@@ -1,0 +1,5 @@
+asset_id,asset_type,currency,valuation_date,market_value,face_value,coupon_rate,yield_rate,maturity_date,credit_spread_bps
+SYN-BOND-01,bond,HKD,2026-09-30,,90000000,0.04,0.025,2030-12-31,100
+SYN-BOND-02,bond,HKD,2026-09-30,,50000000,0.045,0.028,2035-12-31,140
+SYN-EQUITY-01,equity,HKD,2026-09-30,50000000,,,,,
+SYN-CASH-01,cash,HKD,2026-09-30,15000000,,,,,

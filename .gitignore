@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.env
+.streamlit/secrets.toml
+runtime/
+*.sqlite*
+.DS_Store
+build/
+*.egg-info/

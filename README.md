@@ -125,4 +125,4 @@ reports/                       Example Markdown report and complete JSON records
 docs/                          Architecture, methodology, privacy, source review and deployment
 ```
 
-Original application code has not been assigned a redistribution license; choose one before publication. Source-document rights remain with their publishers. No original upstream code, confidential employer data, real client files, API keys or paid benchmark outputs are included. No GitHub push, public deployment or paid API call was performed.
+Original application code has not been assigned a redistribution license; choose one before public distribution. Source-document rights remain with their publishers. No original upstream code, confidential employer data, real client files, API keys or paid benchmark outputs are included. GitHub upload is a separate, explicitly authorized step; the initial implementation was verified locally. No public application deployment or paid API call was performed.

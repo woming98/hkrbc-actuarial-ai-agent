@@ -1,6 +1,6 @@
 # Verification record
 
-Verified locally on 2026-10-24 (Asia/Shanghai). No upstream repositories were modified. The project has a separate local Git repository with no remote configured; nothing was pushed or publicly deployed. No paid model calls or model downloads were made.
+Verified locally on 2026-10-24 (Asia/Shanghai). No upstream repositories were modified. Initial verification used a separate local Git repository before any remote was configured; GitHub upload is a subsequent, explicitly authorized step. No public application deployment, paid model calls or model downloads were made.
 
 ## Actual executions
 

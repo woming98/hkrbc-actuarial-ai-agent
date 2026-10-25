@@ -30,6 +30,8 @@ jobs:
           cache: pip
       - name: Install the application and tests
         run: python -m pip install '.[dev]'
+      - name: Read-only offline demonstration preflight
+        run: python scripts/preflight.py
       - name: Numerical, governance and interface tests
         run: python -m pytest -q
       - name: Verify distributed provenance metadata
@@ -38,11 +40,19 @@ jobs:
         run: python evaluation/run.py
       - name: Retrieval relevance and abstention fixtures
         run: python evaluation/retrieval_eval.py --output evaluation/results/retrieval-ci.json
+      - name: Expanded-corpus retrieval diagnostic
+        run: python evaluation/retrieval_eval.py --cases evaluation/expanded_retrieval_cases.json --supplement data/documents/verified_supplement.json --output evaluation/results/retrieval-expanded-ci.json
+      - name: Signed-service adversarial probes
+        run: python evaluation/adversarial_eval.py --output evaluation/results/adversarial-ci.json
       - name: End-to-end synthetic demonstration
         run: python scripts/run_demo.py
       - name: Save measured evaluation outputs only
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: evaluation-python-${{ matrix.python-version }}
-          path: evaluation/results/*.json
+          path: |
+            evaluation/results/offline.json
+            evaluation/results/retrieval-ci.json
+            evaluation/results/retrieval-expanded-ci.json
+            evaluation/results/adversarial-ci.json
           if-no-files-found: error

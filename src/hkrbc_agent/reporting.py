@@ -26,7 +26,23 @@ def render_report(report_id: str, result: dict, *, citations: list[dict] | None 
              "| Risk module | Opening | Closing | Standalone change | Shapley allocation |", "|---|---:|---:|---:|---:|"]
     for module in ("rate", "credit", "equity"):
         lines.append(f"| {module.title()} | {number(start.get('module_capital', {}).get(module, 0))} | {number(end.get('module_capital', {}).get(module, 0))} | {number(result.get('module_changes', {}).get(module, 0))} | {number(result.get('shapley_attribution', {}).get(module, 0))} |")
-    lines += ["", "## Possible movement drivers", ""]
+    bridge = result.get("factor_bridge")
+    if bridge:
+        lines += ["", "## Counterfactual factor bridge", "",
+                  f"Bridge status: **{bridge['status'].upper()}**. Date ageing is applied first; the three remaining factor replacements are averaged over all six orderings. This is model attribution, not reconstructed transactions or investment returns.", ""]
+        if bridge.get("date_ageing") is not None:
+            lines += ["| Factor | Attributed movement (HKD) |", "|---|---:|",
+                      f"| Date ageing at opening quotes | {number(bridge['date_ageing'])} |"]
+            for factor, value in bridge["factor_attribution"].items():
+                lines.append(f"| {factor.replace('_', ' ').title()} | {number(value)} |")
+            lines.append(f"| Unexplained factor-bridge residual | {number(bridge['unexplained_residual'])} |")
+        else:
+            lines.append("Factor attribution could not be completed from the available positions and settlement information.")
+        for check in bridge["validation"]["checks"]:
+            if not check["passed"]:
+                lines.append(f"- Unresolved: {check['details']}")
+        lines += ["", "Equity/cash value changes combine quantities, prices and flows. Entry/exit bonds retain their sole observed quote. Unknown coupon/maturity settlement and changed instrument terms block completion under the default policy."]
+    lines += ["", "## Risk-module movement allocation", ""]
     for driver in result.get("drivers", []):
         lines.append(f"- {driver['module'].title()}: {driver['description']} Shapley contribution HKD {number(driver['shapley_change_hkd'])}; material: {driver['material']}.")
     lines += ["", "## Validation", "", "| Check | Result | Detail |", "|---|---|---|"]
@@ -46,5 +62,7 @@ def render_report(report_id: str, result: dict, *, citations: list[dict] | None 
     lines += ["", "## Limitations and review", "",
               "No liabilities, taxes, operational risk, counterparty default model, matching adjustment, currency risk, rating-specific factors, regulatory floors, or full prescribed aggregation are implemented. Coupon conventions and flat curves are simplified. Large movements require actuarial review even where arithmetic reconciliation passes. Failed validation prevents completion. This prototype is not a certified compliance solution.", "",
               "## Audit and calculation records", "", "The local SQLite audit records demo identity, UTC timestamps, tool versions, validation status, provider, document versions accessed and report identifier. It excludes raw prompts and portfolios. Logs are local and are not tamper-proof.", "",
-              f"Deterministic calculation ID: `{result.get('report_id', 'unknown')}`. The accompanying JSON export contains every synthetic input, per-asset output, function/version, assumptions, validations and limitations. Use both files for technical review.", ""]
+             f"Deterministic calculation ID: `{result.get('report_id', 'unknown')}`. The accompanying JSON export contains every synthetic input, per-asset output, function/version, assumptions, validations and limitations. Use both files for technical review.", ""]
+    if result.get("analysis_id"):
+        lines += [f"Combined analysis ID: `{result['analysis_id']}` · Workflow version: `{result['analysis_version']}` · Factor bridge ID: `{result['factor_bridge']['report_id']}`.", ""]
     return "\n".join(lines)

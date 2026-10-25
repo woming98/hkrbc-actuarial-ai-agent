@@ -11,7 +11,7 @@ from datetime import date, datetime, timezone
 from pathlib import Path
 from typing import Iterator, Literal
 
-from pydantic import BaseModel, ConfigDict, Field, HttpUrl
+from pydantic import BaseModel, ConfigDict, Field, HttpUrl, field_validator
 
 from .security import CLASSIFICATIONS, PERMISSIONS, Principal, require, is_injection, redact
 
@@ -36,6 +36,17 @@ class Document(BaseModel):
     current_consolidated_verified: bool = False
     source_type: str = Field(default="section_record", min_length=1, max_length=100)
     limitations: str = Field(default="", max_length=2000)
+    source_sha256: str | None = Field(default=None, pattern=r"^[a-f0-9]{64}$")
+    source_page: int | None = Field(default=None, ge=1, le=10000, strict=True)
+    source_checked_at: date | None = None
+    claim_tags: tuple[str, ...] = Field(default=(), max_length=32)
+
+    @field_validator("claim_tags")
+    @classmethod
+    def validate_claim_tags(cls, tags: tuple[str, ...]) -> tuple[str, ...]:
+        if len(set(tags)) != len(tags) or any(not re.fullmatch(r"[a-z][a-z0-9_.]{0,79}", tag) or redact(tag)[1] for tag in tags):
+            raise ValueError("Claim tags must be unique controlled identifiers")
+        return tags
 
     @property
     def reference(self) -> str:
@@ -58,6 +69,10 @@ class Store:
                   details TEXT NOT NULL);
                 CREATE TABLE IF NOT EXISTS reports (
                   report_id TEXT PRIMARY KEY, actor TEXT NOT NULL, payload TEXT NOT NULL);
+                CREATE TABLE IF NOT EXISTS document_retirements (
+                  document_id TEXT NOT NULL, version TEXT NOT NULL, retired_at TEXT NOT NULL,
+                  replacement_id TEXT, replacement_version TEXT,
+                  PRIMARY KEY(document_id, version));
             """)
 
     @contextmanager
@@ -104,7 +119,12 @@ class Store:
             raise ValueError("Source URLs must not contain credentials, email addresses or query data")
         if redact(safe_metadata)[1]:
             raise ValueError("PII or secrets detected; redact before ingestion")
-        payload = document.model_dump_json()
+        # Adding optional verification metadata must not rewrite old immutable
+        # versions when their newly introduced fields are still unset.
+        optional_defaults = {"source_sha256": None, "source_page": None,
+                             "source_checked_at": None, "claim_tags": ()}
+        payload = document.model_dump_json(exclude={key for key, value in optional_defaults.items()
+                                                    if getattr(document, key) == value})
         checksum = hashlib.sha256(payload.encode()).hexdigest()
         quarantine = is_injection(safe_metadata)
         return payload, checksum, quarantine
@@ -115,7 +135,8 @@ class Store:
         markers = ",".join("?" for _ in classes)
         # SQL authorization BEFORE payload loading / vectorisation.
         with self.connect() as db:
-            rows = db.execute(f"SELECT payload, checksum FROM documents WHERE classification IN ({markers}) AND quarantined=0",
+            live = "" if include_archived else " AND NOT EXISTS (SELECT 1 FROM document_retirements r WHERE r.document_id=documents.document_id AND r.version=documents.version)"
+            rows = db.execute(f"SELECT payload, checksum FROM documents WHERE classification IN ({markers}) AND quarantined=0" + live,
                               classes).fetchall()
         result = []
         for row in rows:
@@ -130,12 +151,59 @@ class Store:
             result.append(doc)
         return result
 
+    def retire_document(self, principal: Principal, document_id: str, version: str,
+                        replacement: tuple[str, str] | None = None) -> None:
+        """Retire retrieval eligibility while preserving immutable source bytes."""
+        require(principal, "ingest")
+        if replacement is not None and (not isinstance(replacement, tuple) or len(replacement) != 2):
+            raise ValueError("Replacement must identify one document version")
+        for value in (document_id, version, *(replacement or ())):
+            if not isinstance(value, str) or not re.fullmatch(r"[A-Za-z0-9_.-]{1,80}", value) or redact(value)[1]:
+                raise ValueError("Invalid document reference")
+        if replacement == (document_id, version):
+            raise ValueError("A version cannot replace itself")
+        with self.connect() as db:
+            db.execute("BEGIN IMMEDIATE")
+            if db.execute("SELECT 1 FROM documents WHERE document_id=? AND version=?", (document_id, version)).fetchone() is None:
+                raise ValueError("Document version does not exist")
+            previous = db.execute("SELECT replacement_id,replacement_version FROM document_retirements WHERE document_id=? AND version=?", (document_id, version)).fetchone()
+            expected = replacement or (None, None)
+            if previous:
+                if tuple(previous) != expected:
+                    raise ValueError("A retirement decision is immutable; it already records a different replacement")
+                return
+            if replacement and db.execute("SELECT 1 FROM documents WHERE document_id=? AND version=? AND quarantined=0", replacement).fetchone() is None:
+                raise ValueError("Replacement is missing or quarantined")
+            if replacement and db.execute("SELECT 1 FROM documents WHERE document_id=? AND version=? AND status='superseded'", replacement).fetchone():
+                raise ValueError("Replacement is explicitly superseded")
+            if replacement and db.execute("SELECT 1 FROM document_retirements WHERE document_id=? AND version=?", replacement).fetchone():
+                raise ValueError("Replacement is itself retired")
+            db.execute("INSERT OR IGNORE INTO document_retirements VALUES (?,?,?,?,?)", (
+                document_id, version, datetime.now(timezone.utc).isoformat(),
+                replacement[0] if replacement else None, replacement[1] if replacement else None))
+        self.audit(principal, "document_retired", {"documents": [f"{document_id}@{version}"] +
+                   ([f"{replacement[0]}@{replacement[1]}"] if replacement else []), "validation": "passed"})
+
+    def retirement_rows(self, principal: Principal) -> list[dict]:
+        require(principal, "query")
+        classes = CLASSIFICATIONS[principal.role]
+        markers = ",".join("?" for _ in classes)
+        with self.connect() as db:
+            rows = db.execute(f"SELECT r.document_id,r.version,r.retired_at,r.replacement_id,r.replacement_version,d2.classification AS replacement_classification FROM document_retirements r JOIN documents d ON d.document_id=r.document_id AND d.version=r.version LEFT JOIN documents d2 ON d2.document_id=r.replacement_id AND d2.version=r.replacement_version WHERE d.classification IN ({markers})", classes).fetchall()
+        result = []
+        for row in rows:
+            item = dict(row)
+            if item.pop("replacement_classification") not in classes:
+                item["replacement_id"] = item["replacement_version"] = None
+            result.append(item)
+        return result
+
     def audit(self, principal: Principal, event: str, details: dict) -> None:
-        allowed = {"documents", "tools", "validation", "provider", "report_id", "error_type", "count"}
+        allowed = {"documents", "tools", "validation", "provider", "report_id", "error_type", "count", "retrieval_method"}
         if set(details) - allowed:
             raise ValueError("Audit metadata not on privacy allowlist")
         events = {"sign_in", "document_ingested", "retrieval", "retrieval_blocked", "calculation",
-                  "calculation_failed", "scenario_generation", "scenario_failed", "report_created"}
+                  "calculation_failed", "scenario_generation", "scenario_failed", "report_created", "document_retired"}
         statuses = {"passed", "quarantined", "complete", "blocked", "failed", "unknown",
                     "evidence_found", "insufficient_evidence"}
         providers = {"none", "local-extractive", "local-ollama", "approved-external-openai", "deterministic-python"}
@@ -146,6 +214,8 @@ class Store:
                 raise ValueError("Unknown validation status")
             if key == "provider" and value not in providers:
                 raise ValueError("Unknown model provider")
+            if key == "retrieval_method" and value not in {"bm25+mmr", "hash-legacy", "dense+mmr", "hybrid+mmr", "none", "unspecified"}:
+                raise ValueError("Unknown retrieval method")
             if key in {"documents", "tools"}:
                 if not isinstance(value, list) or len(value) > 1000 or any(
                     not isinstance(item, str) or not re.fullmatch(r"[A-Za-z0-9_.@-]{1,180}", item)

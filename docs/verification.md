@@ -1,5 +1,7 @@
 # Verification record
 
+This is the initial 0.1.0 snapshot. See [second-round verification](phase2-verification.md) for 0.2.0, inspected PDFs, actual local encoder measurements and the expanded tests.
+
 Verified locally on 2026-10-24 (Asia/Shanghai). No upstream repositories were modified. Initial verification used a separate local Git repository before any remote was configured; GitHub upload is a subsequent, explicitly authorized step. No public application deployment, paid model calls or model downloads were made.
 
 ## Actual executions

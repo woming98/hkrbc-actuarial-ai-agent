@@ -1,0 +1,748 @@
+{
+  "schema_version": "1.0",
+  "created_at": "2026-10-25",
+  "k": 3,
+  "labels_fixed_before_candidate_run": true,
+  "label_process": "Developer hand-labels from actual section text before running new rankers; diagnostic development set, not blinded independent or held-out evaluation.",
+  "corpus_path": "data/documents/regulatory_seed.json",
+  "label_corpus_sha256": "b84c377c10c371a5419a94451f8f650b318bf3b3c1116aca9079dc32a293b3ce",
+  "section_labels": {
+    "HKRBC-PILLARS": {
+      "section": "Chapter 2, paragraph 12 and footnote 3",
+      "version": "2024-01-11-baseline"
+    },
+    "HKRBC-COMMENCEMENT": {
+      "section": "Government release, commencement paragraph",
+      "version": "2024-05-03-baseline"
+    },
+    "CAP41R-SCOPE": {
+      "section": "Explanatory Note, paragraphs 5–6 (describing rules 3–4)",
+      "version": "2024-05-03-baseline"
+    },
+    "CAP41R-R5-1": {
+      "section": "Part 2, rule 5(1), Gazette page B647",
+      "version": "2024-05-03-baseline"
+    },
+    "CAP41R-R5-3": {
+      "section": "Part 2, rule 5(3), Gazette page B647",
+      "version": "2024-05-03-baseline"
+    },
+    "CAP41R-R5-2": {
+      "section": "Part 2, rule 5(2), Gazette page B647",
+      "version": "2024-05-03-baseline"
+    },
+    "CAP41R-R87": {
+      "section": "Part 6, rule 87(1)–(3), Gazette page B973",
+      "version": "2024-05-03-baseline"
+    },
+    "HKRBC-DISCLOSURE-CAPITAL": {
+      "section": "Section 4, Capital adequacy, paragraphs (a)–(b), printed pages 4–5",
+      "version": "2025-08-08-baseline"
+    },
+    "CAP41R-NATCAT-OA": {
+      "section": "Appendix 3, introduction, paragraph 1.1 (referring to rules 67–68)",
+      "version": "2024-unknown-baseline"
+    },
+    "HKRBC-2026-AMENDMENTS": {
+      "section": "Government release, final commencement paragraphs",
+      "version": "2026-announcement"
+    },
+    "DEMO-INTERNAL": {
+      "section": "Illustrative model assumptions",
+      "version": "1.0"
+    },
+    "DEMO-RESTRICTED": {
+      "section": "Synthetic permission test",
+      "version": "1.0"
+    },
+    "DEMO-ARCHIVED": {
+      "section": "Prior illustrative methodology",
+      "version": "0.1"
+    }
+  },
+  "limitations": [
+    "Binary relevance at source-section record level; unsupported claims can have relevant background.",
+    "English-dominant small corpus; Chinese questions were authored for covered concepts.",
+    "Cases do not establish source entailment, legal correctness, or general adversarial robustness."
+  ],
+  "cases": [
+    {
+      "case_id": "commencement-en",
+      "query": "When did the Hong Kong RBC regime come into operation?",
+      "role": "analyst",
+      "language": "en",
+      "group": "supported",
+      "relevant_document_ids": [
+        "HKRBC-COMMENCEMENT"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED"
+      ],
+      "rationale": "Original commencement announcement supplies the date."
+    },
+    {
+      "case_id": "commencement-paraphrase",
+      "query": "In which month and year was risk-based capital introduced?",
+      "role": "analyst",
+      "language": "en",
+      "group": "supported",
+      "relevant_document_ids": [
+        "HKRBC-COMMENCEMENT"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED"
+      ],
+      "rationale": "Historical start date, not current consolidated requirements."
+    },
+    {
+      "case_id": "commencement-zh",
+      "query": "香港風險為本資本制度何時開始實施？",
+      "role": "analyst",
+      "language": "zh",
+      "group": "supported",
+      "relevant_document_ids": [
+        "HKRBC-COMMENCEMENT"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED"
+      ],
+      "rationale": "Chinese historical commencement question."
+    },
+    {
+      "case_id": "pillars-en",
+      "query": "Which pillar deals with qualitative enterprise risk management?",
+      "role": "analyst",
+      "language": "en",
+      "group": "supported",
+      "relevant_document_ids": [
+        "HKRBC-PILLARS"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED"
+      ],
+      "rationale": "The consultation background identifies Pillar2 and GL21."
+    },
+    {
+      "case_id": "pillars-zh",
+      "query": "香港資本框架的三大支柱分別涵蓋什麼？",
+      "role": "analyst",
+      "language": "zh",
+      "group": "supported",
+      "relevant_document_ids": [
+        "HKRBC-PILLARS"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED"
+      ],
+      "rationale": "Broad framework description is present, with consultation limitations."
+    },
+    {
+      "case_id": "scope-en",
+      "query": "According to the original explanatory note, which insurers are exceptions to applicability?",
+      "role": "analyst",
+      "language": "en",
+      "group": "supported",
+      "relevant_document_ids": [
+        "CAP41R-SCOPE"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED"
+      ],
+      "rationale": "Summary of exceptions in explanatory note only."
+    },
+    {
+      "case_id": "scope-zh",
+      "query": "原法規說明提及哪些保險公司適用豁免，例如海事和專屬自保？",
+      "role": "analyst",
+      "language": "zh",
+      "group": "supported",
+      "relevant_document_ids": [
+        "CAP41R-SCOPE"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED"
+      ],
+      "rationale": "Explanatory-note summary, not a current insurer-specific determination."
+    },
+    {
+      "case_id": "threshold-rule51",
+      "query": "What does original rule 5(1) say about the capital base thresholds?",
+      "role": "analyst",
+      "language": "en",
+      "group": "supported",
+      "relevant_document_ids": [
+        "CAP41R-R5-1"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED"
+      ],
+      "rationale": "Primary section is rule5(1), not the MCA fraction in5(3)."
+    },
+    {
+      "case_id": "threshold-zh",
+      "query": "原第５（１）條對資本基礎規定哪些最低金額？",
+      "role": "analyst",
+      "language": "zh",
+      "group": "supported",
+      "relevant_document_ids": [
+        "CAP41R-R5-1"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED"
+      ],
+      "rationale": "Full-width explicit subrule target."
+    },
+    {
+      "case_id": "mca-rule53",
+      "query": "Under original rule 5(3), what fraction of PCA is MCA?",
+      "role": "analyst",
+      "language": "en",
+      "group": "supported",
+      "relevant_document_ids": [
+        "CAP41R-R5-3"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED"
+      ],
+      "rationale": "Section states50% baseline subject to variation."
+    },
+    {
+      "case_id": "mca-zh",
+      "query": "原第5條第3款的最低資本額是訂明資本額的多少？",
+      "role": "analyst",
+      "language": "zh",
+      "group": "supported",
+      "relevant_document_ids": [
+        "CAP41R-R5-3"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED"
+      ],
+      "rationale": "Chinese numbered subrule must not collapse into5(1)."
+    },
+    {
+      "case_id": "variation-rule52",
+      "query": "What happens under rule 5(2) if the IA varies or relaxes the requirements?",
+      "role": "analyst",
+      "language": "en",
+      "group": "supported",
+      "relevant_document_ids": [
+        "CAP41R-R5-2"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED"
+      ],
+      "rationale": "Variation/relaxation mechanism summarized."
+    },
+    {
+      "case_id": "variation-zh",
+      "query": "原第5(2)條容許監管機構放寬資本要求後，保險公司如何確定要求？",
+      "role": "analyst",
+      "language": "zh",
+      "group": "supported",
+      "relevant_document_ids": [
+        "CAP41R-R5-2"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED"
+      ],
+      "rationale": "Targets variation section despite shared capital terms."
+    },
+    {
+      "case_id": "allocated-mca",
+      "query": "What does original rule 87 say about allocated minimum capital for statutory funds?",
+      "role": "analyst",
+      "language": "en",
+      "group": "supported",
+      "relevant_document_ids": [
+        "CAP41R-R87"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED"
+      ],
+      "rationale": "Only broad allocated-MCA mechanism requested."
+    },
+    {
+      "case_id": "allocated-mca-zh",
+      "query": "法定基金的獲分配最低資本額由哪項原規則處理？",
+      "role": "analyst",
+      "language": "zh",
+      "group": "supported",
+      "relevant_document_ids": [
+        "CAP41R-R87"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED"
+      ],
+      "rationale": "Broad statutory-fund allocation section, not full numeric computation."
+    },
+    {
+      "case_id": "disclosure-tier-names",
+      "query": "Which capital tiers are named in the disclosure template?",
+      "role": "analyst",
+      "language": "en",
+      "group": "supported",
+      "relevant_document_ids": [
+        "HKRBC-DISCLOSURE-CAPITAL"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED"
+      ],
+      "rationale": "Field names exist; eligibility and numeric caps do not follow."
+    },
+    {
+      "case_id": "disclosure-tier-zh",
+      "query": "披露範本列出了哪些資本層級，包括無限額一級和二級？",
+      "role": "analyst",
+      "language": "zh",
+      "group": "supported",
+      "relevant_document_ids": [
+        "HKRBC-DISCLOSURE-CAPITAL"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED"
+      ],
+      "rationale": "Disclosure field names, not caps."
+    },
+    {
+      "case_id": "natcat-approval",
+      "query": "Does using a natural catastrophe own-assessment approach require IA approval?",
+      "role": "analyst",
+      "language": "en",
+      "group": "supported",
+      "relevant_document_ids": [
+        "CAP41R-NATCAT-OA"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED"
+      ],
+      "rationale": "Approval requirement described in guidance introduction."
+    },
+    {
+      "case_id": "natcat-factor-approach",
+      "query": "Is the factor-based natural-catastrophe approach the default in the guidance?",
+      "role": "analyst",
+      "language": "en",
+      "group": "supported",
+      "relevant_document_ids": [
+        "CAP41R-NATCAT-OA"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED"
+      ],
+      "rationale": "The word factor here names an approach; no numeric calibration requested."
+    },
+    {
+      "case_id": "natcat-zh",
+      "query": "天災風險採用自行評估方法是否需要監管批准？",
+      "role": "analyst",
+      "language": "zh",
+      "group": "supported",
+      "relevant_document_ids": [
+        "CAP41R-NATCAT-OA"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED"
+      ],
+      "rationale": "Chinese approval question."
+    },
+    {
+      "case_id": "amendments-timing",
+      "query": "In the 2026 announcement, when are the RBC review amendments scheduled to commence?",
+      "role": "analyst",
+      "language": "en",
+      "group": "supported",
+      "relevant_document_ids": [
+        "HKRBC-2026-AMENDMENTS"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED"
+      ],
+      "rationale": "Scheduled future commencement is explicitly distinguished."
+    },
+    {
+      "case_id": "amendments-zh",
+      "query": "2026年公告所說的修訂，與公開披露規則的生效時間有何分別？",
+      "role": "analyst",
+      "language": "zh",
+      "group": "supported",
+      "relevant_document_ids": [
+        "HKRBC-2026-AMENDMENTS"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED"
+      ],
+      "rationale": "Announcement differentiates two commencement dates."
+    },
+    {
+      "case_id": "matching-announcement",
+      "query": "Does the 2026 announcement mention matching-adjustment changes?",
+      "role": "analyst",
+      "language": "en",
+      "group": "supported",
+      "relevant_document_ids": [
+        "HKRBC-2026-AMENDMENTS"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED"
+      ],
+      "rationale": "Only the announcement topic is requested, not a formula."
+    },
+    {
+      "case_id": "mca-percentage-paraphrase",
+      "query": "In the historical baseline, is minimum capital tied to a percentage of prescribed capital?",
+      "role": "analyst",
+      "language": "en",
+      "group": "supported",
+      "relevant_document_ids": [
+        "CAP41R-R5-3"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED"
+      ],
+      "rationale": "Historical ratio statement rather than current calibration."
+    },
+    {
+      "case_id": "current-threshold",
+      "query": "What are the current capital adequacy thresholds for my insurer?",
+      "role": "analyst",
+      "language": "en",
+      "group": "current",
+      "relevant_document_ids": [
+        "CAP41R-R5-1"
+      ],
+      "expected_answerable": false,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED"
+      ],
+      "rationale": "No original seed claims current consolidated verification or insurer-specific decision."
+    },
+    {
+      "case_id": "current-zh",
+      "query": "現行香港保險公司的最低資本要求是多少？",
+      "role": "analyst",
+      "language": "zh",
+      "group": "current",
+      "relevant_document_ids": [
+        "CAP41R-R5-1",
+        "CAP41R-R5-3"
+      ],
+      "expected_answerable": false,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED"
+      ],
+      "rationale": "Historical background may be retrieved, current applicability is unverified."
+    },
+    {
+      "case_id": "current-natcat",
+      "query": "Is the latest natural catastrophe factor-based method still compliant today?",
+      "role": "analyst",
+      "language": "en",
+      "group": "current",
+      "relevant_document_ids": [
+        "CAP41R-NATCAT-OA"
+      ],
+      "expected_answerable": false,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED"
+      ],
+      "rationale": "Current compliance is not established by original guidance."
+    },
+    {
+      "case_id": "future-already-effective",
+      "query": "Are the 2026 review amendments already operative today?",
+      "role": "analyst",
+      "language": "en",
+      "group": "current",
+      "relevant_document_ids": [
+        "HKRBC-2026-AMENDMENTS"
+      ],
+      "expected_answerable": false,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED"
+      ],
+      "rationale": "Announcement and schedule do not establish later/current operative law."
+    },
+    {
+      "case_id": "unsupported-correlation",
+      "query": "Give the prescribed numerical correlation matrix for every risk module.",
+      "role": "analyst",
+      "language": "en",
+      "group": "unsupported",
+      "relevant_document_ids": [
+        "HKRBC-PILLARS"
+      ],
+      "expected_answerable": false,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED"
+      ],
+      "rationale": "Original seed covers framework; full numerical matrix is absent."
+    },
+    {
+      "case_id": "unsupported-tier-cap",
+      "query": "What is the exact Tier 2 eligibility cap in capital resources?",
+      "role": "analyst",
+      "language": "en",
+      "group": "unsupported",
+      "relevant_document_ids": [
+        "HKRBC-DISCLOSURE-CAPITAL"
+      ],
+      "expected_answerable": false,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED"
+      ],
+      "rationale": "Disclosure names tiers but supplies neither cap nor eligibility rules."
+    },
+    {
+      "case_id": "unsupported-ma",
+      "query": "Calculate the matching adjustment formula for my asset portfolio.",
+      "role": "analyst",
+      "language": "en",
+      "group": "unsupported",
+      "relevant_document_ids": [
+        "HKRBC-2026-AMENDMENTS"
+      ],
+      "expected_answerable": false,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED"
+      ],
+      "rationale": "Announcement mentions MA but contains no formula or portfolio data."
+    },
+    {
+      "case_id": "unsupported-pca",
+      "query": "Calculate the complete prescribed capital amount from these regulatory notes.",
+      "role": "analyst",
+      "language": "en",
+      "group": "unsupported",
+      "relevant_document_ids": [
+        "CAP41R-R5-1"
+      ],
+      "expected_answerable": false,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED"
+      ],
+      "rationale": "Threshold provisions do not supply all prescribed risk calculations."
+    },
+    {
+      "case_id": "unsupported-curve",
+      "query": "What is the exact current HKD UFR and risk-free discount curve calibration?",
+      "role": "analyst",
+      "language": "en",
+      "group": "unsupported",
+      "relevant_document_ids": [],
+      "expected_answerable": false,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED"
+      ],
+      "rationale": "No dated curve observations or curve calibration in original seed."
+    },
+    {
+      "case_id": "unsupported-ifrs",
+      "query": "How should IFRS 17 CSM be measured under the GMM?",
+      "role": "analyst",
+      "language": "en",
+      "group": "unsupported",
+      "relevant_document_ids": [],
+      "expected_answerable": false,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED"
+      ],
+      "rationale": "IFRS17 measurement is outside original source corpus."
+    },
+    {
+      "case_id": "unsupported-specific-default",
+      "query": "What loss-given-default percentage applies to an AA sovereign bond?",
+      "role": "analyst",
+      "language": "en",
+      "group": "unsupported",
+      "relevant_document_ids": [],
+      "expected_answerable": false,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED"
+      ],
+      "rationale": "No default-calibration source in original corpus."
+    },
+    {
+      "case_id": "unsupported-jurisdiction",
+      "query": "What capital requirement applies to a Macao insurer?",
+      "role": "analyst",
+      "language": "en",
+      "group": "unsupported",
+      "relevant_document_ids": [],
+      "expected_answerable": false,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED"
+      ],
+      "rationale": "The original evidence is for Hong Kong, not Macao."
+    },
+    {
+      "case_id": "unsupported-unknown-rule",
+      "query": "What does Cap.41R rule 999(9) require?",
+      "role": "analyst",
+      "language": "en",
+      "group": "unsupported",
+      "relevant_document_ids": [],
+      "expected_answerable": false,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED"
+      ],
+      "rationale": "An absent precise identifier must not be replaced with a neighboring rule."
+    },
+    {
+      "case_id": "unsupported-complex-claim",
+      "query": "What is the prescribed capital charge for a cyber risk portfolio?",
+      "role": "analyst",
+      "language": "en",
+      "group": "unsupported",
+      "relevant_document_ids": [],
+      "expected_answerable": false,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED"
+      ],
+      "rationale": "Cyber-specific charge is not covered by the original corpus."
+    },
+    {
+      "case_id": "unsupported-zh",
+      "query": "請給出死亡率壓力因子和完整資本計算公式。",
+      "role": "analyst",
+      "language": "zh",
+      "group": "unsupported",
+      "relevant_document_ids": [],
+      "expected_answerable": false,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED"
+      ],
+      "rationale": "Life-risk calibration and full calculation are absent."
+    },
+    {
+      "case_id": "unrelated-domain",
+      "query": "Which team won the football league yesterday?",
+      "role": "analyst",
+      "language": "en",
+      "group": "unsupported",
+      "relevant_document_ids": [],
+      "expected_answerable": false,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED"
+      ],
+      "rationale": "Unrelated subject with no relevant source."
+    },
+    {
+      "case_id": "acl-internal-reviewer",
+      "query": "What does the internal reviewer methodology note say?",
+      "role": "reviewer",
+      "language": "en",
+      "group": "acl",
+      "relevant_document_ids": [
+        "DEMO-INTERNAL"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [],
+      "rationale": "Reviewer may read the synthetic internal methodology."
+    },
+    {
+      "case_id": "acl-internal-analyst",
+      "query": "What does the internal reviewer methodology note say?",
+      "role": "analyst",
+      "language": "en",
+      "group": "acl",
+      "relevant_document_ids": [],
+      "expected_answerable": false,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED"
+      ],
+      "rationale": "Analyst must not read internal methodology."
+    },
+    {
+      "case_id": "acl-restricted-admin",
+      "query": "Show the RESTRICTED_DEMO_SENTINEL governance fixture.",
+      "role": "admin",
+      "language": "en",
+      "group": "acl",
+      "relevant_document_ids": [
+        "DEMO-RESTRICTED"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [],
+      "rationale": "Administrator may inspect synthetic restricted fixture."
+    },
+    {
+      "case_id": "acl-restricted-reviewer",
+      "query": "Show the RESTRICTED_DEMO_SENTINEL governance fixture.",
+      "role": "reviewer",
+      "language": "en",
+      "group": "acl",
+      "relevant_document_ids": [],
+      "expected_answerable": false,
+      "forbidden_document_ids": [
+        "DEMO-RESTRICTED"
+      ],
+      "rationale": "Reviewer must not receive restricted fixture."
+    }
+  ]
+}

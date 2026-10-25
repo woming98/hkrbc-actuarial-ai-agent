@@ -31,6 +31,9 @@ def main(argv: list[str] | None = None) -> int:
         service = AgentService(directory / "demo.sqlite", router=ModelRouter(ModelSettings()))
         admin = service.sign_in("admin", os.getenv("HKRBC_ADMIN_PASSWORD") or DEMO_PASSWORDS["admin"])
         service.seed(admin, ROOT / "data" / "documents" / "regulatory_seed.json")
+        supplement = ROOT / "data" / "documents" / "verified_supplement.json"
+        if supplement.exists():
+            service.seed(admin, supplement)
         analyst = service.sign_in("analyst", os.getenv("HKRBC_ANALYST_PASSWORD") or DEMO_PASSWORDS["analyst"])
         evidence = service.ask(analyst, "When did the RBC regime commence?")
         opening = (ROOT / "data" / "portfolios" / "opening.csv").read_bytes()
@@ -52,7 +55,7 @@ def main(argv: list[str] | None = None) -> int:
                    "report_id": report_id}
         if args.output_dir:
             (directory / "movement.json").write_text(json.dumps(movement, indent=2, allow_nan=False) + "\n", encoding="utf-8")
-            (directory / "movement.md").write_text(render_report(report_id, movement, citations=evidence["citations"]), encoding="utf-8")
+            (directory / "movement.md").write_text(render_report(report_id, movement), encoding="utf-8")
             (directory / "summary.json").write_text(json.dumps(summary, indent=2, allow_nan=False) + "\n", encoding="utf-8")
         print(json.dumps(summary, indent=2, allow_nan=False))
         if args.output_dir:

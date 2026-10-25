@@ -89,6 +89,9 @@ def get_service(database: str, seed_digest: str) -> AgentService:
     if seed_digest and seed.exists():
         token = service.auth.authenticate("admin", os.getenv("HKRBC_ADMIN_PASSWORD") or DEMO_PASSWORDS["admin"])
         service.seed(token, seed)
+        supplement = ROOT / "data" / "documents" / "verified_supplement.json"
+        if supplement.exists():
+            service.seed(token, supplement)
     return service
 
 
@@ -143,7 +146,7 @@ def validation_rows(result: dict, stage: str = "Movement") -> list[dict]:
     rows = [{"Stage": stage, "Check": item["name"], "Asset": item.get("asset_id", "—"),
              "Result": "PASS" if item["passed"] else "FAIL", "Details": item["details"]}
             for item in result.get("validation", {}).get("checks", [])]
-    for key in ("opening", "closing"):
+    for key in ("opening", "closing", "factor_bridge"):
         if key in result:
             rows.extend(validation_rows(result[key], key.title()))
     return rows
@@ -228,6 +231,10 @@ def regulatory_page(service: AgentService, token: str, principal) -> None:
     st.caption(f"Status: {result['status']} · Provider: {result['provider']}")
     if result.get("pii_redacted"):
         st.caption("Potential personal data were redacted before local retrieval.")
+    st.caption(f"Retrieval: {result.get('retrieval_method', 'legacy-hash')} · Current consolidated law remains a separate evidence check.")
+    if result.get("evidence_scope"):
+        with st.expander("Question coverage and evidence checks"):
+            st.json(result["evidence_scope"])
     if result.get("commentary"):
         with st.expander("Optional model commentary — requires review"):
             st.write(result["commentary"])
@@ -236,6 +243,8 @@ def regulatory_page(service: AgentService, token: str, principal) -> None:
             st.caption(f"{citation['reference']} · {citation['status']} · {citation['classification']}")
             st.write(f"Published: {citation.get('published_at') or 'unknown'} · Reviewed: {citation['reviewed_at']} · Effective from: {citation.get('effective_from') or 'not established'}")
             st.write(citation["provenance"])
+            if citation.get("source_sha256"):
+                st.caption(f"Source file SHA-256: {citation['source_sha256']} · PDF page: {citation.get('source_page') or 'n/a'} · Checked: {citation.get('source_checked_at')}")
             st.link_button("Open source", citation["url"])
     limitations(result["limitations"])
 
@@ -258,6 +267,19 @@ def render_analysis(result: dict) -> None:
     drivers = pd.DataFrame(result["drivers"]).rename(columns={"module": "Module", "standalone_change_hkd": "Standalone change (HKD)",
         "shapley_change_hkd": "Shapley change (HKD)", "material": "Material", "description": "Interpretation"})
     show_table(drivers)
+    bridge = result.get("factor_bridge")
+    if bridge:
+        st.subheader("Date and input-factor bridge")
+        st.caption("Date ageing first, then exact Shapley across holdings/equity value, risk-free yield and credit spread. This is an explicit counterfactual model, not a trade ledger.")
+        if bridge.get("date_ageing") is not None:
+            rows = [{"Factor": "Date ageing at opening quotes", "Movement (HKD)": bridge["date_ageing"]}]
+            rows += [{"Factor": name.replace("_", " ").title(), "Movement (HKD)": value} for name, value in bridge["factor_attribution"].items()]
+            rows.append({"Factor": "Unexplained factor-bridge residual", "Movement (HKD)": bridge["unexplained_residual"]})
+            show_table(pd.DataFrame(rows))
+        if not bridge["validation"]["passed"]:
+            st.error("Factor bridge is blocked. Review instrument changes or unobserved coupon/maturity settlement.")
+        with st.expander("Factor-bridge definitions, hybrid states and checks"):
+            st.json(bridge)
     with st.expander("Portfolio valuation and sensitivities"):
         st.write(f"Opening value: HKD {money(opening['total_market_value'])} · Closing value: HKD {money(closing['total_market_value'])}")
         st.write(f"Closing portfolio DV01: HKD {money(closing['portfolio_dv01'])} per basis point")
@@ -359,6 +381,8 @@ def validation_page() -> None:
         bundles = [("Movement", result)] if result else []
         if result:
             bundles += [("Opening", result["opening"]), ("Closing", result["closing"])]
+            if result.get("factor_bridge"):
+                bundles.append(("Factor bridge", result["factor_bridge"]))
         if scenarios:
             bundles.append(("Scenarios", scenarios))
         for stage, bundle in bundles:
@@ -367,10 +391,28 @@ def validation_page() -> None:
                     st.json(record)
 
 
+def retire_evidence_version(service: AgentService, token: str) -> None:
+    """Apply the form action before the next render reads the document register."""
+    try:
+        document_id, version = st.session_state["retirement_target"].split("@", 1)
+        replacement = st.session_state["retirement_successor"]
+        service.retire_document(token, document_id, version,
+            replacement_reference=None if replacement == "No replacement" else replacement)
+        st.session_state["governance_notice"] = "Version retired from retrieval. Its source payload remains unchanged."
+    except (ValueError, PermissionError) as exc:
+        st.session_state["governance_error"] = str(exc)
+
+
 def governance_page(service: AgentService, token: str, principal) -> None:
     st.header("Governance & Audit")
+    notice = st.session_state.pop("governance_notice", None)
+    if notice:
+        st.success(notice)
+    error = st.session_state.pop("governance_error", None)
+    if error:
+        st.error(error)
     st.write("Review versioned evidence and the audit records available to your signed-in role.")
-    documents = service.documents(token)
+    documents = service.documents(token, include_lifecycle=True)
     audit = service.audit(token)
     cols = st.columns(3)
     cols[0].metric("Visible evidence sections", str(len(documents)))
@@ -380,13 +422,17 @@ def governance_page(service: AgentService, token: str, principal) -> None:
     with tabs[0]:
         st.caption("Documents are filtered by server-side role permissions. Status and review date are evidence metadata, not a completeness assertion.")
         if documents:
-            fields = ["document_id", "version", "title", "section", "status", "classification", "published_at", "reviewed_at", "effective_from"]
+            fields = ["document_id", "version", "title", "section", "status", "retrieval_state", "classification", "published_at", "reviewed_at", "effective_from", "source_page"]
             show_table(pd.DataFrame([{key: document.get(key) for key in fields} for document in documents]))
             for document in documents:
                 with st.expander(f"{document['document_id']}@{document['version']} · {document['title']}"):
                     st.write(document["text"])
                     st.caption(document["provenance"])
                     st.caption(document["redistribution"])
+                    if document.get("source_sha256"):
+                        st.caption(f"Source SHA-256: {document['source_sha256']}")
+                    if document.get("retirement"):
+                        st.json(document["retirement"])
                     st.link_button("Open source", document["url"])
         else:
             st.info("No evidence sections are visible to this role yet.")
@@ -415,9 +461,19 @@ def governance_page(service: AgentService, token: str, principal) -> None:
                     raise ValueError("Document batch exceeds 2 MB")
                 records = json.loads(raw.decode("utf-8-sig"))
                 count = service.ingest(token, records)
-                st.success(f"Ingested {count} versioned sections. Reopen this page to refresh the register.")
+                st.session_state["governance_notice"] = f"Ingested {count} versioned sections."
+                st.rerun()
             except (ValueError, PermissionError, UnicodeError, OSError) as exc:
                 st.error(str(exc))
+        st.divider()
+        st.subheader("Retire an evidence version")
+        st.caption("Retirement excludes an old version before retrieval while preserving its original bytes and existing report references. A replacement is an explicit curator decision.")
+        eligible = [f"{doc['document_id']}@{doc['version']}" for doc in documents if doc["retrieval_state"] == "eligible"]
+        if eligible:
+            with st.form("retire_version"):
+                st.selectbox("Version to retire", eligible, key="retirement_target")
+                st.selectbox("Replacement version", ["No replacement"] + eligible, key="retirement_successor")
+                st.form_submit_button("Retire version", on_click=retire_evidence_version, args=(service, token))
 
 
 def main() -> None:
@@ -436,7 +492,9 @@ def main() -> None:
     st.title("Actuarial Workbench")
     st.warning("Research prototype · Evidence includes historical baselines; verify the current consolidated rules. Capital figures are illustrative HKD asset stresses, not statutory HK RBC capital.")
     seed = ROOT / "data" / "documents" / "regulatory_seed.json"
-    digest = hashlib.sha256(seed.read_bytes()).hexdigest() if seed.exists() else ""
+    supplement = ROOT / "data" / "documents" / "verified_supplement.json"
+    seed_bytes = seed.read_bytes() if seed.exists() else b""
+    digest = hashlib.sha256(seed_bytes + (supplement.read_bytes() if supplement.exists() else b"")).hexdigest() if seed_bytes else ""
     database = os.getenv("HKRBC_DB_PATH") or str(ROOT / "runtime" / "demo.sqlite")
     try:
         service = get_service(database, digest)

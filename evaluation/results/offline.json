@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "suite_id": "hkrbc-prototype-fixtures-v1",
-  "measured_at_utc": "2026-10-24T15:12:28.575477+00:00",
+  "measured_at_utc": "2026-10-25T02:02:41.857921+00:00",
   "manifest_sha256": "75b690ea067a5f1157a79af748d0361bfa0162c0b1d704dc0b34686f02f15d11",
   "source_context_sha256": "b84c377c10c371a5419a94451f8f650b318bf3b3c1116aca9079dc32a293b3ce",
   "case_bundle_sha256": "558c2eb2263e434e2f6381beb80778828a37d32ad99f09fa13ed5a57e7210d03",
@@ -62,7 +62,7 @@
               "reconciliation_accuracy": null,
               "unauthorized_disclosure": null,
               "expected_status_and_fields": true,
-              "elapsed_ms": 1.503457999206148
+              "elapsed_ms": 1.4751249982509762
             },
             {
               "passed": true,
@@ -87,7 +87,7 @@
               "reconciliation_accuracy": null,
               "unauthorized_disclosure": null,
               "expected_status_and_fields": true,
-              "elapsed_ms": 1.155667006969452
+              "elapsed_ms": 1.0964590037474409
             }
           ],
           "reproducibility": {
@@ -98,7 +98,7 @@
               "abe1fcea3614d0c672cbbda7b6f64bcef239332f8617f04e6556166e17735e60"
             ]
           },
-          "mean_elapsed_ms": 1.3295625030878
+          "mean_elapsed_ms": 1.2857920009992085
         },
         {
           "case_id": "equity-capital-movement",
@@ -145,7 +145,7 @@
               "reconciliation_accuracy": true,
               "unauthorized_disclosure": null,
               "expected_status_and_fields": true,
-              "elapsed_ms": 1.4535829977830872
+              "elapsed_ms": 4.8972920048981905
             },
             {
               "passed": true,
@@ -188,7 +188,7 @@
               "reconciliation_accuracy": true,
               "unauthorized_disclosure": null,
               "expected_status_and_fields": true,
-              "elapsed_ms": 1.572583001689054
+              "elapsed_ms": 4.160957993008196
             }
           ],
           "reproducibility": {
@@ -199,7 +199,7 @@
               "8d9a7788a23bd618df5c267689f5093cdc7d54b0e7708fa1234a4c71579670cf"
             ]
           },
-          "mean_elapsed_ms": 1.5130829997360706
+          "mean_elapsed_ms": 4.529124998953193
         },
         {
           "case_id": "diversified-movement",
@@ -246,7 +246,7 @@
               "reconciliation_accuracy": true,
               "unauthorized_disclosure": null,
               "expected_status_and_fields": true,
-              "elapsed_ms": 0.18158299644710496
+              "elapsed_ms": 0.18041599832940847
             },
             {
               "passed": true,
@@ -289,7 +289,7 @@
               "reconciliation_accuracy": true,
               "unauthorized_disclosure": null,
               "expected_status_and_fields": true,
-              "elapsed_ms": 0.16537500050617382
+              "elapsed_ms": 0.16825000056996942
             }
           ],
           "reproducibility": {
@@ -300,7 +300,7 @@
               "76f76505aba8d2b7c5f6ce9967627ee372ee5cc6aed218bf8ecef031f1670d54"
             ]
           },
-          "mean_elapsed_ms": 0.1734789984766394
+          "mean_elapsed_ms": 0.17433299944968894
         },
         {
           "case_id": "seeded-scenario-integrity",
@@ -313,7 +313,7 @@
               "reconciliation_accuracy": null,
               "unauthorized_disclosure": null,
               "expected_status_and_fields": true,
-              "elapsed_ms": 4.809958998521324
+              "elapsed_ms": 4.980249999789521
             },
             {
               "passed": true,
@@ -322,7 +322,7 @@
               "reconciliation_accuracy": null,
               "unauthorized_disclosure": null,
               "expected_status_and_fields": true,
-              "elapsed_ms": 4.599292005877942
+              "elapsed_ms": 4.655082986573689
             }
           ],
           "reproducibility": {
@@ -333,7 +333,7 @@
               "443f62d457f46e0a331842a92ed9e35218377a6b877711fcf45141f95cf9f98d"
             ]
           },
-          "mean_elapsed_ms": 4.704625502199633
+          "mean_elapsed_ms": 4.817666493181605
         },
         {
           "case_id": "regulatory-commencement-citation",
@@ -344,37 +344,37 @@
               "numerical_accuracy": null,
               "citation_reference_validity": {
                 "passed": true,
-                "supplied_count": 2,
+                "supplied_count": 3,
                 "required_count": 1
               },
               "reconciliation_accuracy": null,
               "unauthorized_disclosure": null,
               "expected_status_and_fields": true,
-              "elapsed_ms": 4.70783300261246
+              "elapsed_ms": 18.98195900139399
             },
             {
               "passed": true,
               "numerical_accuracy": null,
               "citation_reference_validity": {
                 "passed": true,
-                "supplied_count": 2,
+                "supplied_count": 3,
                 "required_count": 1
               },
               "reconciliation_accuracy": null,
               "unauthorized_disclosure": null,
               "expected_status_and_fields": true,
-              "elapsed_ms": 2.823625000019092
+              "elapsed_ms": 10.23687499400694
             }
           ],
           "reproducibility": {
             "measured": true,
             "passed": true,
             "response_digests": [
-              "89c7329fb95e42a32b5c87acfb8d7cf8e76322667a518540c1105ff5c69fbb85",
-              "89c7329fb95e42a32b5c87acfb8d7cf8e76322667a518540c1105ff5c69fbb85"
+              "1f04f4b0eeb92995d5eb7a54f3c1b4f41aa852c8c3ebd4f04261798dd1aec156",
+              "1f04f4b0eeb92995d5eb7a54f3c1b4f41aa852c8c3ebd4f04261798dd1aec156"
             ]
           },
-          "mean_elapsed_ms": 3.7657290013157763
+          "mean_elapsed_ms": 14.609416997700464
         },
         {
           "case_id": "current-calibration-uncertainty",
@@ -385,37 +385,37 @@
               "numerical_accuracy": null,
               "citation_reference_validity": {
                 "passed": true,
-                "supplied_count": 1,
+                "supplied_count": 3,
                 "required_count": 0
               },
               "reconciliation_accuracy": null,
               "unauthorized_disclosure": null,
               "expected_status_and_fields": true,
-              "elapsed_ms": 2.5301669957116246
+              "elapsed_ms": 10.115041004610248
             },
             {
               "passed": true,
               "numerical_accuracy": null,
               "citation_reference_validity": {
                 "passed": true,
-                "supplied_count": 1,
+                "supplied_count": 3,
                 "required_count": 0
               },
               "reconciliation_accuracy": null,
               "unauthorized_disclosure": null,
               "expected_status_and_fields": true,
-              "elapsed_ms": 2.4657920002937317
+              "elapsed_ms": 10.071541997604072
             }
           ],
           "reproducibility": {
             "measured": true,
             "passed": true,
             "response_digests": [
-              "820fee415a6d835bc5022ff4e5c413381d0b8d4207dc66a541f8580d38f9a3d3",
-              "820fee415a6d835bc5022ff4e5c413381d0b8d4207dc66a541f8580d38f9a3d3"
+              "63341d562a95ada8449e2721d2afc0554747dfe6083b788fdbfdcf8ed7f930fa",
+              "63341d562a95ada8449e2721d2afc0554747dfe6083b788fdbfdcf8ed7f930fa"
             ]
           },
-          "mean_elapsed_ms": 2.497979498002678
+          "mean_elapsed_ms": 10.09329150110716
         },
         {
           "case_id": "analyst-restricted-disclosure",
@@ -432,7 +432,7 @@
               "reconciliation_accuracy": null,
               "unauthorized_disclosure": true,
               "expected_status_and_fields": true,
-              "elapsed_ms": 2.6670420047594234
+              "elapsed_ms": 10.40395800373517
             },
             {
               "passed": true,
@@ -445,18 +445,18 @@
               "reconciliation_accuracy": null,
               "unauthorized_disclosure": true,
               "expected_status_and_fields": true,
-              "elapsed_ms": 2.800791997287888
+              "elapsed_ms": 10.812167005497031
             }
           ],
           "reproducibility": {
             "measured": true,
             "passed": true,
             "response_digests": [
-              "a0c4db4c559c312e62d920d35e0cf853553a09cbc895691934f4d30b7fb44139",
-              "a0c4db4c559c312e62d920d35e0cf853553a09cbc895691934f4d30b7fb44139"
+              "4a4781f6d6c7f4d0b252fa7ebbbec6cf23b41458f10599995f5034482fb28a73",
+              "4a4781f6d6c7f4d0b252fa7ebbbec6cf23b41458f10599995f5034482fb28a73"
             ]
           },
-          "mean_elapsed_ms": 2.7339170010236558
+          "mean_elapsed_ms": 10.6080625046161
         },
         {
           "case_id": "malformed-duplicate-upload",
@@ -469,7 +469,7 @@
               "reconciliation_accuracy": null,
               "unauthorized_disclosure": null,
               "expected_status_and_fields": true,
-              "elapsed_ms": 0.9939169976860285
+              "elapsed_ms": 1.0523329983698204
             },
             {
               "passed": true,
@@ -478,7 +478,7 @@
               "reconciliation_accuracy": null,
               "unauthorized_disclosure": null,
               "expected_status_and_fields": true,
-              "elapsed_ms": 0.9508330040262081
+              "elapsed_ms": 0.804791008704342
             }
           ],
           "reproducibility": {
@@ -489,7 +489,7 @@
               "825af8e9e9f1e243634515ec45226c756ce816daf4bd5fd7ac53cba34bc54b76"
             ]
           },
-          "mean_elapsed_ms": 0.9723750008561183
+          "mean_elapsed_ms": 0.9285620035370812
         }
       ]
     }

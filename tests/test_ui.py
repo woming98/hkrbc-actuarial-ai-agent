@@ -133,3 +133,14 @@ def test_reviewer_external_mode_requires_explicit_request_approval(app, tmp_path
     assert any("explicit per-request approval" in error.value for error in app.error)
     assert "query_result" not in app.session_state.filtered_state
     assert not next(checkbox for checkbox in app.checkbox if checkbox.label.startswith("I approve sending")).value
+
+
+def test_admin_can_retire_demo_version_and_register_refreshes(app):
+    sign_in(app, "admin")
+    app.radio(key="page").set_value("Governance & Audit").run()
+    target = next(select for select in app.selectbox if select.label == "Version to retire")
+    target.set_value("DEMO-INTERNAL@1.0")
+    click(app, "Retire version")
+    assert any("Version retired" in message.value for message in app.success)
+    target = next(select for select in app.selectbox if select.label == "Version to retire")
+    assert "DEMO-INTERNAL@1.0" not in target.options

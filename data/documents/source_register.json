@@ -1,0 +1,590 @@
+{
+  "schema_version": "1.0",
+  "as_of_date": "2026-10-25",
+  "generated_at_utc": "2026-10-25T01:51:41.916817+00:00",
+  "purpose": "Verifiable primary-source provenance for the supplementary researcher paraphrases; not a current-law completeness determination.",
+  "current_consolidated_verified": false,
+  "original_seed_unchanged_sha256": "b84c377c10c371a5419a94451f8f650b318bf3b3c1116aca9079dc32a293b3ce",
+  "supplement_record_count": 12,
+  "cache_distribution": "All raw PDFs, HTML snapshots, extracted full text, rendered pages and validation databases remain under ignored runtime/source-cache and must be excluded from distributed archives.",
+  "legal_effect_limit": "Original 2024 Gazette and a 2026 amendment as made were inspected. Present consolidated law, all intervening amendments, later legislative changes and all insurer-specific decisions were not exhaustively verified.",
+  "rights_assessment_limit": "Policy summaries document observed terms; they are not a legal opinion or a grant of permission. No public source-PDF reproduction licence is asserted.",
+  "sources": [
+    {
+      "source_id": "cap41r-original-ln62-2024",
+      "title": "Insurance (Valuation and Capital) Rules, L.N. 62 of 2024",
+      "requested_url": "https://www.legco.gov.hk/yr2024/english/subleg/negative/2024ln062-e.pdf",
+      "final_url": "https://www.legco.gov.hk/yr2024/english/subleg/negative/2024ln062-e.pdf",
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "access_status": "downloaded_primary_pdf",
+      "download_method": "macOS /usr/bin/curl; standard OS TLS certificate verification; no insecure option",
+      "retrieval_date": "2026-10-25",
+      "page_count": 270,
+      "version_scope": "Original 2024 Gazette only; not current consolidated Cap. 41R",
+      "current_consolidated_verified": false,
+      "inspected_pdf_pages": [
+        9,
+        19,
+        20,
+        21,
+        22,
+        23,
+        43,
+        44,
+        45,
+        94,
+        95,
+        96,
+        238,
+        239,
+        240
+      ],
+      "visually_checked_pdf_pages": [
+        19,
+        20,
+        21,
+        22,
+        23,
+        44,
+        95,
+        238,
+        239
+      ],
+      "rights": {
+        "policy_url": "https://www.legco.gov.hk/en/general/disclaimer.html",
+        "acknowledgement": "The Legislative Council; www.legco.gov.hk; HKSAR Government Gazette where applicable",
+        "public_redistribution_permission": "not_established",
+        "source_pdf_distribution": "excluded; research cache only",
+        "third_party_rights": "LegCo policy reserves third-party rights; no inference that LegCo owns all Gazette material."
+      },
+      "cache_path": "runtime/source-cache/cap41r-legco-2024.pdf",
+      "source_sha256": "ecca2bbe8b256ca821836b18343e7e6ae977da1ad6bc448d2e6e31df979180d3",
+      "byte_count": 2346958,
+      "cache_file_mtime_utc": "2026-10-25T01:46:45.962390+00:00"
+    },
+    {
+      "source_id": "cap41r-amendment-ln58-2026",
+      "title": "Insurance (Valuation and Capital) (Amendment) Rules 2026, L.N. 58 of 2026",
+      "requested_url": "https://www.legco.gov.hk/yr2026/english/hc/sub_leg/sc04/papers/2026ln058-e.pdf",
+      "final_url": "https://www.legco.gov.hk/yr2026/english/hc/sub_leg/sc04/papers/2026ln058-e.pdf",
+      "link_discovered_from": "legco-agenda-2026",
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "access_status": "downloaded_primary_pdf",
+      "download_method": "macOS /usr/bin/curl; standard OS TLS certificate verification; no insecure option",
+      "retrieval_date": "2026-10-25",
+      "page_count": 59,
+      "version_scope": "2026 Gazette as made; rule 1 schedules commencement for 2026-12-31; not current consolidated Cap. 41R",
+      "current_consolidated_verified": false,
+      "inspected_pdf_pages": [
+        5,
+        34,
+        35,
+        41,
+        42,
+        43,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52
+      ],
+      "visually_checked_pdf_pages": [
+        5,
+        34,
+        46,
+        50
+      ],
+      "rights": {
+        "policy_url": "https://www.legco.gov.hk/en/general/disclaimer.html",
+        "acknowledgement": "The Legislative Council; www.legco.gov.hk; HKSAR Government Gazette where applicable",
+        "public_redistribution_permission": "not_established",
+        "source_pdf_distribution": "excluded; research cache only",
+        "third_party_rights": "LegCo policy reserves third-party rights; no inference that LegCo owns all Gazette material."
+      },
+      "cache_path": "runtime/source-cache/cap41r-amendment-2026.pdf",
+      "source_sha256": "e8999c31776b8af3389a9b9107cec1c8c2a30c8c7bcab3e0cca2616d37f31b06",
+      "byte_count": 2208297,
+      "cache_file_mtime_utc": "2026-10-25T01:47:34.582628+00:00"
+    },
+    {
+      "source_id": "legco-agenda-2026",
+      "title": "LegCo subcommittee agenda, 18 June 2026",
+      "requested_url": "https://www.legco.gov.hk/yr2026/english/hc/sub_leg/sc04/agenda/sc0420260618.htm",
+      "http_status": 200,
+      "content_type": "text/html",
+      "access_status": "downloaded_primary_html",
+      "retrieval_date": "2026-10-25",
+      "verified_use": "The actual anchor for L.N. 58 of 2026 supplied the amendment PDF URL. Agenda metadata is not a negative-vetting outcome.",
+      "rights_policy_url": "https://www.legco.gov.hk/en/general/disclaimer.html",
+      "cache_path": "runtime/source-cache/legco-agenda-2026.html",
+      "source_sha256": "e02c144a8b473cabdc2589239a2aef50a254d6593ca3576c2ab79e91523ed533",
+      "byte_count": 6518,
+      "cache_file_mtime_utc": "2026-10-25T01:47:17.538740+00:00"
+    },
+    {
+      "source_id": "legco-rights",
+      "title": "LegCo Disclaimer and Copyright Notice",
+      "requested_url": "https://www.legco.gov.hk/en/general/disclaimer.html",
+      "http_status": 200,
+      "content_type": "text/html",
+      "access_status": "downloaded_primary_html",
+      "retrieval_date": "2026-10-25",
+      "policy_summary": "Conditional personal/internal non-commercial reproduction with accurate copying and attribution; third-party rights require separate permission. No public open licence inferred.",
+      "policy_sections": "Copyright Notice paragraphs 1-3",
+      "public_redistribution_permission": "not_established",
+      "cache_path": "runtime/source-cache/legco-rights.html",
+      "source_sha256": "4c1111c337e597b40ffeb72941e8585e7d6d24e365dab2c39cf24545ddd17d4a",
+      "byte_count": 8608,
+      "cache_file_mtime_utc": "2026-10-25T01:47:14.025261+00:00"
+    },
+    {
+      "source_id": "gazette-rights",
+      "title": "Government Gazette Important Notices",
+      "requested_url": "https://egazette.gld.gov.hk/en/important-notices",
+      "http_status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "access_status": "downloaded_primary_html",
+      "retrieval_date": "2026-10-25",
+      "policy_sections": "Copyright Notice; Disclaimer",
+      "policy_summary": "The Gazette notice requires prior written government authorization for public reproduction/adaptation/distribution/dissemination; no public reproduction permission inferred. Its disclaimer directs users to verify the printed Gazette.",
+      "public_redistribution_permission": "not_granted_by_policy",
+      "cache_path": "runtime/source-cache/gazette-important.html",
+      "source_sha256": "416cda94e723dab22fffbdc4914c368106f7b4bd1690064022bfeb9b3030c6a8",
+      "byte_count": 52456,
+      "cache_file_mtime_utc": "2026-10-25T01:46:21.348126+00:00"
+    },
+    {
+      "source_id": "ia-original-pdf",
+      "title": "IA-hosted original Cap. 41R PDF",
+      "requested_url": "https://www.ia.org.hk/en/legislative_framework/overview/files/es22024281862.pdf",
+      "access_status": "http_403",
+      "http_status": 403,
+      "retrieval_date": "2026-10-25",
+      "source_sha256": null,
+      "limitation": "No PDF bytes obtained from this mirror. The supplement instead uses the independently downloaded official LegCo copy."
+    },
+    {
+      "source_id": "ia-gazette-index",
+      "title": "IA Gazette Notices index",
+      "requested_url": "https://www.ia.org.hk/en/legislative_framework/overview/gazette_notices.html",
+      "access_status": "http_403",
+      "http_status": 403,
+      "retrieval_date": "2026-10-25",
+      "source_sha256": null,
+      "limitation": "Only web-search index text was visible; not used to certify an actual download or current consolidation."
+    },
+    {
+      "source_id": "ia-rights",
+      "title": "IA Legal Information",
+      "requested_url": "https://www.ia.org.hk/en/legal_information.html",
+      "access_status": "http_403_index_text_only",
+      "http_status": 403,
+      "retrieval_date": "2026-10-25",
+      "source_sha256": null,
+      "policy_summary": "Official-domain indexed text reserves IA intellectual property and requires prior written consent for public reproduction, adaptation, distribution and dissemination. Actual page download was unavailable.",
+      "public_redistribution_permission": "not_established",
+      "limitation": "No full-page byte hash; the distributed supplement does not reproduce IA page content."
+    },
+    {
+      "source_id": "eleg-current-cap41r",
+      "title": "Hong Kong e-Legislation Cap. 41R current entry",
+      "requested_url": "https://www.elegislation.gov.hk/hk/cap41R",
+      "final_url": "https://www.elegislation.gov.hk/checkconfig/checkClientConfig.jsp?applicationId=RA001",
+      "http_status": 200,
+      "content_type": "text/html;charset=utf-8",
+      "access_status": "client_configuration_page_only",
+      "retrieval_date": "2026-10-25",
+      "current_consolidated_verified": false,
+      "limitation": "HTTP 200 returned a configuration-check page rather than legislation. The stored hash is of that HTML, not of Cap. 41R.",
+      "cache_path": "runtime/source-cache/eleg-cap41r.html",
+      "source_sha256": "c46364170e5188af85942d63c6e1f574eeffc0a2b61e309d11979501c2e64597",
+      "byte_count": 7562,
+      "cache_file_mtime_utc": "2026-10-25T01:46:07.653313+00:00"
+    },
+    {
+      "source_id": "gazette-legacy-pdf-link",
+      "title": "Legacy Gazette URL for original Cap. 41R",
+      "requested_url": "https://www.gld.gov.hk/egazette/pdf/20242818/es22024281862.pdf",
+      "final_url": "https://egazette.gld.gov.hk/",
+      "http_status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "access_status": "redirected_homepage_not_pdf",
+      "retrieval_date": "2026-10-25",
+      "limitation": "The old PDF URL silently redirected to the new Gazette homepage. Its HTML hash is not a legislation checksum.",
+      "cache_path": "runtime/source-cache/cap41r-gazette-2024.html",
+      "source_sha256": "19cfe0300270c2eb3eb5e0e543f0d6176a5d0c2055cafa70923979d505b7622b",
+      "byte_count": 45230,
+      "cache_file_mtime_utc": "2026-10-25T01:46:07.609936+00:00"
+    },
+    {
+      "source_id": "gazette-search-gate",
+      "title": "New Gazette legal-notice search entry",
+      "requested_url": "https://egazette.gld.gov.hk/en/search-gazette/gazette?c=2",
+      "http_status": 200,
+      "content_type": "text/html",
+      "access_status": "important_notices_acceptance_gate",
+      "retrieval_date": "2026-10-25",
+      "limitation": "Returned the Important Notices acceptance screen instead of search results; no notice PDF was obtained through this route.",
+      "cache_path": "runtime/source-cache/gazette-search.html",
+      "source_sha256": "e55d398902777a6655e7f94881f1108361026a05cd3cdeea7f8a05344558899e",
+      "byte_count": 56519,
+      "cache_file_mtime_utc": "2026-10-25T01:46:49.404100+00:00"
+    }
+  ],
+  "access_attempts": [
+    {
+      "source_id": "ia-original-pdf",
+      "method": "Python urllib inside default sandbox",
+      "retrieval_date": "2026-10-25",
+      "access_status": "sandbox_dns_unavailable",
+      "error_type": "URLError",
+      "remote_http_status": null,
+      "limitation": "This is a local environment failure and is not evidence that the remote server refused the request."
+    },
+    {
+      "source_id": "cap41r-legco-2024",
+      "requested_url": "https://www.legco.gov.hk/yr2024/english/subleg/negative/2024ln062-e.pdf",
+      "checked_at": "2026-10-25",
+      "retrieved_at_utc": "2026-10-25T01:46:05.177002+00:00",
+      "access_status": "download_failed",
+      "error_type": "URLError",
+      "error_message": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>",
+      "environment_note": "Programmatic Python CA or HTTP result; later successful macOS curl results are separately recorded. TLS validation was never disabled."
+    },
+    {
+      "source_id": "cap41r-gazette-2024",
+      "requested_url": "https://www.gld.gov.hk/egazette/pdf/20242818/es22024281862.pdf",
+      "checked_at": "2026-10-25",
+      "retrieved_at_utc": "2026-10-25T01:46:05.178031+00:00",
+      "http_status": 200,
+      "final_url": "https://egazette.gld.gov.hk/",
+      "content_type": "text/html; charset=UTF-8",
+      "byte_count": 45230,
+      "source_sha256": "19cfe0300270c2eb3eb5e0e543f0d6176a5d0c2055cafa70923979d505b7622b",
+      "access_status": "downloaded_html",
+      "environment_note": "Programmatic Python CA or HTTP result; later successful macOS curl results are separately recorded. TLS validation was never disabled."
+    },
+    {
+      "source_id": "legco-agenda-2026",
+      "requested_url": "https://www.legco.gov.hk/yr2026/english/hc/sub_leg/sc04/agenda/sc0420260618.htm",
+      "checked_at": "2026-10-25",
+      "retrieved_at_utc": "2026-10-25T01:46:05.178484+00:00",
+      "access_status": "download_failed",
+      "error_type": "URLError",
+      "error_message": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>",
+      "environment_note": "Programmatic Python CA or HTTP result; later successful macOS curl results are separately recorded. TLS validation was never disabled."
+    },
+    {
+      "source_id": "ia-gazette-index",
+      "requested_url": "https://www.ia.org.hk/en/legislative_framework/overview/gazette_notices.html",
+      "checked_at": "2026-10-25",
+      "retrieved_at_utc": "2026-10-25T01:46:05.178785+00:00",
+      "access_status": "download_failed",
+      "error_type": "HTTPError",
+      "error_message": "HTTP Error 403: Forbidden",
+      "http_status": 403,
+      "environment_note": "Programmatic Python CA or HTTP result; later successful macOS curl results are separately recorded. TLS validation was never disabled."
+    },
+    {
+      "source_id": "legco-rights",
+      "requested_url": "https://www.legco.gov.hk/en/general/disclaimer.html",
+      "checked_at": "2026-10-25",
+      "retrieved_at_utc": "2026-10-25T01:46:05.858307+00:00",
+      "access_status": "download_failed",
+      "error_type": "URLError",
+      "error_message": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>",
+      "environment_note": "Programmatic Python CA or HTTP result; later successful macOS curl results are separately recorded. TLS validation was never disabled."
+    },
+    {
+      "source_id": "ia-rights",
+      "requested_url": "https://www.ia.org.hk/en/legal_information.html",
+      "checked_at": "2026-10-25",
+      "retrieved_at_utc": "2026-10-25T01:46:05.858843+00:00",
+      "access_status": "download_failed",
+      "error_type": "HTTPError",
+      "error_message": "HTTP Error 403: Forbidden",
+      "http_status": 403,
+      "environment_note": "Programmatic Python CA or HTTP result; later successful macOS curl results are separately recorded. TLS validation was never disabled."
+    },
+    {
+      "source_id": "eleg-cap41r",
+      "requested_url": "https://www.elegislation.gov.hk/hk/cap41R",
+      "checked_at": "2026-10-25",
+      "retrieved_at_utc": "2026-10-25T01:46:05.859012+00:00",
+      "http_status": 200,
+      "final_url": "https://www.elegislation.gov.hk/checkconfig/checkClientConfig.jsp?applicationId=RA001",
+      "content_type": "text/html;charset=utf-8",
+      "byte_count": 7562,
+      "source_sha256": "c46364170e5188af85942d63c6e1f574eeffc0a2b61e309d11979501c2e64597",
+      "access_status": "downloaded_html",
+      "environment_note": "Programmatic Python CA or HTTP result; later successful macOS curl results are separately recorded. TLS validation was never disabled."
+    },
+    {
+      "source_id": "cap41r-legco-2024",
+      "requested_url": "https://www.legco.gov.hk/yr2024/english/subleg/negative/2024ln062-e.pdf",
+      "checked_at": "2026-10-25",
+      "tls_trust": "certifi verified; certificate checks enabled",
+      "access_status": "download_failed",
+      "error_type": "URLError",
+      "error_message": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>",
+      "environment_note": "Programmatic Python CA or HTTP result; later successful macOS curl results are separately recorded. TLS validation was never disabled."
+    },
+    {
+      "source_id": "legco-agenda-2026",
+      "requested_url": "https://www.legco.gov.hk/yr2026/english/hc/sub_leg/sc04/agenda/sc0420260618.htm",
+      "checked_at": "2026-10-25",
+      "tls_trust": "certifi verified; certificate checks enabled",
+      "access_status": "download_failed",
+      "error_type": "URLError",
+      "error_message": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>",
+      "environment_note": "Programmatic Python CA or HTTP result; later successful macOS curl results are separately recorded. TLS validation was never disabled."
+    },
+    {
+      "source_id": "legco-rights",
+      "requested_url": "https://www.legco.gov.hk/en/general/disclaimer.html",
+      "checked_at": "2026-10-25",
+      "tls_trust": "certifi verified; certificate checks enabled",
+      "access_status": "download_failed",
+      "error_type": "URLError",
+      "error_message": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>",
+      "environment_note": "Programmatic Python CA or HTTP result; later successful macOS curl results are separately recorded. TLS validation was never disabled."
+    },
+    {
+      "source_id": "gazette-important",
+      "requested_url": "https://egazette.gld.gov.hk/en/important-notices",
+      "checked_at": "2026-10-25",
+      "tls_trust": "certifi verified; certificate checks enabled",
+      "http_status": 200,
+      "final_url": "https://egazette.gld.gov.hk/en/important-notices",
+      "content_type": "text/html; charset=UTF-8",
+      "byte_count": 52456,
+      "source_sha256": "416cda94e723dab22fffbdc4914c368106f7b4bd1690064022bfeb9b3030c6a8",
+      "access_status": "downloaded_html",
+      "environment_note": "Programmatic Python CA or HTTP result; later successful macOS curl results are separately recorded. TLS validation was never disabled."
+    },
+    {
+      "source_id": "ia-original-pdf",
+      "method": "Python urllib with approved network access",
+      "retrieval_date": "2026-10-25",
+      "access_status": "http_403",
+      "remote_http_status": 403
+    },
+    {
+      "source_id": "cap41r-original-ln62-2024",
+      "method": "macOS /usr/bin/curl with standard OS TLS verification",
+      "retrieval_date": "2026-10-25",
+      "requested_url": "https://www.legco.gov.hk/yr2024/english/subleg/negative/2024ln062-e.pdf",
+      "access_status": "download_success",
+      "http_status": 200,
+      "cache_path": "runtime/source-cache/cap41r-legco-2024.pdf",
+      "source_sha256": "ecca2bbe8b256ca821836b18343e7e6ae977da1ad6bc448d2e6e31df979180d3",
+      "byte_count": 2346958,
+      "cache_file_mtime_utc": "2026-10-25T01:46:45.962390+00:00"
+    },
+    {
+      "source_id": "cap41r-amendment-ln58-2026",
+      "method": "macOS /usr/bin/curl with standard OS TLS verification",
+      "retrieval_date": "2026-10-25",
+      "requested_url": "https://www.legco.gov.hk/yr2026/english/hc/sub_leg/sc04/papers/2026ln058-e.pdf",
+      "access_status": "download_success",
+      "http_status": 200,
+      "cache_path": "runtime/source-cache/cap41r-amendment-2026.pdf",
+      "source_sha256": "e8999c31776b8af3389a9b9107cec1c8c2a30c8c7bcab3e0cca2616d37f31b06",
+      "byte_count": 2208297,
+      "cache_file_mtime_utc": "2026-10-25T01:47:34.582628+00:00"
+    },
+    {
+      "source_id": "legco-agenda-2026",
+      "method": "macOS /usr/bin/curl with standard OS TLS verification",
+      "retrieval_date": "2026-10-25",
+      "requested_url": "https://www.legco.gov.hk/yr2026/english/hc/sub_leg/sc04/agenda/sc0420260618.htm",
+      "access_status": "download_success",
+      "http_status": 200,
+      "cache_path": "runtime/source-cache/legco-agenda-2026.html",
+      "source_sha256": "e02c144a8b473cabdc2589239a2aef50a254d6593ca3576c2ab79e91523ed533",
+      "byte_count": 6518,
+      "cache_file_mtime_utc": "2026-10-25T01:47:17.538740+00:00"
+    },
+    {
+      "source_id": "legco-rights",
+      "method": "macOS /usr/bin/curl with standard OS TLS verification",
+      "retrieval_date": "2026-10-25",
+      "requested_url": "https://www.legco.gov.hk/en/general/disclaimer.html",
+      "access_status": "download_success",
+      "http_status": 200,
+      "cache_path": "runtime/source-cache/legco-rights.html",
+      "source_sha256": "4c1111c337e597b40ffeb72941e8585e7d6d24e365dab2c39cf24545ddd17d4a",
+      "byte_count": 8608,
+      "cache_file_mtime_utc": "2026-10-25T01:47:14.025261+00:00"
+    }
+  ],
+  "section_verification": [
+    {
+      "document_id": "cap41r-direct-application",
+      "source_id": "cap41r-original-ln62-2024",
+      "pdf_pages": [
+        19,
+        20
+      ],
+      "gazette_locator": "B643-B645",
+      "page_text_sha256": "84d5c48c9423c2594e3718e6d02f181c5f08e51d6d4fe7c1743389c1f68d9a57",
+      "paraphrase_sha256": "76c2c19516adb44aecbeb15acd2a83034851e6721b1a49359c46d1152a82fbff",
+      "anchor_checks_passed": 4,
+      "visual_check": "English operative page(s) inspected; no Chinese-language verification claimed."
+    },
+    {
+      "document_id": "cap41r-direct-consolidation",
+      "source_id": "cap41r-original-ln62-2024",
+      "pdf_pages": [
+        20
+      ],
+      "gazette_locator": "B645",
+      "page_text_sha256": "420002ad9a731b8775b4abc6bed0f131bb69b9b3fa9bfc9138eb751ece368dad",
+      "paraphrase_sha256": "f6424dcc81138b7a0eedcbc7673a922fd8e89262ed781d036858cc47beb012c1",
+      "anchor_checks_passed": 3,
+      "visual_check": "English operative page(s) inspected; no Chinese-language verification claimed."
+    },
+    {
+      "document_id": "cap41r-direct-branch-currency",
+      "source_id": "cap41r-original-ln62-2024",
+      "pdf_pages": [
+        20
+      ],
+      "gazette_locator": "B645",
+      "page_text_sha256": "420002ad9a731b8775b4abc6bed0f131bb69b9b3fa9bfc9138eb751ece368dad",
+      "paraphrase_sha256": "2e22e59af4ce18d7891911bca0408583a2ac3e8d8c2ab005ec4f36983627c978",
+      "anchor_checks_passed": 3,
+      "visual_check": "English operative page(s) inspected; no Chinese-language verification claimed."
+    },
+    {
+      "document_id": "cap41r-direct-breach-notice",
+      "source_id": "cap41r-original-ln62-2024",
+      "pdf_pages": [
+        21,
+        22
+      ],
+      "gazette_locator": "B647-B649",
+      "page_text_sha256": "71e6a82b697e4d8f6bcd0a2ba22b34531591bfb6d94c30d2592ad66c0f85748c",
+      "paraphrase_sha256": "1e761caab90ce44260cd28998b219ae1e19b207b859460a33af7644ee1201546",
+      "anchor_checks_passed": 4,
+      "visual_check": "English operative page(s) inspected; no Chinese-language verification claimed."
+    },
+    {
+      "document_id": "cap41r-direct-tier-caps",
+      "source_id": "cap41r-original-ln62-2024",
+      "pdf_pages": [
+        23
+      ],
+      "gazette_locator": "B651",
+      "page_text_sha256": "3aa92aa1acd2651a921bbf0e1ec400e9023a06be9349dfd09076be5fd49c4ee3",
+      "paraphrase_sha256": "42cfbc8b77498b05cdd1fdc7c979f0b57be54ac4c897269dbc8b5c6d637285ba",
+      "anchor_checks_passed": 3,
+      "visual_check": "English operative page(s) inspected; no Chinese-language verification claimed."
+    },
+    {
+      "document_id": "cap41r-direct-tvog-method",
+      "source_id": "cap41r-original-ln62-2024",
+      "pdf_pages": [
+        44
+      ],
+      "gazette_locator": "B693",
+      "page_text_sha256": "442e1f8426690768a87156dbe961e03573344996fac79247ce8deb87a10ebd91",
+      "paraphrase_sha256": "f40f82c17997dde8fef6e43267896ebf9f8bce71758fdb5c1a408116aa419202",
+      "anchor_checks_passed": 5,
+      "visual_check": "English operative page(s) inspected; no Chinese-language verification claimed."
+    },
+    {
+      "document_id": "cap41r-direct-tvog-proxy",
+      "source_id": "cap41r-original-ln62-2024",
+      "pdf_pages": [
+        44
+      ],
+      "gazette_locator": "B693",
+      "page_text_sha256": "442e1f8426690768a87156dbe961e03573344996fac79247ce8deb87a10ebd91",
+      "paraphrase_sha256": "0879cd926c5cdcab5ae89900a17448bab3ae8d40930e3f223ddbcda4a1c919bc",
+      "anchor_checks_passed": 3,
+      "visual_check": "English operative page(s) inspected; no Chinese-language verification claimed."
+    },
+    {
+      "document_id": "cap41r-direct-pca-matrix",
+      "source_id": "cap41r-original-ln62-2024",
+      "pdf_pages": [
+        238
+      ],
+      "gazette_locator": "B1081",
+      "page_text_sha256": "8e144a9b9e2bfa8314125039410b6c0a55475b0787d70b5886f4ad968ff58e01",
+      "paraphrase_sha256": "ba6558d5f84ce88245a93afc547622d54f83563dc4b0b900afdc32362b45b74b",
+      "anchor_checks_passed": 5,
+      "visual_check": "English operative page(s) inspected; no Chinese-language verification claimed."
+    },
+    {
+      "document_id": "cap41r-amend-direct-commencement",
+      "source_id": "cap41r-amendment-ln58-2026",
+      "pdf_pages": [
+        5
+      ],
+      "gazette_locator": "B685",
+      "page_text_sha256": "078e9c472821727a1596f6534a529ccf1de18ff350ef215079be11abb55e9f21",
+      "paraphrase_sha256": "39b6241f6f25e694296f291befad9eac4b738442cc8a85c04bdbbb551abd83f7",
+      "anchor_checks_passed": 1,
+      "visual_check": "English operative page(s) inspected; no Chinese-language verification claimed."
+    },
+    {
+      "document_id": "cap41r-amend-direct-pca-matrix",
+      "source_id": "cap41r-amendment-ln58-2026",
+      "pdf_pages": [
+        34
+      ],
+      "gazette_locator": "B743",
+      "page_text_sha256": "0844098be62276b2d79bb358ad279f3051d2225d21673bee4a54fd583d03e1ca",
+      "paraphrase_sha256": "8638ed9b9a5cc0637b8bf40088ccb6ec10e8b38ee4462502ef4de3c03da49106",
+      "anchor_checks_passed": 4,
+      "visual_check": "English operative page(s) inspected; no Chinese-language verification claimed."
+    },
+    {
+      "document_id": "cap41r-amend-direct-cca-bounds",
+      "source_id": "cap41r-amendment-ln58-2026",
+      "pdf_pages": [
+        46
+      ],
+      "gazette_locator": "B767",
+      "page_text_sha256": "b0756b6ca00d6b30b03547ac03de52eb187bbe905aa44eb9778bb83baa8ed605",
+      "paraphrase_sha256": "4437d97c74c415a1249ed68a3fae67bb780df5b5927a44f9454cdcfcd3f36c0c",
+      "anchor_checks_passed": 4,
+      "visual_check": "English operative page(s) inspected; no Chinese-language verification claimed.",
+      "supporting_context": {
+        "source_id": "cap41r-original-ln62-2024",
+        "pdf_page": 95,
+        "gazette_locator": "B795",
+        "provision": "Original rule 49(3)",
+        "page_text_sha256": "f31ad41202400d6eaf6f99e2bb2bb2f95f17752a387b8ca9d6acd771da70b50b",
+        "purpose": "Identifies the countercyclical adjustment as the subject of the amended bounds."
+      }
+    },
+    {
+      "document_id": "cap41r-amend-direct-crypto-stress",
+      "source_id": "cap41r-amendment-ln58-2026",
+      "pdf_pages": [
+        50
+      ],
+      "gazette_locator": "B775",
+      "page_text_sha256": "a1ea5c5c33aa423c351752c175c6232ed8da195cc0749cb3fe396d7a9ac22f36",
+      "paraphrase_sha256": "7a891408eaeb048c07fa4075f95db9ac0e5cf4aadfe75304184054269ac8a06e",
+      "anchor_checks_passed": 3,
+      "visual_check": "English operative page(s) inspected; no Chinese-language verification claimed."
+    }
+  ],
+  "verification_method": "Downloaded PDF byte SHA256; one-based PDF page locators paired with printed Gazette locators; exact anchor-presence checks and SHA256 of extracted relevant-page text; visual inspection of English crop-box pages with MuPDF. Poppler lacked an Adobe-CNS1 language pack for Chinese spread text, so Chinese accuracy was not claimed.",
+  "text_extractor": {
+    "library": "PyMuPDF",
+    "version": "1.27.2.3",
+    "page_text_hash_encoding": "UTF-8",
+    "multi_page_join": "newline",
+    "scope": "get_text() output from the English PDF crop-box pages, not raw PDF bytes; no Chinese verification claimed"
+  }
+}

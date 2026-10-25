@@ -1,34 +1,252 @@
 {
-  "report_id": "fa95722c-8ba1-448c-a804-470bd5ba353c",
-  "result": {
+  "status": "complete",
+  "model_label": "Illustrative capital only \u2014 not HK RBC compliant",
+  "currency": "HKD",
+  "function_version": "1.0.0",
+  "opening": {
     "status": "complete",
-    "model_label": "Illustrative capital only — not HK RBC compliant",
-    "currency": "HKD",
+    "model_label": "Illustrative capital only \u2014 not HK RBC compliant",
     "function_version": "1.0.0",
-    "opening": {
-      "status": "complete",
-      "model_label": "Illustrative capital only — not HK RBC compliant",
-      "function_version": "1.0.0",
-      "currency": "HKD",
-      "valuation_date": "2025-12-31",
-      "total_market_value": 191118100.77390182,
-      "module_capital": {
-        "rate": 7307753.317831427,
-        "credit": 7307753.317831427,
-        "equity": 12000000.0
+    "currency": "HKD",
+    "valuation_date": "2025-12-31",
+    "total_market_value": 191118100.77390182,
+    "module_capital": {
+      "rate": 7307753.317831427,
+      "credit": 7307753.317831427,
+      "equity": 12000000.0
+    },
+    "aggregate_capital": 20224927.83934361,
+    "stress_values": {
+      "rate_up": 183810347.4560704,
+      "rate_down": 199022437.4275174,
+      "credit": 183810347.4560704,
+      "equity": 179118100.77390182
+    },
+    "standalone_capital_sum": 26615506.635662854,
+    "diversification_benefit": 6390578.796319243,
+    "portfolio_dv01": 75965.11059612349,
+    "assets": [
+      {
+        "asset_id": "SYN-BOND-01",
+        "asset_type": "bond",
+        "market_value": 80718231.24516213,
+        "rate_up_value": 77216056.46349418,
+        "rate_down_value": 84423225.69270016,
+        "credit_stress_value": 77216056.46349418,
+        "equity_stress_value": 80718231.24516213,
+        "price": 80718231.24516213,
+        "macaulay_duration": 4.631154848698263,
+        "modified_duration": 4.4616135343913905,
+        "dv01": 36013.35529955494,
+        "key_rate_durations": {
+          "1y": 0.036867304529865655,
+          "2y": 0.18384960074932571,
+          "5y": 4.240896629112199,
+          "10y": 0.0,
+          "20y": 0.0,
+          "30y": 0.0
+        },
+        "cashflows": [
+          {
+            "time_years": 0.999315537303217,
+            "amount_hkd": 3200000.0
+          },
+          {
+            "time_years": 1.998631074606434,
+            "amount_hkd": 3200000.0
+          },
+          {
+            "time_years": 3.0006844626967832,
+            "amount_hkd": 3200000.0
+          },
+          {
+            "time_years": 4.0,
+            "amount_hkd": 3200000.0
+          },
+          {
+            "time_years": 4.999315537303217,
+            "amount_hkd": 83200000.0
+          }
+        ]
       },
-      "aggregate_capital": 20224927.83934361,
-      "stress_values": {
-        "rate_up": 183810347.4560704,
-        "rate_down": 199022437.4275174,
-        "credit": 183810347.4560704,
-        "equity": 179118100.77390182
+      {
+        "asset_id": "SYN-BOND-02",
+        "asset_type": "bond",
+        "market_value": 50399869.52873969,
+        "rate_up_value": 46594290.99257621,
+        "rate_down_value": 54599211.734817244,
+        "credit_stress_value": 46594290.99257621,
+        "equity_stress_value": 50399869.52873969,
+        "price": 50399869.52873969,
+        "macaulay_duration": 8.27574216354535,
+        "modified_duration": 7.9269560953499525,
+        "dv01": 39951.755296568546,
+        "key_rate_durations": {
+          "1y": 0.04103977885645363,
+          "2y": 0.20149140325721804,
+          "5y": 0.7483306379154101,
+          "10y": 6.936094275320872,
+          "20y": 0.0,
+          "30y": 0.0
+        },
+        "cashflows": [
+          {
+            "time_years": 0.999315537303217,
+            "amount_hkd": 2250000.0
+          },
+          {
+            "time_years": 1.998631074606434,
+            "amount_hkd": 2250000.0
+          },
+          {
+            "time_years": 3.0006844626967832,
+            "amount_hkd": 2250000.0
+          },
+          {
+            "time_years": 4.0,
+            "amount_hkd": 2250000.0
+          },
+          {
+            "time_years": 4.999315537303217,
+            "amount_hkd": 2250000.0
+          },
+          {
+            "time_years": 5.9986310746064335,
+            "amount_hkd": 2250000.0
+          },
+          {
+            "time_years": 7.000684462696783,
+            "amount_hkd": 2250000.0
+          },
+          {
+            "time_years": 8.0,
+            "amount_hkd": 2250000.0
+          },
+          {
+            "time_years": 8.999315537303216,
+            "amount_hkd": 2250000.0
+          },
+          {
+            "time_years": 9.998631074606434,
+            "amount_hkd": 52250000.0
+          }
+        ]
       },
-      "standalone_capital_sum": 26615506.635662854,
-      "diversification_benefit": 6390578.796319243,
-      "portfolio_dv01": 75965.11059612349,
-      "assets": [
+      {
+        "asset_id": "SYN-EQUITY-01",
+        "asset_type": "equity",
+        "market_value": 40000000.0,
+        "rate_up_value": 40000000.0,
+        "rate_down_value": 40000000.0,
+        "credit_stress_value": 40000000.0,
+        "equity_stress_value": 28000000.0
+      },
+      {
+        "asset_id": "SYN-CASH-01",
+        "asset_type": "cash",
+        "market_value": 20000000.0,
+        "rate_up_value": 20000000.0,
+        "rate_down_value": 20000000.0,
+        "credit_stress_value": 20000000.0,
+        "equity_stress_value": 20000000.0
+      }
+    ],
+    "validation": {
+      "passed": true,
+      "checks": [
         {
+          "name": "input_schema",
+          "passed": true,
+          "severity": "error",
+          "details": "Strict validated nonempty HKD portfolio; finite inputs and unique IDs."
+        },
+        {
+          "name": "finite_nonnegative_values",
+          "passed": true,
+          "severity": "error",
+          "details": "All scenario asset values are finite and nonnegative.",
+          "asset_id": "SYN-BOND-01"
+        },
+        {
+          "name": "bond_price_monotonicity",
+          "passed": true,
+          "severity": "error",
+          "details": "Positive bond cashflows decrease in value when yield/spread rises.",
+          "asset_id": "SYN-BOND-01"
+        },
+        {
+          "name": "key_rate_duration_reconciliation",
+          "passed": true,
+          "severity": "error",
+          "details": "The interpolated node weights partition unity; KRD sums to modified duration.",
+          "asset_id": "SYN-BOND-01"
+        },
+        {
+          "name": "finite_nonnegative_values",
+          "passed": true,
+          "severity": "error",
+          "details": "All scenario asset values are finite and nonnegative.",
+          "asset_id": "SYN-BOND-02"
+        },
+        {
+          "name": "bond_price_monotonicity",
+          "passed": true,
+          "severity": "error",
+          "details": "Positive bond cashflows decrease in value when yield/spread rises.",
+          "asset_id": "SYN-BOND-02"
+        },
+        {
+          "name": "key_rate_duration_reconciliation",
+          "passed": true,
+          "severity": "error",
+          "details": "The interpolated node weights partition unity; KRD sums to modified duration.",
+          "asset_id": "SYN-BOND-02"
+        },
+        {
+          "name": "finite_nonnegative_values",
+          "passed": true,
+          "severity": "error",
+          "details": "All scenario asset values are finite and nonnegative.",
+          "asset_id": "SYN-EQUITY-01"
+        },
+        {
+          "name": "finite_nonnegative_values",
+          "passed": true,
+          "severity": "error",
+          "details": "All scenario asset values are finite and nonnegative.",
+          "asset_id": "SYN-CASH-01"
+        },
+        {
+          "name": "capital_bounds",
+          "passed": true,
+          "severity": "error",
+          "details": "Illustrative correlation aggregation lies between the largest module and their sum."
+        },
+        {
+          "name": "aggregation_reconciliation",
+          "passed": true,
+          "severity": "error",
+          "details": "Capital reconciles independently to the Cholesky norm of the illustrative correlation matrix."
+        }
+      ]
+    },
+    "calculations": [
+      {
+        "function": "value_and_stress_asset",
+        "version": "1.0.0",
+        "inputs": {
+          "asset_id": "SYN-BOND-01",
+          "asset_type": "bond",
+          "currency": "HKD",
+          "valuation_date": "2025-12-31",
+          "market_value": null,
+          "face_value": 80000000.0,
+          "coupon_rate": 0.04,
+          "yield_rate": 0.03,
+          "maturity_date": "2030-12-31",
+          "credit_spread_bps": 80.0
+        },
+        "outputs": {
           "asset_id": "SYN-BOND-01",
           "asset_type": "bond",
           "market_value": 80718231.24516213,
@@ -71,7 +289,58 @@
             }
           ]
         },
-        {
+        "assumptions": [
+          "Annual effective risk-free yield plus spread/10000.",
+          "Full annual coupons on future maturity anniversaries; maturity payment includes principal."
+        ],
+        "validation": {
+          "passed": true,
+          "checks": [
+            {
+              "name": "finite_nonnegative_values",
+              "passed": true,
+              "severity": "error",
+              "details": "All scenario asset values are finite and nonnegative."
+            },
+            {
+              "name": "bond_price_monotonicity",
+              "passed": true,
+              "severity": "error",
+              "details": "Positive bond cashflows decrease in value when yield/spread rises."
+            },
+            {
+              "name": "key_rate_duration_reconciliation",
+              "passed": true,
+              "severity": "error",
+              "details": "The interpolated node weights partition unity; KRD sums to modified duration."
+            }
+          ]
+        },
+        "limitations": [
+          "Illustrative capital only \u2014 not HK RBC compliant",
+          "Assets only: no insurance liabilities, hedges, tax, operational risk, concentration or FX risk.",
+          "Annual fixed coupons; dirty bond PV; no accrued-interest or business-day adjustment; ACT/365.25 discount times.",
+          "Flat annual effective yields, additive yield/spread stresses, no default, recovery or migration model.",
+          "Interest rate stress +/-100 bp; credit spread stress +100 bp; equity stress -30%; internally chosen calibration.",
+          "The correlation matrix is illustrative and must not be represented as an HK RBC regulatory parameter."
+        ]
+      },
+      {
+        "function": "value_and_stress_asset",
+        "version": "1.0.0",
+        "inputs": {
+          "asset_id": "SYN-BOND-02",
+          "asset_type": "bond",
+          "currency": "HKD",
+          "valuation_date": "2025-12-31",
+          "market_value": null,
+          "face_value": 50000000.0,
+          "coupon_rate": 0.045,
+          "yield_rate": 0.032,
+          "maturity_date": "2035-12-31",
+          "credit_spread_bps": 120.0
+        },
+        "outputs": {
           "asset_id": "SYN-BOND-02",
           "asset_type": "bond",
           "market_value": 50399869.52873969,
@@ -134,7 +403,58 @@
             }
           ]
         },
-        {
+        "assumptions": [
+          "Annual effective risk-free yield plus spread/10000.",
+          "Full annual coupons on future maturity anniversaries; maturity payment includes principal."
+        ],
+        "validation": {
+          "passed": true,
+          "checks": [
+            {
+              "name": "finite_nonnegative_values",
+              "passed": true,
+              "severity": "error",
+              "details": "All scenario asset values are finite and nonnegative."
+            },
+            {
+              "name": "bond_price_monotonicity",
+              "passed": true,
+              "severity": "error",
+              "details": "Positive bond cashflows decrease in value when yield/spread rises."
+            },
+            {
+              "name": "key_rate_duration_reconciliation",
+              "passed": true,
+              "severity": "error",
+              "details": "The interpolated node weights partition unity; KRD sums to modified duration."
+            }
+          ]
+        },
+        "limitations": [
+          "Illustrative capital only \u2014 not HK RBC compliant",
+          "Assets only: no insurance liabilities, hedges, tax, operational risk, concentration or FX risk.",
+          "Annual fixed coupons; dirty bond PV; no accrued-interest or business-day adjustment; ACT/365.25 discount times.",
+          "Flat annual effective yields, additive yield/spread stresses, no default, recovery or migration model.",
+          "Interest rate stress +/-100 bp; credit spread stress +100 bp; equity stress -30%; internally chosen calibration.",
+          "The correlation matrix is illustrative and must not be represented as an HK RBC regulatory parameter."
+        ]
+      },
+      {
+        "function": "value_and_stress_asset",
+        "version": "1.0.0",
+        "inputs": {
+          "asset_id": "SYN-EQUITY-01",
+          "asset_type": "equity",
+          "currency": "HKD",
+          "valuation_date": "2025-12-31",
+          "market_value": 40000000.0,
+          "face_value": null,
+          "coupon_rate": null,
+          "yield_rate": null,
+          "maturity_date": null,
+          "credit_spread_bps": null
+        },
+        "outputs": {
           "asset_id": "SYN-EQUITY-01",
           "asset_type": "equity",
           "market_value": 40000000.0,
@@ -143,7 +463,46 @@
           "credit_stress_value": 40000000.0,
           "equity_stress_value": 28000000.0
         },
-        {
+        "assumptions": [
+          "Annual effective risk-free yield plus spread/10000.",
+          "Full annual coupons on future maturity anniversaries; maturity payment includes principal."
+        ],
+        "validation": {
+          "passed": true,
+          "checks": [
+            {
+              "name": "finite_nonnegative_values",
+              "passed": true,
+              "severity": "error",
+              "details": "All scenario asset values are finite and nonnegative."
+            }
+          ]
+        },
+        "limitations": [
+          "Illustrative capital only \u2014 not HK RBC compliant",
+          "Assets only: no insurance liabilities, hedges, tax, operational risk, concentration or FX risk.",
+          "Annual fixed coupons; dirty bond PV; no accrued-interest or business-day adjustment; ACT/365.25 discount times.",
+          "Flat annual effective yields, additive yield/spread stresses, no default, recovery or migration model.",
+          "Interest rate stress +/-100 bp; credit spread stress +100 bp; equity stress -30%; internally chosen calibration.",
+          "The correlation matrix is illustrative and must not be represented as an HK RBC regulatory parameter."
+        ]
+      },
+      {
+        "function": "value_and_stress_asset",
+        "version": "1.0.0",
+        "inputs": {
+          "asset_id": "SYN-CASH-01",
+          "asset_type": "cash",
+          "currency": "HKD",
+          "valuation_date": "2025-12-31",
+          "market_value": 20000000.0,
+          "face_value": null,
+          "coupon_rate": null,
+          "yield_rate": null,
+          "maturity_date": null,
+          "credit_spread_bps": null
+        },
+        "outputs": {
           "asset_id": "SYN-CASH-01",
           "asset_type": "cash",
           "market_value": 20000000.0,
@@ -151,487 +510,346 @@
           "rate_down_value": 20000000.0,
           "credit_stress_value": 20000000.0,
           "equity_stress_value": 20000000.0
-        }
-      ],
-      "validation": {
-        "passed": true,
-        "checks": [
+        },
+        "assumptions": [
+          "Annual effective risk-free yield plus spread/10000.",
+          "Full annual coupons on future maturity anniversaries; maturity payment includes principal."
+        ],
+        "validation": {
+          "passed": true,
+          "checks": [
+            {
+              "name": "finite_nonnegative_values",
+              "passed": true,
+              "severity": "error",
+              "details": "All scenario asset values are finite and nonnegative."
+            }
+          ]
+        },
+        "limitations": [
+          "Illustrative capital only \u2014 not HK RBC compliant",
+          "Assets only: no insurance liabilities, hedges, tax, operational risk, concentration or FX risk.",
+          "Annual fixed coupons; dirty bond PV; no accrued-interest or business-day adjustment; ACT/365.25 discount times.",
+          "Flat annual effective yields, additive yield/spread stresses, no default, recovery or migration model.",
+          "Interest rate stress +/-100 bp; credit spread stress +100 bp; equity stress -30%; internally chosen calibration.",
+          "The correlation matrix is illustrative and must not be represented as an HK RBC regulatory parameter."
+        ]
+      },
+      {
+        "function": "aggregate_capital",
+        "version": "1.0.0",
+        "inputs": {
+          "module_capital": {
+            "rate": 7307753.317831427,
+            "credit": 7307753.317831427,
+            "equity": 12000000.0
+          },
+          "correlation": [
+            [
+              1.0,
+              0.25,
+              0.25
+            ],
+            [
+              0.25,
+              1.0,
+              0.5
+            ],
+            [
+              0.25,
+              0.5,
+              1.0
+            ]
+          ]
+        },
+        "outputs": {
+          "aggregate_capital": 20224927.83934361
+        },
+        "assumptions": [
+          "Fixed internally chosen positive-definite correlation matrix; no regulatory calibration."
+        ],
+        "validation": {
+          "passed": true,
+          "checks": [
+            {
+              "name": "capital_bounds",
+              "passed": true,
+              "severity": "error",
+              "details": "Illustrative correlation aggregation lies between the largest module and their sum."
+            },
+            {
+              "name": "aggregation_reconciliation",
+              "passed": true,
+              "severity": "error",
+              "details": "Capital reconciles independently to the Cholesky norm of the illustrative correlation matrix."
+            }
+          ]
+        },
+        "limitations": [
+          "Illustrative capital only \u2014 not HK RBC compliant",
+          "Assets only: no insurance liabilities, hedges, tax, operational risk, concentration or FX risk.",
+          "Annual fixed coupons; dirty bond PV; no accrued-interest or business-day adjustment; ACT/365.25 discount times.",
+          "Flat annual effective yields, additive yield/spread stresses, no default, recovery or migration model.",
+          "Interest rate stress +/-100 bp; credit spread stress +100 bp; equity stress -30%; internally chosen calibration.",
+          "The correlation matrix is illustrative and must not be represented as an HK RBC regulatory parameter."
+        ]
+      }
+    ],
+    "limitations": [
+      "Illustrative capital only \u2014 not HK RBC compliant",
+      "Assets only: no insurance liabilities, hedges, tax, operational risk, concentration or FX risk.",
+      "Annual fixed coupons; dirty bond PV; no accrued-interest or business-day adjustment; ACT/365.25 discount times.",
+      "Flat annual effective yields, additive yield/spread stresses, no default, recovery or migration model.",
+      "Interest rate stress +/-100 bp; credit spread stress +100 bp; equity stress -30%; internally chosen calibration.",
+      "The correlation matrix is illustrative and must not be represented as an HK RBC regulatory parameter."
+    ],
+    "input_fingerprint": "f7991f0d59e7698bdec8c78a2ad6e0f67305cf618ef25011b521174c02d27388",
+    "report_id": "portfolio-a9f9833c97acb2ed"
+  },
+  "closing": {
+    "status": "complete",
+    "model_label": "Illustrative capital only \u2014 not HK RBC compliant",
+    "function_version": "1.0.0",
+    "currency": "HKD",
+    "valuation_date": "2026-09-30",
+    "total_market_value": 212236867.72468808,
+    "module_capital": {
+      "rate": 7112135.441287711,
+      "credit": 7112135.441287711,
+      "equity": 15000000.0
+    },
+    "aggregate_capital": 22615906.43257584,
+    "stress_values": {
+      "rate_up": 205124732.28340036,
+      "rate_down": 219878953.27028802,
+      "credit": 205124732.28340036,
+      "equity": 197236867.72468808
+    },
+    "standalone_capital_sum": 29224270.882575423,
+    "diversification_benefit": 6608364.449999582,
+    "portfolio_dv01": 73691.86599368598,
+    "assets": [
+      {
+        "asset_id": "SYN-BOND-01",
+        "asset_type": "bond",
+        "market_value": 94430923.14644101,
+        "rate_up_value": 90971207.16785134,
+        "rate_down_value": 98066712.68075565,
+        "credit_stress_value": 90971207.16785134,
+        "equity_stress_value": 94430923.14644101,
+        "price": 94430923.14644101,
+        "macaulay_duration": 3.886554546420737,
+        "modified_duration": 3.755125165623901,
+        "dv01": 35459.993592029714,
+        "key_rate_durations": {
+          "1y": 0.04225356439065358,
+          "2y": 1.0210638318743044,
+          "5y": 2.691807769358943,
+          "10y": 0.0,
+          "20y": 0.0,
+          "30y": 0.0
+        },
+        "cashflows": [
           {
-            "name": "input_schema",
-            "passed": true,
-            "severity": "error",
-            "details": "Strict validated nonempty HKD portfolio; finite inputs and unique IDs."
+            "time_years": 0.2518822724161533,
+            "amount_hkd": 3600000.0
           },
           {
-            "name": "finite_nonnegative_values",
-            "passed": true,
-            "severity": "error",
-            "details": "All scenario asset values are finite and nonnegative.",
-            "asset_id": "SYN-BOND-01"
+            "time_years": 1.2511978097193703,
+            "amount_hkd": 3600000.0
           },
           {
-            "name": "bond_price_monotonicity",
-            "passed": true,
-            "severity": "error",
-            "details": "Positive bond cashflows decrease in value when yield/spread rises.",
-            "asset_id": "SYN-BOND-01"
+            "time_years": 2.2532511978097194,
+            "amount_hkd": 3600000.0
           },
           {
-            "name": "key_rate_duration_reconciliation",
-            "passed": true,
-            "severity": "error",
-            "details": "The interpolated node weights partition unity; KRD sums to modified duration.",
-            "asset_id": "SYN-BOND-01"
+            "time_years": 3.252566735112936,
+            "amount_hkd": 3600000.0
           },
           {
-            "name": "finite_nonnegative_values",
-            "passed": true,
-            "severity": "error",
-            "details": "All scenario asset values are finite and nonnegative.",
-            "asset_id": "SYN-BOND-02"
-          },
-          {
-            "name": "bond_price_monotonicity",
-            "passed": true,
-            "severity": "error",
-            "details": "Positive bond cashflows decrease in value when yield/spread rises.",
-            "asset_id": "SYN-BOND-02"
-          },
-          {
-            "name": "key_rate_duration_reconciliation",
-            "passed": true,
-            "severity": "error",
-            "details": "The interpolated node weights partition unity; KRD sums to modified duration.",
-            "asset_id": "SYN-BOND-02"
-          },
-          {
-            "name": "finite_nonnegative_values",
-            "passed": true,
-            "severity": "error",
-            "details": "All scenario asset values are finite and nonnegative.",
-            "asset_id": "SYN-EQUITY-01"
-          },
-          {
-            "name": "finite_nonnegative_values",
-            "passed": true,
-            "severity": "error",
-            "details": "All scenario asset values are finite and nonnegative.",
-            "asset_id": "SYN-CASH-01"
-          },
-          {
-            "name": "capital_bounds",
-            "passed": true,
-            "severity": "error",
-            "details": "Illustrative correlation aggregation lies between the largest module and their sum."
-          },
-          {
-            "name": "aggregation_reconciliation",
-            "passed": true,
-            "severity": "error",
-            "details": "Capital reconciles independently to the Cholesky norm of the illustrative correlation matrix."
+            "time_years": 4.251882272416153,
+            "amount_hkd": 93600000.0
           }
         ]
       },
-      "calculations": [
+      {
+        "asset_id": "SYN-BOND-02",
+        "asset_type": "bond",
+        "market_value": 52805944.57824707,
+        "rate_up_value": 49153525.11554903,
+        "rate_down_value": 56812240.58953238,
+        "credit_stress_value": 49153525.11554903,
+        "equity_stress_value": 52805944.57824707,
+        "price": 52805944.57824707,
+        "macaulay_duration": 7.544152720058825,
+        "modified_duration": 7.240069788924017,
+        "dv01": 38231.87240165626,
+        "key_rate_durations": {
+          "1y": 0.04658254099797549,
+          "2y": 0.19326544020651923,
+          "5y": 1.58177360524358,
+          "10y": 5.4184482024759415,
+          "20y": 0.0,
+          "30y": 0.0
+        },
+        "cashflows": [
+          {
+            "time_years": 0.2518822724161533,
+            "amount_hkd": 2250000.0
+          },
+          {
+            "time_years": 1.2511978097193703,
+            "amount_hkd": 2250000.0
+          },
+          {
+            "time_years": 2.2532511978097194,
+            "amount_hkd": 2250000.0
+          },
+          {
+            "time_years": 3.252566735112936,
+            "amount_hkd": 2250000.0
+          },
+          {
+            "time_years": 4.251882272416153,
+            "amount_hkd": 2250000.0
+          },
+          {
+            "time_years": 5.25119780971937,
+            "amount_hkd": 2250000.0
+          },
+          {
+            "time_years": 6.253251197809719,
+            "amount_hkd": 2250000.0
+          },
+          {
+            "time_years": 7.252566735112937,
+            "amount_hkd": 2250000.0
+          },
+          {
+            "time_years": 8.251882272416154,
+            "amount_hkd": 2250000.0
+          },
+          {
+            "time_years": 9.25119780971937,
+            "amount_hkd": 52250000.0
+          }
+        ]
+      },
+      {
+        "asset_id": "SYN-EQUITY-01",
+        "asset_type": "equity",
+        "market_value": 50000000.0,
+        "rate_up_value": 50000000.0,
+        "rate_down_value": 50000000.0,
+        "credit_stress_value": 50000000.0,
+        "equity_stress_value": 35000000.0
+      },
+      {
+        "asset_id": "SYN-CASH-01",
+        "asset_type": "cash",
+        "market_value": 15000000.0,
+        "rate_up_value": 15000000.0,
+        "rate_down_value": 15000000.0,
+        "credit_stress_value": 15000000.0,
+        "equity_stress_value": 15000000.0
+      }
+    ],
+    "validation": {
+      "passed": true,
+      "checks": [
         {
-          "function": "value_and_stress_asset",
-          "version": "1.0.0",
-          "inputs": {
-            "asset_id": "SYN-BOND-01",
-            "asset_type": "bond",
-            "currency": "HKD",
-            "valuation_date": "2025-12-31",
-            "market_value": null,
-            "face_value": 80000000.0,
-            "coupon_rate": 0.04,
-            "yield_rate": 0.03,
-            "maturity_date": "2030-12-31",
-            "credit_spread_bps": 80.0
-          },
-          "outputs": {
-            "asset_id": "SYN-BOND-01",
-            "asset_type": "bond",
-            "market_value": 80718231.24516213,
-            "rate_up_value": 77216056.46349418,
-            "rate_down_value": 84423225.69270016,
-            "credit_stress_value": 77216056.46349418,
-            "equity_stress_value": 80718231.24516213,
-            "price": 80718231.24516213,
-            "macaulay_duration": 4.631154848698263,
-            "modified_duration": 4.4616135343913905,
-            "dv01": 36013.35529955494,
-            "key_rate_durations": {
-              "1y": 0.036867304529865655,
-              "2y": 0.18384960074932571,
-              "5y": 4.240896629112199,
-              "10y": 0.0,
-              "20y": 0.0,
-              "30y": 0.0
-            },
-            "cashflows": [
-              {
-                "time_years": 0.999315537303217,
-                "amount_hkd": 3200000.0
-              },
-              {
-                "time_years": 1.998631074606434,
-                "amount_hkd": 3200000.0
-              },
-              {
-                "time_years": 3.0006844626967832,
-                "amount_hkd": 3200000.0
-              },
-              {
-                "time_years": 4.0,
-                "amount_hkd": 3200000.0
-              },
-              {
-                "time_years": 4.999315537303217,
-                "amount_hkd": 83200000.0
-              }
-            ]
-          },
-          "assumptions": [
-            "Annual effective risk-free yield plus spread/10000.",
-            "Full annual coupons on future maturity anniversaries; maturity payment includes principal."
-          ],
-          "validation": {
-            "passed": true,
-            "checks": [
-              {
-                "name": "finite_nonnegative_values",
-                "passed": true,
-                "severity": "error",
-                "details": "All scenario asset values are finite and nonnegative."
-              },
-              {
-                "name": "bond_price_monotonicity",
-                "passed": true,
-                "severity": "error",
-                "details": "Positive bond cashflows decrease in value when yield/spread rises."
-              },
-              {
-                "name": "key_rate_duration_reconciliation",
-                "passed": true,
-                "severity": "error",
-                "details": "The interpolated node weights partition unity; KRD sums to modified duration."
-              }
-            ]
-          },
-          "limitations": [
-            "Illustrative capital only — not HK RBC compliant",
-            "Assets only: no insurance liabilities, hedges, tax, operational risk, concentration or FX risk.",
-            "Annual fixed coupons; dirty bond PV; no accrued-interest or business-day adjustment; ACT/365.25 discount times.",
-            "Flat annual effective yields, additive yield/spread stresses, no default, recovery or migration model.",
-            "Interest rate stress +/-100 bp; credit spread stress +100 bp; equity stress -30%; internally chosen calibration.",
-            "The correlation matrix is illustrative and must not be represented as an HK RBC regulatory parameter."
-          ]
+          "name": "input_schema",
+          "passed": true,
+          "severity": "error",
+          "details": "Strict validated nonempty HKD portfolio; finite inputs and unique IDs."
         },
         {
-          "function": "value_and_stress_asset",
-          "version": "1.0.0",
-          "inputs": {
-            "asset_id": "SYN-BOND-02",
-            "asset_type": "bond",
-            "currency": "HKD",
-            "valuation_date": "2025-12-31",
-            "market_value": null,
-            "face_value": 50000000.0,
-            "coupon_rate": 0.045,
-            "yield_rate": 0.032,
-            "maturity_date": "2035-12-31",
-            "credit_spread_bps": 120.0
-          },
-          "outputs": {
-            "asset_id": "SYN-BOND-02",
-            "asset_type": "bond",
-            "market_value": 50399869.52873969,
-            "rate_up_value": 46594290.99257621,
-            "rate_down_value": 54599211.734817244,
-            "credit_stress_value": 46594290.99257621,
-            "equity_stress_value": 50399869.52873969,
-            "price": 50399869.52873969,
-            "macaulay_duration": 8.27574216354535,
-            "modified_duration": 7.9269560953499525,
-            "dv01": 39951.755296568546,
-            "key_rate_durations": {
-              "1y": 0.04103977885645363,
-              "2y": 0.20149140325721804,
-              "5y": 0.7483306379154101,
-              "10y": 6.936094275320872,
-              "20y": 0.0,
-              "30y": 0.0
-            },
-            "cashflows": [
-              {
-                "time_years": 0.999315537303217,
-                "amount_hkd": 2250000.0
-              },
-              {
-                "time_years": 1.998631074606434,
-                "amount_hkd": 2250000.0
-              },
-              {
-                "time_years": 3.0006844626967832,
-                "amount_hkd": 2250000.0
-              },
-              {
-                "time_years": 4.0,
-                "amount_hkd": 2250000.0
-              },
-              {
-                "time_years": 4.999315537303217,
-                "amount_hkd": 2250000.0
-              },
-              {
-                "time_years": 5.9986310746064335,
-                "amount_hkd": 2250000.0
-              },
-              {
-                "time_years": 7.000684462696783,
-                "amount_hkd": 2250000.0
-              },
-              {
-                "time_years": 8.0,
-                "amount_hkd": 2250000.0
-              },
-              {
-                "time_years": 8.999315537303216,
-                "amount_hkd": 2250000.0
-              },
-              {
-                "time_years": 9.998631074606434,
-                "amount_hkd": 52250000.0
-              }
-            ]
-          },
-          "assumptions": [
-            "Annual effective risk-free yield plus spread/10000.",
-            "Full annual coupons on future maturity anniversaries; maturity payment includes principal."
-          ],
-          "validation": {
-            "passed": true,
-            "checks": [
-              {
-                "name": "finite_nonnegative_values",
-                "passed": true,
-                "severity": "error",
-                "details": "All scenario asset values are finite and nonnegative."
-              },
-              {
-                "name": "bond_price_monotonicity",
-                "passed": true,
-                "severity": "error",
-                "details": "Positive bond cashflows decrease in value when yield/spread rises."
-              },
-              {
-                "name": "key_rate_duration_reconciliation",
-                "passed": true,
-                "severity": "error",
-                "details": "The interpolated node weights partition unity; KRD sums to modified duration."
-              }
-            ]
-          },
-          "limitations": [
-            "Illustrative capital only — not HK RBC compliant",
-            "Assets only: no insurance liabilities, hedges, tax, operational risk, concentration or FX risk.",
-            "Annual fixed coupons; dirty bond PV; no accrued-interest or business-day adjustment; ACT/365.25 discount times.",
-            "Flat annual effective yields, additive yield/spread stresses, no default, recovery or migration model.",
-            "Interest rate stress +/-100 bp; credit spread stress +100 bp; equity stress -30%; internally chosen calibration.",
-            "The correlation matrix is illustrative and must not be represented as an HK RBC regulatory parameter."
-          ]
+          "name": "finite_nonnegative_values",
+          "passed": true,
+          "severity": "error",
+          "details": "All scenario asset values are finite and nonnegative.",
+          "asset_id": "SYN-BOND-01"
         },
         {
-          "function": "value_and_stress_asset",
-          "version": "1.0.0",
-          "inputs": {
-            "asset_id": "SYN-EQUITY-01",
-            "asset_type": "equity",
-            "currency": "HKD",
-            "valuation_date": "2025-12-31",
-            "market_value": 40000000.0,
-            "face_value": null,
-            "coupon_rate": null,
-            "yield_rate": null,
-            "maturity_date": null,
-            "credit_spread_bps": null
-          },
-          "outputs": {
-            "asset_id": "SYN-EQUITY-01",
-            "asset_type": "equity",
-            "market_value": 40000000.0,
-            "rate_up_value": 40000000.0,
-            "rate_down_value": 40000000.0,
-            "credit_stress_value": 40000000.0,
-            "equity_stress_value": 28000000.0
-          },
-          "assumptions": [
-            "Annual effective risk-free yield plus spread/10000.",
-            "Full annual coupons on future maturity anniversaries; maturity payment includes principal."
-          ],
-          "validation": {
-            "passed": true,
-            "checks": [
-              {
-                "name": "finite_nonnegative_values",
-                "passed": true,
-                "severity": "error",
-                "details": "All scenario asset values are finite and nonnegative."
-              }
-            ]
-          },
-          "limitations": [
-            "Illustrative capital only — not HK RBC compliant",
-            "Assets only: no insurance liabilities, hedges, tax, operational risk, concentration or FX risk.",
-            "Annual fixed coupons; dirty bond PV; no accrued-interest or business-day adjustment; ACT/365.25 discount times.",
-            "Flat annual effective yields, additive yield/spread stresses, no default, recovery or migration model.",
-            "Interest rate stress +/-100 bp; credit spread stress +100 bp; equity stress -30%; internally chosen calibration.",
-            "The correlation matrix is illustrative and must not be represented as an HK RBC regulatory parameter."
-          ]
+          "name": "bond_price_monotonicity",
+          "passed": true,
+          "severity": "error",
+          "details": "Positive bond cashflows decrease in value when yield/spread rises.",
+          "asset_id": "SYN-BOND-01"
         },
         {
-          "function": "value_and_stress_asset",
-          "version": "1.0.0",
-          "inputs": {
-            "asset_id": "SYN-CASH-01",
-            "asset_type": "cash",
-            "currency": "HKD",
-            "valuation_date": "2025-12-31",
-            "market_value": 20000000.0,
-            "face_value": null,
-            "coupon_rate": null,
-            "yield_rate": null,
-            "maturity_date": null,
-            "credit_spread_bps": null
-          },
-          "outputs": {
-            "asset_id": "SYN-CASH-01",
-            "asset_type": "cash",
-            "market_value": 20000000.0,
-            "rate_up_value": 20000000.0,
-            "rate_down_value": 20000000.0,
-            "credit_stress_value": 20000000.0,
-            "equity_stress_value": 20000000.0
-          },
-          "assumptions": [
-            "Annual effective risk-free yield plus spread/10000.",
-            "Full annual coupons on future maturity anniversaries; maturity payment includes principal."
-          ],
-          "validation": {
-            "passed": true,
-            "checks": [
-              {
-                "name": "finite_nonnegative_values",
-                "passed": true,
-                "severity": "error",
-                "details": "All scenario asset values are finite and nonnegative."
-              }
-            ]
-          },
-          "limitations": [
-            "Illustrative capital only — not HK RBC compliant",
-            "Assets only: no insurance liabilities, hedges, tax, operational risk, concentration or FX risk.",
-            "Annual fixed coupons; dirty bond PV; no accrued-interest or business-day adjustment; ACT/365.25 discount times.",
-            "Flat annual effective yields, additive yield/spread stresses, no default, recovery or migration model.",
-            "Interest rate stress +/-100 bp; credit spread stress +100 bp; equity stress -30%; internally chosen calibration.",
-            "The correlation matrix is illustrative and must not be represented as an HK RBC regulatory parameter."
-          ]
+          "name": "key_rate_duration_reconciliation",
+          "passed": true,
+          "severity": "error",
+          "details": "The interpolated node weights partition unity; KRD sums to modified duration.",
+          "asset_id": "SYN-BOND-01"
         },
         {
-          "function": "aggregate_capital",
-          "version": "1.0.0",
-          "inputs": {
-            "module_capital": {
-              "rate": 7307753.317831427,
-              "credit": 7307753.317831427,
-              "equity": 12000000.0
-            },
-            "correlation": [
-              [
-                1.0,
-                0.25,
-                0.25
-              ],
-              [
-                0.25,
-                1.0,
-                0.5
-              ],
-              [
-                0.25,
-                0.5,
-                1.0
-              ]
-            ]
-          },
-          "outputs": {
-            "aggregate_capital": 20224927.83934361
-          },
-          "assumptions": [
-            "Fixed internally chosen positive-definite correlation matrix; no regulatory calibration."
-          ],
-          "validation": {
-            "passed": true,
-            "checks": [
-              {
-                "name": "capital_bounds",
-                "passed": true,
-                "severity": "error",
-                "details": "Illustrative correlation aggregation lies between the largest module and their sum."
-              },
-              {
-                "name": "aggregation_reconciliation",
-                "passed": true,
-                "severity": "error",
-                "details": "Capital reconciles independently to the Cholesky norm of the illustrative correlation matrix."
-              }
-            ]
-          },
-          "limitations": [
-            "Illustrative capital only — not HK RBC compliant",
-            "Assets only: no insurance liabilities, hedges, tax, operational risk, concentration or FX risk.",
-            "Annual fixed coupons; dirty bond PV; no accrued-interest or business-day adjustment; ACT/365.25 discount times.",
-            "Flat annual effective yields, additive yield/spread stresses, no default, recovery or migration model.",
-            "Interest rate stress +/-100 bp; credit spread stress +100 bp; equity stress -30%; internally chosen calibration.",
-            "The correlation matrix is illustrative and must not be represented as an HK RBC regulatory parameter."
-          ]
+          "name": "finite_nonnegative_values",
+          "passed": true,
+          "severity": "error",
+          "details": "All scenario asset values are finite and nonnegative.",
+          "asset_id": "SYN-BOND-02"
+        },
+        {
+          "name": "bond_price_monotonicity",
+          "passed": true,
+          "severity": "error",
+          "details": "Positive bond cashflows decrease in value when yield/spread rises.",
+          "asset_id": "SYN-BOND-02"
+        },
+        {
+          "name": "key_rate_duration_reconciliation",
+          "passed": true,
+          "severity": "error",
+          "details": "The interpolated node weights partition unity; KRD sums to modified duration.",
+          "asset_id": "SYN-BOND-02"
+        },
+        {
+          "name": "finite_nonnegative_values",
+          "passed": true,
+          "severity": "error",
+          "details": "All scenario asset values are finite and nonnegative.",
+          "asset_id": "SYN-EQUITY-01"
+        },
+        {
+          "name": "finite_nonnegative_values",
+          "passed": true,
+          "severity": "error",
+          "details": "All scenario asset values are finite and nonnegative.",
+          "asset_id": "SYN-CASH-01"
+        },
+        {
+          "name": "capital_bounds",
+          "passed": true,
+          "severity": "error",
+          "details": "Illustrative correlation aggregation lies between the largest module and their sum."
+        },
+        {
+          "name": "aggregation_reconciliation",
+          "passed": true,
+          "severity": "error",
+          "details": "Capital reconciles independently to the Cholesky norm of the illustrative correlation matrix."
         }
-      ],
-      "limitations": [
-        "Illustrative capital only — not HK RBC compliant",
-        "Assets only: no insurance liabilities, hedges, tax, operational risk, concentration or FX risk.",
-        "Annual fixed coupons; dirty bond PV; no accrued-interest or business-day adjustment; ACT/365.25 discount times.",
-        "Flat annual effective yields, additive yield/spread stresses, no default, recovery or migration model.",
-        "Interest rate stress +/-100 bp; credit spread stress +100 bp; equity stress -30%; internally chosen calibration.",
-        "The correlation matrix is illustrative and must not be represented as an HK RBC regulatory parameter."
-      ],
-      "input_fingerprint": "f7991f0d59e7698bdec8c78a2ad6e0f67305cf618ef25011b521174c02d27388",
-      "report_id": "portfolio-a9f9833c97acb2ed"
+      ]
     },
-    "closing": {
-      "status": "complete",
-      "model_label": "Illustrative capital only — not HK RBC compliant",
-      "function_version": "1.0.0",
-      "currency": "HKD",
-      "valuation_date": "2026-09-30",
-      "total_market_value": 212236867.72468808,
-      "module_capital": {
-        "rate": 7112135.441287711,
-        "credit": 7112135.441287711,
-        "equity": 15000000.0
-      },
-      "aggregate_capital": 22615906.43257584,
-      "stress_values": {
-        "rate_up": 205124732.28340036,
-        "rate_down": 219878953.27028802,
-        "credit": 205124732.28340036,
-        "equity": 197236867.72468808
-      },
-      "standalone_capital_sum": 29224270.882575423,
-      "diversification_benefit": 6608364.449999582,
-      "portfolio_dv01": 73691.86599368598,
-      "assets": [
-        {
+    "calculations": [
+      {
+        "function": "value_and_stress_asset",
+        "version": "1.0.0",
+        "inputs": {
+          "asset_id": "SYN-BOND-01",
+          "asset_type": "bond",
+          "currency": "HKD",
+          "valuation_date": "2026-09-30",
+          "market_value": null,
+          "face_value": 90000000.0,
+          "coupon_rate": 0.04,
+          "yield_rate": 0.025,
+          "maturity_date": "2030-12-31",
+          "credit_spread_bps": 100.0
+        },
+        "outputs": {
           "asset_id": "SYN-BOND-01",
           "asset_type": "bond",
           "market_value": 94430923.14644101,
@@ -674,7 +892,58 @@
             }
           ]
         },
-        {
+        "assumptions": [
+          "Annual effective risk-free yield plus spread/10000.",
+          "Full annual coupons on future maturity anniversaries; maturity payment includes principal."
+        ],
+        "validation": {
+          "passed": true,
+          "checks": [
+            {
+              "name": "finite_nonnegative_values",
+              "passed": true,
+              "severity": "error",
+              "details": "All scenario asset values are finite and nonnegative."
+            },
+            {
+              "name": "bond_price_monotonicity",
+              "passed": true,
+              "severity": "error",
+              "details": "Positive bond cashflows decrease in value when yield/spread rises."
+            },
+            {
+              "name": "key_rate_duration_reconciliation",
+              "passed": true,
+              "severity": "error",
+              "details": "The interpolated node weights partition unity; KRD sums to modified duration."
+            }
+          ]
+        },
+        "limitations": [
+          "Illustrative capital only \u2014 not HK RBC compliant",
+          "Assets only: no insurance liabilities, hedges, tax, operational risk, concentration or FX risk.",
+          "Annual fixed coupons; dirty bond PV; no accrued-interest or business-day adjustment; ACT/365.25 discount times.",
+          "Flat annual effective yields, additive yield/spread stresses, no default, recovery or migration model.",
+          "Interest rate stress +/-100 bp; credit spread stress +100 bp; equity stress -30%; internally chosen calibration.",
+          "The correlation matrix is illustrative and must not be represented as an HK RBC regulatory parameter."
+        ]
+      },
+      {
+        "function": "value_and_stress_asset",
+        "version": "1.0.0",
+        "inputs": {
+          "asset_id": "SYN-BOND-02",
+          "asset_type": "bond",
+          "currency": "HKD",
+          "valuation_date": "2026-09-30",
+          "market_value": null,
+          "face_value": 50000000.0,
+          "coupon_rate": 0.045,
+          "yield_rate": 0.028,
+          "maturity_date": "2035-12-31",
+          "credit_spread_bps": 140.0
+        },
+        "outputs": {
           "asset_id": "SYN-BOND-02",
           "asset_type": "bond",
           "market_value": 52805944.57824707,
@@ -737,7 +1006,58 @@
             }
           ]
         },
-        {
+        "assumptions": [
+          "Annual effective risk-free yield plus spread/10000.",
+          "Full annual coupons on future maturity anniversaries; maturity payment includes principal."
+        ],
+        "validation": {
+          "passed": true,
+          "checks": [
+            {
+              "name": "finite_nonnegative_values",
+              "passed": true,
+              "severity": "error",
+              "details": "All scenario asset values are finite and nonnegative."
+            },
+            {
+              "name": "bond_price_monotonicity",
+              "passed": true,
+              "severity": "error",
+              "details": "Positive bond cashflows decrease in value when yield/spread rises."
+            },
+            {
+              "name": "key_rate_duration_reconciliation",
+              "passed": true,
+              "severity": "error",
+              "details": "The interpolated node weights partition unity; KRD sums to modified duration."
+            }
+          ]
+        },
+        "limitations": [
+          "Illustrative capital only \u2014 not HK RBC compliant",
+          "Assets only: no insurance liabilities, hedges, tax, operational risk, concentration or FX risk.",
+          "Annual fixed coupons; dirty bond PV; no accrued-interest or business-day adjustment; ACT/365.25 discount times.",
+          "Flat annual effective yields, additive yield/spread stresses, no default, recovery or migration model.",
+          "Interest rate stress +/-100 bp; credit spread stress +100 bp; equity stress -30%; internally chosen calibration.",
+          "The correlation matrix is illustrative and must not be represented as an HK RBC regulatory parameter."
+        ]
+      },
+      {
+        "function": "value_and_stress_asset",
+        "version": "1.0.0",
+        "inputs": {
+          "asset_id": "SYN-EQUITY-01",
+          "asset_type": "equity",
+          "currency": "HKD",
+          "valuation_date": "2026-09-30",
+          "market_value": 50000000.0,
+          "face_value": null,
+          "coupon_rate": null,
+          "yield_rate": null,
+          "maturity_date": null,
+          "credit_spread_bps": null
+        },
+        "outputs": {
           "asset_id": "SYN-EQUITY-01",
           "asset_type": "equity",
           "market_value": 50000000.0,
@@ -746,7 +1066,46 @@
           "credit_stress_value": 50000000.0,
           "equity_stress_value": 35000000.0
         },
-        {
+        "assumptions": [
+          "Annual effective risk-free yield plus spread/10000.",
+          "Full annual coupons on future maturity anniversaries; maturity payment includes principal."
+        ],
+        "validation": {
+          "passed": true,
+          "checks": [
+            {
+              "name": "finite_nonnegative_values",
+              "passed": true,
+              "severity": "error",
+              "details": "All scenario asset values are finite and nonnegative."
+            }
+          ]
+        },
+        "limitations": [
+          "Illustrative capital only \u2014 not HK RBC compliant",
+          "Assets only: no insurance liabilities, hedges, tax, operational risk, concentration or FX risk.",
+          "Annual fixed coupons; dirty bond PV; no accrued-interest or business-day adjustment; ACT/365.25 discount times.",
+          "Flat annual effective yields, additive yield/spread stresses, no default, recovery or migration model.",
+          "Interest rate stress +/-100 bp; credit spread stress +100 bp; equity stress -30%; internally chosen calibration.",
+          "The correlation matrix is illustrative and must not be represented as an HK RBC regulatory parameter."
+        ]
+      },
+      {
+        "function": "value_and_stress_asset",
+        "version": "1.0.0",
+        "inputs": {
+          "asset_id": "SYN-CASH-01",
+          "asset_type": "cash",
+          "currency": "HKD",
+          "valuation_date": "2026-09-30",
+          "market_value": 15000000.0,
+          "face_value": null,
+          "coupon_rate": null,
+          "yield_rate": null,
+          "maturity_date": null,
+          "credit_spread_bps": null
+        },
+        "outputs": {
           "asset_id": "SYN-CASH-01",
           "asset_type": "cash",
           "market_value": 15000000.0,
@@ -754,608 +1113,83 @@
           "rate_down_value": 15000000.0,
           "credit_stress_value": 15000000.0,
           "equity_stress_value": 15000000.0
-        }
-      ],
-      "validation": {
-        "passed": true,
-        "checks": [
-          {
-            "name": "input_schema",
-            "passed": true,
-            "severity": "error",
-            "details": "Strict validated nonempty HKD portfolio; finite inputs and unique IDs."
-          },
-          {
-            "name": "finite_nonnegative_values",
-            "passed": true,
-            "severity": "error",
-            "details": "All scenario asset values are finite and nonnegative.",
-            "asset_id": "SYN-BOND-01"
-          },
-          {
-            "name": "bond_price_monotonicity",
-            "passed": true,
-            "severity": "error",
-            "details": "Positive bond cashflows decrease in value when yield/spread rises.",
-            "asset_id": "SYN-BOND-01"
-          },
-          {
-            "name": "key_rate_duration_reconciliation",
-            "passed": true,
-            "severity": "error",
-            "details": "The interpolated node weights partition unity; KRD sums to modified duration.",
-            "asset_id": "SYN-BOND-01"
-          },
-          {
-            "name": "finite_nonnegative_values",
-            "passed": true,
-            "severity": "error",
-            "details": "All scenario asset values are finite and nonnegative.",
-            "asset_id": "SYN-BOND-02"
-          },
-          {
-            "name": "bond_price_monotonicity",
-            "passed": true,
-            "severity": "error",
-            "details": "Positive bond cashflows decrease in value when yield/spread rises.",
-            "asset_id": "SYN-BOND-02"
-          },
-          {
-            "name": "key_rate_duration_reconciliation",
-            "passed": true,
-            "severity": "error",
-            "details": "The interpolated node weights partition unity; KRD sums to modified duration.",
-            "asset_id": "SYN-BOND-02"
-          },
-          {
-            "name": "finite_nonnegative_values",
-            "passed": true,
-            "severity": "error",
-            "details": "All scenario asset values are finite and nonnegative.",
-            "asset_id": "SYN-EQUITY-01"
-          },
-          {
-            "name": "finite_nonnegative_values",
-            "passed": true,
-            "severity": "error",
-            "details": "All scenario asset values are finite and nonnegative.",
-            "asset_id": "SYN-CASH-01"
-          },
-          {
-            "name": "capital_bounds",
-            "passed": true,
-            "severity": "error",
-            "details": "Illustrative correlation aggregation lies between the largest module and their sum."
-          },
-          {
-            "name": "aggregation_reconciliation",
-            "passed": true,
-            "severity": "error",
-            "details": "Capital reconciles independently to the Cholesky norm of the illustrative correlation matrix."
-          }
-        ]
-      },
-      "calculations": [
-        {
-          "function": "value_and_stress_asset",
-          "version": "1.0.0",
-          "inputs": {
-            "asset_id": "SYN-BOND-01",
-            "asset_type": "bond",
-            "currency": "HKD",
-            "valuation_date": "2026-09-30",
-            "market_value": null,
-            "face_value": 90000000.0,
-            "coupon_rate": 0.04,
-            "yield_rate": 0.025,
-            "maturity_date": "2030-12-31",
-            "credit_spread_bps": 100.0
-          },
-          "outputs": {
-            "asset_id": "SYN-BOND-01",
-            "asset_type": "bond",
-            "market_value": 94430923.14644101,
-            "rate_up_value": 90971207.16785134,
-            "rate_down_value": 98066712.68075565,
-            "credit_stress_value": 90971207.16785134,
-            "equity_stress_value": 94430923.14644101,
-            "price": 94430923.14644101,
-            "macaulay_duration": 3.886554546420737,
-            "modified_duration": 3.755125165623901,
-            "dv01": 35459.993592029714,
-            "key_rate_durations": {
-              "1y": 0.04225356439065358,
-              "2y": 1.0210638318743044,
-              "5y": 2.691807769358943,
-              "10y": 0.0,
-              "20y": 0.0,
-              "30y": 0.0
-            },
-            "cashflows": [
-              {
-                "time_years": 0.2518822724161533,
-                "amount_hkd": 3600000.0
-              },
-              {
-                "time_years": 1.2511978097193703,
-                "amount_hkd": 3600000.0
-              },
-              {
-                "time_years": 2.2532511978097194,
-                "amount_hkd": 3600000.0
-              },
-              {
-                "time_years": 3.252566735112936,
-                "amount_hkd": 3600000.0
-              },
-              {
-                "time_years": 4.251882272416153,
-                "amount_hkd": 93600000.0
-              }
-            ]
-          },
-          "assumptions": [
-            "Annual effective risk-free yield plus spread/10000.",
-            "Full annual coupons on future maturity anniversaries; maturity payment includes principal."
-          ],
-          "validation": {
-            "passed": true,
-            "checks": [
-              {
-                "name": "finite_nonnegative_values",
-                "passed": true,
-                "severity": "error",
-                "details": "All scenario asset values are finite and nonnegative."
-              },
-              {
-                "name": "bond_price_monotonicity",
-                "passed": true,
-                "severity": "error",
-                "details": "Positive bond cashflows decrease in value when yield/spread rises."
-              },
-              {
-                "name": "key_rate_duration_reconciliation",
-                "passed": true,
-                "severity": "error",
-                "details": "The interpolated node weights partition unity; KRD sums to modified duration."
-              }
-            ]
-          },
-          "limitations": [
-            "Illustrative capital only — not HK RBC compliant",
-            "Assets only: no insurance liabilities, hedges, tax, operational risk, concentration or FX risk.",
-            "Annual fixed coupons; dirty bond PV; no accrued-interest or business-day adjustment; ACT/365.25 discount times.",
-            "Flat annual effective yields, additive yield/spread stresses, no default, recovery or migration model.",
-            "Interest rate stress +/-100 bp; credit spread stress +100 bp; equity stress -30%; internally chosen calibration.",
-            "The correlation matrix is illustrative and must not be represented as an HK RBC regulatory parameter."
-          ]
-        },
-        {
-          "function": "value_and_stress_asset",
-          "version": "1.0.0",
-          "inputs": {
-            "asset_id": "SYN-BOND-02",
-            "asset_type": "bond",
-            "currency": "HKD",
-            "valuation_date": "2026-09-30",
-            "market_value": null,
-            "face_value": 50000000.0,
-            "coupon_rate": 0.045,
-            "yield_rate": 0.028,
-            "maturity_date": "2035-12-31",
-            "credit_spread_bps": 140.0
-          },
-          "outputs": {
-            "asset_id": "SYN-BOND-02",
-            "asset_type": "bond",
-            "market_value": 52805944.57824707,
-            "rate_up_value": 49153525.11554903,
-            "rate_down_value": 56812240.58953238,
-            "credit_stress_value": 49153525.11554903,
-            "equity_stress_value": 52805944.57824707,
-            "price": 52805944.57824707,
-            "macaulay_duration": 7.544152720058825,
-            "modified_duration": 7.240069788924017,
-            "dv01": 38231.87240165626,
-            "key_rate_durations": {
-              "1y": 0.04658254099797549,
-              "2y": 0.19326544020651923,
-              "5y": 1.58177360524358,
-              "10y": 5.4184482024759415,
-              "20y": 0.0,
-              "30y": 0.0
-            },
-            "cashflows": [
-              {
-                "time_years": 0.2518822724161533,
-                "amount_hkd": 2250000.0
-              },
-              {
-                "time_years": 1.2511978097193703,
-                "amount_hkd": 2250000.0
-              },
-              {
-                "time_years": 2.2532511978097194,
-                "amount_hkd": 2250000.0
-              },
-              {
-                "time_years": 3.252566735112936,
-                "amount_hkd": 2250000.0
-              },
-              {
-                "time_years": 4.251882272416153,
-                "amount_hkd": 2250000.0
-              },
-              {
-                "time_years": 5.25119780971937,
-                "amount_hkd": 2250000.0
-              },
-              {
-                "time_years": 6.253251197809719,
-                "amount_hkd": 2250000.0
-              },
-              {
-                "time_years": 7.252566735112937,
-                "amount_hkd": 2250000.0
-              },
-              {
-                "time_years": 8.251882272416154,
-                "amount_hkd": 2250000.0
-              },
-              {
-                "time_years": 9.25119780971937,
-                "amount_hkd": 52250000.0
-              }
-            ]
-          },
-          "assumptions": [
-            "Annual effective risk-free yield plus spread/10000.",
-            "Full annual coupons on future maturity anniversaries; maturity payment includes principal."
-          ],
-          "validation": {
-            "passed": true,
-            "checks": [
-              {
-                "name": "finite_nonnegative_values",
-                "passed": true,
-                "severity": "error",
-                "details": "All scenario asset values are finite and nonnegative."
-              },
-              {
-                "name": "bond_price_monotonicity",
-                "passed": true,
-                "severity": "error",
-                "details": "Positive bond cashflows decrease in value when yield/spread rises."
-              },
-              {
-                "name": "key_rate_duration_reconciliation",
-                "passed": true,
-                "severity": "error",
-                "details": "The interpolated node weights partition unity; KRD sums to modified duration."
-              }
-            ]
-          },
-          "limitations": [
-            "Illustrative capital only — not HK RBC compliant",
-            "Assets only: no insurance liabilities, hedges, tax, operational risk, concentration or FX risk.",
-            "Annual fixed coupons; dirty bond PV; no accrued-interest or business-day adjustment; ACT/365.25 discount times.",
-            "Flat annual effective yields, additive yield/spread stresses, no default, recovery or migration model.",
-            "Interest rate stress +/-100 bp; credit spread stress +100 bp; equity stress -30%; internally chosen calibration.",
-            "The correlation matrix is illustrative and must not be represented as an HK RBC regulatory parameter."
-          ]
-        },
-        {
-          "function": "value_and_stress_asset",
-          "version": "1.0.0",
-          "inputs": {
-            "asset_id": "SYN-EQUITY-01",
-            "asset_type": "equity",
-            "currency": "HKD",
-            "valuation_date": "2026-09-30",
-            "market_value": 50000000.0,
-            "face_value": null,
-            "coupon_rate": null,
-            "yield_rate": null,
-            "maturity_date": null,
-            "credit_spread_bps": null
-          },
-          "outputs": {
-            "asset_id": "SYN-EQUITY-01",
-            "asset_type": "equity",
-            "market_value": 50000000.0,
-            "rate_up_value": 50000000.0,
-            "rate_down_value": 50000000.0,
-            "credit_stress_value": 50000000.0,
-            "equity_stress_value": 35000000.0
-          },
-          "assumptions": [
-            "Annual effective risk-free yield plus spread/10000.",
-            "Full annual coupons on future maturity anniversaries; maturity payment includes principal."
-          ],
-          "validation": {
-            "passed": true,
-            "checks": [
-              {
-                "name": "finite_nonnegative_values",
-                "passed": true,
-                "severity": "error",
-                "details": "All scenario asset values are finite and nonnegative."
-              }
-            ]
-          },
-          "limitations": [
-            "Illustrative capital only — not HK RBC compliant",
-            "Assets only: no insurance liabilities, hedges, tax, operational risk, concentration or FX risk.",
-            "Annual fixed coupons; dirty bond PV; no accrued-interest or business-day adjustment; ACT/365.25 discount times.",
-            "Flat annual effective yields, additive yield/spread stresses, no default, recovery or migration model.",
-            "Interest rate stress +/-100 bp; credit spread stress +100 bp; equity stress -30%; internally chosen calibration.",
-            "The correlation matrix is illustrative and must not be represented as an HK RBC regulatory parameter."
-          ]
-        },
-        {
-          "function": "value_and_stress_asset",
-          "version": "1.0.0",
-          "inputs": {
-            "asset_id": "SYN-CASH-01",
-            "asset_type": "cash",
-            "currency": "HKD",
-            "valuation_date": "2026-09-30",
-            "market_value": 15000000.0,
-            "face_value": null,
-            "coupon_rate": null,
-            "yield_rate": null,
-            "maturity_date": null,
-            "credit_spread_bps": null
-          },
-          "outputs": {
-            "asset_id": "SYN-CASH-01",
-            "asset_type": "cash",
-            "market_value": 15000000.0,
-            "rate_up_value": 15000000.0,
-            "rate_down_value": 15000000.0,
-            "credit_stress_value": 15000000.0,
-            "equity_stress_value": 15000000.0
-          },
-          "assumptions": [
-            "Annual effective risk-free yield plus spread/10000.",
-            "Full annual coupons on future maturity anniversaries; maturity payment includes principal."
-          ],
-          "validation": {
-            "passed": true,
-            "checks": [
-              {
-                "name": "finite_nonnegative_values",
-                "passed": true,
-                "severity": "error",
-                "details": "All scenario asset values are finite and nonnegative."
-              }
-            ]
-          },
-          "limitations": [
-            "Illustrative capital only — not HK RBC compliant",
-            "Assets only: no insurance liabilities, hedges, tax, operational risk, concentration or FX risk.",
-            "Annual fixed coupons; dirty bond PV; no accrued-interest or business-day adjustment; ACT/365.25 discount times.",
-            "Flat annual effective yields, additive yield/spread stresses, no default, recovery or migration model.",
-            "Interest rate stress +/-100 bp; credit spread stress +100 bp; equity stress -30%; internally chosen calibration.",
-            "The correlation matrix is illustrative and must not be represented as an HK RBC regulatory parameter."
-          ]
-        },
-        {
-          "function": "aggregate_capital",
-          "version": "1.0.0",
-          "inputs": {
-            "module_capital": {
-              "rate": 7112135.441287711,
-              "credit": 7112135.441287711,
-              "equity": 15000000.0
-            },
-            "correlation": [
-              [
-                1.0,
-                0.25,
-                0.25
-              ],
-              [
-                0.25,
-                1.0,
-                0.5
-              ],
-              [
-                0.25,
-                0.5,
-                1.0
-              ]
-            ]
-          },
-          "outputs": {
-            "aggregate_capital": 22615906.43257584
-          },
-          "assumptions": [
-            "Fixed internally chosen positive-definite correlation matrix; no regulatory calibration."
-          ],
-          "validation": {
-            "passed": true,
-            "checks": [
-              {
-                "name": "capital_bounds",
-                "passed": true,
-                "severity": "error",
-                "details": "Illustrative correlation aggregation lies between the largest module and their sum."
-              },
-              {
-                "name": "aggregation_reconciliation",
-                "passed": true,
-                "severity": "error",
-                "details": "Capital reconciles independently to the Cholesky norm of the illustrative correlation matrix."
-              }
-            ]
-          },
-          "limitations": [
-            "Illustrative capital only — not HK RBC compliant",
-            "Assets only: no insurance liabilities, hedges, tax, operational risk, concentration or FX risk.",
-            "Annual fixed coupons; dirty bond PV; no accrued-interest or business-day adjustment; ACT/365.25 discount times.",
-            "Flat annual effective yields, additive yield/spread stresses, no default, recovery or migration model.",
-            "Interest rate stress +/-100 bp; credit spread stress +100 bp; equity stress -30%; internally chosen calibration.",
-            "The correlation matrix is illustrative and must not be represented as an HK RBC regulatory parameter."
-          ]
-        }
-      ],
-      "limitations": [
-        "Illustrative capital only — not HK RBC compliant",
-        "Assets only: no insurance liabilities, hedges, tax, operational risk, concentration or FX risk.",
-        "Annual fixed coupons; dirty bond PV; no accrued-interest or business-day adjustment; ACT/365.25 discount times.",
-        "Flat annual effective yields, additive yield/spread stresses, no default, recovery or migration model.",
-        "Interest rate stress +/-100 bp; credit spread stress +100 bp; equity stress -30%; internally chosen calibration.",
-        "The correlation matrix is illustrative and must not be represented as an HK RBC regulatory parameter."
-      ],
-      "input_fingerprint": "27558d6b9d7e188e6a28f8740617c82c9ff3bb2406d1e0db52585acb4d905f67",
-      "report_id": "portfolio-f680abb2d535b8ce"
-    },
-    "capital_movement": 2390978.5932322294,
-    "relative_movement": 0.11821938808508635,
-    "module_changes": {
-      "rate": -195617.8765437156,
-      "credit": -195617.8765437156,
-      "equity": 3000000.0
-    },
-    "shapley_attribution": {
-      "rate": -113353.32590552233,
-      "credit": -144084.4121148307,
-      "equity": 2648416.3312525824
-    },
-    "explained_movement": 2390978.5932322294,
-    "unexplained_residual": 0.0,
-    "diversification_movement": 217785.65368033946,
-    "drivers": [
-      {
-        "module": "rate",
-        "standalone_change_hkd": -195617.8765437156,
-        "shapley_change_hkd": -113353.32590552233,
-        "material": true,
-        "description": "Change in bond exposure, remaining cashflows and yields under +/-100 bp rate stress."
-      },
-      {
-        "module": "credit",
-        "standalone_change_hkd": -195617.8765437156,
-        "shapley_change_hkd": -144084.4121148307,
-        "material": true,
-        "description": "Change in bond exposure, remaining cashflows and yields under +100 bp spread stress."
-      },
-      {
-        "module": "equity",
-        "standalone_change_hkd": 3000000.0,
-        "shapley_change_hkd": 2648416.3312525824,
-        "material": true,
-        "description": "Change in equity market value under the illustrative 30% equity shock."
-      }
-    ],
-    "exposure_changes": {
-      "bond": {
-        "opening": 131118100.77390182,
-        "closing": 147236867.72468808
-      },
-      "equity": {
-        "opening": 40000000.0,
-        "closing": 50000000.0
-      },
-      "cash": {
-        "opening": 20000000.0,
-        "closing": 15000000.0
-      }
-    },
-    "added_asset_ids": [],
-    "removed_asset_ids": [],
-    "validation": {
-      "passed": true,
-      "checks": [
-        {
-          "name": "opening_validation",
-          "passed": true,
-          "severity": "error",
-          "details": "Opening portfolio deterministic checks."
-        },
-        {
-          "name": "closing_validation",
-          "passed": true,
-          "severity": "error",
-          "details": "Closing portfolio deterministic checks."
-        },
-        {
-          "name": "movement_reconciliation",
-          "passed": true,
-          "severity": "error",
-          "details": "Exact Shapley allocation residual: HKD 0.0000000000; tolerance HKD 0.01."
-        },
-        {
-          "name": "unexpected_movement_review",
-          "passed": true,
-          "severity": "error",
-          "details": "Review required if absolute change exceeds HKD 100000 and relative change exceeds 50%; opening zero with material increase also requires review."
-        }
-      ]
-    },
-    "calculations": [
-      {
-        "function": "compare_portfolios_exact_shapley",
-        "version": "1.0.0",
-        "inputs": {
-          "opening_modules": {
-            "rate": 7307753.317831427,
-            "credit": 7307753.317831427,
-            "equity": 12000000.0
-          },
-          "closing_modules": {
-            "rate": 7112135.441287711,
-            "credit": 7112135.441287711,
-            "equity": 15000000.0
-          },
-          "materiality_hkd": 100000.0,
-          "unexpected_movement_ratio": 0.5
-        },
-        "outputs": {
-          "capital_movement": 2390978.5932322294,
-          "shapley_attribution": {
-            "rate": -113353.32590552233,
-            "credit": -144084.4121148307,
-            "equity": 2648416.3312525824
-          },
-          "unexplained_residual": 0.0
         },
         "assumptions": [
-          "All 6 module orderings have equal weight.",
-          "This allocates changes among risk modules, not causal transaction-level drivers."
+          "Annual effective risk-free yield plus spread/10000.",
+          "Full annual coupons on future maturity anniversaries; maturity payment includes principal."
         ],
         "validation": {
           "passed": true,
           "checks": [
             {
-              "name": "opening_validation",
+              "name": "finite_nonnegative_values",
               "passed": true,
               "severity": "error",
-              "details": "Opening portfolio deterministic checks."
-            },
-            {
-              "name": "closing_validation",
-              "passed": true,
-              "severity": "error",
-              "details": "Closing portfolio deterministic checks."
-            },
-            {
-              "name": "movement_reconciliation",
-              "passed": true,
-              "severity": "error",
-              "details": "Exact Shapley allocation residual: HKD 0.0000000000; tolerance HKD 0.01."
-            },
-            {
-              "name": "unexpected_movement_review",
-              "passed": true,
-              "severity": "error",
-              "details": "Review required if absolute change exceeds HKD 100000 and relative change exceeds 50%; opening zero with material increase also requires review."
+              "details": "All scenario asset values are finite and nonnegative."
             }
           ]
         },
         "limitations": [
-          "Illustrative capital only — not HK RBC compliant",
+          "Illustrative capital only \u2014 not HK RBC compliant",
+          "Assets only: no insurance liabilities, hedges, tax, operational risk, concentration or FX risk.",
+          "Annual fixed coupons; dirty bond PV; no accrued-interest or business-day adjustment; ACT/365.25 discount times.",
+          "Flat annual effective yields, additive yield/spread stresses, no default, recovery or migration model.",
+          "Interest rate stress +/-100 bp; credit spread stress +100 bp; equity stress -30%; internally chosen calibration.",
+          "The correlation matrix is illustrative and must not be represented as an HK RBC regulatory parameter."
+        ]
+      },
+      {
+        "function": "aggregate_capital",
+        "version": "1.0.0",
+        "inputs": {
+          "module_capital": {
+            "rate": 7112135.441287711,
+            "credit": 7112135.441287711,
+            "equity": 15000000.0
+          },
+          "correlation": [
+            [
+              1.0,
+              0.25,
+              0.25
+            ],
+            [
+              0.25,
+              1.0,
+              0.5
+            ],
+            [
+              0.25,
+              0.5,
+              1.0
+            ]
+          ]
+        },
+        "outputs": {
+          "aggregate_capital": 22615906.43257584
+        },
+        "assumptions": [
+          "Fixed internally chosen positive-definite correlation matrix; no regulatory calibration."
+        ],
+        "validation": {
+          "passed": true,
+          "checks": [
+            {
+              "name": "capital_bounds",
+              "passed": true,
+              "severity": "error",
+              "details": "Illustrative correlation aggregation lies between the largest module and their sum."
+            },
+            {
+              "name": "aggregation_reconciliation",
+              "passed": true,
+              "severity": "error",
+              "details": "Capital reconciles independently to the Cholesky norm of the illustrative correlation matrix."
+            }
+          ]
+        },
+        "limitations": [
+          "Illustrative capital only \u2014 not HK RBC compliant",
           "Assets only: no insurance liabilities, hedges, tax, operational risk, concentration or FX risk.",
           "Annual fixed coupons; dirty bond PV; no accrued-interest or business-day adjustment; ACT/365.25 discount times.",
           "Flat annual effective yields, additive yield/spread stresses, no default, recovery or migration model.",
@@ -1365,81 +1199,2450 @@
       }
     ],
     "limitations": [
-      "Illustrative capital only — not HK RBC compliant",
+      "Illustrative capital only \u2014 not HK RBC compliant",
       "Assets only: no insurance liabilities, hedges, tax, operational risk, concentration or FX risk.",
       "Annual fixed coupons; dirty bond PV; no accrued-interest or business-day adjustment; ACT/365.25 discount times.",
       "Flat annual effective yields, additive yield/spread stresses, no default, recovery or migration model.",
       "Interest rate stress +/-100 bp; credit spread stress +100 bp; equity stress -30%; internally chosen calibration.",
       "The correlation matrix is illustrative and must not be represented as an HK RBC regulatory parameter."
     ],
-    "report_id": "movement-ad0212953f517237",
-    "source_references": [
+    "input_fingerprint": "27558d6b9d7e188e6a28f8740617c82c9ff3bb2406d1e0db52585acb4d905f67",
+    "report_id": "portfolio-f680abb2d535b8ce"
+  },
+  "capital_movement": 2390978.5932322294,
+  "relative_movement": 0.11821938808508635,
+  "module_changes": {
+    "rate": -195617.8765437156,
+    "credit": -195617.8765437156,
+    "equity": 3000000.0
+  },
+  "shapley_attribution": {
+    "rate": -113353.32590552233,
+    "credit": -144084.4121148307,
+    "equity": 2648416.3312525824
+  },
+  "explained_movement": 2390978.5932322294,
+  "unexplained_residual": 0.0,
+  "diversification_movement": 217785.65368033946,
+  "drivers": [
+    {
+      "module": "rate",
+      "standalone_change_hkd": -195617.8765437156,
+      "shapley_change_hkd": -113353.32590552233,
+      "material": true,
+      "description": "Change in bond exposure, remaining cashflows and yields under +/-100 bp rate stress."
+    },
+    {
+      "module": "credit",
+      "standalone_change_hkd": -195617.8765437156,
+      "shapley_change_hkd": -144084.4121148307,
+      "material": true,
+      "description": "Change in bond exposure, remaining cashflows and yields under +100 bp spread stress."
+    },
+    {
+      "module": "equity",
+      "standalone_change_hkd": 3000000.0,
+      "shapley_change_hkd": 2648416.3312525824,
+      "material": true,
+      "description": "Change in equity market value under the illustrative 30% equity shock."
+    }
+  ],
+  "exposure_changes": {
+    "bond": {
+      "opening": 131118100.77390182,
+      "closing": 147236867.72468808
+    },
+    "equity": {
+      "opening": 40000000.0,
+      "closing": 50000000.0
+    },
+    "cash": {
+      "opening": 20000000.0,
+      "closing": 15000000.0
+    }
+  },
+  "added_asset_ids": [],
+  "removed_asset_ids": [],
+  "validation": {
+    "passed": true,
+    "checks": [
       {
-        "reference": "HKRBC-DISCLOSURE-CAPITAL@2025-08-08-baseline",
-        "score": 0.447214,
-        "document_id": "HKRBC-DISCLOSURE-CAPITAL",
-        "version": "2025-08-08-baseline",
-        "title": "Public Disclosure Requirements for the First Financial Year Adopting RBC Regime, Annex 1 — Capital composition disclosure fields",
-        "section": "Section 4, Capital adequacy, paragraphs (a)–(b), printed pages 4–5",
-        "url": "https://www.ia.org.hk/en/legislative_framework/circulars/reg_matters/files/Circular_20250808_Annex_1.pdf",
-        "published_at": "2025-08-08",
-        "reviewed_at": "2026-10-24",
-        "effective_from": null,
-        "effective_to": null,
-        "status": "verified_baseline",
-        "classification": "public",
-        "kind": "regulatory",
-        "text": "The template separates PCA and risk capital amounts from capital base. Its capital-base table lists Unlimited Tier 1, Limited Tier 1 and Tier 2 capital.",
-        "provenance": "Official-domain text surfaced by web search index; full PDF retrieval unavailable in this session.",
-        "redistribution": "Short original paraphrase with attribution; no bulk source text redistributed. Source-specific reuse permission has not been verified; no open licence is asserted.",
-        "current_consolidated_verified": false,
-        "source_type": "regulatory_circular_annex",
-        "limitations": "A disclosure template establishes fields, not capital eligibility, deductions, limits or calculation formulas. Numeric tier caps are omitted because operative rule 7 was not independently verified from primary text in this session."
+        "name": "opening_validation",
+        "passed": true,
+        "severity": "error",
+        "details": "Opening portfolio deterministic checks."
       },
       {
-        "reference": "CAP41R-R5-1@2024-05-03-baseline",
-        "score": 0.423999,
-        "document_id": "CAP41R-R5-1",
-        "version": "2024-05-03-baseline",
-        "title": "Insurance (Valuation and Capital) Rules, L.N. 62 of 2024 — Capital adequacy thresholds",
-        "section": "Part 2, rule 5(1), Gazette page B647",
-        "url": "https://www.ia.org.hk/en/legislative_framework/overview/files/es22024281862.pdf",
-        "published_at": "2024-05-03",
-        "reviewed_at": "2026-10-24",
-        "effective_from": "2024-07-01",
-        "effective_to": null,
-        "status": "verified_baseline",
-        "classification": "public",
-        "kind": "regulatory",
-        "text": "Subject to rule 5(2), an applicable insurer must maintain capital base at least equal to each of its prescribed capital amount, minimum capital amount and HK$20 million. Capital base follows Part 3; PCA follows Part 5.",
-        "provenance": "Official-domain text surfaced by web search index; full PDF retrieval unavailable in this session.",
-        "redistribution": "Short original paraphrase with attribution; no bulk source text redistributed. Source-specific reuse permission has not been verified; no open licence is asserted.",
-        "current_consolidated_verified": false,
-        "source_type": "gazetted_rules",
-        "limitations": "Historical baseline only; requires insurer applicability, valuation date, variations/relaxations and current official text. Does not establish a complete regulatory calculation."
+        "name": "closing_validation",
+        "passed": true,
+        "severity": "error",
+        "details": "Closing portfolio deterministic checks."
       },
       {
-        "reference": "CAP41R-R5-3@2024-05-03-baseline",
-        "score": 0.316228,
-        "document_id": "CAP41R-R5-3",
-        "version": "2024-05-03-baseline",
-        "title": "Insurance (Valuation and Capital) Rules, L.N. 62 of 2024 — Minimum capital amount baseline",
-        "section": "Part 2, rule 5(3), Gazette page B647",
-        "url": "https://www.ia.org.hk/en/legislative_framework/overview/files/es22024281862.pdf",
-        "published_at": "2024-05-03",
-        "reviewed_at": "2026-10-24",
-        "effective_from": "2024-07-01",
-        "effective_to": null,
-        "status": "verified_baseline",
-        "classification": "public",
-        "kind": "regulatory",
-        "text": "MCA is 50% of PCA unless the IA determines another amount through the variation or relaxation mechanism in rule 5(2).",
-        "provenance": "Official-domain text surfaced by web search index; full PDF retrieval unavailable in this session.",
-        "redistribution": "Short original paraphrase with attribution; no bulk source text redistributed. Source-specific reuse permission has not been verified; no open licence is asserted.",
-        "current_consolidated_verified": false,
-        "source_type": "gazetted_rules",
-        "limitations": "Do not apply the 50% baseline if an insurer-specific variation or relaxation applies."
+        "name": "movement_reconciliation",
+        "passed": true,
+        "severity": "error",
+        "details": "Exact Shapley allocation residual: HKD 0.0000000000; tolerance HKD 0.01."
+      },
+      {
+        "name": "unexpected_movement_review",
+        "passed": true,
+        "severity": "error",
+        "details": "Review required if absolute change exceeds HKD 100000 and relative change exceeds 50%; opening zero with material increase also requires review."
+      },
+      {
+        "name": "factor_bridge_validation",
+        "passed": true,
+        "severity": "error",
+        "details": "Date-first bridge plus exact holdings/yield/spread Shapley; unknown coupon/maturity settlement blocks attribution."
       }
     ]
-  }
+  },
+  "calculations": [
+    {
+      "function": "compare_portfolios_exact_shapley",
+      "version": "1.0.0",
+      "inputs": {
+        "opening_modules": {
+          "rate": 7307753.317831427,
+          "credit": 7307753.317831427,
+          "equity": 12000000.0
+        },
+        "closing_modules": {
+          "rate": 7112135.441287711,
+          "credit": 7112135.441287711,
+          "equity": 15000000.0
+        },
+        "materiality_hkd": 100000.0,
+        "unexpected_movement_ratio": 0.5
+      },
+      "outputs": {
+        "capital_movement": 2390978.5932322294,
+        "shapley_attribution": {
+          "rate": -113353.32590552233,
+          "credit": -144084.4121148307,
+          "equity": 2648416.3312525824
+        },
+        "unexplained_residual": 0.0
+      },
+      "assumptions": [
+        "All 6 module orderings have equal weight.",
+        "This allocates changes among risk modules, not causal transaction-level drivers."
+      ],
+      "validation": {
+        "passed": true,
+        "checks": [
+          {
+            "name": "opening_validation",
+            "passed": true,
+            "severity": "error",
+            "details": "Opening portfolio deterministic checks."
+          },
+          {
+            "name": "closing_validation",
+            "passed": true,
+            "severity": "error",
+            "details": "Closing portfolio deterministic checks."
+          },
+          {
+            "name": "movement_reconciliation",
+            "passed": true,
+            "severity": "error",
+            "details": "Exact Shapley allocation residual: HKD 0.0000000000; tolerance HKD 0.01."
+          },
+          {
+            "name": "unexpected_movement_review",
+            "passed": true,
+            "severity": "error",
+            "details": "Review required if absolute change exceeds HKD 100000 and relative change exceeds 50%; opening zero with material increase also requires review."
+          },
+          {
+            "name": "factor_bridge_validation",
+            "passed": true,
+            "severity": "error",
+            "details": "Date-first bridge plus exact holdings/yield/spread Shapley; unknown coupon/maturity settlement blocks attribution."
+          }
+        ]
+      },
+      "limitations": [
+        "Illustrative capital only \u2014 not HK RBC compliant",
+        "Assets only: no insurance liabilities, hedges, tax, operational risk, concentration or FX risk.",
+        "Annual fixed coupons; dirty bond PV; no accrued-interest or business-day adjustment; ACT/365.25 discount times.",
+        "Flat annual effective yields, additive yield/spread stresses, no default, recovery or migration model.",
+        "Interest rate stress +/-100 bp; credit spread stress +100 bp; equity stress -30%; internally chosen calibration.",
+        "The correlation matrix is illustrative and must not be represented as an HK RBC regulatory parameter."
+      ]
+    }
+  ],
+  "limitations": [
+    "Illustrative capital only \u2014 not HK RBC compliant",
+    "Assets only: no insurance liabilities, hedges, tax, operational risk, concentration or FX risk.",
+    "Annual fixed coupons; dirty bond PV; no accrued-interest or business-day adjustment; ACT/365.25 discount times.",
+    "Flat annual effective yields, additive yield/spread stresses, no default, recovery or migration model.",
+    "Interest rate stress +/-100 bp; credit spread stress +100 bp; equity stress -30%; internally chosen calibration.",
+    "The correlation matrix is illustrative and must not be represented as an HK RBC regulatory parameter."
+  ],
+  "report_id": "movement-ad0212953f517237",
+  "factor_bridge": {
+    "status": "complete",
+    "model_label": "Illustrative capital only \u2014 not HK RBC compliant",
+    "function_version": "1.0.0",
+    "engine_version": "1.0.0",
+    "currency": "HKD",
+    "opening_date": "2025-12-31",
+    "closing_date": "2026-09-30",
+    "cashflow_policy": "block",
+    "opening_capital": 20224927.83934361,
+    "closing_capital": 22615906.43257584,
+    "total_movement": 2390978.5932322294,
+    "date_ageing": -924090.6240014173,
+    "same_date_movement": 3315069.2172336467,
+    "factor_attribution": {
+      "holdings_and_equity_value": 3165983.6703140046,
+      "risk_free_yield": 277386.9190710485,
+      "credit_spread": -128301.37215140648
+    },
+    "explained_movement": 2390978.5932322294,
+    "unexplained_residual": 0.0,
+    "states": [
+      {
+        "active_factors": [],
+        "aggregate_capital": 19300837.215342194,
+        "module_capital": {
+          "rate": 6616111.142957248,
+          "credit": 6616111.142957248,
+          "equity": 12000000.0
+        },
+        "market_value": 195048325.67086923,
+        "input_fingerprint": "b742e8548785c3998c227c60e89250e29bea0925aac8566f8ae03433645a24c5",
+        "validation_passed": true
+      },
+      {
+        "active_factors": [
+          "holdings_and_equity_value"
+        ],
+        "aggregate_capital": 22465653.584381968,
+        "module_capital": {
+          "rate": 6994878.702682413,
+          "credit": 6994878.702682413,
+          "equity": 15000000.0
+        },
+        "market_value": 210423325.31750444,
+        "input_fingerprint": "1c08bbf11164a686eefce6d21eb4cd6bc612d644915ed8835b2eeed5c560e3d1",
+        "validation_passed": true
+      },
+      {
+        "active_factors": [
+          "risk_free_yield"
+        ],
+        "aggregate_capital": 19579590.896060284,
+        "module_capital": {
+          "rate": 6826128.325645849,
+          "credit": 6826128.325645849,
+          "equity": 12000000.0
+        },
+        "market_value": 198149841.91191506,
+        "input_fingerprint": "df78813e1d047034de9d14b6d4d36900615382dac5ad817a771113091e9f78c9",
+        "validation_passed": true
+      },
+      {
+        "active_factors": [
+          "credit_spread"
+        ],
+        "aggregate_capital": 19175635.633568835,
+        "module_capital": {
+          "rate": 6521363.5830632,
+          "credit": 6521363.5830632,
+          "equity": 12000000.0
+        },
+        "market_value": 193686523.71290585,
+        "input_fingerprint": "38c7ad1fbd3129f5807a011f65f015b25ce0912745159115cf8aa18b1e7d3365",
+        "validation_passed": true
+      },
+      {
+        "active_factors": [
+          "holdings_and_equity_value",
+          "risk_free_yield"
+        ],
+        "aggregate_capital": 22747321.57902507,
+        "module_capital": {
+          "rate": 7214361.084063947,
+          "credit": 7214361.084063947,
+          "equity": 15000000.0
+        },
+        "market_value": 213721359.3942601,
+        "input_fingerprint": "f4daa05e3d2bd442e7c670dc023041216f913304b490526153a5bc3bbf66dbae",
+        "validation_passed": true
+      },
+      {
+        "active_factors": [
+          "credit_spread",
+          "holdings_and_equity_value"
+        ],
+        "aggregate_capital": 22339900.25907161,
+        "module_capital": {
+          "rate": 6896423.010493562,
+          "credit": 6896423.010493562,
+          "equity": 15000000.0
+        },
+        "market_value": 208984269.025168,
+        "input_fingerprint": "abd5f63196a0da467a67ef346682203c345d27401382df4288261996f8d57600",
+        "validation_passed": true
+      },
+      {
+        "active_factors": [
+          "credit_spread",
+          "risk_free_yield"
+        ],
+        "aggregate_capital": 19448769.444907382,
+        "module_capital": {
+          "rate": 6727722.554777756,
+          "credit": 6727722.554777756,
+          "equity": 12000000.0
+        },
+        "market_value": 196744542.9306391,
+        "input_fingerprint": "86e29176eceb69ee7925dec1badcc44fdf6350cbdea5b867d4067250e27b8e65",
+        "validation_passed": true
+      },
+      {
+        "active_factors": [
+          "credit_spread",
+          "holdings_and_equity_value",
+          "risk_free_yield"
+        ],
+        "aggregate_capital": 22615906.43257584,
+        "module_capital": {
+          "rate": 7112135.441287711,
+          "credit": 7112135.441287711,
+          "equity": 15000000.0
+        },
+        "market_value": 212236867.72468808,
+        "input_fingerprint": "33a00396a01192b4d14379dfd368791eae7805edea0c6149d7ae7b74af65ca34",
+        "validation_passed": true
+      }
+    ],
+    "permutations": [
+      {
+        "ordering": [
+          "holdings_and_equity_value",
+          "risk_free_yield",
+          "credit_spread"
+        ],
+        "legs": [
+          {
+            "factor": "holdings_and_equity_value",
+            "opening_capital": 19300837.215342194,
+            "closing_capital": 22465653.584381968,
+            "movement": 3164816.369039774
+          },
+          {
+            "factor": "risk_free_yield",
+            "opening_capital": 22465653.584381968,
+            "closing_capital": 22747321.57902507,
+            "movement": 281667.99464310333
+          },
+          {
+            "factor": "credit_spread",
+            "opening_capital": 22747321.57902507,
+            "closing_capital": 22615906.43257584,
+            "movement": -131415.1464492306
+          }
+        ],
+        "total_movement": 3315069.2172336467
+      },
+      {
+        "ordering": [
+          "holdings_and_equity_value",
+          "credit_spread",
+          "risk_free_yield"
+        ],
+        "legs": [
+          {
+            "factor": "holdings_and_equity_value",
+            "opening_capital": 19300837.215342194,
+            "closing_capital": 22465653.584381968,
+            "movement": 3164816.369039774
+          },
+          {
+            "factor": "credit_spread",
+            "opening_capital": 22465653.584381968,
+            "closing_capital": 22339900.25907161,
+            "movement": -125753.32531035691
+          },
+          {
+            "factor": "risk_free_yield",
+            "opening_capital": 22339900.25907161,
+            "closing_capital": 22615906.43257584,
+            "movement": 276006.17350422964
+          }
+        ],
+        "total_movement": 3315069.2172336467
+      },
+      {
+        "ordering": [
+          "risk_free_yield",
+          "holdings_and_equity_value",
+          "credit_spread"
+        ],
+        "legs": [
+          {
+            "factor": "risk_free_yield",
+            "opening_capital": 19300837.215342194,
+            "closing_capital": 19579590.896060284,
+            "movement": 278753.6807180904
+          },
+          {
+            "factor": "holdings_and_equity_value",
+            "opening_capital": 19579590.896060284,
+            "closing_capital": 22747321.57902507,
+            "movement": 3167730.682964787
+          },
+          {
+            "factor": "credit_spread",
+            "opening_capital": 22747321.57902507,
+            "closing_capital": 22615906.43257584,
+            "movement": -131415.1464492306
+          }
+        ],
+        "total_movement": 3315069.2172336467
+      },
+      {
+        "ordering": [
+          "risk_free_yield",
+          "credit_spread",
+          "holdings_and_equity_value"
+        ],
+        "legs": [
+          {
+            "factor": "risk_free_yield",
+            "opening_capital": 19300837.215342194,
+            "closing_capital": 19579590.896060284,
+            "movement": 278753.6807180904
+          },
+          {
+            "factor": "credit_spread",
+            "opening_capital": 19579590.896060284,
+            "closing_capital": 19448769.444907382,
+            "movement": -130821.4511529021
+          },
+          {
+            "factor": "holdings_and_equity_value",
+            "opening_capital": 19448769.444907382,
+            "closing_capital": 22615906.43257584,
+            "movement": 3167136.9876684584
+          }
+        ],
+        "total_movement": 3315069.2172336467
+      },
+      {
+        "ordering": [
+          "credit_spread",
+          "holdings_and_equity_value",
+          "risk_free_yield"
+        ],
+        "legs": [
+          {
+            "factor": "credit_spread",
+            "opening_capital": 19300837.215342194,
+            "closing_capital": 19175635.633568835,
+            "movement": -125201.58177335933
+          },
+          {
+            "factor": "holdings_and_equity_value",
+            "opening_capital": 19175635.633568835,
+            "closing_capital": 22339900.25907161,
+            "movement": 3164264.6255027764
+          },
+          {
+            "factor": "risk_free_yield",
+            "opening_capital": 22339900.25907161,
+            "closing_capital": 22615906.43257584,
+            "movement": 276006.17350422964
+          }
+        ],
+        "total_movement": 3315069.2172336467
+      },
+      {
+        "ordering": [
+          "credit_spread",
+          "risk_free_yield",
+          "holdings_and_equity_value"
+        ],
+        "legs": [
+          {
+            "factor": "credit_spread",
+            "opening_capital": 19300837.215342194,
+            "closing_capital": 19175635.633568835,
+            "movement": -125201.58177335933
+          },
+          {
+            "factor": "risk_free_yield",
+            "opening_capital": 19175635.633568835,
+            "closing_capital": 19448769.444907382,
+            "movement": 273133.8113385476
+          },
+          {
+            "factor": "holdings_and_equity_value",
+            "opening_capital": 19448769.444907382,
+            "closing_capital": 22615906.43257584,
+            "movement": 3167136.9876684584
+          }
+        ],
+        "total_movement": 3315069.2172336467
+      }
+    ],
+    "cashflow_events": [],
+    "settlement_cash_asset_id": null,
+    "added_asset_ids": [],
+    "removed_asset_ids": [],
+    "matched_bond_ids": [
+      "SYN-BOND-01",
+      "SYN-BOND-02"
+    ],
+    "calculations": [
+      {
+        "function": "factor_hybrid_capital",
+        "version": "1.0.0",
+        "engine_version": "1.0.0",
+        "inputs": {
+          "active_factors": [],
+          "portfolio": {
+            "valuation_date": "2026-09-30",
+            "currency": "HKD",
+            "assets": [
+              {
+                "asset_id": "SYN-BOND-01",
+                "asset_type": "bond",
+                "currency": "HKD",
+                "valuation_date": "2026-09-30",
+                "market_value": null,
+                "face_value": 80000000.0,
+                "coupon_rate": 0.04,
+                "yield_rate": 0.03,
+                "maturity_date": "2030-12-31",
+                "credit_spread_bps": 80.0
+              },
+              {
+                "asset_id": "SYN-BOND-02",
+                "asset_type": "bond",
+                "currency": "HKD",
+                "valuation_date": "2026-09-30",
+                "market_value": null,
+                "face_value": 50000000.0,
+                "coupon_rate": 0.045,
+                "yield_rate": 0.032,
+                "maturity_date": "2035-12-31",
+                "credit_spread_bps": 120.0
+              },
+              {
+                "asset_id": "SYN-CASH-01",
+                "asset_type": "cash",
+                "currency": "HKD",
+                "valuation_date": "2026-09-30",
+                "market_value": 20000000.0,
+                "face_value": null,
+                "coupon_rate": null,
+                "yield_rate": null,
+                "maturity_date": null,
+                "credit_spread_bps": null
+              },
+              {
+                "asset_id": "SYN-EQUITY-01",
+                "asset_type": "equity",
+                "currency": "HKD",
+                "valuation_date": "2026-09-30",
+                "market_value": 40000000.0,
+                "face_value": null,
+                "coupon_rate": null,
+                "yield_rate": null,
+                "maturity_date": null,
+                "credit_spread_bps": null
+              }
+            ]
+          }
+        },
+        "outputs": {
+          "active_factors": [],
+          "aggregate_capital": 19300837.215342194,
+          "module_capital": {
+            "rate": 6616111.142957248,
+            "credit": 6616111.142957248,
+            "equity": 12000000.0
+          },
+          "market_value": 195048325.67086923,
+          "input_fingerprint": "b742e8548785c3998c227c60e89250e29bea0925aac8566f8ae03433645a24c5",
+          "validation_passed": true
+        },
+        "assumptions": [
+          "All positions use the common closing valuation date.",
+          "Matched bond face amount follows holdings; risk-free yield and spread follow independent factor flags.",
+          "Entry/exit bonds keep their sole observed quote; equity/cash value changes are joint holdings/market changes."
+        ],
+        "validation": {
+          "passed": true,
+          "checks": [
+            {
+              "name": "input_schema",
+              "passed": true,
+              "severity": "error",
+              "details": "Strict validated nonempty HKD portfolio; finite inputs and unique IDs."
+            },
+            {
+              "name": "finite_nonnegative_values",
+              "passed": true,
+              "severity": "error",
+              "details": "All scenario asset values are finite and nonnegative.",
+              "asset_id": "SYN-BOND-01"
+            },
+            {
+              "name": "bond_price_monotonicity",
+              "passed": true,
+              "severity": "error",
+              "details": "Positive bond cashflows decrease in value when yield/spread rises.",
+              "asset_id": "SYN-BOND-01"
+            },
+            {
+              "name": "key_rate_duration_reconciliation",
+              "passed": true,
+              "severity": "error",
+              "details": "The interpolated node weights partition unity; KRD sums to modified duration.",
+              "asset_id": "SYN-BOND-01"
+            },
+            {
+              "name": "finite_nonnegative_values",
+              "passed": true,
+              "severity": "error",
+              "details": "All scenario asset values are finite and nonnegative.",
+              "asset_id": "SYN-BOND-02"
+            },
+            {
+              "name": "bond_price_monotonicity",
+              "passed": true,
+              "severity": "error",
+              "details": "Positive bond cashflows decrease in value when yield/spread rises.",
+              "asset_id": "SYN-BOND-02"
+            },
+            {
+              "name": "key_rate_duration_reconciliation",
+              "passed": true,
+              "severity": "error",
+              "details": "The interpolated node weights partition unity; KRD sums to modified duration.",
+              "asset_id": "SYN-BOND-02"
+            },
+            {
+              "name": "finite_nonnegative_values",
+              "passed": true,
+              "severity": "error",
+              "details": "All scenario asset values are finite and nonnegative.",
+              "asset_id": "SYN-CASH-01"
+            },
+            {
+              "name": "finite_nonnegative_values",
+              "passed": true,
+              "severity": "error",
+              "details": "All scenario asset values are finite and nonnegative.",
+              "asset_id": "SYN-EQUITY-01"
+            },
+            {
+              "name": "capital_bounds",
+              "passed": true,
+              "severity": "error",
+              "details": "Illustrative correlation aggregation lies between the largest module and their sum."
+            },
+            {
+              "name": "aggregation_reconciliation",
+              "passed": true,
+              "severity": "error",
+              "details": "Capital reconciles independently to the Cholesky norm of the illustrative correlation matrix."
+            }
+          ]
+        },
+        "limitations": [
+          "Illustrative capital only \u2014 not HK RBC compliant",
+          "Assets only: no insurance liabilities, hedges, tax, operational risk, concentration or FX risk.",
+          "Annual fixed coupons; dirty bond PV; no accrued-interest or business-day adjustment; ACT/365.25 discount times.",
+          "Flat annual effective yields, additive yield/spread stresses, no default, recovery or migration model.",
+          "Interest rate stress +/-100 bp; credit spread stress +100 bp; equity stress -30%; internally chosen calibration.",
+          "The correlation matrix is illustrative and must not be represented as an HK RBC regulatory parameter.",
+          "Counterfactual model attribution is not a transaction ledger, investment return, or proof of economic causality.",
+          "Date ageing is applied first at opening bond quotes; its interactions with market/holding changes are allocated by that explicit ordering.",
+          "Equity/cash market-value changes jointly represent quantities, prices and flows; units and trade data are unavailable, so these causes cannot be separated.",
+          "Entry/exit bonds have only one observed endpoint quote; that quote is held fixed in all counterfactual states and their effect is assigned to holdings/composition.",
+          "Same-ID changes of asset type, coupon or maturity are blocked. Use distinct IDs for genuinely different instruments, with supporting trade evidence outside this prototype.",
+          "A flat scalar risk-free yield and scalar credit spread are independent input factors; no observed yield-curve, liquidity/default decomposition or official HK RBC calibration is implied."
+        ]
+      },
+      {
+        "function": "factor_hybrid_capital",
+        "version": "1.0.0",
+        "engine_version": "1.0.0",
+        "inputs": {
+          "active_factors": [
+            "holdings_and_equity_value"
+          ],
+          "portfolio": {
+            "valuation_date": "2026-09-30",
+            "currency": "HKD",
+            "assets": [
+              {
+                "asset_id": "SYN-BOND-01",
+                "asset_type": "bond",
+                "currency": "HKD",
+                "valuation_date": "2026-09-30",
+                "market_value": null,
+                "face_value": 90000000.0,
+                "coupon_rate": 0.04,
+                "yield_rate": 0.03,
+                "maturity_date": "2030-12-31",
+                "credit_spread_bps": 80.0
+              },
+              {
+                "asset_id": "SYN-BOND-02",
+                "asset_type": "bond",
+                "currency": "HKD",
+                "valuation_date": "2026-09-30",
+                "market_value": null,
+                "face_value": 50000000.0,
+                "coupon_rate": 0.045,
+                "yield_rate": 0.032,
+                "maturity_date": "2035-12-31",
+                "credit_spread_bps": 120.0
+              },
+              {
+                "asset_id": "SYN-CASH-01",
+                "asset_type": "cash",
+                "currency": "HKD",
+                "valuation_date": "2026-09-30",
+                "market_value": 15000000.0,
+                "face_value": null,
+                "coupon_rate": null,
+                "yield_rate": null,
+                "maturity_date": null,
+                "credit_spread_bps": null
+              },
+              {
+                "asset_id": "SYN-EQUITY-01",
+                "asset_type": "equity",
+                "currency": "HKD",
+                "valuation_date": "2026-09-30",
+                "market_value": 50000000.0,
+                "face_value": null,
+                "coupon_rate": null,
+                "yield_rate": null,
+                "maturity_date": null,
+                "credit_spread_bps": null
+              }
+            ]
+          }
+        },
+        "outputs": {
+          "active_factors": [
+            "holdings_and_equity_value"
+          ],
+          "aggregate_capital": 22465653.584381968,
+          "module_capital": {
+            "rate": 6994878.702682413,
+            "credit": 6994878.702682413,
+            "equity": 15000000.0
+          },
+          "market_value": 210423325.31750444,
+          "input_fingerprint": "1c08bbf11164a686eefce6d21eb4cd6bc612d644915ed8835b2eeed5c560e3d1",
+          "validation_passed": true
+        },
+        "assumptions": [
+          "All positions use the common closing valuation date.",
+          "Matched bond face amount follows holdings; risk-free yield and spread follow independent factor flags.",
+          "Entry/exit bonds keep their sole observed quote; equity/cash value changes are joint holdings/market changes."
+        ],
+        "validation": {
+          "passed": true,
+          "checks": [
+            {
+              "name": "input_schema",
+              "passed": true,
+              "severity": "error",
+              "details": "Strict validated nonempty HKD portfolio; finite inputs and unique IDs."
+            },
+            {
+              "name": "finite_nonnegative_values",
+              "passed": true,
+              "severity": "error",
+              "details": "All scenario asset values are finite and nonnegative.",
+              "asset_id": "SYN-BOND-01"
+            },
+            {
+              "name": "bond_price_monotonicity",
+              "passed": true,
+              "severity": "error",
+              "details": "Positive bond cashflows decrease in value when yield/spread rises.",
+              "asset_id": "SYN-BOND-01"
+            },
+            {
+              "name": "key_rate_duration_reconciliation",
+              "passed": true,
+              "severity": "error",
+              "details": "The interpolated node weights partition unity; KRD sums to modified duration.",
+              "asset_id": "SYN-BOND-01"
+            },
+            {
+              "name": "finite_nonnegative_values",
+              "passed": true,
+              "severity": "error",
+              "details": "All scenario asset values are finite and nonnegative.",
+              "asset_id": "SYN-BOND-02"
+            },
+            {
+              "name": "bond_price_monotonicity",
+              "passed": true,
+              "severity": "error",
+              "details": "Positive bond cashflows decrease in value when yield/spread rises.",
+              "asset_id": "SYN-BOND-02"
+            },
+            {
+              "name": "key_rate_duration_reconciliation",
+              "passed": true,
+              "severity": "error",
+              "details": "The interpolated node weights partition unity; KRD sums to modified duration.",
+              "asset_id": "SYN-BOND-02"
+            },
+            {
+              "name": "finite_nonnegative_values",
+              "passed": true,
+              "severity": "error",
+              "details": "All scenario asset values are finite and nonnegative.",
+              "asset_id": "SYN-CASH-01"
+            },
+            {
+              "name": "finite_nonnegative_values",
+              "passed": true,
+              "severity": "error",
+              "details": "All scenario asset values are finite and nonnegative.",
+              "asset_id": "SYN-EQUITY-01"
+            },
+            {
+              "name": "capital_bounds",
+              "passed": true,
+              "severity": "error",
+              "details": "Illustrative correlation aggregation lies between the largest module and their sum."
+            },
+            {
+              "name": "aggregation_reconciliation",
+              "passed": true,
+              "severity": "error",
+              "details": "Capital reconciles independently to the Cholesky norm of the illustrative correlation matrix."
+            }
+          ]
+        },
+        "limitations": [
+          "Illustrative capital only \u2014 not HK RBC compliant",
+          "Assets only: no insurance liabilities, hedges, tax, operational risk, concentration or FX risk.",
+          "Annual fixed coupons; dirty bond PV; no accrued-interest or business-day adjustment; ACT/365.25 discount times.",
+          "Flat annual effective yields, additive yield/spread stresses, no default, recovery or migration model.",
+          "Interest rate stress +/-100 bp; credit spread stress +100 bp; equity stress -30%; internally chosen calibration.",
+          "The correlation matrix is illustrative and must not be represented as an HK RBC regulatory parameter.",
+          "Counterfactual model attribution is not a transaction ledger, investment return, or proof of economic causality.",
+          "Date ageing is applied first at opening bond quotes; its interactions with market/holding changes are allocated by that explicit ordering.",
+          "Equity/cash market-value changes jointly represent quantities, prices and flows; units and trade data are unavailable, so these causes cannot be separated.",
+          "Entry/exit bonds have only one observed endpoint quote; that quote is held fixed in all counterfactual states and their effect is assigned to holdings/composition.",
+          "Same-ID changes of asset type, coupon or maturity are blocked. Use distinct IDs for genuinely different instruments, with supporting trade evidence outside this prototype.",
+          "A flat scalar risk-free yield and scalar credit spread are independent input factors; no observed yield-curve, liquidity/default decomposition or official HK RBC calibration is implied."
+        ]
+      },
+      {
+        "function": "factor_hybrid_capital",
+        "version": "1.0.0",
+        "engine_version": "1.0.0",
+        "inputs": {
+          "active_factors": [
+            "risk_free_yield"
+          ],
+          "portfolio": {
+            "valuation_date": "2026-09-30",
+            "currency": "HKD",
+            "assets": [
+              {
+                "asset_id": "SYN-BOND-01",
+                "asset_type": "bond",
+                "currency": "HKD",
+                "valuation_date": "2026-09-30",
+                "market_value": null,
+                "face_value": 80000000.0,
+                "coupon_rate": 0.04,
+                "yield_rate": 0.025,
+                "maturity_date": "2030-12-31",
+                "credit_spread_bps": 80.0
+              },
+              {
+                "asset_id": "SYN-BOND-02",
+                "asset_type": "bond",
+                "currency": "HKD",
+                "valuation_date": "2026-09-30",
+                "market_value": null,
+                "face_value": 50000000.0,
+                "coupon_rate": 0.045,
+                "yield_rate": 0.028,
+                "maturity_date": "2035-12-31",
+                "credit_spread_bps": 120.0
+              },
+              {
+                "asset_id": "SYN-CASH-01",
+                "asset_type": "cash",
+                "currency": "HKD",
+                "valuation_date": "2026-09-30",
+                "market_value": 20000000.0,
+                "face_value": null,
+                "coupon_rate": null,
+                "yield_rate": null,
+                "maturity_date": null,
+                "credit_spread_bps": null
+              },
+              {
+                "asset_id": "SYN-EQUITY-01",
+                "asset_type": "equity",
+                "currency": "HKD",
+                "valuation_date": "2026-09-30",
+                "market_value": 40000000.0,
+                "face_value": null,
+                "coupon_rate": null,
+                "yield_rate": null,
+                "maturity_date": null,
+                "credit_spread_bps": null
+              }
+            ]
+          }
+        },
+        "outputs": {
+          "active_factors": [
+            "risk_free_yield"
+          ],
+          "aggregate_capital": 19579590.896060284,
+          "module_capital": {
+            "rate": 6826128.325645849,
+            "credit": 6826128.325645849,
+            "equity": 12000000.0
+          },
+          "market_value": 198149841.91191506,
+          "input_fingerprint": "df78813e1d047034de9d14b6d4d36900615382dac5ad817a771113091e9f78c9",
+          "validation_passed": true
+        },
+        "assumptions": [
+          "All positions use the common closing valuation date.",
+          "Matched bond face amount follows holdings; risk-free yield and spread follow independent factor flags.",
+          "Entry/exit bonds keep their sole observed quote; equity/cash value changes are joint holdings/market changes."
+        ],
+        "validation": {
+          "passed": true,
+          "checks": [
+            {
+              "name": "input_schema",
+              "passed": true,
+              "severity": "error",
+              "details": "Strict validated nonempty HKD portfolio; finite inputs and unique IDs."
+            },
+            {
+              "name": "finite_nonnegative_values",
+              "passed": true,
+              "severity": "error",
+              "details": "All scenario asset values are finite and nonnegative.",
+              "asset_id": "SYN-BOND-01"
+            },
+            {
+              "name": "bond_price_monotonicity",
+              "passed": true,
+              "severity": "error",
+              "details": "Positive bond cashflows decrease in value when yield/spread rises.",
+              "asset_id": "SYN-BOND-01"
+            },
+            {
+              "name": "key_rate_duration_reconciliation",
+              "passed": true,
+              "severity": "error",
+              "details": "The interpolated node weights partition unity; KRD sums to modified duration.",
+              "asset_id": "SYN-BOND-01"
+            },
+            {
+              "name": "finite_nonnegative_values",
+              "passed": true,
+              "severity": "error",
+              "details": "All scenario asset values are finite and nonnegative.",
+              "asset_id": "SYN-BOND-02"
+            },
+            {
+              "name": "bond_price_monotonicity",
+              "passed": true,
+              "severity": "error",
+              "details": "Positive bond cashflows decrease in value when yield/spread rises.",
+              "asset_id": "SYN-BOND-02"
+            },
+            {
+              "name": "key_rate_duration_reconciliation",
+              "passed": true,
+              "severity": "error",
+              "details": "The interpolated node weights partition unity; KRD sums to modified duration.",
+              "asset_id": "SYN-BOND-02"
+            },
+            {
+              "name": "finite_nonnegative_values",
+              "passed": true,
+              "severity": "error",
+              "details": "All scenario asset values are finite and nonnegative.",
+              "asset_id": "SYN-CASH-01"
+            },
+            {
+              "name": "finite_nonnegative_values",
+              "passed": true,
+              "severity": "error",
+              "details": "All scenario asset values are finite and nonnegative.",
+              "asset_id": "SYN-EQUITY-01"
+            },
+            {
+              "name": "capital_bounds",
+              "passed": true,
+              "severity": "error",
+              "details": "Illustrative correlation aggregation lies between the largest module and their sum."
+            },
+            {
+              "name": "aggregation_reconciliation",
+              "passed": true,
+              "severity": "error",
+              "details": "Capital reconciles independently to the Cholesky norm of the illustrative correlation matrix."
+            }
+          ]
+        },
+        "limitations": [
+          "Illustrative capital only \u2014 not HK RBC compliant",
+          "Assets only: no insurance liabilities, hedges, tax, operational risk, concentration or FX risk.",
+          "Annual fixed coupons; dirty bond PV; no accrued-interest or business-day adjustment; ACT/365.25 discount times.",
+          "Flat annual effective yields, additive yield/spread stresses, no default, recovery or migration model.",
+          "Interest rate stress +/-100 bp; credit spread stress +100 bp; equity stress -30%; internally chosen calibration.",
+          "The correlation matrix is illustrative and must not be represented as an HK RBC regulatory parameter.",
+          "Counterfactual model attribution is not a transaction ledger, investment return, or proof of economic causality.",
+          "Date ageing is applied first at opening bond quotes; its interactions with market/holding changes are allocated by that explicit ordering.",
+          "Equity/cash market-value changes jointly represent quantities, prices and flows; units and trade data are unavailable, so these causes cannot be separated.",
+          "Entry/exit bonds have only one observed endpoint quote; that quote is held fixed in all counterfactual states and their effect is assigned to holdings/composition.",
+          "Same-ID changes of asset type, coupon or maturity are blocked. Use distinct IDs for genuinely different instruments, with supporting trade evidence outside this prototype.",
+          "A flat scalar risk-free yield and scalar credit spread are independent input factors; no observed yield-curve, liquidity/default decomposition or official HK RBC calibration is implied."
+        ]
+      },
+      {
+        "function": "factor_hybrid_capital",
+        "version": "1.0.0",
+        "engine_version": "1.0.0",
+        "inputs": {
+          "active_factors": [
+            "credit_spread"
+          ],
+          "portfolio": {
+            "valuation_date": "2026-09-30",
+            "currency": "HKD",
+            "assets": [
+              {
+                "asset_id": "SYN-BOND-01",
+                "asset_type": "bond",
+                "currency": "HKD",
+                "valuation_date": "2026-09-30",
+                "market_value": null,
+                "face_value": 80000000.0,
+                "coupon_rate": 0.04,
+                "yield_rate": 0.03,
+                "maturity_date": "2030-12-31",
+                "credit_spread_bps": 100.0
+              },
+              {
+                "asset_id": "SYN-BOND-02",
+                "asset_type": "bond",
+                "currency": "HKD",
+                "valuation_date": "2026-09-30",
+                "market_value": null,
+                "face_value": 50000000.0,
+                "coupon_rate": 0.045,
+                "yield_rate": 0.032,
+                "maturity_date": "2035-12-31",
+                "credit_spread_bps": 140.0
+              },
+              {
+                "asset_id": "SYN-CASH-01",
+                "asset_type": "cash",
+                "currency": "HKD",
+                "valuation_date": "2026-09-30",
+                "market_value": 20000000.0,
+                "face_value": null,
+                "coupon_rate": null,
+                "yield_rate": null,
+                "maturity_date": null,
+                "credit_spread_bps": null
+              },
+              {
+                "asset_id": "SYN-EQUITY-01",
+                "asset_type": "equity",
+                "currency": "HKD",
+                "valuation_date": "2026-09-30",
+                "market_value": 40000000.0,
+                "face_value": null,
+                "coupon_rate": null,
+                "yield_rate": null,
+                "maturity_date": null,
+                "credit_spread_bps": null
+              }
+            ]
+          }
+        },
+        "outputs": {
+          "active_factors": [
+            "credit_spread"
+          ],
+          "aggregate_capital": 19175635.633568835,
+          "module_capital": {
+            "rate": 6521363.5830632,
+            "credit": 6521363.5830632,
+            "equity": 12000000.0
+          },
+          "market_value": 193686523.71290585,
+          "input_fingerprint": "38c7ad1fbd3129f5807a011f65f015b25ce0912745159115cf8aa18b1e7d3365",
+          "validation_passed": true
+        },
+        "assumptions": [
+          "All positions use the common closing valuation date.",
+          "Matched bond face amount follows holdings; risk-free yield and spread follow independent factor flags.",
+          "Entry/exit bonds keep their sole observed quote; equity/cash value changes are joint holdings/market changes."
+        ],
+        "validation": {
+          "passed": true,
+          "checks": [
+            {
+              "name": "input_schema",
+              "passed": true,
+              "severity": "error",
+              "details": "Strict validated nonempty HKD portfolio; finite inputs and unique IDs."
+            },
+            {
+              "name": "finite_nonnegative_values",
+              "passed": true,
+              "severity": "error",
+              "details": "All scenario asset values are finite and nonnegative.",
+              "asset_id": "SYN-BOND-01"
+            },
+            {
+              "name": "bond_price_monotonicity",
+              "passed": true,
+              "severity": "error",
+              "details": "Positive bond cashflows decrease in value when yield/spread rises.",
+              "asset_id": "SYN-BOND-01"
+            },
+            {
+              "name": "key_rate_duration_reconciliation",
+              "passed": true,
+              "severity": "error",
+              "details": "The interpolated node weights partition unity; KRD sums to modified duration.",
+              "asset_id": "SYN-BOND-01"
+            },
+            {
+              "name": "finite_nonnegative_values",
+              "passed": true,
+              "severity": "error",
+              "details": "All scenario asset values are finite and nonnegative.",
+              "asset_id": "SYN-BOND-02"
+            },
+            {
+              "name": "bond_price_monotonicity",
+              "passed": true,
+              "severity": "error",
+              "details": "Positive bond cashflows decrease in value when yield/spread rises.",
+              "asset_id": "SYN-BOND-02"
+            },
+            {
+              "name": "key_rate_duration_reconciliation",
+              "passed": true,
+              "severity": "error",
+              "details": "The interpolated node weights partition unity; KRD sums to modified duration.",
+              "asset_id": "SYN-BOND-02"
+            },
+            {
+              "name": "finite_nonnegative_values",
+              "passed": true,
+              "severity": "error",
+              "details": "All scenario asset values are finite and nonnegative.",
+              "asset_id": "SYN-CASH-01"
+            },
+            {
+              "name": "finite_nonnegative_values",
+              "passed": true,
+              "severity": "error",
+              "details": "All scenario asset values are finite and nonnegative.",
+              "asset_id": "SYN-EQUITY-01"
+            },
+            {
+              "name": "capital_bounds",
+              "passed": true,
+              "severity": "error",
+              "details": "Illustrative correlation aggregation lies between the largest module and their sum."
+            },
+            {
+              "name": "aggregation_reconciliation",
+              "passed": true,
+              "severity": "error",
+              "details": "Capital reconciles independently to the Cholesky norm of the illustrative correlation matrix."
+            }
+          ]
+        },
+        "limitations": [
+          "Illustrative capital only \u2014 not HK RBC compliant",
+          "Assets only: no insurance liabilities, hedges, tax, operational risk, concentration or FX risk.",
+          "Annual fixed coupons; dirty bond PV; no accrued-interest or business-day adjustment; ACT/365.25 discount times.",
+          "Flat annual effective yields, additive yield/spread stresses, no default, recovery or migration model.",
+          "Interest rate stress +/-100 bp; credit spread stress +100 bp; equity stress -30%; internally chosen calibration.",
+          "The correlation matrix is illustrative and must not be represented as an HK RBC regulatory parameter.",
+          "Counterfactual model attribution is not a transaction ledger, investment return, or proof of economic causality.",
+          "Date ageing is applied first at opening bond quotes; its interactions with market/holding changes are allocated by that explicit ordering.",
+          "Equity/cash market-value changes jointly represent quantities, prices and flows; units and trade data are unavailable, so these causes cannot be separated.",
+          "Entry/exit bonds have only one observed endpoint quote; that quote is held fixed in all counterfactual states and their effect is assigned to holdings/composition.",
+          "Same-ID changes of asset type, coupon or maturity are blocked. Use distinct IDs for genuinely different instruments, with supporting trade evidence outside this prototype.",
+          "A flat scalar risk-free yield and scalar credit spread are independent input factors; no observed yield-curve, liquidity/default decomposition or official HK RBC calibration is implied."
+        ]
+      },
+      {
+        "function": "factor_hybrid_capital",
+        "version": "1.0.0",
+        "engine_version": "1.0.0",
+        "inputs": {
+          "active_factors": [
+            "holdings_and_equity_value",
+            "risk_free_yield"
+          ],
+          "portfolio": {
+            "valuation_date": "2026-09-30",
+            "currency": "HKD",
+            "assets": [
+              {
+                "asset_id": "SYN-BOND-01",
+                "asset_type": "bond",
+                "currency": "HKD",
+                "valuation_date": "2026-09-30",
+                "market_value": null,
+                "face_value": 90000000.0,
+                "coupon_rate": 0.04,
+                "yield_rate": 0.025,
+                "maturity_date": "2030-12-31",
+                "credit_spread_bps": 80.0
+              },
+              {
+                "asset_id": "SYN-BOND-02",
+                "asset_type": "bond",
+                "currency": "HKD",
+                "valuation_date": "2026-09-30",
+                "market_value": null,
+                "face_value": 50000000.0,
+                "coupon_rate": 0.045,
+                "yield_rate": 0.028,
+                "maturity_date": "2035-12-31",
+                "credit_spread_bps": 120.0
+              },
+              {
+                "asset_id": "SYN-CASH-01",
+                "asset_type": "cash",
+                "currency": "HKD",
+                "valuation_date": "2026-09-30",
+                "market_value": 15000000.0,
+                "face_value": null,
+                "coupon_rate": null,
+                "yield_rate": null,
+                "maturity_date": null,
+                "credit_spread_bps": null
+              },
+              {
+                "asset_id": "SYN-EQUITY-01",
+                "asset_type": "equity",
+                "currency": "HKD",
+                "valuation_date": "2026-09-30",
+                "market_value": 50000000.0,
+                "face_value": null,
+                "coupon_rate": null,
+                "yield_rate": null,
+                "maturity_date": null,
+                "credit_spread_bps": null
+              }
+            ]
+          }
+        },
+        "outputs": {
+          "active_factors": [
+            "holdings_and_equity_value",
+            "risk_free_yield"
+          ],
+          "aggregate_capital": 22747321.57902507,
+          "module_capital": {
+            "rate": 7214361.084063947,
+            "credit": 7214361.084063947,
+            "equity": 15000000.0
+          },
+          "market_value": 213721359.3942601,
+          "input_fingerprint": "f4daa05e3d2bd442e7c670dc023041216f913304b490526153a5bc3bbf66dbae",
+          "validation_passed": true
+        },
+        "assumptions": [
+          "All positions use the common closing valuation date.",
+          "Matched bond face amount follows holdings; risk-free yield and spread follow independent factor flags.",
+          "Entry/exit bonds keep their sole observed quote; equity/cash value changes are joint holdings/market changes."
+        ],
+        "validation": {
+          "passed": true,
+          "checks": [
+            {
+              "name": "input_schema",
+              "passed": true,
+              "severity": "error",
+              "details": "Strict validated nonempty HKD portfolio; finite inputs and unique IDs."
+            },
+            {
+              "name": "finite_nonnegative_values",
+              "passed": true,
+              "severity": "error",
+              "details": "All scenario asset values are finite and nonnegative.",
+              "asset_id": "SYN-BOND-01"
+            },
+            {
+              "name": "bond_price_monotonicity",
+              "passed": true,
+              "severity": "error",
+              "details": "Positive bond cashflows decrease in value when yield/spread rises.",
+              "asset_id": "SYN-BOND-01"
+            },
+            {
+              "name": "key_rate_duration_reconciliation",
+              "passed": true,
+              "severity": "error",
+              "details": "The interpolated node weights partition unity; KRD sums to modified duration.",
+              "asset_id": "SYN-BOND-01"
+            },
+            {
+              "name": "finite_nonnegative_values",
+              "passed": true,
+              "severity": "error",
+              "details": "All scenario asset values are finite and nonnegative.",
+              "asset_id": "SYN-BOND-02"
+            },
+            {
+              "name": "bond_price_monotonicity",
+              "passed": true,
+              "severity": "error",
+              "details": "Positive bond cashflows decrease in value when yield/spread rises.",
+              "asset_id": "SYN-BOND-02"
+            },
+            {
+              "name": "key_rate_duration_reconciliation",
+              "passed": true,
+              "severity": "error",
+              "details": "The interpolated node weights partition unity; KRD sums to modified duration.",
+              "asset_id": "SYN-BOND-02"
+            },
+            {
+              "name": "finite_nonnegative_values",
+              "passed": true,
+              "severity": "error",
+              "details": "All scenario asset values are finite and nonnegative.",
+              "asset_id": "SYN-CASH-01"
+            },
+            {
+              "name": "finite_nonnegative_values",
+              "passed": true,
+              "severity": "error",
+              "details": "All scenario asset values are finite and nonnegative.",
+              "asset_id": "SYN-EQUITY-01"
+            },
+            {
+              "name": "capital_bounds",
+              "passed": true,
+              "severity": "error",
+              "details": "Illustrative correlation aggregation lies between the largest module and their sum."
+            },
+            {
+              "name": "aggregation_reconciliation",
+              "passed": true,
+              "severity": "error",
+              "details": "Capital reconciles independently to the Cholesky norm of the illustrative correlation matrix."
+            }
+          ]
+        },
+        "limitations": [
+          "Illustrative capital only \u2014 not HK RBC compliant",
+          "Assets only: no insurance liabilities, hedges, tax, operational risk, concentration or FX risk.",
+          "Annual fixed coupons; dirty bond PV; no accrued-interest or business-day adjustment; ACT/365.25 discount times.",
+          "Flat annual effective yields, additive yield/spread stresses, no default, recovery or migration model.",
+          "Interest rate stress +/-100 bp; credit spread stress +100 bp; equity stress -30%; internally chosen calibration.",
+          "The correlation matrix is illustrative and must not be represented as an HK RBC regulatory parameter.",
+          "Counterfactual model attribution is not a transaction ledger, investment return, or proof of economic causality.",
+          "Date ageing is applied first at opening bond quotes; its interactions with market/holding changes are allocated by that explicit ordering.",
+          "Equity/cash market-value changes jointly represent quantities, prices and flows; units and trade data are unavailable, so these causes cannot be separated.",
+          "Entry/exit bonds have only one observed endpoint quote; that quote is held fixed in all counterfactual states and their effect is assigned to holdings/composition.",
+          "Same-ID changes of asset type, coupon or maturity are blocked. Use distinct IDs for genuinely different instruments, with supporting trade evidence outside this prototype.",
+          "A flat scalar risk-free yield and scalar credit spread are independent input factors; no observed yield-curve, liquidity/default decomposition or official HK RBC calibration is implied."
+        ]
+      },
+      {
+        "function": "factor_hybrid_capital",
+        "version": "1.0.0",
+        "engine_version": "1.0.0",
+        "inputs": {
+          "active_factors": [
+            "credit_spread",
+            "holdings_and_equity_value"
+          ],
+          "portfolio": {
+            "valuation_date": "2026-09-30",
+            "currency": "HKD",
+            "assets": [
+              {
+                "asset_id": "SYN-BOND-01",
+                "asset_type": "bond",
+                "currency": "HKD",
+                "valuation_date": "2026-09-30",
+                "market_value": null,
+                "face_value": 90000000.0,
+                "coupon_rate": 0.04,
+                "yield_rate": 0.03,
+                "maturity_date": "2030-12-31",
+                "credit_spread_bps": 100.0
+              },
+              {
+                "asset_id": "SYN-BOND-02",
+                "asset_type": "bond",
+                "currency": "HKD",
+                "valuation_date": "2026-09-30",
+                "market_value": null,
+                "face_value": 50000000.0,
+                "coupon_rate": 0.045,
+                "yield_rate": 0.032,
+                "maturity_date": "2035-12-31",
+                "credit_spread_bps": 140.0
+              },
+              {
+                "asset_id": "SYN-CASH-01",
+                "asset_type": "cash",
+                "currency": "HKD",
+                "valuation_date": "2026-09-30",
+                "market_value": 15000000.0,
+                "face_value": null,
+                "coupon_rate": null,
+                "yield_rate": null,
+                "maturity_date": null,
+                "credit_spread_bps": null
+              },
+              {
+                "asset_id": "SYN-EQUITY-01",
+                "asset_type": "equity",
+                "currency": "HKD",
+                "valuation_date": "2026-09-30",
+                "market_value": 50000000.0,
+                "face_value": null,
+                "coupon_rate": null,
+                "yield_rate": null,
+                "maturity_date": null,
+                "credit_spread_bps": null
+              }
+            ]
+          }
+        },
+        "outputs": {
+          "active_factors": [
+            "credit_spread",
+            "holdings_and_equity_value"
+          ],
+          "aggregate_capital": 22339900.25907161,
+          "module_capital": {
+            "rate": 6896423.010493562,
+            "credit": 6896423.010493562,
+            "equity": 15000000.0
+          },
+          "market_value": 208984269.025168,
+          "input_fingerprint": "abd5f63196a0da467a67ef346682203c345d27401382df4288261996f8d57600",
+          "validation_passed": true
+        },
+        "assumptions": [
+          "All positions use the common closing valuation date.",
+          "Matched bond face amount follows holdings; risk-free yield and spread follow independent factor flags.",
+          "Entry/exit bonds keep their sole observed quote; equity/cash value changes are joint holdings/market changes."
+        ],
+        "validation": {
+          "passed": true,
+          "checks": [
+            {
+              "name": "input_schema",
+              "passed": true,
+              "severity": "error",
+              "details": "Strict validated nonempty HKD portfolio; finite inputs and unique IDs."
+            },
+            {
+              "name": "finite_nonnegative_values",
+              "passed": true,
+              "severity": "error",
+              "details": "All scenario asset values are finite and nonnegative.",
+              "asset_id": "SYN-BOND-01"
+            },
+            {
+              "name": "bond_price_monotonicity",
+              "passed": true,
+              "severity": "error",
+              "details": "Positive bond cashflows decrease in value when yield/spread rises.",
+              "asset_id": "SYN-BOND-01"
+            },
+            {
+              "name": "key_rate_duration_reconciliation",
+              "passed": true,
+              "severity": "error",
+              "details": "The interpolated node weights partition unity; KRD sums to modified duration.",
+              "asset_id": "SYN-BOND-01"
+            },
+            {
+              "name": "finite_nonnegative_values",
+              "passed": true,
+              "severity": "error",
+              "details": "All scenario asset values are finite and nonnegative.",
+              "asset_id": "SYN-BOND-02"
+            },
+            {
+              "name": "bond_price_monotonicity",
+              "passed": true,
+              "severity": "error",
+              "details": "Positive bond cashflows decrease in value when yield/spread rises.",
+              "asset_id": "SYN-BOND-02"
+            },
+            {
+              "name": "key_rate_duration_reconciliation",
+              "passed": true,
+              "severity": "error",
+              "details": "The interpolated node weights partition unity; KRD sums to modified duration.",
+              "asset_id": "SYN-BOND-02"
+            },
+            {
+              "name": "finite_nonnegative_values",
+              "passed": true,
+              "severity": "error",
+              "details": "All scenario asset values are finite and nonnegative.",
+              "asset_id": "SYN-CASH-01"
+            },
+            {
+              "name": "finite_nonnegative_values",
+              "passed": true,
+              "severity": "error",
+              "details": "All scenario asset values are finite and nonnegative.",
+              "asset_id": "SYN-EQUITY-01"
+            },
+            {
+              "name": "capital_bounds",
+              "passed": true,
+              "severity": "error",
+              "details": "Illustrative correlation aggregation lies between the largest module and their sum."
+            },
+            {
+              "name": "aggregation_reconciliation",
+              "passed": true,
+              "severity": "error",
+              "details": "Capital reconciles independently to the Cholesky norm of the illustrative correlation matrix."
+            }
+          ]
+        },
+        "limitations": [
+          "Illustrative capital only \u2014 not HK RBC compliant",
+          "Assets only: no insurance liabilities, hedges, tax, operational risk, concentration or FX risk.",
+          "Annual fixed coupons; dirty bond PV; no accrued-interest or business-day adjustment; ACT/365.25 discount times.",
+          "Flat annual effective yields, additive yield/spread stresses, no default, recovery or migration model.",
+          "Interest rate stress +/-100 bp; credit spread stress +100 bp; equity stress -30%; internally chosen calibration.",
+          "The correlation matrix is illustrative and must not be represented as an HK RBC regulatory parameter.",
+          "Counterfactual model attribution is not a transaction ledger, investment return, or proof of economic causality.",
+          "Date ageing is applied first at opening bond quotes; its interactions with market/holding changes are allocated by that explicit ordering.",
+          "Equity/cash market-value changes jointly represent quantities, prices and flows; units and trade data are unavailable, so these causes cannot be separated.",
+          "Entry/exit bonds have only one observed endpoint quote; that quote is held fixed in all counterfactual states and their effect is assigned to holdings/composition.",
+          "Same-ID changes of asset type, coupon or maturity are blocked. Use distinct IDs for genuinely different instruments, with supporting trade evidence outside this prototype.",
+          "A flat scalar risk-free yield and scalar credit spread are independent input factors; no observed yield-curve, liquidity/default decomposition or official HK RBC calibration is implied."
+        ]
+      },
+      {
+        "function": "factor_hybrid_capital",
+        "version": "1.0.0",
+        "engine_version": "1.0.0",
+        "inputs": {
+          "active_factors": [
+            "credit_spread",
+            "risk_free_yield"
+          ],
+          "portfolio": {
+            "valuation_date": "2026-09-30",
+            "currency": "HKD",
+            "assets": [
+              {
+                "asset_id": "SYN-BOND-01",
+                "asset_type": "bond",
+                "currency": "HKD",
+                "valuation_date": "2026-09-30",
+                "market_value": null,
+                "face_value": 80000000.0,
+                "coupon_rate": 0.04,
+                "yield_rate": 0.025,
+                "maturity_date": "2030-12-31",
+                "credit_spread_bps": 100.0
+              },
+              {
+                "asset_id": "SYN-BOND-02",
+                "asset_type": "bond",
+                "currency": "HKD",
+                "valuation_date": "2026-09-30",
+                "market_value": null,
+                "face_value": 50000000.0,
+                "coupon_rate": 0.045,
+                "yield_rate": 0.028,
+                "maturity_date": "2035-12-31",
+                "credit_spread_bps": 140.0
+              },
+              {
+                "asset_id": "SYN-CASH-01",
+                "asset_type": "cash",
+                "currency": "HKD",
+                "valuation_date": "2026-09-30",
+                "market_value": 20000000.0,
+                "face_value": null,
+                "coupon_rate": null,
+                "yield_rate": null,
+                "maturity_date": null,
+                "credit_spread_bps": null
+              },
+              {
+                "asset_id": "SYN-EQUITY-01",
+                "asset_type": "equity",
+                "currency": "HKD",
+                "valuation_date": "2026-09-30",
+                "market_value": 40000000.0,
+                "face_value": null,
+                "coupon_rate": null,
+                "yield_rate": null,
+                "maturity_date": null,
+                "credit_spread_bps": null
+              }
+            ]
+          }
+        },
+        "outputs": {
+          "active_factors": [
+            "credit_spread",
+            "risk_free_yield"
+          ],
+          "aggregate_capital": 19448769.444907382,
+          "module_capital": {
+            "rate": 6727722.554777756,
+            "credit": 6727722.554777756,
+            "equity": 12000000.0
+          },
+          "market_value": 196744542.9306391,
+          "input_fingerprint": "86e29176eceb69ee7925dec1badcc44fdf6350cbdea5b867d4067250e27b8e65",
+          "validation_passed": true
+        },
+        "assumptions": [
+          "All positions use the common closing valuation date.",
+          "Matched bond face amount follows holdings; risk-free yield and spread follow independent factor flags.",
+          "Entry/exit bonds keep their sole observed quote; equity/cash value changes are joint holdings/market changes."
+        ],
+        "validation": {
+          "passed": true,
+          "checks": [
+            {
+              "name": "input_schema",
+              "passed": true,
+              "severity": "error",
+              "details": "Strict validated nonempty HKD portfolio; finite inputs and unique IDs."
+            },
+            {
+              "name": "finite_nonnegative_values",
+              "passed": true,
+              "severity": "error",
+              "details": "All scenario asset values are finite and nonnegative.",
+              "asset_id": "SYN-BOND-01"
+            },
+            {
+              "name": "bond_price_monotonicity",
+              "passed": true,
+              "severity": "error",
+              "details": "Positive bond cashflows decrease in value when yield/spread rises.",
+              "asset_id": "SYN-BOND-01"
+            },
+            {
+              "name": "key_rate_duration_reconciliation",
+              "passed": true,
+              "severity": "error",
+              "details": "The interpolated node weights partition unity; KRD sums to modified duration.",
+              "asset_id": "SYN-BOND-01"
+            },
+            {
+              "name": "finite_nonnegative_values",
+              "passed": true,
+              "severity": "error",
+              "details": "All scenario asset values are finite and nonnegative.",
+              "asset_id": "SYN-BOND-02"
+            },
+            {
+              "name": "bond_price_monotonicity",
+              "passed": true,
+              "severity": "error",
+              "details": "Positive bond cashflows decrease in value when yield/spread rises.",
+              "asset_id": "SYN-BOND-02"
+            },
+            {
+              "name": "key_rate_duration_reconciliation",
+              "passed": true,
+              "severity": "error",
+              "details": "The interpolated node weights partition unity; KRD sums to modified duration.",
+              "asset_id": "SYN-BOND-02"
+            },
+            {
+              "name": "finite_nonnegative_values",
+              "passed": true,
+              "severity": "error",
+              "details": "All scenario asset values are finite and nonnegative.",
+              "asset_id": "SYN-CASH-01"
+            },
+            {
+              "name": "finite_nonnegative_values",
+              "passed": true,
+              "severity": "error",
+              "details": "All scenario asset values are finite and nonnegative.",
+              "asset_id": "SYN-EQUITY-01"
+            },
+            {
+              "name": "capital_bounds",
+              "passed": true,
+              "severity": "error",
+              "details": "Illustrative correlation aggregation lies between the largest module and their sum."
+            },
+            {
+              "name": "aggregation_reconciliation",
+              "passed": true,
+              "severity": "error",
+              "details": "Capital reconciles independently to the Cholesky norm of the illustrative correlation matrix."
+            }
+          ]
+        },
+        "limitations": [
+          "Illustrative capital only \u2014 not HK RBC compliant",
+          "Assets only: no insurance liabilities, hedges, tax, operational risk, concentration or FX risk.",
+          "Annual fixed coupons; dirty bond PV; no accrued-interest or business-day adjustment; ACT/365.25 discount times.",
+          "Flat annual effective yields, additive yield/spread stresses, no default, recovery or migration model.",
+          "Interest rate stress +/-100 bp; credit spread stress +100 bp; equity stress -30%; internally chosen calibration.",
+          "The correlation matrix is illustrative and must not be represented as an HK RBC regulatory parameter.",
+          "Counterfactual model attribution is not a transaction ledger, investment return, or proof of economic causality.",
+          "Date ageing is applied first at opening bond quotes; its interactions with market/holding changes are allocated by that explicit ordering.",
+          "Equity/cash market-value changes jointly represent quantities, prices and flows; units and trade data are unavailable, so these causes cannot be separated.",
+          "Entry/exit bonds have only one observed endpoint quote; that quote is held fixed in all counterfactual states and their effect is assigned to holdings/composition.",
+          "Same-ID changes of asset type, coupon or maturity are blocked. Use distinct IDs for genuinely different instruments, with supporting trade evidence outside this prototype.",
+          "A flat scalar risk-free yield and scalar credit spread are independent input factors; no observed yield-curve, liquidity/default decomposition or official HK RBC calibration is implied."
+        ]
+      },
+      {
+        "function": "factor_hybrid_capital",
+        "version": "1.0.0",
+        "engine_version": "1.0.0",
+        "inputs": {
+          "active_factors": [
+            "credit_spread",
+            "holdings_and_equity_value",
+            "risk_free_yield"
+          ],
+          "portfolio": {
+            "valuation_date": "2026-09-30",
+            "currency": "HKD",
+            "assets": [
+              {
+                "asset_id": "SYN-BOND-01",
+                "asset_type": "bond",
+                "currency": "HKD",
+                "valuation_date": "2026-09-30",
+                "market_value": null,
+                "face_value": 90000000.0,
+                "coupon_rate": 0.04,
+                "yield_rate": 0.025,
+                "maturity_date": "2030-12-31",
+                "credit_spread_bps": 100.0
+              },
+              {
+                "asset_id": "SYN-BOND-02",
+                "asset_type": "bond",
+                "currency": "HKD",
+                "valuation_date": "2026-09-30",
+                "market_value": null,
+                "face_value": 50000000.0,
+                "coupon_rate": 0.045,
+                "yield_rate": 0.028,
+                "maturity_date": "2035-12-31",
+                "credit_spread_bps": 140.0
+              },
+              {
+                "asset_id": "SYN-CASH-01",
+                "asset_type": "cash",
+                "currency": "HKD",
+                "valuation_date": "2026-09-30",
+                "market_value": 15000000.0,
+                "face_value": null,
+                "coupon_rate": null,
+                "yield_rate": null,
+                "maturity_date": null,
+                "credit_spread_bps": null
+              },
+              {
+                "asset_id": "SYN-EQUITY-01",
+                "asset_type": "equity",
+                "currency": "HKD",
+                "valuation_date": "2026-09-30",
+                "market_value": 50000000.0,
+                "face_value": null,
+                "coupon_rate": null,
+                "yield_rate": null,
+                "maturity_date": null,
+                "credit_spread_bps": null
+              }
+            ]
+          }
+        },
+        "outputs": {
+          "active_factors": [
+            "credit_spread",
+            "holdings_and_equity_value",
+            "risk_free_yield"
+          ],
+          "aggregate_capital": 22615906.43257584,
+          "module_capital": {
+            "rate": 7112135.441287711,
+            "credit": 7112135.441287711,
+            "equity": 15000000.0
+          },
+          "market_value": 212236867.72468808,
+          "input_fingerprint": "33a00396a01192b4d14379dfd368791eae7805edea0c6149d7ae7b74af65ca34",
+          "validation_passed": true
+        },
+        "assumptions": [
+          "All positions use the common closing valuation date.",
+          "Matched bond face amount follows holdings; risk-free yield and spread follow independent factor flags.",
+          "Entry/exit bonds keep their sole observed quote; equity/cash value changes are joint holdings/market changes."
+        ],
+        "validation": {
+          "passed": true,
+          "checks": [
+            {
+              "name": "input_schema",
+              "passed": true,
+              "severity": "error",
+              "details": "Strict validated nonempty HKD portfolio; finite inputs and unique IDs."
+            },
+            {
+              "name": "finite_nonnegative_values",
+              "passed": true,
+              "severity": "error",
+              "details": "All scenario asset values are finite and nonnegative.",
+              "asset_id": "SYN-BOND-01"
+            },
+            {
+              "name": "bond_price_monotonicity",
+              "passed": true,
+              "severity": "error",
+              "details": "Positive bond cashflows decrease in value when yield/spread rises.",
+              "asset_id": "SYN-BOND-01"
+            },
+            {
+              "name": "key_rate_duration_reconciliation",
+              "passed": true,
+              "severity": "error",
+              "details": "The interpolated node weights partition unity; KRD sums to modified duration.",
+              "asset_id": "SYN-BOND-01"
+            },
+            {
+              "name": "finite_nonnegative_values",
+              "passed": true,
+              "severity": "error",
+              "details": "All scenario asset values are finite and nonnegative.",
+              "asset_id": "SYN-BOND-02"
+            },
+            {
+              "name": "bond_price_monotonicity",
+              "passed": true,
+              "severity": "error",
+              "details": "Positive bond cashflows decrease in value when yield/spread rises.",
+              "asset_id": "SYN-BOND-02"
+            },
+            {
+              "name": "key_rate_duration_reconciliation",
+              "passed": true,
+              "severity": "error",
+              "details": "The interpolated node weights partition unity; KRD sums to modified duration.",
+              "asset_id": "SYN-BOND-02"
+            },
+            {
+              "name": "finite_nonnegative_values",
+              "passed": true,
+              "severity": "error",
+              "details": "All scenario asset values are finite and nonnegative.",
+              "asset_id": "SYN-CASH-01"
+            },
+            {
+              "name": "finite_nonnegative_values",
+              "passed": true,
+              "severity": "error",
+              "details": "All scenario asset values are finite and nonnegative.",
+              "asset_id": "SYN-EQUITY-01"
+            },
+            {
+              "name": "capital_bounds",
+              "passed": true,
+              "severity": "error",
+              "details": "Illustrative correlation aggregation lies between the largest module and their sum."
+            },
+            {
+              "name": "aggregation_reconciliation",
+              "passed": true,
+              "severity": "error",
+              "details": "Capital reconciles independently to the Cholesky norm of the illustrative correlation matrix."
+            }
+          ]
+        },
+        "limitations": [
+          "Illustrative capital only \u2014 not HK RBC compliant",
+          "Assets only: no insurance liabilities, hedges, tax, operational risk, concentration or FX risk.",
+          "Annual fixed coupons; dirty bond PV; no accrued-interest or business-day adjustment; ACT/365.25 discount times.",
+          "Flat annual effective yields, additive yield/spread stresses, no default, recovery or migration model.",
+          "Interest rate stress +/-100 bp; credit spread stress +100 bp; equity stress -30%; internally chosen calibration.",
+          "The correlation matrix is illustrative and must not be represented as an HK RBC regulatory parameter.",
+          "Counterfactual model attribution is not a transaction ledger, investment return, or proof of economic causality.",
+          "Date ageing is applied first at opening bond quotes; its interactions with market/holding changes are allocated by that explicit ordering.",
+          "Equity/cash market-value changes jointly represent quantities, prices and flows; units and trade data are unavailable, so these causes cannot be separated.",
+          "Entry/exit bonds have only one observed endpoint quote; that quote is held fixed in all counterfactual states and their effect is assigned to holdings/composition.",
+          "Same-ID changes of asset type, coupon or maturity are blocked. Use distinct IDs for genuinely different instruments, with supporting trade evidence outside this prototype.",
+          "A flat scalar risk-free yield and scalar credit spread are independent input factors; no observed yield-curve, liquidity/default decomposition or official HK RBC calibration is implied."
+        ]
+      },
+      {
+        "function": "age_opening_positions",
+        "version": "1.0.0",
+        "engine_version": "1.0.0",
+        "inputs": {
+          "opening": {
+            "valuation_date": "2025-12-31",
+            "currency": "HKD",
+            "assets": [
+              {
+                "asset_id": "SYN-BOND-01",
+                "asset_type": "bond",
+                "currency": "HKD",
+                "valuation_date": "2025-12-31",
+                "market_value": null,
+                "face_value": 80000000.0,
+                "coupon_rate": 0.04,
+                "yield_rate": 0.03,
+                "maturity_date": "2030-12-31",
+                "credit_spread_bps": 80.0
+              },
+              {
+                "asset_id": "SYN-BOND-02",
+                "asset_type": "bond",
+                "currency": "HKD",
+                "valuation_date": "2025-12-31",
+                "market_value": null,
+                "face_value": 50000000.0,
+                "coupon_rate": 0.045,
+                "yield_rate": 0.032,
+                "maturity_date": "2035-12-31",
+                "credit_spread_bps": 120.0
+              },
+              {
+                "asset_id": "SYN-EQUITY-01",
+                "asset_type": "equity",
+                "currency": "HKD",
+                "valuation_date": "2025-12-31",
+                "market_value": 40000000.0,
+                "face_value": null,
+                "coupon_rate": null,
+                "yield_rate": null,
+                "maturity_date": null,
+                "credit_spread_bps": null
+              },
+              {
+                "asset_id": "SYN-CASH-01",
+                "asset_type": "cash",
+                "currency": "HKD",
+                "valuation_date": "2025-12-31",
+                "market_value": 20000000.0,
+                "face_value": null,
+                "coupon_rate": null,
+                "yield_rate": null,
+                "maturity_date": null,
+                "credit_spread_bps": null
+              }
+            ]
+          },
+          "closing_date": "2026-09-30",
+          "cashflow_policy": "block",
+          "cashflow_events": [],
+          "aged_portfolio": {
+            "valuation_date": "2026-09-30",
+            "currency": "HKD",
+            "assets": [
+              {
+                "asset_id": "SYN-BOND-01",
+                "asset_type": "bond",
+                "currency": "HKD",
+                "valuation_date": "2026-09-30",
+                "market_value": null,
+                "face_value": 80000000.0,
+                "coupon_rate": 0.04,
+                "yield_rate": 0.03,
+                "maturity_date": "2030-12-31",
+                "credit_spread_bps": 80.0
+              },
+              {
+                "asset_id": "SYN-BOND-02",
+                "asset_type": "bond",
+                "currency": "HKD",
+                "valuation_date": "2026-09-30",
+                "market_value": null,
+                "face_value": 50000000.0,
+                "coupon_rate": 0.045,
+                "yield_rate": 0.032,
+                "maturity_date": "2035-12-31",
+                "credit_spread_bps": 120.0
+              },
+              {
+                "asset_id": "SYN-EQUITY-01",
+                "asset_type": "equity",
+                "currency": "HKD",
+                "valuation_date": "2026-09-30",
+                "market_value": 40000000.0,
+                "face_value": null,
+                "coupon_rate": null,
+                "yield_rate": null,
+                "maturity_date": null,
+                "credit_spread_bps": null
+              },
+              {
+                "asset_id": "SYN-CASH-01",
+                "asset_type": "cash",
+                "currency": "HKD",
+                "valuation_date": "2026-09-30",
+                "market_value": 20000000.0,
+                "face_value": null,
+                "coupon_rate": null,
+                "yield_rate": null,
+                "maturity_date": null,
+                "credit_spread_bps": null
+              }
+            ]
+          }
+        },
+        "outputs": {
+          "opening_capital": 20224927.83934361,
+          "aged_opening_capital": 19300837.215342194,
+          "date_ageing": -924090.6240014173
+        },
+        "assumptions": [
+          "Opening bond yields/spreads are held fixed; annual maturity-anniversary cashflows follow the existing engine.",
+          "Equity/cash market values stay fixed during date ageing.",
+          "Only under explicit cash_no_interest policy, scheduled positive receipts are held as separate HKD cash without interest; this is a hypothetical settlement path."
+        ],
+        "validation": {
+          "passed": true,
+          "checks": [
+            {
+              "name": "aged_portfolio_validation",
+              "passed": true,
+              "severity": "error",
+              "details": "Opening holdings at closing date satisfy deterministic valuation checks."
+            }
+          ]
+        },
+        "limitations": [
+          "Illustrative capital only \u2014 not HK RBC compliant",
+          "Assets only: no insurance liabilities, hedges, tax, operational risk, concentration or FX risk.",
+          "Annual fixed coupons; dirty bond PV; no accrued-interest or business-day adjustment; ACT/365.25 discount times.",
+          "Flat annual effective yields, additive yield/spread stresses, no default, recovery or migration model.",
+          "Interest rate stress +/-100 bp; credit spread stress +100 bp; equity stress -30%; internally chosen calibration.",
+          "The correlation matrix is illustrative and must not be represented as an HK RBC regulatory parameter.",
+          "Counterfactual model attribution is not a transaction ledger, investment return, or proof of economic causality.",
+          "Date ageing is applied first at opening bond quotes; its interactions with market/holding changes are allocated by that explicit ordering.",
+          "Equity/cash market-value changes jointly represent quantities, prices and flows; units and trade data are unavailable, so these causes cannot be separated.",
+          "Entry/exit bonds have only one observed endpoint quote; that quote is held fixed in all counterfactual states and their effect is assigned to holdings/composition.",
+          "Same-ID changes of asset type, coupon or maturity are blocked. Use distinct IDs for genuinely different instruments, with supporting trade evidence outside this prototype.",
+          "A flat scalar risk-free yield and scalar credit spread are independent input factors; no observed yield-curve, liquidity/default decomposition or official HK RBC calibration is implied."
+        ]
+      },
+      {
+        "function": "attribute_capital_movement",
+        "version": "1.0.0",
+        "engine_version": "1.0.0",
+        "inputs": {
+          "opening": {
+            "valuation_date": "2025-12-31",
+            "currency": "HKD",
+            "assets": [
+              {
+                "asset_id": "SYN-BOND-01",
+                "asset_type": "bond",
+                "currency": "HKD",
+                "valuation_date": "2025-12-31",
+                "market_value": null,
+                "face_value": 80000000.0,
+                "coupon_rate": 0.04,
+                "yield_rate": 0.03,
+                "maturity_date": "2030-12-31",
+                "credit_spread_bps": 80.0
+              },
+              {
+                "asset_id": "SYN-BOND-02",
+                "asset_type": "bond",
+                "currency": "HKD",
+                "valuation_date": "2025-12-31",
+                "market_value": null,
+                "face_value": 50000000.0,
+                "coupon_rate": 0.045,
+                "yield_rate": 0.032,
+                "maturity_date": "2035-12-31",
+                "credit_spread_bps": 120.0
+              },
+              {
+                "asset_id": "SYN-EQUITY-01",
+                "asset_type": "equity",
+                "currency": "HKD",
+                "valuation_date": "2025-12-31",
+                "market_value": 40000000.0,
+                "face_value": null,
+                "coupon_rate": null,
+                "yield_rate": null,
+                "maturity_date": null,
+                "credit_spread_bps": null
+              },
+              {
+                "asset_id": "SYN-CASH-01",
+                "asset_type": "cash",
+                "currency": "HKD",
+                "valuation_date": "2025-12-31",
+                "market_value": 20000000.0,
+                "face_value": null,
+                "coupon_rate": null,
+                "yield_rate": null,
+                "maturity_date": null,
+                "credit_spread_bps": null
+              }
+            ]
+          },
+          "closing": {
+            "valuation_date": "2026-09-30",
+            "currency": "HKD",
+            "assets": [
+              {
+                "asset_id": "SYN-BOND-01",
+                "asset_type": "bond",
+                "currency": "HKD",
+                "valuation_date": "2026-09-30",
+                "market_value": null,
+                "face_value": 90000000.0,
+                "coupon_rate": 0.04,
+                "yield_rate": 0.025,
+                "maturity_date": "2030-12-31",
+                "credit_spread_bps": 100.0
+              },
+              {
+                "asset_id": "SYN-BOND-02",
+                "asset_type": "bond",
+                "currency": "HKD",
+                "valuation_date": "2026-09-30",
+                "market_value": null,
+                "face_value": 50000000.0,
+                "coupon_rate": 0.045,
+                "yield_rate": 0.028,
+                "maturity_date": "2035-12-31",
+                "credit_spread_bps": 140.0
+              },
+              {
+                "asset_id": "SYN-EQUITY-01",
+                "asset_type": "equity",
+                "currency": "HKD",
+                "valuation_date": "2026-09-30",
+                "market_value": 50000000.0,
+                "face_value": null,
+                "coupon_rate": null,
+                "yield_rate": null,
+                "maturity_date": null,
+                "credit_spread_bps": null
+              },
+              {
+                "asset_id": "SYN-CASH-01",
+                "asset_type": "cash",
+                "currency": "HKD",
+                "valuation_date": "2026-09-30",
+                "market_value": 15000000.0,
+                "face_value": null,
+                "coupon_rate": null,
+                "yield_rate": null,
+                "maturity_date": null,
+                "credit_spread_bps": null
+              }
+            ]
+          },
+          "cashflow_policy": "block",
+          "factor_order": [
+            "holdings_and_equity_value",
+            "risk_free_yield",
+            "credit_spread"
+          ]
+        },
+        "outputs": {
+          "total_movement": 2390978.5932322294,
+          "date_ageing": -924090.6240014173,
+          "same_date_movement": 3315069.2172336467,
+          "factor_attribution": {
+            "holdings_and_equity_value": 3165983.6703140046,
+            "risk_free_yield": 277386.9190710485,
+            "credit_spread": -128301.37215140648
+          },
+          "explained_movement": 2390978.5932322294,
+          "unexplained_residual": 0.0
+        },
+        "assumptions": [
+          "Date ageing is a sequential first leg, followed by exact Shapley at one date.",
+          "No historical transaction or investment-return causality is inferred."
+        ],
+        "validation": {
+          "passed": true,
+          "checks": [
+            {
+              "name": "original_comparison_validation",
+              "passed": true,
+              "severity": "error",
+              "details": "Original compare_portfolios validation, including unexpected-movement review, must pass."
+            },
+            {
+              "name": "instrument_identity",
+              "passed": true,
+              "severity": "error",
+              "details": "Matched IDs must keep asset type, currency, bond coupon and maturity."
+            },
+            {
+              "name": "cashflow_bridge_supported",
+              "passed": true,
+              "severity": "error",
+              "details": "Default block policy rejects positive coupon or maturity events in (opening date, closing date]; explicit hypothetical cash settlement is required."
+            },
+            {
+              "name": "aged_portfolio_validation",
+              "passed": true,
+              "severity": "error",
+              "details": "Opening holdings at closing date satisfy deterministic valuation checks."
+            },
+            {
+              "name": "all_hybrid_validations",
+              "passed": true,
+              "severity": "error",
+              "details": "All eight required counterfactual portfolios pass deterministic validation."
+            },
+            {
+              "name": "hybrid_endpoints",
+              "passed": true,
+              "severity": "error",
+              "details": "Empty/full factor coalitions reproduce aged-opening/closing capital within HKD0.01."
+            },
+            {
+              "name": "same_date_shapley_reconciliation",
+              "passed": true,
+              "severity": "error",
+              "details": "Three factor attributions sum to the same-date diversified capital change within HKD0.01."
+            },
+            {
+              "name": "every_permutation_reconciliation",
+              "passed": true,
+              "severity": "error",
+              "details": "Each of six ordered bridges telescopes to the same-date change within HKD0.01."
+            },
+            {
+              "name": "full_bridge_reconciliation",
+              "passed": true,
+              "severity": "error",
+              "details": "Date ageing plus exact factor attribution reconciles the original nonlinear aggregate capital movement within HKD0.01."
+            }
+          ]
+        },
+        "limitations": [
+          "Illustrative capital only \u2014 not HK RBC compliant",
+          "Assets only: no insurance liabilities, hedges, tax, operational risk, concentration or FX risk.",
+          "Annual fixed coupons; dirty bond PV; no accrued-interest or business-day adjustment; ACT/365.25 discount times.",
+          "Flat annual effective yields, additive yield/spread stresses, no default, recovery or migration model.",
+          "Interest rate stress +/-100 bp; credit spread stress +100 bp; equity stress -30%; internally chosen calibration.",
+          "The correlation matrix is illustrative and must not be represented as an HK RBC regulatory parameter.",
+          "Counterfactual model attribution is not a transaction ledger, investment return, or proof of economic causality.",
+          "Date ageing is applied first at opening bond quotes; its interactions with market/holding changes are allocated by that explicit ordering.",
+          "Equity/cash market-value changes jointly represent quantities, prices and flows; units and trade data are unavailable, so these causes cannot be separated.",
+          "Entry/exit bonds have only one observed endpoint quote; that quote is held fixed in all counterfactual states and their effect is assigned to holdings/composition.",
+          "Same-ID changes of asset type, coupon or maturity are blocked. Use distinct IDs for genuinely different instruments, with supporting trade evidence outside this prototype.",
+          "A flat scalar risk-free yield and scalar credit spread are independent input factors; no observed yield-curve, liquidity/default decomposition or official HK RBC calibration is implied."
+        ]
+      }
+    ],
+    "limitations": [
+      "Illustrative capital only \u2014 not HK RBC compliant",
+      "Assets only: no insurance liabilities, hedges, tax, operational risk, concentration or FX risk.",
+      "Annual fixed coupons; dirty bond PV; no accrued-interest or business-day adjustment; ACT/365.25 discount times.",
+      "Flat annual effective yields, additive yield/spread stresses, no default, recovery or migration model.",
+      "Interest rate stress +/-100 bp; credit spread stress +100 bp; equity stress -30%; internally chosen calibration.",
+      "The correlation matrix is illustrative and must not be represented as an HK RBC regulatory parameter.",
+      "Counterfactual model attribution is not a transaction ledger, investment return, or proof of economic causality.",
+      "Date ageing is applied first at opening bond quotes; its interactions with market/holding changes are allocated by that explicit ordering.",
+      "Equity/cash market-value changes jointly represent quantities, prices and flows; units and trade data are unavailable, so these causes cannot be separated.",
+      "Entry/exit bonds have only one observed endpoint quote; that quote is held fixed in all counterfactual states and their effect is assigned to holdings/composition.",
+      "Same-ID changes of asset type, coupon or maturity are blocked. Use distinct IDs for genuinely different instruments, with supporting trade evidence outside this prototype.",
+      "A flat scalar risk-free yield and scalar credit spread are independent input factors; no observed yield-curve, liquidity/default decomposition or official HK RBC calibration is implied."
+    ],
+    "input_fingerprints": {
+      "opening": "f7991f0d59e7698bdec8c78a2ad6e0f67305cf618ef25011b521174c02d27388",
+      "closing": "27558d6b9d7e188e6a28f8740617c82c9ff3bb2406d1e0db52585acb4d905f67"
+    },
+    "composition_conflicts": [],
+    "aged_opening_capital": 19300837.215342194,
+    "aged_input_fingerprint": "02e0eef05c98b13af1c8014c2a979540b562a0716960cfe6fb07b98d88a4bd7a",
+    "validation": {
+      "passed": true,
+      "checks": [
+        {
+          "name": "original_comparison_validation",
+          "passed": true,
+          "severity": "error",
+          "details": "Original compare_portfolios validation, including unexpected-movement review, must pass."
+        },
+        {
+          "name": "instrument_identity",
+          "passed": true,
+          "severity": "error",
+          "details": "Matched IDs must keep asset type, currency, bond coupon and maturity."
+        },
+        {
+          "name": "cashflow_bridge_supported",
+          "passed": true,
+          "severity": "error",
+          "details": "Default block policy rejects positive coupon or maturity events in (opening date, closing date]; explicit hypothetical cash settlement is required."
+        },
+        {
+          "name": "aged_portfolio_validation",
+          "passed": true,
+          "severity": "error",
+          "details": "Opening holdings at closing date satisfy deterministic valuation checks."
+        },
+        {
+          "name": "all_hybrid_validations",
+          "passed": true,
+          "severity": "error",
+          "details": "All eight required counterfactual portfolios pass deterministic validation."
+        },
+        {
+          "name": "hybrid_endpoints",
+          "passed": true,
+          "severity": "error",
+          "details": "Empty/full factor coalitions reproduce aged-opening/closing capital within HKD0.01."
+        },
+        {
+          "name": "same_date_shapley_reconciliation",
+          "passed": true,
+          "severity": "error",
+          "details": "Three factor attributions sum to the same-date diversified capital change within HKD0.01."
+        },
+        {
+          "name": "every_permutation_reconciliation",
+          "passed": true,
+          "severity": "error",
+          "details": "Each of six ordered bridges telescopes to the same-date change within HKD0.01."
+        },
+        {
+          "name": "full_bridge_reconciliation",
+          "passed": true,
+          "severity": "error",
+          "details": "Date ageing plus exact factor attribution reconciles the original nonlinear aggregate capital movement within HKD0.01."
+        }
+      ]
+    },
+    "report_id": "attribution-23963dcbb5846a0e"
+  },
+  "analysis_version": "0.2.0",
+  "analysis_id": "analysis-98631ac490f8b6e8",
+  "source_references": [
+    {
+      "reference": "CAP41R-R5-1@2024-05-03-baseline",
+      "score": 7.347567,
+      "retrieval_method": "bm25+mmr",
+      "document_id": "CAP41R-R5-1",
+      "version": "2024-05-03-baseline",
+      "title": "Insurance (Valuation and Capital) Rules, L.N. 62 of 2024 \u2014 Capital adequacy thresholds",
+      "section": "Part 2, rule 5(1), Gazette page B647",
+      "url": "https://www.ia.org.hk/en/legislative_framework/overview/files/es22024281862.pdf",
+      "published_at": "2024-05-03",
+      "reviewed_at": "2026-10-24",
+      "effective_from": "2024-07-01",
+      "effective_to": null,
+      "status": "verified_baseline",
+      "classification": "public",
+      "kind": "regulatory",
+      "text": "Subject to rule 5(2), an applicable insurer must maintain capital base at least equal to each of its prescribed capital amount, minimum capital amount and HK$20 million. Capital base follows Part 3; PCA follows Part 5.",
+      "provenance": "Official-domain text surfaced by web search index; full PDF retrieval unavailable in this session.",
+      "redistribution": "Short original paraphrase with attribution; no bulk source text redistributed. Source-specific reuse permission has not been verified; no open licence is asserted.",
+      "current_consolidated_verified": false,
+      "source_type": "gazetted_rules",
+      "limitations": "Historical baseline only; requires insurer applicability, valuation date, variations/relaxations and current official text. Does not establish a complete regulatory calculation.",
+      "source_sha256": null,
+      "source_page": null,
+      "source_checked_at": null,
+      "claim_tags": []
+    },
+    {
+      "reference": "CAP41R-R5-3@2024-05-03-baseline",
+      "score": 5.766932,
+      "retrieval_method": "bm25+mmr",
+      "document_id": "CAP41R-R5-3",
+      "version": "2024-05-03-baseline",
+      "title": "Insurance (Valuation and Capital) Rules, L.N. 62 of 2024 \u2014 Minimum capital amount baseline",
+      "section": "Part 2, rule 5(3), Gazette page B647",
+      "url": "https://www.ia.org.hk/en/legislative_framework/overview/files/es22024281862.pdf",
+      "published_at": "2024-05-03",
+      "reviewed_at": "2026-10-24",
+      "effective_from": "2024-07-01",
+      "effective_to": null,
+      "status": "verified_baseline",
+      "classification": "public",
+      "kind": "regulatory",
+      "text": "MCA is 50% of PCA unless the IA determines another amount through the variation or relaxation mechanism in rule 5(2).",
+      "provenance": "Official-domain text surfaced by web search index; full PDF retrieval unavailable in this session.",
+      "redistribution": "Short original paraphrase with attribution; no bulk source text redistributed. Source-specific reuse permission has not been verified; no open licence is asserted.",
+      "current_consolidated_verified": false,
+      "source_type": "gazetted_rules",
+      "limitations": "Do not apply the 50% baseline if an insurer-specific variation or relaxation applies.",
+      "source_sha256": null,
+      "source_page": null,
+      "source_checked_at": null,
+      "claim_tags": []
+    },
+    {
+      "reference": "HKRBC-DISCLOSURE-CAPITAL@2025-08-08-baseline",
+      "score": 5.621892,
+      "retrieval_method": "bm25+mmr",
+      "document_id": "HKRBC-DISCLOSURE-CAPITAL",
+      "version": "2025-08-08-baseline",
+      "title": "Public Disclosure Requirements for the First Financial Year Adopting RBC Regime, Annex 1 \u2014 Capital composition disclosure fields",
+      "section": "Section 4, Capital adequacy, paragraphs (a)\u2013(b), printed pages 4\u20135",
+      "url": "https://www.ia.org.hk/en/legislative_framework/circulars/reg_matters/files/Circular_20250808_Annex_1.pdf",
+      "published_at": "2025-08-08",
+      "reviewed_at": "2026-10-24",
+      "effective_from": null,
+      "effective_to": null,
+      "status": "verified_baseline",
+      "classification": "public",
+      "kind": "regulatory",
+      "text": "The template separates PCA and risk capital amounts from capital base. Its capital-base table lists Unlimited Tier 1, Limited Tier 1 and Tier 2 capital.",
+      "provenance": "Official-domain text surfaced by web search index; full PDF retrieval unavailable in this session.",
+      "redistribution": "Short original paraphrase with attribution; no bulk source text redistributed. Source-specific reuse permission has not been verified; no open licence is asserted.",
+      "current_consolidated_verified": false,
+      "source_type": "regulatory_circular_annex",
+      "limitations": "A disclosure template establishes fields, not capital eligibility, deductions, limits or calculation formulas. Numeric tier caps are omitted because operative rule 7 was not independently verified from primary text in this session.",
+      "source_sha256": null,
+      "source_page": null,
+      "source_checked_at": null,
+      "claim_tags": []
+    }
+  ]
 }

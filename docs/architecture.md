@@ -11,7 +11,7 @@ flowchart TD
     Calc --> Validate[Independent checks and Shapley reconciliation]
     Validate --> Report[Owned JSON / Markdown reports]
     Service --> Policy[Role classification filter in SQL]
-    Policy --> Index[Local feature-hash vectors / exact NumPy cosine search]
+    Policy --> Index[BM25 fields / optional local dense vectors / hybrid fusion]
     Index --> Post[Second authorization filter / section references]
     Post --> Answer[Evidence-only deterministic answer / uncertainty]
     Post --> Route[Optional model router]
@@ -26,9 +26,11 @@ flowchart TD
 
 `security.py` authenticates three demonstration users and defines server permissions. `service.py` is the application boundary: every exposed operation resolves a signed token and checks permissions. `store.py` persists immutable document versions, owned report payloads and allowlisted audit metadata. Portfolio inputs are never routed to LLMs.
 
-`retrieval.py` receives only authorized document payloads from SQLite; it embeds those locally and applies a lexical overlap guard, cosine threshold and second classification check before returning results. The index is intentionally a small exact in-memory vector index backed by SQLite document metadata. It avoids a second database service, binary FAISS dependency, model downloads and paid inference. It is a deterministic feature-hash embedding, **not a trained semantic model**; ranking quality is limited. Chroma/FAISS or local semantic encoders are future replaceable adapters, not implemented claims.
+`retrieval.py` receives only authorized document payloads from SQLite and applies an independent classification check before all ranker/encoder work. Default field-weighted BM25 supports Chinese bigrams, curated bilingual aliases and precise rule identifiers. Diversity reranking reduces redundant sections. The legacy hash method remains a comparison baseline. Optional local SentenceTransformers safetensors provide real semantic vectors; `hybrid` combines lexical and dense ranks using reciprocal-rank fusion. Semantic configuration fails closed when files/dependencies/integrity checks fail. No document/query vector cache is shared across roles or persisted. The small exact in-memory corpus needs no FAISS/Chroma service. Recall, answer-scope and authorization metrics are evaluated separately; relevance is not legal entailment.
 
 Each ingested record represents one named source section. Oversized records split within that section; citation metadata remains attached. Batches are prevalidated and inserted atomically. Changed content cannot overwrite an existing `(document_id, version)`. Archived versions remain inspectable but are excluded from ordinary retrieval. A SHA-256 payload check detects accidental document corruption; it does not defend against an administrator able to rewrite the database.
+
+Retirement decisions live in a separate append-only table, preserving the exact immutable source payload. SQL excludes retired versions before deserialization. A curator may name an existing, nonquarantined, nonsuperseded successor; decisions are immutable and idempotent even when the successor is later retired. Protected successor IDs are omitted from lower-role history. Existing databases gain the retirement table without rewriting old payload/checksums, and newly added optional provenance defaults preserve legacy serialization.
 
 The offline answer renderer attaches only retrieved reference IDs, source URLs, dates, sections and version limitations. It never asks a model to invent references. Current-law and regulatory-calibration questions return explicit insufficient-evidence status when the seed corpus cannot establish them. Optional model prose is displayed separately as unverified commentary. No model can choose tools or calculate authoritative figures.
 

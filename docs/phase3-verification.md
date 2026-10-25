@@ -7,6 +7,8 @@ Executed on 25 October 2026. This release adds an expanded-corpus retrieval stud
 | Check | Observed result |
 |---|---|
 | Full local pytest suite | **476 passed in 24.46s** on the final source snapshot |
+| Clean GitHub Linux / Python 3.11.17 | **476 passed in 33.55s**, followed by every workflow step passing |
+| Clean GitHub Linux / Python 3.13.16 | **476 passed in 24.25s**, followed by every workflow step passing |
 | Signed-service adversarial runner | **36/36**, zero network attempts, one intentional in-memory authorized transport control |
 | Original 44-case regression | BM25 Recall@3 **0.956**, MRR@3 **0.951**; zero authored-negative false positives/unauthorized hits |
 | Expanded full-corpus study | **64 cases**, 25 source records, all four rankers measured with a real local multilingual encoder |
@@ -66,4 +68,4 @@ The [actual evidence-gap screenshot](../reports/evidence-gap-preview.jpg) shows 
 
 The application remains an asset-only, educational portfolio prototype. Present consolidated law, complete statutory capital, enterprise IAM/tenant isolation, full DLP, sentence-level legal entailment, real generative provider behavior and the formal same-LLM A/B/C experiment remain unverified. A/B are still `not_run`; local encoders are retrieval models. No public app deployment, upstream repository modification or source-PDF redistribution occurred.
 
-The extended GitHub workflow includes preflight, the authored adversarial runner and lexical expanded-corpus checks. Observed clean-environment results are recorded after that workflow finishes; its existence alone does not establish a passing run or branch protection.
+The [complete extended CI run](https://github.com/woming98/hkrbc-actuarial-ai-agent/actions/runs/40155259958) passed both clean Linux jobs at application/test/workflow commit `166c1a1758608d0a44f5827446e6a9ab17f3efa3`. Each ran preflight, all 476 tests, provenance checks, 8/8 offline fixtures, original/expanded lexical diagnostics, 36/36 signed-service probes and the synthetic demonstration. Artifact upload succeeded with only four fresh evaluation JSON outputs; local semantic weights/results, source caches and databases were excluded. Semantic inference was measured locally, not in CI. This documentation-only follow-up records the observed result without rerunning unchanged application/tests. No branch protection or universal dependency/platform compatibility is asserted.

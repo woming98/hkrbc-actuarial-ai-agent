@@ -7,6 +7,8 @@ Version **0.2.0** strengthens the first working prototype with inspected source 
 | Check | Observed result |
 |---|---|
 | `python -m pytest -q` | **374 passed in 14.76s** on the final code |
+| Clean GitHub Linux / Python 3.11.17 | **374 passed in 16.81s**; provenance, 8/8 offline fixtures, lexical retrieval diagnostics and demo passed |
+| Clean GitHub Linux / Python 3.13.16 | **374 passed in 19.81s**; the same subsequent checks passed |
 | `python scripts/verify_source_register.py --require-cache` | 12 supplementary records; both registered primary PDFs matched cached file sizes/SHA; current consolidated verification remains false |
 | `python evaluation/run.py` | Offline C fixtures **8/8**; A and B **not_run** |
 | English and multilingual `evaluation/retrieval_eval.py --model-path ...` | Both real local encoders loaded on CPU; all four rankers measured on the same 44 diagnostic cases; zero unauthorized hits |
@@ -20,7 +22,9 @@ Tests run without model transport. New numerical checks use 50-digit Decimal ref
 
 The environment remains the Mac/Anaconda-inheriting Python 3.13.12 environment described in the initial record. It is not a clean install or a cross-platform test. Optional PyArrow is still unavailable due to the host's native-library mismatch; escaped HTML tables/charts were visually inspected. No global package repair was attempted.
 
-The [initial clean Linux CI run](https://github.com/woming98/hkrbc-actuarial-ai-agent/actions/runs/40153320318) installed successfully but failed 7 tests on each Python version, with 367 passing. Streamlit 1.66.1 removed the AppTest internal `filtered_state` attribute used by those assertions. Tests now use public `app.session_state[key]` reads and catch only `KeyError` for absence; all positive/negative assertions are retained, with no skips or old-version pin. The updated UI/integration tests also passed on local Streamlit 1.45.1 (19/19). Subsequent CI results determine clean-environment compatibility.
+The [initial clean Linux CI run](https://github.com/woming98/hkrbc-actuarial-ai-agent/actions/runs/40153320318) installed successfully but failed 7 tests on each Python version, with 367 passing. Streamlit 1.66.1 removed the AppTest internal `filtered_state` attribute used by those assertions. Tests now use public `app.session_state[key]` reads and catch only `KeyError` for absence; all positive/negative assertions are retained, with no skips or old-version pin. The updated UI/integration tests also passed on local Streamlit 1.45.1 (19/19).
+
+The [subsequent complete CI run](https://github.com/woming98/hkrbc-actuarial-ai-agent/actions/runs/40153525240) passed both clean Linux jobs at application/test commit `384d73233d435767afc4acf02cbd074aa9e4312a`, including every workflow step and evaluation artifact upload. Both jobs installed Streamlit 1.66.1, pandas 2.3.3, Pydantic 2.14.1, PyArrow 26.0.0 and pytest 8.4.2. NumPy was 2.4.6 on Python 3.11 and 2.5.4 on Python 3.13. This establishes those observed combinations, not a locked environment or universal compatibility. Semantic weights/provisioning and generative providers were not run in CI. This final documentation-only follow-up records the observed result without rerunning unchanged application/tests.
 
 ## Source evidence
 

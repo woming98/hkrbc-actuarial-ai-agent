@@ -96,9 +96,9 @@ python scripts/verify_source_register.py --require-cache
 
 The second command intentionally fails when the private cache is absent. Exclude `runtime/source-cache/` from release archives: it contains research-only source PDFs, snapshots and rendered pages without a public-redistribution licence being asserted. A `.gitignore` rule alone does not control arbitrary archive tools. See [source verification and rights limits](source-verification-2026-10-25.md).
 
-## Local checks and inactive CI template
+## Local checks and GitHub Actions
 
-Run the tests, provenance verifier and evaluation commands locally before release. [docs/ci/verify.yml](ci/verify.yml) is an **inactive GitHub Actions template**, not an installed or observed CI workflow. It uses BM25 and offline model settings and does not provision encoder weights. Its dependency-install step still needs package access. No active CI result, workflow execution or branch protection is claimed by its presence in the documentation directory.
+Run the tests, provenance verifier and evaluation commands locally before release. The installed [GitHub Actions workflow](../.github/workflows/verify.yml) performs a clean package install on Ubuntu with Python 3.11 and 3.13, then runs tests, provenance metadata checks, deterministic fixtures, lexical retrieval diagnostics and the synthetic demonstration. It uses BM25 and offline model settings without provisioning encoder weights. Dependency installation still needs package access. Only evaluation JSON files are uploaded as CI artifacts; private source caches, model weights and local audit databases are excluded. See [observed verification results](phase2-verification.md); a workflow's presence alone does not mean it passed or protects a branch.
 
 ## Container example
 

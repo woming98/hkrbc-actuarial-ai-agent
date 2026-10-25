@@ -20,6 +20,8 @@ Tests run without model transport. New numerical checks use 50-digit Decimal ref
 
 The environment remains the Mac/Anaconda-inheriting Python 3.13.12 environment described in the initial record. It is not a clean install or a cross-platform test. Optional PyArrow is still unavailable due to the host's native-library mismatch; escaped HTML tables/charts were visually inspected. No global package repair was attempted.
 
+The [initial clean Linux CI run](https://github.com/woming98/hkrbc-actuarial-ai-agent/actions/runs/40153320318) installed successfully but failed 7 tests on each Python version, with 367 passing. Streamlit 1.66.1 removed the AppTest internal `filtered_state` attribute used by those assertions. Tests now use public `app.session_state[key]` reads and catch only `KeyError` for absence; all positive/negative assertions are retained, with no skips or old-version pin. The updated UI/integration tests also passed on local Streamlit 1.45.1 (19/19). Subsequent CI results determine clean-environment compatibility.
+
 ## Source evidence
 
 The unchanged original seed is accompanied by **12 short original paraphrases** checked against actual official LegCo-hosted L.N. 62/2024 and L.N. 58/2026 PDFs. The supplement records file SHA-256, one-based PDF page, printed provision, verification date, narrow claim tags and historical/future scope. The [verification record](source-verification-2026-10-25.md) distinguishes actual PDF downloads from 403 responses, configuration HTML and misleading HTML redirects.
@@ -68,7 +70,7 @@ See the regenerated [Markdown report](../reports/example-actuarial-report.md), [
 - Real generative Ollama/OpenAI integration and formal same-LLM A/B/C evaluation remain unrun; no paid API requests were made. Encoder measurements are not LLM evaluations.
 - Full current consolidated law, exhaustive amendments, precise prescribed calibrations and insurer-specific decisions remain unverified. Capital is illustrative and asset-only.
 - Independent held-out retrieval questions, broader distractor corpora, sentence-level entailment, production-scale indexing and truncation-aware semantic chunking remain necessary for broader claims.
-- Clean installs, Docker, production IAM/tenant isolation, encrypted persistence, immutable external audit and enterprise DLP remain outside the verified scope.
-- The GitHub Actions file under `docs/ci/verify.yml` is initially an inactive template. Only an installed workflow and observed run can establish CI execution; deployment documentation records its final activation state.
+- Docker, production IAM/tenant isolation, encrypted persistence, immutable external audit and enterprise DLP remain outside the verified scope. Clean Linux installs are covered only by the observed CI matrix, not every dependency/platform combination.
+- The installed `.github/workflows/verify.yml` runs offline checks on Python 3.11 and 3.13. It does not run model provisioning, paid LLMs or semantic retrieval with actual weights, and it does not establish branch protection.
 
 No public application hosting, source-PDF redistribution or upstream repository modification was performed.

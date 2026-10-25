@@ -1,5 +1,7 @@
 # HK RBC Actuarial Analysis & Validation Agent
 
+[![Offline verification](https://github.com/woming98/hkrbc-actuarial-ai-agent/actions/workflows/verify.yml/badge.svg)](https://github.com/woming98/hkrbc-actuarial-ai-agent/actions/workflows/verify.yml)
+
 A local-first, working Streamlit prototype for actuarial consulting demonstrations: versioned regulatory evidence, deterministic asset analysis, diversification-aware capital movements, validation and controlled data access.
 
 Version **0.2.0** adds directly inspected official-PDF evidence, measured bilingual retrieval, optional local semantic encoders, an explicit date/holdings/yield/spread bridge, and immutable document retirement. It remains a research prototype. See [the second-round verification record](docs/phase2-verification.md) for measured results and outstanding work.

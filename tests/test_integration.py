@@ -18,6 +18,15 @@ from hkrbc_agent.store import Document
 PROJECT = Path(__file__).resolve().parents[1]
 
 
+def has_session_key(app, key):
+    """Use public item access without relying on Streamlit's internal storage."""
+    try:
+        app.session_state[key]
+    except KeyError:
+        return False
+    return True
+
+
 @pytest.fixture
 def service_and_sessions(tmp_path, monkeypatch):
     for name in DEMO_PASSWORDS:
@@ -196,9 +205,9 @@ def test_ui_invalid_session_clears_prior_identity_results(tmp_path, monkeypatch)
     app.session_state["opening_bytes"] = b"prior identity upload"
     app.run()
     assert not app.exception
-    assert "session_token" not in app.session_state.filtered_state
-    assert "analysis_result" not in app.session_state.filtered_state
-    assert "query_result" not in app.session_state.filtered_state
-    assert "opening_bytes" not in app.session_state.filtered_state
+    assert not has_session_key(app, "session_token")
+    assert not has_session_key(app, "analysis_result")
+    assert not has_session_key(app, "query_result")
+    assert not has_session_key(app, "opening_bytes")
     assert not any(radio.label == "Workspace" for radio in app.radio)
     assert any("Session expired" in warning.value for warning in app.warning)

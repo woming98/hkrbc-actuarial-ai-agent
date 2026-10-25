@@ -4,7 +4,7 @@
 
 A local-first, working Streamlit prototype for actuarial consulting demonstrations: versioned regulatory evidence, deterministic asset analysis, diversification-aware capital movements, validation and controlled data access.
 
-Version **0.2.0** adds directly inspected official-PDF evidence, measured bilingual retrieval, optional local semantic encoders, an explicit date/holdings/yield/spread bridge, and immutable document retirement. It remains a research prototype. See [the second-round verification record](docs/phase2-verification.md) for measured results and outstanding work.
+Version **0.3.0** adds a 64-question expanded-corpus diagnostic, 36 adversarial service probes, compound-question and legal-identifier fixes, guided examples, and a read-only demonstration preflight. See [the current verification record](docs/phase3-verification.md) and [the interview walkthrough](docs/interview-demo.md). The earlier [0.2.0 verification](docs/phase2-verification.md) preserves the inspected-PDF, local-encoder and factor-bridge work.
 
 **Synthetic data only. Educational capital approximations. Not a certified compliance solution or a production-ready system.** No claim of regulatory approval, complete HK RBC implementation or measured advantage over a general LLM.
 
@@ -16,6 +16,7 @@ Version **0.2.0** adds directly inspected official-PDF evidence, measured biling
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install '.[dev]'
+python scripts/preflight.py
 python -m pytest -q
 python scripts/run_demo.py
 python -m streamlit run app.py --server.address 127.0.0.1 --server.port 8501 --browser.gatherUsageStats false
@@ -41,10 +42,10 @@ The intended demonstration is for actuarial consultants, insurance risk professi
 
 ## Demonstration workflow
 
-1. Sign in as `analyst`. In **Regulatory Assistant**, ask “When did the RBC regime commence?” or “HK RBC 何時實施？” Inspect official URLs, sections, publication/review dates and version limitations. Ask for a current regulatory correlation matrix: the result explicitly reports insufficient evidence.
+1. Sign in as `analyst`. In **Regulatory Assistant**, open **Example questions**, choose a question and select **Use example** to fill it without running it. Search a historical tier-cap question, then a current-law or compound formula request. Inspect source locators and the specific missing coverage. Optional generation is suppressed when scope is insufficient.
 2. Open **Capital Analysis** and load the bundled synthetic data. Run the opening/closing comparison. Inspect module stresses, Shapley attribution, diversification and residual. Run seeded illustrative scenarios and download a Markdown report plus its detailed JSON calculation records.
 3. Open **Validation Dashboard**. Validation is deterministic and separate from commentary. Upload `data/portfolios/malformed.csv` to trigger an input failure; a material unexpected capital movement also blocks completion. A failed result cannot be presented as complete.
-   The `coupon_crossing_opening.csv` / `coupon_crossing_closing.csv` pair demonstrates a subtler failure: risk-module arithmetic reconciles, but missing coupon settlement prevents completion of the factor bridge.
+   Under **Validation example**, select **Load missing-settlement example** and run it. Its coupon-crossing pair demonstrates a subtler failure: risk-module arithmetic reconciles, but missing coupon settlement prevents completion of the factor bridge. Loading it clears previous report/results.
 4. Open **Governance & Audit**. The analyst sees public documents and their own audit. Sign out and use `reviewer` to inspect internal synthetic methodology; only `admin` can see the restricted synthetic marker and ingest new document versions. Raw prompts are absent from audit.
 
 The sample portfolio produces approximately:
@@ -116,7 +117,9 @@ The evaluation manifest includes identical case definitions, independently speci
 
 A separate 44-question developer diagnostic set compares hash, BM25, dense and hybrid ranking on the same versioned corpus. It reports recall/MRR, English/Chinese groups, unsupported/current-law abstention, unauthorized retrieval and the joint presence of a relevant section with an answerable status. This is a small diagnostic set used during development, not an independent held-out or LLM benchmark. Model revisions, corpus/case hashes and raw per-question results are recorded. See [retrieval evaluation](docs/retrieval-evaluation.md).
 
-Unit, integration, security and Streamlit AppTest tests can run without paid calls. The [second-round verification](docs/phase2-verification.md) and [initial verification snapshot](docs/verification.md) record the tested environment, actual commands/results and untested integrations.
+The new **64-question** diagnostic covers the full 25-record corpus with independently authored development labels frozen before candidate runs. It adds joint source-component checks and keeps failures visible; its scores must not be compared directly with the different 44-case corpus. The separate **36-case adversarial runner** checks signed-service privacy, injection, routing, lifecycle and report boundaries with no network access. See [expanded-corpus results](docs/phase3-verification.md), [labeling limits](docs/expanded-corpus-labeling.md) and [adversarial diagnostics](docs/adversarial-evaluation.md).
+
+Unit, integration, security and Streamlit AppTest tests can run without paid calls. The [current verification](docs/phase3-verification.md), [second-round verification](docs/phase2-verification.md) and [initial snapshot](docs/verification.md) record actual executions and untested integrations.
 
 [View the actual local interface screenshot](reports/app-preview.jpg).
 

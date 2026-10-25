@@ -1,0 +1,2161 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-10-25T02:33:59.419194+00:00",
+  "purpose": "Fixed developer-authored signed-service diagnostic probes; not a security certificate or held-out adversarial benchmark.",
+  "case_manifest_sha256": "3dcd77b72eb5b4edc9a9214714ededeb2f72ef324156aac7231ef2eab4980172",
+  "source_sha256": {
+    "evaluation/adversarial_eval.py": "f380c019ba7069a3322f1ad441d994ad05a6ff68d58ed3100ea6ab529530385b",
+    "src/hkrbc_agent/service.py": "fb220029a0a67f26ef4bbf80383d48024ea11d0a088e49f816e7f1c7c09261e0",
+    "src/hkrbc_agent/security.py": "9604946436cce1f1d3879fd2cdf1a1baa58fcf2e9b1e1354eaccb50f632b5059",
+    "src/hkrbc_agent/store.py": "b4db531bab1a11ddcbc4837119a2741d4d3c35b5fe06997220a126350c5a977d",
+    "src/hkrbc_agent/routing.py": "ab07742a97aef451892b2da200e0aa859c392a3c57fa7a7f07edf60fdf7dce38",
+    "src/hkrbc_agent/retrieval.py": "8f40be9108ea0a28862509ecdfe5e0f4efb9e726e27e0c0ea7e98838c7f8cfe7",
+    "src/hkrbc_agent/portfolio.py": "a9fbfde75b626e1509cbeee8e11d9e66f11ce0b55d9833361ea4868fa3d65c13",
+    "src/hkrbc_agent/calculations.py": "a53005d608951078eea3cbd192fd89bae1cc9f2b248e72845ab7471fecc89050",
+    "src/hkrbc_agent/attribution.py": "8f9e22d22191359ab085bd1ea735cf618b4caaf7fd6c193a1d378c854f07e20b"
+  },
+  "source_stable_during_run": true,
+  "passed": true,
+  "summary": {
+    "cases": 36,
+    "passed_cases": 36,
+    "failed_cases": 0,
+    "failed_case_ids": [],
+    "categories": {
+      "authorization": 3,
+      "claim_scope": 9,
+      "injection": 3,
+      "lifecycle": 3,
+      "privacy": 4,
+      "reports": 2,
+      "routing": 8,
+      "sessions": 4
+    },
+    "network_attempts": 0,
+    "in_memory_transport_attempts": 1
+  },
+  "safety_boundaries": {
+    "network": "Socket connect and urllib entry points fail before network I/O.",
+    "transport": "Injected spy raises TransportBlocked before any HTTP request.",
+    "identity": "Real signed service sessions from public demo accounts, fresh service secret per case.",
+    "storage": "Fresh temporary SQLite per case, checked for raw queries, synthetic PII markers and tokens, then deleted.",
+    "inference": "BM25 only, no local encoder or LLM, no model downloads, no paid API."
+  },
+  "limitations": [
+    "Only synthetic fixtures/public demonstration credentials; no production identity, tenant, host compromise, real client data, or paid inference is exercised.",
+    "TransportBlocked is an intentional in-memory boundary exception, not an external API request.",
+    "Pattern-based DLP and request-scope checks are incomplete; passing these probes is not general security or semantic entailment proof.",
+    "Fixed authored probes test specified paths only. They do not establish coverage against unknown attacks, host compromise, concurrent users, or enterprise tenant isolation.",
+    "Claim-scope checks use authored tags and known phrasing; passing is not semantic entailment proof or legal completeness.",
+    "No external provider response or production identity provider is exercised."
+  ],
+  "cases": [
+    {
+      "case_id": "local-default",
+      "category": "routing",
+      "probe": "ask",
+      "passed": true,
+      "checks": {
+        "outcome": {
+          "expected": "returned",
+          "observed": "returned",
+          "passed": true
+        },
+        "status": {
+          "expected": "evidence_found",
+          "observed": "evidence_found",
+          "passed": true
+        },
+        "provider": {
+          "expected": "local-extractive",
+          "observed": "local-extractive",
+          "passed": true
+        },
+        "transport_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "network_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "raw_prompt_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "raw_sensitive_fixture_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "session_token_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        }
+      },
+      "observations": {
+        "outcome": "returned",
+        "status": "evidence_found",
+        "provider": "local-extractive",
+        "pii_redacted": false,
+        "requested_claim_tags": [],
+        "missing_claim_tags": [],
+        "missing_rule_identifiers": [],
+        "transport_attempts": 0,
+        "network_attempts": 0,
+        "raw_prompt_persisted": false,
+        "raw_sensitive_fixture_persisted": false,
+        "session_token_persisted": false
+      }
+    },
+    {
+      "case_id": "local-redaction-no-persistence",
+      "category": "privacy",
+      "probe": "ask",
+      "passed": true,
+      "checks": {
+        "outcome": {
+          "expected": "returned",
+          "observed": "returned",
+          "passed": true
+        },
+        "status": {
+          "expected": "evidence_found",
+          "observed": "evidence_found",
+          "passed": true
+        },
+        "provider": {
+          "expected": "local-extractive",
+          "observed": "local-extractive",
+          "passed": true
+        },
+        "transport_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "pii_redacted": {
+          "expected": true,
+          "observed": true,
+          "passed": true
+        },
+        "network_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "raw_prompt_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "raw_sensitive_fixture_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "session_token_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        }
+      },
+      "observations": {
+        "outcome": "returned",
+        "status": "evidence_found",
+        "provider": "local-extractive",
+        "pii_redacted": true,
+        "requested_claim_tags": [],
+        "missing_claim_tags": [],
+        "missing_rule_identifiers": [],
+        "transport_attempts": 0,
+        "network_attempts": 0,
+        "raw_prompt_persisted": false,
+        "raw_sensitive_fixture_persisted": false,
+        "session_token_persisted": false
+      }
+    },
+    {
+      "case_id": "query-injection-english",
+      "category": "injection",
+      "probe": "ask",
+      "passed": true,
+      "checks": {
+        "outcome": {
+          "expected": "raised",
+          "observed": "raised",
+          "passed": true
+        },
+        "error_type": {
+          "expected": "PrivacyError",
+          "observed": "PrivacyError",
+          "passed": true
+        },
+        "transport_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "network_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "raw_prompt_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "raw_sensitive_fixture_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "session_token_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        }
+      },
+      "observations": {
+        "outcome": "raised",
+        "error_type": "PrivacyError",
+        "transport_attempts": 0,
+        "network_attempts": 0,
+        "raw_prompt_persisted": false,
+        "raw_sensitive_fixture_persisted": false,
+        "session_token_persisted": false
+      }
+    },
+    {
+      "case_id": "query-injection-chinese",
+      "category": "injection",
+      "probe": "ask",
+      "passed": true,
+      "checks": {
+        "outcome": {
+          "expected": "raised",
+          "observed": "raised",
+          "passed": true
+        },
+        "error_type": {
+          "expected": "PrivacyError",
+          "observed": "PrivacyError",
+          "passed": true
+        },
+        "transport_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "network_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "raw_prompt_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "raw_sensitive_fixture_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "session_token_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        }
+      },
+      "observations": {
+        "outcome": "raised",
+        "error_type": "PrivacyError",
+        "transport_attempts": 0,
+        "network_attempts": 0,
+        "raw_prompt_persisted": false,
+        "raw_sensitive_fixture_persisted": false,
+        "session_token_persisted": false
+      }
+    },
+    {
+      "case_id": "ingestion-injection-atomic",
+      "category": "injection",
+      "probe": "ingest_batch",
+      "passed": true,
+      "checks": {
+        "outcome": {
+          "expected": "raised",
+          "observed": "raised",
+          "passed": true
+        },
+        "error_type": {
+          "expected": "PrivacyError",
+          "observed": "PrivacyError",
+          "passed": true
+        },
+        "documents_unchanged": {
+          "expected": true,
+          "observed": true,
+          "passed": true
+        },
+        "transport_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "network_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "raw_prompt_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "raw_sensitive_fixture_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "session_token_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        }
+      },
+      "observations": {
+        "outcome": "raised",
+        "error_type": "PrivacyError",
+        "documents_unchanged": true,
+        "transport_attempts": 0,
+        "network_attempts": 0,
+        "raw_prompt_persisted": false,
+        "raw_sensitive_fixture_persisted": false,
+        "session_token_persisted": false
+      }
+    },
+    {
+      "case_id": "ingestion-pii-atomic",
+      "category": "privacy",
+      "probe": "ingest_batch",
+      "passed": true,
+      "checks": {
+        "outcome": {
+          "expected": "raised",
+          "observed": "raised",
+          "passed": true
+        },
+        "error_type": {
+          "expected": "ValueError",
+          "observed": "ValueError",
+          "passed": true
+        },
+        "documents_unchanged": {
+          "expected": true,
+          "observed": true,
+          "passed": true
+        },
+        "transport_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "network_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "raw_prompt_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "raw_sensitive_fixture_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "session_token_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        }
+      },
+      "observations": {
+        "outcome": "raised",
+        "error_type": "ValueError",
+        "documents_unchanged": true,
+        "transport_attempts": 0,
+        "network_attempts": 0,
+        "raw_prompt_persisted": false,
+        "raw_sensitive_fixture_persisted": false,
+        "session_token_persisted": false
+      }
+    },
+    {
+      "case_id": "session-tamper-role",
+      "category": "sessions",
+      "probe": "session_tamper",
+      "passed": true,
+      "checks": {
+        "outcome": {
+          "expected": "raised",
+          "observed": "raised",
+          "passed": true
+        },
+        "error_type": {
+          "expected": "AccessDenied",
+          "observed": "AccessDenied",
+          "passed": true
+        },
+        "transport_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "network_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "raw_prompt_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "raw_sensitive_fixture_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "session_token_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        }
+      },
+      "observations": {
+        "outcome": "raised",
+        "error_type": "AccessDenied",
+        "transport_attempts": 0,
+        "network_attempts": 0,
+        "raw_prompt_persisted": false,
+        "raw_sensitive_fixture_persisted": false,
+        "session_token_persisted": false
+      }
+    },
+    {
+      "case_id": "session-tamper-signature",
+      "category": "sessions",
+      "probe": "session_tamper",
+      "passed": true,
+      "checks": {
+        "outcome": {
+          "expected": "raised",
+          "observed": "raised",
+          "passed": true
+        },
+        "error_type": {
+          "expected": "AccessDenied",
+          "observed": "AccessDenied",
+          "passed": true
+        },
+        "transport_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "network_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "raw_prompt_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "raw_sensitive_fixture_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "session_token_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        }
+      },
+      "observations": {
+        "outcome": "raised",
+        "error_type": "AccessDenied",
+        "transport_attempts": 0,
+        "network_attempts": 0,
+        "raw_prompt_persisted": false,
+        "raw_sensitive_fixture_persisted": false,
+        "session_token_persisted": false
+      }
+    },
+    {
+      "case_id": "expired-session",
+      "category": "sessions",
+      "probe": "session_expiry",
+      "passed": true,
+      "checks": {
+        "outcome": {
+          "expected": "raised",
+          "observed": "raised",
+          "passed": true
+        },
+        "error_type": {
+          "expected": "AccessDenied",
+          "observed": "AccessDenied",
+          "passed": true
+        },
+        "transport_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "network_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "raw_prompt_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "raw_sensitive_fixture_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "session_token_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        }
+      },
+      "observations": {
+        "outcome": "raised",
+        "error_type": "AccessDenied",
+        "transport_attempts": 0,
+        "network_attempts": 0,
+        "raw_prompt_persisted": false,
+        "raw_sensitive_fixture_persisted": false,
+        "session_token_persisted": false
+      }
+    },
+    {
+      "case_id": "wrong-password",
+      "category": "sessions",
+      "probe": "credentials",
+      "passed": true,
+      "checks": {
+        "outcome": {
+          "expected": "raised",
+          "observed": "raised",
+          "passed": true
+        },
+        "error_type": {
+          "expected": "AccessDenied",
+          "observed": "AccessDenied",
+          "passed": true
+        },
+        "successful_signins_unchanged": {
+          "expected": true,
+          "observed": true,
+          "passed": true
+        },
+        "transport_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "network_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "raw_prompt_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "raw_sensitive_fixture_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "session_token_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        }
+      },
+      "observations": {
+        "outcome": "raised",
+        "error_type": "AccessDenied",
+        "successful_signins_unchanged": true,
+        "transport_attempts": 0,
+        "network_attempts": 0,
+        "raw_prompt_persisted": false,
+        "raw_sensitive_fixture_persisted": false,
+        "session_token_persisted": false
+      }
+    },
+    {
+      "case_id": "analyst-private-isolation",
+      "category": "authorization",
+      "probe": "acl",
+      "passed": true,
+      "checks": {
+        "outcome": {
+          "expected": "returned",
+          "observed": "returned",
+          "passed": true
+        },
+        "citation_classes": {
+          "expected": [
+            "public"
+          ],
+          "observed": [
+            "public"
+          ],
+          "passed": true
+        },
+        "private_marker_disclosed": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "transport_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "network_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "raw_prompt_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "raw_sensitive_fixture_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "session_token_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        }
+      },
+      "observations": {
+        "outcome": "returned",
+        "status": "evidence_found",
+        "provider": "local-extractive",
+        "pii_redacted": false,
+        "requested_claim_tags": [],
+        "missing_claim_tags": [],
+        "missing_rule_identifiers": [],
+        "citation_classes": [
+          "public"
+        ],
+        "private_marker_disclosed": false,
+        "restricted_marker_disclosed": false,
+        "transport_attempts": 0,
+        "network_attempts": 0,
+        "raw_prompt_persisted": false,
+        "raw_sensitive_fixture_persisted": false,
+        "session_token_persisted": false
+      }
+    },
+    {
+      "case_id": "reviewer-restricted-isolation",
+      "category": "authorization",
+      "probe": "acl",
+      "passed": true,
+      "checks": {
+        "outcome": {
+          "expected": "returned",
+          "observed": "returned",
+          "passed": true
+        },
+        "citation_classes": {
+          "expected": [
+            "internal",
+            "public"
+          ],
+          "observed": [
+            "internal",
+            "public"
+          ],
+          "passed": true
+        },
+        "restricted_marker_disclosed": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "transport_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "network_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "raw_prompt_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "raw_sensitive_fixture_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "session_token_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        }
+      },
+      "observations": {
+        "outcome": "returned",
+        "status": "evidence_found",
+        "provider": "local-extractive",
+        "pii_redacted": false,
+        "requested_claim_tags": [],
+        "missing_claim_tags": [],
+        "missing_rule_identifiers": [],
+        "citation_classes": [
+          "internal",
+          "public"
+        ],
+        "private_marker_disclosed": true,
+        "restricted_marker_disclosed": false,
+        "transport_attempts": 0,
+        "network_attempts": 0,
+        "raw_prompt_persisted": false,
+        "raw_sensitive_fixture_persisted": false,
+        "session_token_persisted": false
+      }
+    },
+    {
+      "case_id": "external-server-disabled",
+      "category": "routing",
+      "probe": "ask",
+      "passed": true,
+      "checks": {
+        "outcome": {
+          "expected": "raised",
+          "observed": "raised",
+          "passed": true
+        },
+        "error_type": {
+          "expected": "AccessDenied",
+          "observed": "AccessDenied",
+          "passed": true
+        },
+        "transport_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "network_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "raw_prompt_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "raw_sensitive_fixture_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "session_token_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        }
+      },
+      "observations": {
+        "outcome": "raised",
+        "error_type": "AccessDenied",
+        "transport_attempts": 0,
+        "network_attempts": 0,
+        "raw_prompt_persisted": false,
+        "raw_sensitive_fixture_persisted": false,
+        "session_token_persisted": false
+      }
+    },
+    {
+      "case_id": "external-missing-approval",
+      "category": "routing",
+      "probe": "ask",
+      "passed": true,
+      "checks": {
+        "outcome": {
+          "expected": "raised",
+          "observed": "raised",
+          "passed": true
+        },
+        "error_type": {
+          "expected": "AccessDenied",
+          "observed": "AccessDenied",
+          "passed": true
+        },
+        "transport_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "network_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "raw_prompt_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "raw_sensitive_fixture_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "session_token_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        }
+      },
+      "observations": {
+        "outcome": "raised",
+        "error_type": "AccessDenied",
+        "transport_attempts": 0,
+        "network_attempts": 0,
+        "raw_prompt_persisted": false,
+        "raw_sensitive_fixture_persisted": false,
+        "session_token_persisted": false
+      }
+    },
+    {
+      "case_id": "external-truthy-approval",
+      "category": "routing",
+      "probe": "ask",
+      "passed": true,
+      "checks": {
+        "outcome": {
+          "expected": "raised",
+          "observed": "raised",
+          "passed": true
+        },
+        "error_type": {
+          "expected": "AccessDenied",
+          "observed": "AccessDenied",
+          "passed": true
+        },
+        "transport_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "network_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "raw_prompt_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "raw_sensitive_fixture_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "session_token_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        }
+      },
+      "observations": {
+        "outcome": "raised",
+        "error_type": "AccessDenied",
+        "transport_attempts": 0,
+        "network_attempts": 0,
+        "raw_prompt_persisted": false,
+        "raw_sensitive_fixture_persisted": false,
+        "session_token_persisted": false
+      }
+    },
+    {
+      "case_id": "external-analyst-role",
+      "category": "routing",
+      "probe": "ask",
+      "passed": true,
+      "checks": {
+        "outcome": {
+          "expected": "raised",
+          "observed": "raised",
+          "passed": true
+        },
+        "error_type": {
+          "expected": "AccessDenied",
+          "observed": "AccessDenied",
+          "passed": true
+        },
+        "transport_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "network_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "raw_prompt_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "raw_sensitive_fixture_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "session_token_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        }
+      },
+      "observations": {
+        "outcome": "raised",
+        "error_type": "AccessDenied",
+        "transport_attempts": 0,
+        "network_attempts": 0,
+        "raw_prompt_persisted": false,
+        "raw_sensitive_fixture_persisted": false,
+        "session_token_persisted": false
+      }
+    },
+    {
+      "case_id": "external-original-pii",
+      "category": "privacy",
+      "probe": "ask",
+      "passed": true,
+      "checks": {
+        "outcome": {
+          "expected": "raised",
+          "observed": "raised",
+          "passed": true
+        },
+        "error_type": {
+          "expected": "PrivacyError",
+          "observed": "PrivacyError",
+          "passed": true
+        },
+        "transport_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "network_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "raw_prompt_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "raw_sensitive_fixture_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "session_token_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        }
+      },
+      "observations": {
+        "outcome": "raised",
+        "error_type": "PrivacyError",
+        "transport_attempts": 0,
+        "network_attempts": 0,
+        "raw_prompt_persisted": false,
+        "raw_sensitive_fixture_persisted": false,
+        "session_token_persisted": false
+      }
+    },
+    {
+      "case_id": "external-sensitive-public-evidence",
+      "category": "privacy",
+      "probe": "ask",
+      "passed": true,
+      "checks": {
+        "outcome": {
+          "expected": "raised",
+          "observed": "raised",
+          "passed": true
+        },
+        "error_type": {
+          "expected": "PrivacyError",
+          "observed": "PrivacyError",
+          "passed": true
+        },
+        "transport_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "network_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "raw_prompt_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "raw_sensitive_fixture_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "session_token_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        }
+      },
+      "observations": {
+        "outcome": "raised",
+        "error_type": "PrivacyError",
+        "transport_attempts": 0,
+        "network_attempts": 0,
+        "raw_prompt_persisted": false,
+        "raw_sensitive_fixture_persisted": false,
+        "session_token_persisted": false
+      }
+    },
+    {
+      "case_id": "external-nonpublic-evidence",
+      "category": "authorization",
+      "probe": "ask",
+      "passed": true,
+      "checks": {
+        "outcome": {
+          "expected": "raised",
+          "observed": "raised",
+          "passed": true
+        },
+        "error_type": {
+          "expected": "PrivacyError",
+          "observed": "PrivacyError",
+          "passed": true
+        },
+        "transport_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "network_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "raw_prompt_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "raw_sensitive_fixture_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "session_token_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        }
+      },
+      "observations": {
+        "outcome": "raised",
+        "error_type": "PrivacyError",
+        "transport_attempts": 0,
+        "network_attempts": 0,
+        "raw_prompt_persisted": false,
+        "raw_sensitive_fixture_persisted": false,
+        "session_token_persisted": false
+      }
+    },
+    {
+      "case_id": "external-public-boundary-control",
+      "category": "routing",
+      "probe": "ask",
+      "passed": true,
+      "checks": {
+        "outcome": {
+          "expected": "raised",
+          "observed": "raised",
+          "passed": true
+        },
+        "error_type": {
+          "expected": "TransportBlocked",
+          "observed": "TransportBlocked",
+          "passed": true
+        },
+        "transport_attempts": {
+          "expected": 1,
+          "observed": 1,
+          "passed": true
+        },
+        "network_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "raw_prompt_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "raw_sensitive_fixture_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "session_token_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        }
+      },
+      "observations": {
+        "outcome": "raised",
+        "error_type": "TransportBlocked",
+        "transport_attempts": 1,
+        "network_attempts": 0,
+        "raw_prompt_persisted": false,
+        "raw_sensitive_fixture_persisted": false,
+        "session_token_persisted": false
+      }
+    },
+    {
+      "case_id": "external-no-evidence-no-call",
+      "category": "routing",
+      "probe": "ask",
+      "passed": true,
+      "checks": {
+        "outcome": {
+          "expected": "returned",
+          "observed": "returned",
+          "passed": true
+        },
+        "status": {
+          "expected": "insufficient_evidence",
+          "observed": "insufficient_evidence",
+          "passed": true
+        },
+        "provider": {
+          "expected": "local-extractive",
+          "observed": "local-extractive",
+          "passed": true
+        },
+        "transport_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "network_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "raw_prompt_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "raw_sensitive_fixture_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "session_token_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        }
+      },
+      "observations": {
+        "outcome": "returned",
+        "status": "insufficient_evidence",
+        "provider": "local-extractive",
+        "pii_redacted": false,
+        "requested_claim_tags": [],
+        "missing_claim_tags": [],
+        "missing_rule_identifiers": [],
+        "transport_attempts": 0,
+        "network_attempts": 0,
+        "raw_prompt_persisted": false,
+        "raw_sensitive_fixture_persisted": false,
+        "session_token_persisted": false
+      }
+    },
+    {
+      "case_id": "unknown-mode-rejected",
+      "category": "routing",
+      "probe": "ask",
+      "passed": true,
+      "checks": {
+        "outcome": {
+          "expected": "raised",
+          "observed": "raised",
+          "passed": true
+        },
+        "error_type": {
+          "expected": "ValueError",
+          "observed": "ValueError",
+          "passed": true
+        },
+        "transport_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "network_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "raw_prompt_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "raw_sensitive_fixture_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "session_token_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        }
+      },
+      "observations": {
+        "outcome": "raised",
+        "error_type": "ValueError",
+        "transport_attempts": 0,
+        "network_attempts": 0,
+        "raw_prompt_persisted": false,
+        "raw_sensitive_fixture_persisted": false,
+        "session_token_persisted": false
+      }
+    },
+    {
+      "case_id": "retired-source-excluded",
+      "category": "lifecycle",
+      "probe": "retirement",
+      "passed": true,
+      "checks": {
+        "outcome": {
+          "expected": "returned",
+          "observed": "returned",
+          "passed": true
+        },
+        "old_version_returned": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "replacement_returned": {
+          "expected": true,
+          "observed": true,
+          "passed": true
+        },
+        "source_payload_unchanged": {
+          "expected": true,
+          "observed": true,
+          "passed": true
+        },
+        "old_state": {
+          "expected": "retired",
+          "observed": "retired",
+          "passed": true
+        },
+        "transport_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "network_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "raw_prompt_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "raw_sensitive_fixture_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "session_token_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        }
+      },
+      "observations": {
+        "outcome": "returned",
+        "status": "evidence_found",
+        "provider": "local-extractive",
+        "pii_redacted": false,
+        "requested_claim_tags": [],
+        "missing_claim_tags": [],
+        "missing_rule_identifiers": [],
+        "old_version_returned": false,
+        "replacement_returned": true,
+        "source_payload_unchanged": true,
+        "old_state": "retired",
+        "transport_attempts": 0,
+        "network_attempts": 0,
+        "raw_prompt_persisted": false,
+        "raw_sensitive_fixture_persisted": false,
+        "session_token_persisted": false
+      }
+    },
+    {
+      "case_id": "analyst-retirement-denied",
+      "category": "lifecycle",
+      "probe": "retirement_unauthorized",
+      "passed": true,
+      "checks": {
+        "outcome": {
+          "expected": "raised",
+          "observed": "raised",
+          "passed": true
+        },
+        "error_type": {
+          "expected": "AccessDenied",
+          "observed": "AccessDenied",
+          "passed": true
+        },
+        "source_still_eligible": {
+          "expected": true,
+          "observed": true,
+          "passed": true
+        },
+        "transport_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "network_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "raw_prompt_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "raw_sensitive_fixture_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "session_token_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        }
+      },
+      "observations": {
+        "outcome": "raised",
+        "error_type": "AccessDenied",
+        "source_still_eligible": true,
+        "transport_attempts": 0,
+        "network_attempts": 0,
+        "raw_prompt_persisted": false,
+        "raw_sensitive_fixture_persisted": false,
+        "session_token_persisted": false
+      }
+    },
+    {
+      "case_id": "private-replacement-reference-hidden",
+      "category": "lifecycle",
+      "probe": "replacement_privacy",
+      "passed": true,
+      "checks": {
+        "outcome": {
+          "expected": "returned",
+          "observed": "returned",
+          "passed": true
+        },
+        "replacement_reference_hidden": {
+          "expected": true,
+          "observed": true,
+          "passed": true
+        },
+        "private_marker_disclosed": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "transport_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "network_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "raw_prompt_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "raw_sensitive_fixture_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "session_token_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        }
+      },
+      "observations": {
+        "outcome": "returned",
+        "status": "evidence_found",
+        "provider": "local-extractive",
+        "pii_redacted": false,
+        "requested_claim_tags": [],
+        "missing_claim_tags": [],
+        "missing_rule_identifiers": [],
+        "replacement_reference_hidden": true,
+        "private_marker_disclosed": false,
+        "transport_attempts": 0,
+        "network_attempts": 0,
+        "raw_prompt_persisted": false,
+        "raw_sensitive_fixture_persisted": false,
+        "session_token_persisted": false
+      }
+    },
+    {
+      "case_id": "report-owner-reviewer-controls",
+      "category": "reports",
+      "probe": "report_ownership",
+      "passed": true,
+      "checks": {
+        "outcome": {
+          "expected": "raised",
+          "observed": "raised",
+          "passed": true
+        },
+        "error_type": {
+          "expected": "AccessDenied",
+          "observed": "AccessDenied",
+          "passed": true
+        },
+        "owner_can_read": {
+          "expected": true,
+          "observed": true,
+          "passed": true
+        },
+        "reviewer_can_read": {
+          "expected": true,
+          "observed": true,
+          "passed": true
+        },
+        "report_status": {
+          "expected": "complete",
+          "observed": "complete",
+          "passed": true
+        },
+        "transport_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "network_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "raw_prompt_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "raw_sensitive_fixture_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "session_token_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        }
+      },
+      "observations": {
+        "outcome": "raised",
+        "error_type": "AccessDenied",
+        "owner_can_read": true,
+        "reviewer_can_read": true,
+        "report_status": "complete",
+        "transport_attempts": 0,
+        "network_attempts": 0,
+        "raw_prompt_persisted": false,
+        "raw_sensitive_fixture_persisted": false,
+        "session_token_persisted": false
+      }
+    },
+    {
+      "case_id": "invalid-input-no-complete-report",
+      "category": "reports",
+      "probe": "invalid_report",
+      "passed": true,
+      "checks": {
+        "outcome": {
+          "expected": "raised",
+          "observed": "raised",
+          "passed": true
+        },
+        "error_type": {
+          "expected": "ValidationError",
+          "observed": "ValidationError",
+          "passed": true
+        },
+        "reports_stored": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "complete_event_recorded": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "transport_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "network_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "raw_prompt_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "raw_sensitive_fixture_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "session_token_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        }
+      },
+      "observations": {
+        "outcome": "raised",
+        "error_type": "ValidationError",
+        "reports_stored": 0,
+        "complete_event_recorded": false,
+        "transport_attempts": 0,
+        "network_attempts": 0,
+        "raw_prompt_persisted": false,
+        "raw_sensitive_fixture_persisted": false,
+        "session_token_persisted": false
+      }
+    },
+    {
+      "case_id": "compound-missing-second-claim",
+      "category": "claim_scope",
+      "probe": "ask",
+      "passed": true,
+      "checks": {
+        "outcome": {
+          "expected": "returned",
+          "observed": "returned",
+          "passed": true
+        },
+        "status": {
+          "expected": "insufficient_evidence",
+          "observed": "insufficient_evidence",
+          "passed": true
+        },
+        "transport_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "network_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "raw_prompt_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "raw_sensitive_fixture_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "session_token_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        }
+      },
+      "observations": {
+        "outcome": "returned",
+        "status": "insufficient_evidence",
+        "provider": "local-extractive",
+        "pii_redacted": false,
+        "requested_claim_tags": [
+          "capital.correlation_matrix",
+          "capital.tier_limits"
+        ],
+        "missing_claim_tags": [
+          "capital.tier_limits"
+        ],
+        "missing_rule_identifiers": [],
+        "transport_attempts": 0,
+        "network_attempts": 0,
+        "raw_prompt_persisted": false,
+        "raw_sensitive_fixture_persisted": false,
+        "session_token_persisted": false
+      }
+    },
+    {
+      "case_id": "compound-covered-control",
+      "category": "claim_scope",
+      "probe": "ask",
+      "passed": true,
+      "checks": {
+        "outcome": {
+          "expected": "returned",
+          "observed": "returned",
+          "passed": true
+        },
+        "status": {
+          "expected": "evidence_found",
+          "observed": "evidence_found",
+          "passed": true
+        },
+        "transport_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "network_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "raw_prompt_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "raw_sensitive_fixture_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "session_token_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        }
+      },
+      "observations": {
+        "outcome": "returned",
+        "status": "evidence_found",
+        "provider": "local-extractive",
+        "pii_redacted": false,
+        "requested_claim_tags": [
+          "capital.correlation_matrix",
+          "capital.tier_limits"
+        ],
+        "missing_claim_tags": [],
+        "missing_rule_identifiers": [],
+        "transport_attempts": 0,
+        "network_attempts": 0,
+        "raw_prompt_persisted": false,
+        "raw_sensitive_fixture_persisted": false,
+        "session_token_persisted": false
+      }
+    },
+    {
+      "case_id": "announcement-formula-compound-en",
+      "category": "claim_scope",
+      "probe": "ask",
+      "passed": true,
+      "checks": {
+        "outcome": {
+          "expected": "returned",
+          "observed": "returned",
+          "passed": true
+        },
+        "status": {
+          "expected": "insufficient_evidence",
+          "observed": "insufficient_evidence",
+          "passed": true
+        },
+        "transport_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "network_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "raw_prompt_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "raw_sensitive_fixture_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "session_token_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        }
+      },
+      "observations": {
+        "outcome": "returned",
+        "status": "insufficient_evidence",
+        "provider": "local-extractive",
+        "pii_redacted": false,
+        "requested_claim_tags": [
+          "matching_adjustment.formula"
+        ],
+        "missing_claim_tags": [
+          "matching_adjustment.formula"
+        ],
+        "missing_rule_identifiers": [],
+        "transport_attempts": 0,
+        "network_attempts": 0,
+        "raw_prompt_persisted": false,
+        "raw_sensitive_fixture_persisted": false,
+        "session_token_persisted": false
+      }
+    },
+    {
+      "case_id": "announcement-formula-compound-zh",
+      "category": "claim_scope",
+      "probe": "ask",
+      "passed": true,
+      "checks": {
+        "outcome": {
+          "expected": "returned",
+          "observed": "returned",
+          "passed": true
+        },
+        "status": {
+          "expected": "insufficient_evidence",
+          "observed": "insufficient_evidence",
+          "passed": true
+        },
+        "transport_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "network_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "raw_prompt_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "raw_sensitive_fixture_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "session_token_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        }
+      },
+      "observations": {
+        "outcome": "returned",
+        "status": "insufficient_evidence",
+        "provider": "local-extractive",
+        "pii_redacted": false,
+        "requested_claim_tags": [
+          "matching_adjustment.formula"
+        ],
+        "missing_claim_tags": [
+          "matching_adjustment.formula"
+        ],
+        "missing_rule_identifiers": [],
+        "transport_attempts": 0,
+        "network_attempts": 0,
+        "raw_prompt_persisted": false,
+        "raw_sensitive_fixture_persisted": false,
+        "session_token_persisted": false
+      }
+    },
+    {
+      "case_id": "tier-names-plus-instrument-eligibility",
+      "category": "claim_scope",
+      "probe": "ask",
+      "passed": true,
+      "checks": {
+        "outcome": {
+          "expected": "returned",
+          "observed": "returned",
+          "passed": true
+        },
+        "status": {
+          "expected": "insufficient_evidence",
+          "observed": "insufficient_evidence",
+          "passed": true
+        },
+        "transport_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "network_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "raw_prompt_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "raw_sensitive_fixture_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "session_token_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        }
+      },
+      "observations": {
+        "outcome": "returned",
+        "status": "insufficient_evidence",
+        "provider": "local-extractive",
+        "pii_redacted": false,
+        "requested_claim_tags": [
+          "capital.tier_instrument_eligibility"
+        ],
+        "missing_claim_tags": [
+          "capital.tier_instrument_eligibility"
+        ],
+        "missing_rule_identifiers": [],
+        "transport_attempts": 0,
+        "network_attempts": 0,
+        "raw_prompt_persisted": false,
+        "raw_sensitive_fixture_persisted": false,
+        "session_token_persisted": false
+      }
+    },
+    {
+      "case_id": "compound-missing-exact-subrule",
+      "category": "claim_scope",
+      "probe": "ask",
+      "passed": true,
+      "checks": {
+        "outcome": {
+          "expected": "returned",
+          "observed": "returned",
+          "passed": true
+        },
+        "status": {
+          "expected": "insufficient_evidence",
+          "observed": "insufficient_evidence",
+          "passed": true
+        },
+        "transport_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "network_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "raw_prompt_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "raw_sensitive_fixture_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "session_token_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        }
+      },
+      "observations": {
+        "outcome": "returned",
+        "status": "insufficient_evidence",
+        "provider": "local-extractive",
+        "pii_redacted": false,
+        "requested_claim_tags": [],
+        "missing_claim_tags": [],
+        "missing_rule_identifiers": [
+          "rule:99(3)"
+        ],
+        "transport_attempts": 0,
+        "network_attempts": 0,
+        "raw_prompt_persisted": false,
+        "raw_sensitive_fixture_persisted": false,
+        "session_token_persisted": false
+      }
+    },
+    {
+      "case_id": "compound-current-compliance",
+      "category": "claim_scope",
+      "probe": "ask",
+      "passed": true,
+      "checks": {
+        "outcome": {
+          "expected": "returned",
+          "observed": "returned",
+          "passed": true
+        },
+        "status": {
+          "expected": "insufficient_evidence",
+          "observed": "insufficient_evidence",
+          "passed": true
+        },
+        "transport_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "network_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "raw_prompt_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "raw_sensitive_fixture_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "session_token_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        }
+      },
+      "observations": {
+        "outcome": "returned",
+        "status": "insufficient_evidence",
+        "provider": "local-extractive",
+        "pii_redacted": false,
+        "requested_claim_tags": [
+          "capital.correlation_matrix"
+        ],
+        "missing_claim_tags": [],
+        "missing_rule_identifiers": [],
+        "transport_attempts": 0,
+        "network_attempts": 0,
+        "raw_prompt_persisted": false,
+        "raw_sensitive_fixture_persisted": false,
+        "session_token_persisted": false
+      }
+    },
+    {
+      "case_id": "factor-approach-positive-control",
+      "category": "claim_scope",
+      "probe": "ask",
+      "passed": true,
+      "checks": {
+        "outcome": {
+          "expected": "returned",
+          "observed": "returned",
+          "passed": true
+        },
+        "status": {
+          "expected": "evidence_found",
+          "observed": "evidence_found",
+          "passed": true
+        },
+        "transport_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "network_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "raw_prompt_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "raw_sensitive_fixture_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "session_token_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        }
+      },
+      "observations": {
+        "outcome": "returned",
+        "status": "evidence_found",
+        "provider": "local-extractive",
+        "pii_redacted": false,
+        "requested_claim_tags": [],
+        "missing_claim_tags": [],
+        "missing_rule_identifiers": [],
+        "transport_attempts": 0,
+        "network_attempts": 0,
+        "raw_prompt_persisted": false,
+        "raw_sensitive_fixture_persisted": false,
+        "session_token_persisted": false
+      }
+    },
+    {
+      "case_id": "announcement-topic-positive-control",
+      "category": "claim_scope",
+      "probe": "ask",
+      "passed": true,
+      "checks": {
+        "outcome": {
+          "expected": "returned",
+          "observed": "returned",
+          "passed": true
+        },
+        "status": {
+          "expected": "evidence_found",
+          "observed": "evidence_found",
+          "passed": true
+        },
+        "transport_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "network_attempts": {
+          "expected": 0,
+          "observed": 0,
+          "passed": true
+        },
+        "raw_prompt_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "raw_sensitive_fixture_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        },
+        "session_token_persisted": {
+          "expected": false,
+          "observed": false,
+          "passed": true
+        }
+      },
+      "observations": {
+        "outcome": "returned",
+        "status": "evidence_found",
+        "provider": "local-extractive",
+        "pii_redacted": false,
+        "requested_claim_tags": [],
+        "missing_claim_tags": [],
+        "missing_rule_identifiers": [],
+        "transport_attempts": 0,
+        "network_attempts": 0,
+        "raw_prompt_persisted": false,
+        "raw_sensitive_fixture_persisted": false,
+        "session_token_persisted": false
+      }
+    }
+  ]
+}

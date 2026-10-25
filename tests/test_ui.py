@@ -153,3 +153,33 @@ def test_admin_can_retire_demo_version_and_register_refreshes(app):
     assert any("Version retired" in message.value for message in app.success)
     target = next(select for select in app.selectbox if select.label == "Version to retire")
     assert "DEMO-INTERNAL@1.0" not in target.options
+
+
+def test_question_example_prefills_without_running_and_explains_compound_gap(app):
+    sign_in(app)
+    app.selectbox(key="question_example").set_value("Compound evidence gap / 複合問題證據不足")
+    click(app, "Use example")
+    assert "calculate the matching adjustment formula" in app.text_area(key="regulatory_question").value
+    assert not has_session_key(app, "query_result")
+    click(app, "Search evidence")
+    assert app.session_state["query_result"]["status"] == "insufficient_evidence"
+    assert any("Evidence is incomplete" in message.value for message in app.warning)
+    assert any("Missing evidence for matching-adjustment formula" in message.value for message in app.markdown)
+
+
+def test_missing_settlement_demo_clears_old_report_and_blocks_completion(app):
+    sign_in(app)
+    app.radio(key="page").set_value("Capital Analysis").run()
+    click(app, "Load synthetic demo portfolios")
+    click(app, "Run capital analysis")
+    click(app, "Create review report")
+    assert has_session_key(app, "saved_report")
+    click(app, "Load missing-settlement example")
+    assert not has_session_key(app, "saved_report")
+    assert not has_session_key(app, "analysis_result")
+    click(app, "Run capital analysis")
+    result = app.session_state["analysis_result"]
+    assert result["status"] == "blocked"
+    assert result["unexplained_residual"] == 0
+    assert result["factor_bridge"]["unexplained_residual"] is None
+    assert next(button for button in app.button if button.label == "Create review report").disabled

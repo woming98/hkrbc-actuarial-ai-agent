@@ -1,5 +1,7 @@
 # Second-round verification — 25 October 2026
 
+This is the **0.2.0 historical snapshot**. The [0.3.0 record](phase3-verification.md) documents subsequent scope fixes, expanded diagnostics and guided demonstration controls.
+
 Version **0.2.0** strengthens the first working prototype with inspected source bytes, measured bilingual retrieval, explicit counterfactual movement drivers and immutable evidence retirement. This record supersedes the outstanding-source/encoder items in the [initial verification snapshot](verification.md), while preserving its historical results. It does not certify production readiness, legal currency or full HK RBC implementation.
 
 ## Actual executions
@@ -34,7 +36,7 @@ The corpus is still incomplete. Every record has `current_consolidated_verified=
 
 ## Retrieval measurements and decision
 
-The [44-case diagnostic](retrieval-evaluation.md) has frozen queries, manually reviewed relevance labels, corpus/case/implementation hashes and per-case raw outputs. Both final encoder artifacts match the delivered source hashes. It is a development set used during implementation, not an independent held-out benchmark. Rankers share the same upgraded scope checker.
+The [44-case diagnostic](retrieval-evaluation.md) has frozen queries, manually reviewed relevance labels, corpus/case/implementation hashes and per-case raw outputs. Both encoder artifacts identify the delivered 0.2.0 source snapshot. It is a development set used during implementation, not an independent held-out benchmark. Rankers share the same upgraded scope checker.
 
 | Method | Recall@3 | MRR@3 | Answered without a labeled relevant section |
 |---|---:|---:|---:|

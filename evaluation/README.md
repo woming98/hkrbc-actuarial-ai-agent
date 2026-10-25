@@ -72,6 +72,16 @@ The same integration module checks old-database source-byte/checksum preservatio
 
 [retrieval_eval.py](retrieval_eval.py) and [retrieval_cases.json](retrieval_cases.json) provide a separate, manually labeled retrieval development set. Its measurements, optional local encoder configuration, source/case/implementation hashes and limitations are documented in [retrieval-evaluation.md](../docs/retrieval-evaluation.md). Lexical/dense retrieval measurements do not constitute the same-LLM A/B/C experiment described above. The A/B statuses in the original suite remain `not_run` until actual baseline submissions are supplied.
 
+Version 0.3 adds a separate fixed [64-case full-corpus manifest](expanded_retrieval_cases.json), an optional `required_document_ids` label, and a [36-case signed-service adversarial runner](adversarial_eval.py):
+
+```bash
+python evaluation/retrieval_eval.py --cases evaluation/expanded_retrieval_cases.json \
+  --supplement data/documents/verified_supplement.json --output runtime/expanded.json
+python evaluation/adversarial_eval.py --output runtime/adversarial.json
+```
+
+The component metrics count whether every annotator-required source is retrieved and whether an answerable status appears with a missing component. This is stricter than finding any relevant section, and still does not prove entailment; dated metadata in another source may overlap a component. Tests pin the unchanged 64-case manifest and require the authored negative cases to abstain. The adversarial CLI itself exits nonzero for failed expectations, network attempts or a source change during execution. See [current measured results and visible misses](../docs/phase3-verification.md) and [labeling limits](../docs/expanded-corpus-labeling.md). These experiments use different corpora/cases from the original 44-case study; their aggregate metrics are not a before/after comparison.
+
 ## External-result adapter
 
 Generate an **unexecuted** schema template:

@@ -1,0 +1,2518 @@
+{
+  "schema_version": "1.0",
+  "created_at": "2026-10-25",
+  "labels_frozen_at_utc": "2026-10-25T02:20:07.950254+00:00",
+  "label_as_of_date": "2026-10-25",
+  "k": 3,
+  "labels_fixed_before_candidate_run": true,
+  "label_process": "Independent development-agent source-section labeling for this new expanded manifest before its candidate evaluation. No ranker or evaluator was invoked during this labeling task. This is a developer-authored diagnostic, not a blinded human or held-out evaluation.",
+  "prior_exposure_disclosure": "The labeling agent previously curated source records, implemented UI/provenance tests and observed exploratory prototype queries. These 64 labels were derived from the frozen source contents and limitations rather than new candidate outputs; prior development exposure prevents a blind-holdout claim.",
+  "corpus_path": "data/documents/regulatory_seed.json",
+  "label_corpus_sha256": "b84c377c10c371a5419a94451f8f650b318bf3b3c1116aca9079dc32a293b3ce",
+  "supplement_path": "data/documents/verified_supplement.json",
+  "label_supplement_sha256": "40d3a0089fbca1548f721dca784833b243ddc0bf7c1d0e5d9a211558f9fc135b",
+  "source_register_path": "data/documents/source_register.json",
+  "label_source_register_sha256": "d732c937f1cb01687738448e3bc628b090205aa32ec84eec50b41bc1a795c49b",
+  "original_case_manifest_path": "evaluation/retrieval_cases.json",
+  "original_case_manifest_unchanged_sha256": "5ae358fe4d0aeb44ee2373238e62ef2ee398215af22ca2e0758aa546c46c80ef",
+  "corpus_section_records": 25,
+  "section_labels": {
+    "HKRBC-PILLARS": {
+      "version": "2024-01-11-baseline",
+      "section": "Chapter 2, paragraph 12 and footnote 3",
+      "url": "https://www.ia.org.hk/en/infocenter/files/Consultation_Paper_on_the_Draft_RBC_Rules_20240111_Eng.pdf",
+      "status": "verified_baseline",
+      "classification": "public",
+      "source_sha256": null,
+      "source_page": null,
+      "source_checked_at": null,
+      "current_consolidated_verified": false
+    },
+    "HKRBC-COMMENCEMENT": {
+      "version": "2024-05-03-baseline",
+      "section": "Government release, commencement paragraph",
+      "url": "https://www.info.gov.hk/gia/general/202405/03/P2024050300187p.htm",
+      "status": "verified_baseline",
+      "classification": "public",
+      "source_sha256": null,
+      "source_page": null,
+      "source_checked_at": null,
+      "current_consolidated_verified": false
+    },
+    "CAP41R-SCOPE": {
+      "version": "2024-05-03-baseline",
+      "section": "Explanatory Note, paragraphs 5–6 (describing rules 3–4)",
+      "url": "https://www.legco.gov.hk/yr2024/english/subleg/negative/2024ln062-e.pdf",
+      "status": "verified_baseline",
+      "classification": "public",
+      "source_sha256": null,
+      "source_page": null,
+      "source_checked_at": null,
+      "current_consolidated_verified": false
+    },
+    "CAP41R-R5-1": {
+      "version": "2024-05-03-baseline",
+      "section": "Part 2, rule 5(1), Gazette page B647",
+      "url": "https://www.ia.org.hk/en/legislative_framework/overview/files/es22024281862.pdf",
+      "status": "verified_baseline",
+      "classification": "public",
+      "source_sha256": null,
+      "source_page": null,
+      "source_checked_at": null,
+      "current_consolidated_verified": false
+    },
+    "CAP41R-R5-3": {
+      "version": "2024-05-03-baseline",
+      "section": "Part 2, rule 5(3), Gazette page B647",
+      "url": "https://www.ia.org.hk/en/legislative_framework/overview/files/es22024281862.pdf",
+      "status": "verified_baseline",
+      "classification": "public",
+      "source_sha256": null,
+      "source_page": null,
+      "source_checked_at": null,
+      "current_consolidated_verified": false
+    },
+    "CAP41R-R5-2": {
+      "version": "2024-05-03-baseline",
+      "section": "Part 2, rule 5(2), Gazette page B647",
+      "url": "https://www.ia.org.hk/en/legislative_framework/overview/files/es22024281862.pdf",
+      "status": "verified_baseline",
+      "classification": "public",
+      "source_sha256": null,
+      "source_page": null,
+      "source_checked_at": null,
+      "current_consolidated_verified": false
+    },
+    "CAP41R-R87": {
+      "version": "2024-05-03-baseline",
+      "section": "Part 6, rule 87(1)–(3), Gazette page B973",
+      "url": "https://www.ia.org.hk/en/legislative_framework/overview/files/es22024281862.pdf",
+      "status": "verified_baseline",
+      "classification": "public",
+      "source_sha256": null,
+      "source_page": null,
+      "source_checked_at": null,
+      "current_consolidated_verified": false
+    },
+    "HKRBC-DISCLOSURE-CAPITAL": {
+      "version": "2025-08-08-baseline",
+      "section": "Section 4, Capital adequacy, paragraphs (a)–(b), printed pages 4–5",
+      "url": "https://www.ia.org.hk/en/legislative_framework/circulars/reg_matters/files/Circular_20250808_Annex_1.pdf",
+      "status": "verified_baseline",
+      "classification": "public",
+      "source_sha256": null,
+      "source_page": null,
+      "source_checked_at": null,
+      "current_consolidated_verified": false
+    },
+    "CAP41R-NATCAT-OA": {
+      "version": "2024-unknown-baseline",
+      "section": "Appendix 3, introduction, paragraph 1.1 (referring to rules 67–68)",
+      "url": "https://www.ia.org.hk/english/legislative_framework/circulars/reg_matters/files/Cir_dd_12.6.2024_41R_Appendixes.pdf",
+      "status": "verified_baseline",
+      "classification": "public",
+      "source_sha256": null,
+      "source_page": null,
+      "source_checked_at": null,
+      "current_consolidated_verified": false
+    },
+    "HKRBC-2026-AMENDMENTS": {
+      "version": "2026-announcement",
+      "section": "Government release, final commencement paragraphs",
+      "url": "https://www.info.gov.hk/gia/general/202605/22/P2026052200317.htm",
+      "status": "verified_baseline",
+      "classification": "public",
+      "source_sha256": null,
+      "source_page": null,
+      "source_checked_at": null,
+      "current_consolidated_verified": false
+    },
+    "DEMO-INTERNAL": {
+      "version": "1.0",
+      "section": "Illustrative model assumptions",
+      "url": "https://example.org/synthetic-internal",
+      "status": "demo",
+      "classification": "internal",
+      "source_sha256": null,
+      "source_page": null,
+      "source_checked_at": null,
+      "current_consolidated_verified": false
+    },
+    "DEMO-RESTRICTED": {
+      "version": "1.0",
+      "section": "Synthetic permission test",
+      "url": "https://example.org/synthetic-restricted",
+      "status": "demo",
+      "classification": "restricted",
+      "source_sha256": null,
+      "source_page": null,
+      "source_checked_at": null,
+      "current_consolidated_verified": false
+    },
+    "DEMO-ARCHIVED": {
+      "version": "0.1",
+      "section": "Prior illustrative methodology",
+      "url": "https://example.org/synthetic-archive",
+      "status": "superseded",
+      "classification": "public",
+      "source_sha256": null,
+      "source_page": null,
+      "source_checked_at": null,
+      "current_consolidated_verified": false
+    },
+    "cap41r-direct-application": {
+      "version": "ln62-2024-direct-v1",
+      "section": "Rule 3(1)-(2); Gazette B643-B645",
+      "url": "https://www.legco.gov.hk/yr2024/english/subleg/negative/2024ln062-e.pdf",
+      "status": "verified_baseline",
+      "classification": "public",
+      "source_sha256": "ecca2bbe8b256ca821836b18343e7e6ae977da1ad6bc448d2e6e31df979180d3",
+      "source_page": 19,
+      "source_checked_at": "2026-10-25",
+      "current_consolidated_verified": false
+    },
+    "cap41r-direct-consolidation": {
+      "version": "ln62-2024-direct-v1",
+      "section": "Rule 4(1)-(2); Gazette B645",
+      "url": "https://www.legco.gov.hk/yr2024/english/subleg/negative/2024ln062-e.pdf",
+      "status": "verified_baseline",
+      "classification": "public",
+      "source_sha256": "ecca2bbe8b256ca821836b18343e7e6ae977da1ad6bc448d2e6e31df979180d3",
+      "source_page": 20,
+      "source_checked_at": "2026-10-25",
+      "current_consolidated_verified": false
+    },
+    "cap41r-direct-branch-currency": {
+      "version": "ln62-2024-direct-v1",
+      "section": "Rule 4(3)-(4); Gazette B645",
+      "url": "https://www.legco.gov.hk/yr2024/english/subleg/negative/2024ln062-e.pdf",
+      "status": "verified_baseline",
+      "classification": "public",
+      "source_sha256": "ecca2bbe8b256ca821836b18343e7e6ae977da1ad6bc448d2e6e31df979180d3",
+      "source_page": 20,
+      "source_checked_at": "2026-10-25",
+      "current_consolidated_verified": false
+    },
+    "cap41r-direct-breach-notice": {
+      "version": "ln62-2024-direct-v1",
+      "section": "Rule 6; Gazette B647-B649",
+      "url": "https://www.legco.gov.hk/yr2024/english/subleg/negative/2024ln062-e.pdf",
+      "status": "verified_baseline",
+      "classification": "public",
+      "source_sha256": "ecca2bbe8b256ca821836b18343e7e6ae977da1ad6bc448d2e6e31df979180d3",
+      "source_page": 21,
+      "source_checked_at": "2026-10-25",
+      "current_consolidated_verified": false
+    },
+    "cap41r-direct-tier-caps": {
+      "version": "ln62-2024-direct-v1",
+      "section": "Rule 7(a)-(c); Gazette B651",
+      "url": "https://www.legco.gov.hk/yr2024/english/subleg/negative/2024ln062-e.pdf",
+      "status": "verified_baseline",
+      "classification": "public",
+      "source_sha256": "ecca2bbe8b256ca821836b18343e7e6ae977da1ad6bc448d2e6e31df979180d3",
+      "source_page": 23,
+      "source_checked_at": "2026-10-25",
+      "current_consolidated_verified": false
+    },
+    "cap41r-direct-tvog-method": {
+      "version": "ln62-2024-direct-v1",
+      "section": "Rule 19(2)-(3); Gazette B693",
+      "url": "https://www.legco.gov.hk/yr2024/english/subleg/negative/2024ln062-e.pdf",
+      "status": "verified_baseline",
+      "classification": "public",
+      "source_sha256": "ecca2bbe8b256ca821836b18343e7e6ae977da1ad6bc448d2e6e31df979180d3",
+      "source_page": 44,
+      "source_checked_at": "2026-10-25",
+      "current_consolidated_verified": false
+    },
+    "cap41r-direct-tvog-proxy": {
+      "version": "ln62-2024-direct-v1",
+      "section": "Rule 19(4)-(5); Gazette B693",
+      "url": "https://www.legco.gov.hk/yr2024/english/subleg/negative/2024ln062-e.pdf",
+      "status": "verified_baseline",
+      "classification": "public",
+      "source_sha256": "ecca2bbe8b256ca821836b18343e7e6ae977da1ad6bc448d2e6e31df979180d3",
+      "source_page": 44,
+      "source_checked_at": "2026-10-25",
+      "current_consolidated_verified": false
+    },
+    "cap41r-direct-pca-matrix": {
+      "version": "ln62-2024-direct-v1",
+      "section": "Schedule 7, section 2, Table 2; Gazette B1081",
+      "url": "https://www.legco.gov.hk/yr2024/english/subleg/negative/2024ln062-e.pdf",
+      "status": "verified_baseline",
+      "classification": "public",
+      "source_sha256": "ecca2bbe8b256ca821836b18343e7e6ae977da1ad6bc448d2e6e31df979180d3",
+      "source_page": 238,
+      "source_checked_at": "2026-10-25",
+      "current_consolidated_verified": false
+    },
+    "cap41r-amend-direct-commencement": {
+      "version": "ln58-2026-direct-v1",
+      "section": "2026 Amendment Rules, rule 1; Gazette B685",
+      "url": "https://www.legco.gov.hk/yr2026/english/hc/sub_leg/sc04/papers/2026ln058-e.pdf",
+      "status": "future",
+      "classification": "public",
+      "source_sha256": "e8999c31776b8af3389a9b9107cec1c8c2a30c8c7bcab3e0cca2616d37f31b06",
+      "source_page": 5,
+      "source_checked_at": "2026-10-25",
+      "current_consolidated_verified": false
+    },
+    "cap41r-amend-direct-pca-matrix": {
+      "version": "ln58-2026-direct-v1",
+      "section": "2026 Amendment Rules, rule 14(1), replacement Schedule 7 Table 2; Gazette B743",
+      "url": "https://www.legco.gov.hk/yr2026/english/hc/sub_leg/sc04/papers/2026ln058-e.pdf",
+      "status": "future",
+      "classification": "public",
+      "source_sha256": "e8999c31776b8af3389a9b9107cec1c8c2a30c8c7bcab3e0cca2616d37f31b06",
+      "source_page": 34,
+      "source_checked_at": "2026-10-25",
+      "current_consolidated_verified": false
+    },
+    "cap41r-amend-direct-cca-bounds": {
+      "version": "ln58-2026-direct-v1",
+      "section": "2026 Amendment Rules, rule 22(2), amending rule 49(3); Gazette B767",
+      "url": "https://www.legco.gov.hk/yr2026/english/hc/sub_leg/sc04/papers/2026ln058-e.pdf",
+      "status": "future",
+      "classification": "public",
+      "source_sha256": "e8999c31776b8af3389a9b9107cec1c8c2a30c8c7bcab3e0cca2616d37f31b06",
+      "source_page": 46,
+      "source_checked_at": "2026-10-25",
+      "current_consolidated_verified": false
+    },
+    "cap41r-amend-direct-crypto-stress": {
+      "version": "ln58-2026-direct-v1",
+      "section": "2026 Amendment Rules, rule 31, added rule 85A(1)(a); Gazette B775",
+      "url": "https://www.legco.gov.hk/yr2026/english/hc/sub_leg/sc04/papers/2026ln058-e.pdf",
+      "status": "future",
+      "classification": "public",
+      "source_sha256": "e8999c31776b8af3389a9b9107cec1c8c2a30c8c7bcab3e0cca2616d37f31b06",
+      "source_page": 50,
+      "source_checked_at": "2026-10-25",
+      "current_consolidated_verified": false
+    }
+  },
+  "relevance_definition": "Binary section relevance means substantive direct support for a requested component or identified historical/background assistance. It does not mean complete support; expected_answerable=false can coexist with relevant background. Mere shared topic words alone are insufficient.",
+  "required_document_ids_definition": "For answerable cases, the minimum labeled source components needed together; corroborating relevant sources can be optional. The existing ranker runner uses any relevant section for some metrics and does not by itself establish joint completeness.",
+  "limitations": [
+    "Developer-authored, independently agent-labeled diagnostic; not blinded human labeling, a held-out set, or an independent institutional evaluation.",
+    "The author had prior source-curation and exploratory prototype-query exposure; no candidate runs occurred during authoring this new manifest.",
+    "Balanced 32 English and 32 Chinese cases are deliberately source-covered concepts and misses, not sampled production prevalence.",
+    "Relevance labels may identify partial or historical background for an unanswerable request; current-law, calibration and firm-specific gaps remain separately unanswerable.",
+    "All regulatory records lack verified current-consolidated status. Future records are scoped relative to the fixed labeling date, 2026-10-25.",
+    "No labels certify legal correctness, full statutory capital implementation, citation entailment or production security.",
+    "Compound positive cases need all required source components; existing any-relevant-section answer metrics cannot establish complete compound-answer support.",
+    "Each negative compound requires abstention from a complete conclusion, though authorized partial evidence may be displayed with explicit missing-scope limitations.",
+    "Only frozen source text/metadata and role/lifecycle constraints informed labels; the original 44-case manifest was not changed.",
+    "After candidate inspection, preserve this snapshot. Corrections or additional cases require a separately versioned manifest with a disclosed rationale, not silent relabeling."
+  ],
+  "cases": [
+    {
+      "case_id": "original-application-en",
+      "query": "Under the original 2024 rule 3, are companies still applying for authorization covered, and how are marine, captive, Lloyd’s and special-purpose insurers treated?",
+      "role": "analyst",
+      "language": "en",
+      "group": "original_supported",
+      "relevant_document_ids": [
+        "cap41r-direct-application",
+        "CAP41R-SCOPE"
+      ],
+      "required_document_ids": [
+        "cap41r-direct-application"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "historical_original",
+      "relevance_kind": "direct_or_component",
+      "missing_requirements": [],
+      "source_locators": [
+        {
+          "document_id": "cap41r-direct-application",
+          "version": "ln62-2024-direct-v1",
+          "section": "Rule 3(1)-(2); Gazette B643-B645",
+          "url": "https://www.legco.gov.hk/yr2024/english/subleg/negative/2024ln062-e.pdf",
+          "source_page": 19
+        },
+        {
+          "document_id": "CAP41R-SCOPE",
+          "version": "2024-05-03-baseline",
+          "section": "Explanatory Note, paragraphs 5–6 (describing rules 3–4)",
+          "url": "https://www.legco.gov.hk/yr2024/english/subleg/negative/2024ln062-e.pdf",
+          "source_page": null
+        }
+      ],
+      "rationale": "The operative rule-3 paraphrase covers applicants and exceptions; the explanatory note supplies corroborating scope background."
+    },
+    {
+      "case_id": "original-application-zh",
+      "query": "按2024年原始第3條，公司仲喺申請授權階段都適用嗎？海事、自保、勞合社同特定目的保險人又點處理？",
+      "role": "analyst",
+      "language": "zh",
+      "group": "original_supported",
+      "relevant_document_ids": [
+        "cap41r-direct-application",
+        "CAP41R-SCOPE"
+      ],
+      "required_document_ids": [
+        "cap41r-direct-application"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "historical_original",
+      "relevance_kind": "direct_or_component",
+      "missing_requirements": [],
+      "source_locators": [
+        {
+          "document_id": "cap41r-direct-application",
+          "version": "ln62-2024-direct-v1",
+          "section": "Rule 3(1)-(2); Gazette B643-B645",
+          "url": "https://www.legco.gov.hk/yr2024/english/subleg/negative/2024ln062-e.pdf",
+          "source_page": 19
+        },
+        {
+          "document_id": "CAP41R-SCOPE",
+          "version": "2024-05-03-baseline",
+          "section": "Explanatory Note, paragraphs 5–6 (describing rules 3–4)",
+          "url": "https://www.legco.gov.hk/yr2024/english/subleg/negative/2024ln062-e.pdf",
+          "source_page": null
+        }
+      ],
+      "rationale": "The question asks original application scope, including applicants; only the direct rule-3 record completes that component."
+    },
+    {
+      "case_id": "original-consolidation-en",
+      "query": "For an HK or designated insurer under original rule 4, is overseas business included, and are regulated financial-entity subsidiaries consolidated?",
+      "role": "analyst",
+      "language": "en",
+      "group": "original_supported",
+      "relevant_document_ids": [
+        "cap41r-direct-consolidation"
+      ],
+      "required_document_ids": [
+        "cap41r-direct-consolidation"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "historical_original",
+      "relevance_kind": "direct_or_component",
+      "missing_requirements": [],
+      "source_locators": [
+        {
+          "document_id": "cap41r-direct-consolidation",
+          "version": "ln62-2024-direct-v1",
+          "section": "Rule 4(1)-(2); Gazette B645",
+          "url": "https://www.legco.gov.hk/yr2024/english/subleg/negative/2024ln062-e.pdf",
+          "source_page": 20
+        }
+      ],
+      "rationale": "The direct consolidation record states both overseas inclusion and the regulated-financial-entity exception."
+    },
+    {
+      "case_id": "original-consolidation-zh",
+      "query": "原始第4條對香港成立或獲指定保險人的整合範圍，包括境外業務嗎？受金融監管的附屬公司是否同樣合併？",
+      "role": "analyst",
+      "language": "zh",
+      "group": "original_supported",
+      "relevant_document_ids": [
+        "cap41r-direct-consolidation"
+      ],
+      "required_document_ids": [
+        "cap41r-direct-consolidation"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "historical_original",
+      "relevance_kind": "direct_or_component",
+      "missing_requirements": [],
+      "source_locators": [
+        {
+          "document_id": "cap41r-direct-consolidation",
+          "version": "ln62-2024-direct-v1",
+          "section": "Rule 4(1)-(2); Gazette B645",
+          "url": "https://www.legco.gov.hk/yr2024/english/subleg/negative/2024ln062-e.pdf",
+          "source_page": 20
+        }
+      ],
+      "rationale": "Both requested historical consolidation points are explicit in the same section record."
+    },
+    {
+      "case_id": "original-branch-currency-en",
+      "query": "Under original rule 4(3)-(4), what business is included for a non-HK insurer that is not designated, and what currency is used unless otherwise specified?",
+      "role": "analyst",
+      "language": "en",
+      "group": "original_supported",
+      "relevant_document_ids": [
+        "cap41r-direct-branch-currency"
+      ],
+      "required_document_ids": [
+        "cap41r-direct-branch-currency"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "historical_original",
+      "relevance_kind": "direct_or_component",
+      "missing_requirements": [],
+      "source_locators": [
+        {
+          "document_id": "cap41r-direct-branch-currency",
+          "version": "ln62-2024-direct-v1",
+          "section": "Rule 4(3)-(4); Gazette B645",
+          "url": "https://www.legco.gov.hk/yr2024/english/subleg/negative/2024ln062-e.pdf",
+          "source_page": 20
+        }
+      ],
+      "rationale": "The branch-scope record supplies the in/from-Hong-Kong perimeter and the denomination caveat; no FX calibration is requested."
+    },
+    {
+      "case_id": "original-branch-currency-zh",
+      "query": "原始第4(3)及4(4)條對非獲指定的外地保險人，涵蓋哪部分業務？除非另有規定，計算用什麼貨幣？",
+      "role": "analyst",
+      "language": "zh",
+      "group": "original_supported",
+      "relevant_document_ids": [
+        "cap41r-direct-branch-currency"
+      ],
+      "required_document_ids": [
+        "cap41r-direct-branch-currency"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "historical_original",
+      "relevance_kind": "direct_or_component",
+      "missing_requirements": [],
+      "source_locators": [
+        {
+          "document_id": "cap41r-direct-branch-currency",
+          "version": "ln62-2024-direct-v1",
+          "section": "Rule 4(3)-(4); Gazette B645",
+          "url": "https://www.legco.gov.hk/yr2024/english/subleg/negative/2024ln062-e.pdf",
+          "source_page": 20
+        }
+      ],
+      "rationale": "The question is limited to the historical branch perimeter and currency convention."
+    },
+    {
+      "case_id": "original-breach-notice-en",
+      "query": "Did original rule 6 require an actual capital breach before notifying the IA, or was a view that a breach was at risk enough? How promptly and in what form?",
+      "role": "analyst",
+      "language": "en",
+      "group": "original_supported",
+      "relevant_document_ids": [
+        "cap41r-direct-breach-notice"
+      ],
+      "required_document_ids": [
+        "cap41r-direct-breach-notice"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "historical_original",
+      "relevance_kind": "direct_or_component",
+      "missing_requirements": [],
+      "source_locators": [
+        {
+          "document_id": "cap41r-direct-breach-notice",
+          "version": "ln62-2024-direct-v1",
+          "section": "Rule 6; Gazette B647-B649",
+          "url": "https://www.legco.gov.hk/yr2024/english/subleg/negative/2024ln062-e.pdf",
+          "source_page": 21
+        }
+      ],
+      "rationale": "The section supplies both trigger types plus immediate written notification, without requiring a full remediation procedure."
+    },
+    {
+      "case_id": "original-breach-notice-zh",
+      "query": "原始第6條要等到資本真的違規先通知IA嗎？董事認為有違規風險時，通知時間同形式有咩要求？",
+      "role": "analyst",
+      "language": "zh",
+      "group": "original_supported",
+      "relevant_document_ids": [
+        "cap41r-direct-breach-notice"
+      ],
+      "required_document_ids": [
+        "cap41r-direct-breach-notice"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "historical_original",
+      "relevance_kind": "direct_or_component",
+      "missing_requirements": [],
+      "source_locators": [
+        {
+          "document_id": "cap41r-direct-breach-notice",
+          "version": "ln62-2024-direct-v1",
+          "section": "Rule 6; Gazette B647-B649",
+          "url": "https://www.legco.gov.hk/yr2024/english/subleg/negative/2024ln062-e.pdf",
+          "source_page": 21
+        }
+      ],
+      "rationale": "The original notification trigger and manner are present; current intervention powers are outside the question."
+    },
+    {
+      "case_id": "original-tier-caps-en",
+      "query": "In the original rule 7 capital base, how large could Limited Tier 1 and Tier 2 be relative to PCA?",
+      "role": "analyst",
+      "language": "en",
+      "group": "original_supported",
+      "relevant_document_ids": [
+        "cap41r-direct-tier-caps"
+      ],
+      "required_document_ids": [
+        "cap41r-direct-tier-caps"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "historical_original",
+      "relevance_kind": "direct_or_component",
+      "missing_requirements": [],
+      "source_locators": [
+        {
+          "document_id": "cap41r-direct-tier-caps",
+          "version": "ln62-2024-direct-v1",
+          "section": "Rule 7(a)-(c); Gazette B651",
+          "url": "https://www.legco.gov.hk/yr2024/english/subleg/negative/2024ln062-e.pdf",
+          "source_page": 23
+        }
+      ],
+      "rationale": "The direct rule-7 record supplies the two numeric limits and their PCA denominator, not instrument qualification."
+    },
+    {
+      "case_id": "original-tier-caps-zh",
+      "query": "原版第7條，有限制一級資本同二級資本各自最多係訂明資本額幾多百分比？",
+      "role": "analyst",
+      "language": "zh",
+      "group": "original_supported",
+      "relevant_document_ids": [
+        "cap41r-direct-tier-caps"
+      ],
+      "required_document_ids": [
+        "cap41r-direct-tier-caps"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "historical_original",
+      "relevance_kind": "direct_or_component",
+      "missing_requirements": [],
+      "source_locators": [
+        {
+          "document_id": "cap41r-direct-tier-caps",
+          "version": "ln62-2024-direct-v1",
+          "section": "Rule 7(a)-(c); Gazette B651",
+          "url": "https://www.legco.gov.hk/yr2024/english/subleg/negative/2024ln062-e.pdf",
+          "source_page": 23
+        }
+      ],
+      "rationale": "This requests only the verified original numeric caps."
+    },
+    {
+      "case_id": "original-tvog-method-en",
+      "query": "For original rule 19 TVOG, what kind of scenarios and liability cashflows are specified, and must the model be reproducible?",
+      "role": "analyst",
+      "language": "en",
+      "group": "original_supported",
+      "relevant_document_ids": [
+        "cap41r-direct-tvog-method"
+      ],
+      "required_document_ids": [
+        "cap41r-direct-tvog-method"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "historical_original",
+      "relevance_kind": "direct_or_component",
+      "missing_requirements": [],
+      "source_locators": [
+        {
+          "document_id": "cap41r-direct-tvog-method",
+          "version": "ln62-2024-direct-v1",
+          "section": "Rule 19(2)-(3); Gazette B693",
+          "url": "https://www.legco.gov.hk/yr2024/english/subleg/negative/2024ln062-e.pdf",
+          "source_page": 44
+        }
+      ],
+      "rationale": "The stochastic-method record directly states risk-neutral market consistency, behavior/management cashflows and reproducibility; a full generator is not requested."
+    },
+    {
+      "case_id": "original-tvog-method-zh",
+      "query": "按2024年原始第19條計TVOG，情景同負債現金流有咩要求？模型結果要唔要可驗證及重現？",
+      "role": "analyst",
+      "language": "zh",
+      "group": "original_supported",
+      "relevant_document_ids": [
+        "cap41r-direct-tvog-method"
+      ],
+      "required_document_ids": [
+        "cap41r-direct-tvog-method"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "historical_original",
+      "relevance_kind": "direct_or_component",
+      "missing_requirements": [],
+      "source_locators": [
+        {
+          "document_id": "cap41r-direct-tvog-method",
+          "version": "ln62-2024-direct-v1",
+          "section": "Rule 19(2)-(3); Gazette B693",
+          "url": "https://www.legco.gov.hk/yr2024/english/subleg/negative/2024ln062-e.pdf",
+          "source_page": 44
+        }
+      ],
+      "rationale": "The question stays within the stated method characteristics rather than absent calibration parameters."
+    },
+    {
+      "case_id": "original-tvog-proxy-en",
+      "query": "What conditions did original rule 19(4) place on the 20% of deterministic current estimate proxy, and could TVOG be negative for the insurer as a whole?",
+      "role": "analyst",
+      "language": "en",
+      "group": "original_supported",
+      "relevant_document_ids": [
+        "cap41r-direct-tvog-proxy"
+      ],
+      "required_document_ids": [
+        "cap41r-direct-tvog-proxy"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "historical_original",
+      "relevance_kind": "direct_or_component",
+      "missing_requirements": [],
+      "source_locators": [
+        {
+          "document_id": "cap41r-direct-tvog-proxy",
+          "version": "ln62-2024-direct-v1",
+          "section": "Rule 19(4)-(5); Gazette B693",
+          "url": "https://www.legco.gov.hk/yr2024/english/subleg/negative/2024ln062-e.pdf",
+          "source_page": 44
+        }
+      ],
+      "rationale": "The source covers the never-before-applied condition and insurer-wide floor. Here current estimate is a technical term, not a request to certify present law."
+    },
+    {
+      "case_id": "original-tvog-proxy-zh",
+      "query": "原始19(4)的20%替代法可在什麼前提下使用？19(5)容許整間保險人的TVOG為負數嗎？",
+      "role": "analyst",
+      "language": "zh",
+      "group": "original_supported",
+      "relevant_document_ids": [
+        "cap41r-direct-tvog-proxy"
+      ],
+      "required_document_ids": [
+        "cap41r-direct-tvog-proxy"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "historical_original",
+      "relevance_kind": "direct_or_component",
+      "missing_requirements": [],
+      "source_locators": [
+        {
+          "document_id": "cap41r-direct-tvog-proxy",
+          "version": "ln62-2024-direct-v1",
+          "section": "Rule 19(4)-(5); Gazette B693",
+          "url": "https://www.legco.gov.hk/yr2024/english/subleg/negative/2024ln062-e.pdf",
+          "source_page": 44
+        }
+      ],
+      "rationale": "The conditional proxy and whole-insurer nonnegative requirement are both explicit; this does not approve a particular firm’s election."
+    },
+    {
+      "case_id": "original-pca-matrix-en",
+      "query": "Describe the original Schedule 7 Table 2 correlations among the four PCA modules, including the life/general pair.",
+      "role": "analyst",
+      "language": "en",
+      "group": "original_supported",
+      "relevant_document_ids": [
+        "cap41r-direct-pca-matrix"
+      ],
+      "required_document_ids": [
+        "cap41r-direct-pca-matrix"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "historical_original",
+      "relevance_kind": "direct_or_component",
+      "missing_requirements": [],
+      "source_locators": [
+        {
+          "document_id": "cap41r-direct-pca-matrix",
+          "version": "ln62-2024-direct-v1",
+          "section": "Schedule 7, section 2, Table 2; Gazette B1081",
+          "url": "https://www.legco.gov.hk/yr2024/english/subleg/negative/2024ln062-e.pdf",
+          "source_page": 238
+        }
+      ],
+      "rationale": "The record compactly covers the complete four-module intermodule table; market sub-risk tables are not requested."
+    },
+    {
+      "case_id": "original-pca-matrix-zh",
+      "query": "原始附表7表2的四個PCA模組，對角線、其他組合及人壽與一般保險一組的相關係數分別係點？",
+      "role": "analyst",
+      "language": "zh",
+      "group": "original_supported",
+      "relevant_document_ids": [
+        "cap41r-direct-pca-matrix"
+      ],
+      "required_document_ids": [
+        "cap41r-direct-pca-matrix"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "historical_original",
+      "relevance_kind": "direct_or_component",
+      "missing_requirements": [],
+      "source_locators": [
+        {
+          "document_id": "cap41r-direct-pca-matrix",
+          "version": "ln62-2024-direct-v1",
+          "section": "Schedule 7, section 2, Table 2; Gazette B1081",
+          "url": "https://www.legco.gov.hk/yr2024/english/subleg/negative/2024ln062-e.pdf",
+          "source_page": 238
+        }
+      ],
+      "rationale": "This is the original four-module PCA table, not a complete market-risk submatrix or PCA formula."
+    },
+    {
+      "case_id": "future-start-and-disclosure-en",
+      "query": "The May 2026 release mentions public disclosure and the capital amendments. Were they announced to start on the same day, and when are the capital amendments scheduled to start?",
+      "role": "analyst",
+      "language": "en",
+      "group": "future_supported",
+      "relevant_document_ids": [
+        "HKRBC-2026-AMENDMENTS",
+        "cap41r-amend-direct-commencement"
+      ],
+      "required_document_ids": [
+        "HKRBC-2026-AMENDMENTS"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "historical_announcement_and_prospective_amendment",
+      "relevance_kind": "direct_or_component",
+      "missing_requirements": [],
+      "source_locators": [
+        {
+          "document_id": "HKRBC-2026-AMENDMENTS",
+          "version": "2026-announcement",
+          "section": "Government release, final commencement paragraphs",
+          "url": "https://www.info.gov.hk/gia/general/202605/22/P2026052200317.htm",
+          "source_page": null
+        },
+        {
+          "document_id": "cap41r-amend-direct-commencement",
+          "version": "ln58-2026-direct-v1",
+          "section": "2026 Amendment Rules, rule 1; Gazette B685",
+          "url": "https://www.legco.gov.hk/yr2026/english/hc/sub_leg/sc04/papers/2026ln058-e.pdf",
+          "source_page": 5
+        }
+      ],
+      "rationale": "The announcement distinguishes the two commencement arrangements; actual amendment rule 1 corroborates the capital date."
+    },
+    {
+      "case_id": "future-start-rule1-zh",
+      "query": "2026年已刊憲的估值及資本修訂規則，第1條列出的預定生效日期係幾時？",
+      "role": "analyst",
+      "language": "zh",
+      "group": "future_supported",
+      "relevant_document_ids": [
+        "cap41r-amend-direct-commencement"
+      ],
+      "required_document_ids": [
+        "cap41r-amend-direct-commencement"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "prospective_amendment",
+      "relevance_kind": "direct_or_component",
+      "missing_requirements": [],
+      "source_locators": [
+        {
+          "document_id": "cap41r-amend-direct-commencement",
+          "version": "ln58-2026-direct-v1",
+          "section": "2026 Amendment Rules, rule 1; Gazette B685",
+          "url": "https://www.legco.gov.hk/yr2026/english/hc/sub_leg/sc04/papers/2026ln058-e.pdf",
+          "source_page": 5
+        }
+      ],
+      "rationale": "Actual amendment rule 1 supplies the future commencement date; no assertion that it is already operative is needed."
+    },
+    {
+      "case_id": "future-pca-matrix-en",
+      "query": "In the 2026 amendment scheduled for December, what will rule 14 set for the market/general-insurance correlation, and is life/general still zero?",
+      "role": "analyst",
+      "language": "en",
+      "group": "future_supported",
+      "relevant_document_ids": [
+        "cap41r-amend-direct-pca-matrix"
+      ],
+      "required_document_ids": [
+        "cap41r-amend-direct-pca-matrix"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "prospective_amendment",
+      "relevance_kind": "direct_or_component",
+      "missing_requirements": [],
+      "source_locators": [
+        {
+          "document_id": "cap41r-amend-direct-pca-matrix",
+          "version": "ln58-2026-direct-v1",
+          "section": "2026 Amendment Rules, rule 14(1), replacement Schedule 7 Table 2; Gazette B743",
+          "url": "https://www.legco.gov.hk/yr2026/english/hc/sub_leg/sc04/papers/2026ln058-e.pdf",
+          "source_page": 34
+        }
+      ],
+      "rationale": "The replacement Table 2 supplies both requested entries and is labeled future."
+    },
+    {
+      "case_id": "future-pca-matrix-zh",
+      "query": "就2026年將生效的第14條修訂，市場同一般保險的PCA相關係數會係幾多？人壽同一般保險一組是否仍為零？",
+      "role": "analyst",
+      "language": "zh",
+      "group": "future_supported",
+      "relevant_document_ids": [
+        "cap41r-amend-direct-pca-matrix"
+      ],
+      "required_document_ids": [
+        "cap41r-amend-direct-pca-matrix"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "prospective_amendment",
+      "relevance_kind": "direct_or_component",
+      "missing_requirements": [],
+      "source_locators": [
+        {
+          "document_id": "cap41r-amend-direct-pca-matrix",
+          "version": "ln58-2026-direct-v1",
+          "section": "2026 Amendment Rules, rule 14(1), replacement Schedule 7 Table 2; Gazette B743",
+          "url": "https://www.legco.gov.hk/yr2026/english/hc/sub_leg/sc04/papers/2026ln058-e.pdf",
+          "source_page": 34
+        }
+      ],
+      "rationale": "Both matrix entries are present in the narrowly scoped future record."
+    },
+    {
+      "case_id": "future-cca-method-en",
+      "query": "When the 2026 amendment takes effect, will rule 49(3) still hardcode the countercyclical bounds, or will the IA specify them through notices?",
+      "role": "analyst",
+      "language": "en",
+      "group": "future_supported",
+      "relevant_document_ids": [
+        "cap41r-amend-direct-cca-bounds"
+      ],
+      "required_document_ids": [
+        "cap41r-amend-direct-cca-bounds"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "prospective_amendment",
+      "relevance_kind": "direct_or_component",
+      "missing_requirements": [],
+      "source_locators": [
+        {
+          "document_id": "cap41r-amend-direct-cca-bounds",
+          "version": "ln58-2026-direct-v1",
+          "section": "2026 Amendment Rules, rule 22(2), amending rule 49(3); Gazette B767",
+          "url": "https://www.legco.gov.hk/yr2026/english/hc/sub_leg/sc04/papers/2026ln058-e.pdf",
+          "source_page": 46
+        }
+      ],
+      "rationale": "The future record supports the change in how bounds are specified; it does not supply a later notice’s numeric values."
+    },
+    {
+      "case_id": "future-cca-method-zh",
+      "query": "未來2026修訂會點改逆周期調整上限及下限的設定方式？係邊個用咩公告決定？",
+      "role": "analyst",
+      "language": "zh",
+      "group": "future_supported",
+      "relevant_document_ids": [
+        "cap41r-amend-direct-cca-bounds"
+      ],
+      "required_document_ids": [
+        "cap41r-amend-direct-cca-bounds"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "prospective_amendment",
+      "relevance_kind": "direct_or_component",
+      "missing_requirements": [],
+      "source_locators": [
+        {
+          "document_id": "cap41r-amend-direct-cca-bounds",
+          "version": "ln58-2026-direct-v1",
+          "section": "2026 Amendment Rules, rule 22(2), amending rule 49(3); Gazette B767",
+          "url": "https://www.legco.gov.hk/yr2026/english/hc/sub_leg/sc04/papers/2026ln058-e.pdf",
+          "source_page": 46
+        }
+      ],
+      "rationale": "Only the future specification mechanism is requested, which the source contains."
+    },
+    {
+      "case_id": "future-crypto-stress-en",
+      "query": "What is the crypto-asset downward stress percentage in the scheduled 2026 amendment, and should corresponding liabilities sensitive to those assets also change?",
+      "role": "analyst",
+      "language": "en",
+      "group": "future_supported",
+      "relevant_document_ids": [
+        "cap41r-amend-direct-crypto-stress"
+      ],
+      "required_document_ids": [
+        "cap41r-amend-direct-crypto-stress"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "prospective_amendment",
+      "relevance_kind": "direct_or_component",
+      "missing_requirements": [],
+      "source_locators": [
+        {
+          "document_id": "cap41r-amend-direct-crypto-stress",
+          "version": "ln58-2026-direct-v1",
+          "section": "2026 Amendment Rules, rule 31, added rule 85A(1)(a); Gazette B775",
+          "url": "https://www.legco.gov.hk/yr2026/english/hc/sub_leg/sc04/papers/2026ln058-e.pdf",
+          "source_page": 50
+        }
+      ],
+      "rationale": "The added rule-85A crypto component supplies both the percentage and corresponding liability sensitivity. Other-risk and stablecoin treatment are not requested."
+    },
+    {
+      "case_id": "future-crypto-stress-zh",
+      "query": "2026年將生效的新增85A對加密資產作幾多百分比下調壓力？相關負債跟住變動要唔要計？",
+      "role": "analyst",
+      "language": "zh",
+      "group": "future_supported",
+      "relevant_document_ids": [
+        "cap41r-amend-direct-crypto-stress"
+      ],
+      "required_document_ids": [
+        "cap41r-amend-direct-crypto-stress"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "prospective_amendment",
+      "relevance_kind": "direct_or_component",
+      "missing_requirements": [],
+      "source_locators": [
+        {
+          "document_id": "cap41r-amend-direct-crypto-stress",
+          "version": "ln58-2026-direct-v1",
+          "section": "2026 Amendment Rules, rule 31, added rule 85A(1)(a); Gazette B775",
+          "url": "https://www.legco.gov.hk/yr2026/english/hc/sub_leg/sc04/papers/2026ln058-e.pdf",
+          "source_page": 50
+        }
+      ],
+      "rationale": "The narrowly scoped future crypto component answers both requested points, without establishing full revised capital."
+    },
+    {
+      "case_id": "compare-original-future-matrix-en",
+      "query": "Compare the original 2024 and the 2026 replacement PCA table for the market/general-insurance pair, and state when the replacement is scheduled to begin.",
+      "role": "analyst",
+      "language": "en",
+      "group": "historical_comparison",
+      "relevant_document_ids": [
+        "cap41r-direct-pca-matrix",
+        "cap41r-amend-direct-pca-matrix",
+        "cap41r-amend-direct-commencement"
+      ],
+      "required_document_ids": [
+        "cap41r-direct-pca-matrix",
+        "cap41r-amend-direct-pca-matrix",
+        "cap41r-amend-direct-commencement"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "original_and_prospective_comparison",
+      "relevance_kind": "direct_or_component",
+      "missing_requirements": [],
+      "source_locators": [
+        {
+          "document_id": "cap41r-direct-pca-matrix",
+          "version": "ln62-2024-direct-v1",
+          "section": "Schedule 7, section 2, Table 2; Gazette B1081",
+          "url": "https://www.legco.gov.hk/yr2024/english/subleg/negative/2024ln062-e.pdf",
+          "source_page": 238
+        },
+        {
+          "document_id": "cap41r-amend-direct-pca-matrix",
+          "version": "ln58-2026-direct-v1",
+          "section": "2026 Amendment Rules, rule 14(1), replacement Schedule 7 Table 2; Gazette B743",
+          "url": "https://www.legco.gov.hk/yr2026/english/hc/sub_leg/sc04/papers/2026ln058-e.pdf",
+          "source_page": 34
+        },
+        {
+          "document_id": "cap41r-amend-direct-commencement",
+          "version": "ln58-2026-direct-v1",
+          "section": "2026 Amendment Rules, rule 1; Gazette B685",
+          "url": "https://www.legco.gov.hk/yr2026/english/hc/sub_leg/sc04/papers/2026ln058-e.pdf",
+          "source_page": 5
+        }
+      ],
+      "rationale": "This comparison needs original and replacement entries plus the commencement provision; each period must stay labeled separately."
+    },
+    {
+      "case_id": "compare-original-future-matrix-zh",
+      "query": "比較2024原版與2026修訂後，市場及一般保險一組的PCA相關係數，並註明後者預定生效日期。",
+      "role": "analyst",
+      "language": "zh",
+      "group": "historical_comparison",
+      "relevant_document_ids": [
+        "cap41r-direct-pca-matrix",
+        "cap41r-amend-direct-pca-matrix",
+        "cap41r-amend-direct-commencement"
+      ],
+      "required_document_ids": [
+        "cap41r-direct-pca-matrix",
+        "cap41r-amend-direct-pca-matrix",
+        "cap41r-amend-direct-commencement"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "original_and_prospective_comparison",
+      "relevance_kind": "direct_or_component",
+      "missing_requirements": [],
+      "source_locators": [
+        {
+          "document_id": "cap41r-direct-pca-matrix",
+          "version": "ln62-2024-direct-v1",
+          "section": "Schedule 7, section 2, Table 2; Gazette B1081",
+          "url": "https://www.legco.gov.hk/yr2024/english/subleg/negative/2024ln062-e.pdf",
+          "source_page": 238
+        },
+        {
+          "document_id": "cap41r-amend-direct-pca-matrix",
+          "version": "ln58-2026-direct-v1",
+          "section": "2026 Amendment Rules, rule 14(1), replacement Schedule 7 Table 2; Gazette B743",
+          "url": "https://www.legco.gov.hk/yr2026/english/hc/sub_leg/sc04/papers/2026ln058-e.pdf",
+          "source_page": 34
+        },
+        {
+          "document_id": "cap41r-amend-direct-commencement",
+          "version": "ln58-2026-direct-v1",
+          "section": "2026 Amendment Rules, rule 1; Gazette B685",
+          "url": "https://www.legco.gov.hk/yr2026/english/hc/sub_leg/sc04/papers/2026ln058-e.pdf",
+          "source_page": 5
+        }
+      ],
+      "rationale": "All three source components are needed for a complete dated comparison; one relevant citation alone is not complete support."
+    },
+    {
+      "case_id": "legacy-pillars-en",
+      "query": "In the framework description, which pillar covers ERM and which one concerns reporting and public disclosure?",
+      "role": "analyst",
+      "language": "en",
+      "group": "legacy_supported",
+      "relevant_document_ids": [
+        "HKRBC-PILLARS"
+      ],
+      "required_document_ids": [
+        "HKRBC-PILLARS"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "framework_background",
+      "relevance_kind": "direct_or_component",
+      "missing_requirements": [],
+      "source_locators": [
+        {
+          "document_id": "HKRBC-PILLARS",
+          "version": "2024-01-11-baseline",
+          "section": "Chapter 2, paragraph 12 and footnote 3",
+          "url": "https://www.ia.org.hk/en/infocenter/files/Consultation_Paper_on_the_Draft_RBC_Rules_20240111_Eng.pdf",
+          "source_page": null
+        }
+      ],
+      "rationale": "The original consultation-background paraphrase distinguishes the requested pillars; it is not treated as current operative law."
+    },
+    {
+      "case_id": "legacy-commencement-zh",
+      "query": "香港RBC制度最初係邊日開始實施？我問原始實施日期。",
+      "role": "analyst",
+      "language": "zh",
+      "group": "legacy_supported",
+      "relevant_document_ids": [
+        "HKRBC-COMMENCEMENT"
+      ],
+      "required_document_ids": [
+        "HKRBC-COMMENCEMENT"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "historical_commencement",
+      "relevance_kind": "direct_or_component",
+      "missing_requirements": [],
+      "source_locators": [
+        {
+          "document_id": "HKRBC-COMMENCEMENT",
+          "version": "2024-05-03-baseline",
+          "section": "Government release, commencement paragraph",
+          "url": "https://www.info.gov.hk/gia/general/202405/03/P2024050300187p.htm",
+          "source_page": null
+        }
+      ],
+      "rationale": "The historical government announcement supplies original commencement, not later amendments."
+    },
+    {
+      "case_id": "legacy-capital-thresholds-en",
+      "query": "What did original rule 5(1) compare the capital base against, including the fixed Hong Kong dollar amount?",
+      "role": "analyst",
+      "language": "en",
+      "group": "legacy_supported",
+      "relevant_document_ids": [
+        "CAP41R-R5-1"
+      ],
+      "required_document_ids": [
+        "CAP41R-R5-1"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "historical_original",
+      "relevance_kind": "direct_or_component",
+      "missing_requirements": [],
+      "source_locators": [
+        {
+          "document_id": "CAP41R-R5-1",
+          "version": "2024-05-03-baseline",
+          "section": "Part 2, rule 5(1), Gazette page B647",
+          "url": "https://www.ia.org.hk/en/legislative_framework/overview/files/es22024281862.pdf",
+          "source_page": null
+        }
+      ],
+      "rationale": "The original threshold record identifies the three comparisons and fixed amount, with variations left as a caveat."
+    },
+    {
+      "case_id": "legacy-mca-default-zh",
+      "query": "按原始第5(3)條，MCA預設相對PCA係幾多？IA另有寬免時是否仍須用同一比例？",
+      "role": "analyst",
+      "language": "zh",
+      "group": "legacy_supported",
+      "relevant_document_ids": [
+        "CAP41R-R5-3"
+      ],
+      "required_document_ids": [
+        "CAP41R-R5-3"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "historical_original",
+      "relevance_kind": "direct_or_component",
+      "missing_requirements": [],
+      "source_locators": [
+        {
+          "document_id": "CAP41R-R5-3",
+          "version": "2024-05-03-baseline",
+          "section": "Part 2, rule 5(3), Gazette page B647",
+          "url": "https://www.ia.org.hk/en/legislative_framework/overview/files/es22024281862.pdf",
+          "source_page": null
+        }
+      ],
+      "rationale": "The default MCA ratio and qualification for IA variation/relaxation are both present."
+    },
+    {
+      "case_id": "legacy-variation-en",
+      "query": "What does original rule 5(2) require after the IA grants a variation or relaxation of the capital requirements?",
+      "role": "analyst",
+      "language": "en",
+      "group": "legacy_supported",
+      "relevant_document_ids": [
+        "CAP41R-R5-2"
+      ],
+      "required_document_ids": [
+        "CAP41R-R5-2"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "historical_original",
+      "relevance_kind": "direct_or_component",
+      "missing_requirements": [],
+      "source_locators": [
+        {
+          "document_id": "CAP41R-R5-2",
+          "version": "2024-05-03-baseline",
+          "section": "Part 2, rule 5(2), Gazette page B647",
+          "url": "https://www.ia.org.hk/en/legislative_framework/overview/files/es22024281862.pdf",
+          "source_page": null
+        }
+      ],
+      "rationale": "The record describes determining requirements as varied or relaxed; no firm-specific decision is requested."
+    },
+    {
+      "case_id": "legacy-natcat-default-zh",
+      "query": "據2024年指引，天災RCA係直接可以自評，定預設用因子法？改用OA要咩批准？",
+      "role": "analyst",
+      "language": "zh",
+      "group": "legacy_supported",
+      "relevant_document_ids": [
+        "CAP41R-NATCAT-OA"
+      ],
+      "required_document_ids": [
+        "CAP41R-NATCAT-OA"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "historical_original",
+      "relevance_kind": "direct_or_component",
+      "missing_requirements": [],
+      "source_locators": [
+        {
+          "document_id": "CAP41R-NATCAT-OA",
+          "version": "2024-unknown-baseline",
+          "section": "Appendix 3, introduction, paragraph 1.1 (referring to rules 67–68)",
+          "url": "https://www.ia.org.hk/english/legislative_framework/circulars/reg_matters/files/Cir_dd_12.6.2024_41R_Appendixes.pdf",
+          "source_page": null
+        }
+      ],
+      "rationale": "The factor-based default and prior IA approval for own assessment are covered. Numeric prescribed factors are not requested."
+    },
+    {
+      "case_id": "legacy-disclosure-fields-en",
+      "query": "Which three capital tiers appear in the first-year public-disclosure template, separately from the PCA line?",
+      "role": "analyst",
+      "language": "en",
+      "group": "legacy_supported",
+      "relevant_document_ids": [
+        "HKRBC-DISCLOSURE-CAPITAL"
+      ],
+      "required_document_ids": [
+        "HKRBC-DISCLOSURE-CAPITAL"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "historical_disclosure_template",
+      "relevance_kind": "direct_or_component",
+      "missing_requirements": [],
+      "source_locators": [
+        {
+          "document_id": "HKRBC-DISCLOSURE-CAPITAL",
+          "version": "2025-08-08-baseline",
+          "section": "Section 4, Capital adequacy, paragraphs (a)–(b), printed pages 4–5",
+          "url": "https://www.ia.org.hk/en/legislative_framework/circulars/reg_matters/files/Circular_20250808_Annex_1.pdf",
+          "source_page": null
+        }
+      ],
+      "rationale": "The disclosure-template record supplies field names, without instrument eligibility or caps."
+    },
+    {
+      "case_id": "legacy-fund-purpose-zh",
+      "query": "原始第87條的大方向係咩？它有無把法定基金及指定資產負債組合的名義資本額連在一起？",
+      "role": "analyst",
+      "language": "zh",
+      "group": "legacy_supported",
+      "relevant_document_ids": [
+        "CAP41R-R87"
+      ],
+      "required_document_ids": [
+        "CAP41R-R87"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "historical_original",
+      "relevance_kind": "direct_or_component",
+      "missing_requirements": [],
+      "source_locators": [
+        {
+          "document_id": "CAP41R-R87",
+          "version": "2024-05-03-baseline",
+          "section": "Part 6, rule 87(1)–(3), Gazette page B973",
+          "url": "https://www.ia.org.hk/en/legislative_framework/overview/files/es22024281862.pdf",
+          "source_page": null
+        }
+      ],
+      "rationale": "The existing record covers the broad allocated-MCA purpose and notional amounts, not a numerical allocation algorithm."
+    },
+    {
+      "case_id": "current-tier-caps-en",
+      "query": "As of 25 October 2026, confirm the currently applicable Limited Tier 1 and Tier 2 caps for compliance.",
+      "role": "analyst",
+      "language": "en",
+      "group": "current_law",
+      "relevant_document_ids": [
+        "cap41r-direct-tier-caps"
+      ],
+      "required_document_ids": [],
+      "expected_answerable": false,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "present_law",
+      "relevance_kind": "partial_or_historical_background",
+      "missing_requirements": [
+        "Verified current consolidated law and applicable insurer-specific decisions."
+      ],
+      "source_locators": [
+        {
+          "document_id": "cap41r-direct-tier-caps",
+          "version": "ln62-2024-direct-v1",
+          "section": "Rule 7(a)-(c); Gazette B651",
+          "url": "https://www.legco.gov.hk/yr2024/english/subleg/negative/2024ln062-e.pdf",
+          "source_page": 23
+        }
+      ],
+      "rationale": "The cap record is verified only against original 2024 law and every regulatory record lacks current-consolidated verification."
+    },
+    {
+      "case_id": "current-tier-caps-zh",
+      "query": "截至2026年10月25日，二級資本現行是否可以認列至PCA的50%？請確認合規。",
+      "role": "analyst",
+      "language": "zh",
+      "group": "current_law",
+      "relevant_document_ids": [
+        "cap41r-direct-tier-caps"
+      ],
+      "required_document_ids": [],
+      "expected_answerable": false,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "present_law",
+      "relevance_kind": "partial_or_historical_background",
+      "missing_requirements": [
+        "Verified current consolidated law; applicability and any insurer-specific decisions."
+      ],
+      "source_locators": [
+        {
+          "document_id": "cap41r-direct-tier-caps",
+          "version": "ln62-2024-direct-v1",
+          "section": "Rule 7(a)-(c); Gazette B651",
+          "url": "https://www.legco.gov.hk/yr2024/english/subleg/negative/2024ln062-e.pdf",
+          "source_page": 23
+        }
+      ],
+      "rationale": "A historical matching number is insufficient to certify a present compliance statement."
+    },
+    {
+      "case_id": "current-pca-matrix-en",
+      "query": "On 25 October 2026, is the currently applicable market/general-insurance PCA correlation 12.5% or 25%? Please certify which rule applies today.",
+      "role": "analyst",
+      "language": "en",
+      "group": "current_law",
+      "relevant_document_ids": [
+        "cap41r-direct-pca-matrix",
+        "cap41r-amend-direct-pca-matrix",
+        "cap41r-amend-direct-commencement"
+      ],
+      "required_document_ids": [],
+      "expected_answerable": false,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "present_law",
+      "relevance_kind": "partial_or_historical_background",
+      "missing_requirements": [
+        "Verified current consolidated rule and full amendment-history review."
+      ],
+      "source_locators": [
+        {
+          "document_id": "cap41r-direct-pca-matrix",
+          "version": "ln62-2024-direct-v1",
+          "section": "Schedule 7, section 2, Table 2; Gazette B1081",
+          "url": "https://www.legco.gov.hk/yr2024/english/subleg/negative/2024ln062-e.pdf",
+          "source_page": 238
+        },
+        {
+          "document_id": "cap41r-amend-direct-pca-matrix",
+          "version": "ln58-2026-direct-v1",
+          "section": "2026 Amendment Rules, rule 14(1), replacement Schedule 7 Table 2; Gazette B743",
+          "url": "https://www.legco.gov.hk/yr2026/english/hc/sub_leg/sc04/papers/2026ln058-e.pdf",
+          "source_page": 34
+        },
+        {
+          "document_id": "cap41r-amend-direct-commencement",
+          "version": "ln58-2026-direct-v1",
+          "section": "2026 Amendment Rules, rule 1; Gazette B685",
+          "url": "https://www.legco.gov.hk/yr2026/english/hc/sub_leg/sc04/papers/2026ln058-e.pdf",
+          "source_page": 5
+        }
+      ],
+      "rationale": "The corpus distinguishes original and future material but has not exhaustively verified current consolidation or intervening changes."
+    },
+    {
+      "case_id": "current-pca-matrix-zh",
+      "query": "而家市場同一般保險的法定PCA相關係數究竟係12.5%定25%？我要今日現行規則確認。",
+      "role": "analyst",
+      "language": "zh",
+      "group": "current_law",
+      "relevant_document_ids": [
+        "cap41r-direct-pca-matrix",
+        "cap41r-amend-direct-pca-matrix",
+        "cap41r-amend-direct-commencement"
+      ],
+      "required_document_ids": [],
+      "expected_answerable": false,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "present_law",
+      "relevance_kind": "partial_or_historical_background",
+      "missing_requirements": [
+        "Verified current consolidated matrix."
+      ],
+      "source_locators": [
+        {
+          "document_id": "cap41r-direct-pca-matrix",
+          "version": "ln62-2024-direct-v1",
+          "section": "Schedule 7, section 2, Table 2; Gazette B1081",
+          "url": "https://www.legco.gov.hk/yr2024/english/subleg/negative/2024ln062-e.pdf",
+          "source_page": 238
+        },
+        {
+          "document_id": "cap41r-amend-direct-pca-matrix",
+          "version": "ln58-2026-direct-v1",
+          "section": "2026 Amendment Rules, rule 14(1), replacement Schedule 7 Table 2; Gazette B743",
+          "url": "https://www.legco.gov.hk/yr2026/english/hc/sub_leg/sc04/papers/2026ln058-e.pdf",
+          "source_page": 34
+        },
+        {
+          "document_id": "cap41r-amend-direct-commencement",
+          "version": "ln58-2026-direct-v1",
+          "section": "2026 Amendment Rules, rule 1; Gazette B685",
+          "url": "https://www.legco.gov.hk/yr2026/english/hc/sub_leg/sc04/papers/2026ln058-e.pdf",
+          "source_page": 5
+        }
+      ],
+      "rationale": "Original and future entries may be shown as background, but must not be promoted to current-law certification."
+    },
+    {
+      "case_id": "current-crypto-stress-en",
+      "query": "What is the legally required crypto-asset stress today? Can we already apply the 100% treatment as current law?",
+      "role": "analyst",
+      "language": "en",
+      "group": "current_law",
+      "relevant_document_ids": [
+        "cap41r-amend-direct-crypto-stress",
+        "cap41r-amend-direct-commencement"
+      ],
+      "required_document_ids": [],
+      "expected_answerable": false,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "present_law",
+      "relevance_kind": "partial_or_historical_background",
+      "missing_requirements": [
+        "Verified present crypto treatment and current consolidated law."
+      ],
+      "source_locators": [
+        {
+          "document_id": "cap41r-amend-direct-crypto-stress",
+          "version": "ln58-2026-direct-v1",
+          "section": "2026 Amendment Rules, rule 31, added rule 85A(1)(a); Gazette B775",
+          "url": "https://www.legco.gov.hk/yr2026/english/hc/sub_leg/sc04/papers/2026ln058-e.pdf",
+          "source_page": 50
+        },
+        {
+          "document_id": "cap41r-amend-direct-commencement",
+          "version": "ln58-2026-direct-v1",
+          "section": "2026 Amendment Rules, rule 1; Gazette B685",
+          "url": "https://www.legco.gov.hk/yr2026/english/hc/sub_leg/sc04/papers/2026ln058-e.pdf",
+          "source_page": 5
+        }
+      ],
+      "rationale": "The precise crypto record is a future amendment as of the labeling date, not a verified-current requirement."
+    },
+    {
+      "case_id": "current-crypto-stress-zh",
+      "query": "而家加密資產是否一律100%下調？請給現行監管要求，唔係未來修訂。",
+      "role": "analyst",
+      "language": "zh",
+      "group": "current_law",
+      "relevant_document_ids": [
+        "cap41r-amend-direct-crypto-stress",
+        "cap41r-amend-direct-commencement"
+      ],
+      "required_document_ids": [],
+      "expected_answerable": false,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "present_law",
+      "relevance_kind": "partial_or_historical_background",
+      "missing_requirements": [
+        "Verified present crypto treatment."
+      ],
+      "source_locators": [
+        {
+          "document_id": "cap41r-amend-direct-crypto-stress",
+          "version": "ln58-2026-direct-v1",
+          "section": "2026 Amendment Rules, rule 31, added rule 85A(1)(a); Gazette B775",
+          "url": "https://www.legco.gov.hk/yr2026/english/hc/sub_leg/sc04/papers/2026ln058-e.pdf",
+          "source_page": 50
+        },
+        {
+          "document_id": "cap41r-amend-direct-commencement",
+          "version": "ln58-2026-direct-v1",
+          "section": "2026 Amendment Rules, rule 1; Gazette B685",
+          "url": "https://www.legco.gov.hk/yr2026/english/hc/sub_leg/sc04/papers/2026ln058-e.pdf",
+          "source_page": 5
+        }
+      ],
+      "rationale": "An explicit present-scope request cannot be satisfied by a future crypto provision."
+    },
+    {
+      "case_id": "current-tvog-election-en",
+      "query": "Under today’s rule 19, can our firm elect the 20% proxy immediately and declare compliance?",
+      "role": "analyst",
+      "language": "en",
+      "group": "current_law",
+      "relevant_document_ids": [
+        "cap41r-direct-tvog-proxy",
+        "cap41r-direct-tvog-method"
+      ],
+      "required_document_ids": [],
+      "expected_answerable": false,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "present_law_and_firm_specific",
+      "relevance_kind": "partial_or_historical_background",
+      "missing_requirements": [
+        "Current consolidated rule; firm-specific proxy eligibility assessment."
+      ],
+      "source_locators": [
+        {
+          "document_id": "cap41r-direct-tvog-proxy",
+          "version": "ln62-2024-direct-v1",
+          "section": "Rule 19(4)-(5); Gazette B693",
+          "url": "https://www.legco.gov.hk/yr2024/english/subleg/negative/2024ln062-e.pdf",
+          "source_page": 44
+        },
+        {
+          "document_id": "cap41r-direct-tvog-method",
+          "version": "ln62-2024-direct-v1",
+          "section": "Rule 19(2)-(3); Gazette B693",
+          "url": "https://www.legco.gov.hk/yr2024/english/subleg/negative/2024ln062-e.pdf",
+          "source_page": 44
+        }
+      ],
+      "rationale": "Neither current law nor this firm’s satisfaction of the historical never-before-applied condition is established."
+    },
+    {
+      "case_id": "current-tvog-election-zh",
+      "query": "現行第19條下，公司可直接選20%替代法，並對外話已經合規嗎？",
+      "role": "analyst",
+      "language": "zh",
+      "group": "current_law",
+      "relevant_document_ids": [
+        "cap41r-direct-tvog-proxy",
+        "cap41r-direct-tvog-method"
+      ],
+      "required_document_ids": [],
+      "expected_answerable": false,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "present_law_and_firm_specific",
+      "relevance_kind": "partial_or_historical_background",
+      "missing_requirements": [
+        "Current-law review and company-specific condition verification."
+      ],
+      "source_locators": [
+        {
+          "document_id": "cap41r-direct-tvog-proxy",
+          "version": "ln62-2024-direct-v1",
+          "section": "Rule 19(4)-(5); Gazette B693",
+          "url": "https://www.legco.gov.hk/yr2024/english/subleg/negative/2024ln062-e.pdf",
+          "source_page": 44
+        },
+        {
+          "document_id": "cap41r-direct-tvog-method",
+          "version": "ln62-2024-direct-v1",
+          "section": "Rule 19(2)-(3); Gazette B693",
+          "url": "https://www.legco.gov.hk/yr2024/english/subleg/negative/2024ln062-e.pdf",
+          "source_page": 44
+        }
+      ],
+      "rationale": "The historical conditional proxy does not authorize an unspecified firm or certify present compliance."
+    },
+    {
+      "case_id": "unsupported-full-pca-en",
+      "query": "Give the complete original rule 37 PCA formula, all risk-module inputs and every required adjustment so that I can calculate statutory capital.",
+      "role": "analyst",
+      "language": "en",
+      "group": "unsupported_specificity",
+      "relevant_document_ids": [
+        "cap41r-direct-pca-matrix",
+        "CAP41R-R5-1"
+      ],
+      "required_document_ids": [],
+      "expected_answerable": false,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "historical_original",
+      "relevance_kind": "partial_or_historical_background",
+      "missing_requirements": [
+        "Full original PCA formula, module specifications and adjustments."
+      ],
+      "source_locators": [
+        {
+          "document_id": "cap41r-direct-pca-matrix",
+          "version": "ln62-2024-direct-v1",
+          "section": "Schedule 7, section 2, Table 2; Gazette B1081",
+          "url": "https://www.legco.gov.hk/yr2024/english/subleg/negative/2024ln062-e.pdf",
+          "source_page": 238
+        },
+        {
+          "document_id": "CAP41R-R5-1",
+          "version": "2024-05-03-baseline",
+          "section": "Part 2, rule 5(1), Gazette page B647",
+          "url": "https://www.ia.org.hk/en/legislative_framework/overview/files/es22024281862.pdf",
+          "source_page": null
+        }
+      ],
+      "rationale": "The matrix and capital-threshold context do not supply rule 37, all module amounts or adjustments."
+    },
+    {
+      "case_id": "unsupported-full-pca-zh",
+      "query": "請完整列出原始第37條PCA計算公式、全部模組輸入同必要調整，足夠直接計法定資本。",
+      "role": "analyst",
+      "language": "zh",
+      "group": "unsupported_specificity",
+      "relevant_document_ids": [
+        "cap41r-direct-pca-matrix",
+        "CAP41R-R5-1"
+      ],
+      "required_document_ids": [],
+      "expected_answerable": false,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "historical_original",
+      "relevance_kind": "partial_or_historical_background",
+      "missing_requirements": [
+        "Complete original PCA calculation specifications."
+      ],
+      "source_locators": [
+        {
+          "document_id": "cap41r-direct-pca-matrix",
+          "version": "ln62-2024-direct-v1",
+          "section": "Schedule 7, section 2, Table 2; Gazette B1081",
+          "url": "https://www.legco.gov.hk/yr2024/english/subleg/negative/2024ln062-e.pdf",
+          "source_page": 238
+        },
+        {
+          "document_id": "CAP41R-R5-1",
+          "version": "2024-05-03-baseline",
+          "section": "Part 2, rule 5(1), Gazette page B647",
+          "url": "https://www.ia.org.hk/en/legislative_framework/overview/files/es22024281862.pdf",
+          "source_page": null
+        }
+      ],
+      "rationale": "The corpus has no complete prescribed-capital calculation despite storing one intermodule table."
+    },
+    {
+      "case_id": "unsupported-tier-eligibility-en",
+      "query": "What exact contractual conditions must a preference-share instrument meet to qualify as Limited Tier 1 under the original rules?",
+      "role": "analyst",
+      "language": "en",
+      "group": "unsupported_specificity",
+      "relevant_document_ids": [
+        "cap41r-direct-tier-caps",
+        "HKRBC-DISCLOSURE-CAPITAL"
+      ],
+      "required_document_ids": [],
+      "expected_answerable": false,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "historical_original",
+      "relevance_kind": "partial_or_historical_background",
+      "missing_requirements": [
+        "Qualifying instrument terms and Schedules 1-3 criteria."
+      ],
+      "source_locators": [
+        {
+          "document_id": "cap41r-direct-tier-caps",
+          "version": "ln62-2024-direct-v1",
+          "section": "Rule 7(a)-(c); Gazette B651",
+          "url": "https://www.legco.gov.hk/yr2024/english/subleg/negative/2024ln062-e.pdf",
+          "source_page": 23
+        },
+        {
+          "document_id": "HKRBC-DISCLOSURE-CAPITAL",
+          "version": "2025-08-08-baseline",
+          "section": "Section 4, Capital adequacy, paragraphs (a)–(b), printed pages 4–5",
+          "url": "https://www.ia.org.hk/en/legislative_framework/circulars/reg_matters/files/Circular_20250808_Annex_1.pdf",
+          "source_page": null
+        }
+      ],
+      "rationale": "Numeric caps and disclosure field names do not establish the instrument qualification criteria."
+    },
+    {
+      "case_id": "unsupported-tier-eligibility-zh",
+      "query": "原來規則下，次順位債券要滿足哪些契約條件才算合格二級資本？請逐條列出。",
+      "role": "analyst",
+      "language": "zh",
+      "group": "unsupported_specificity",
+      "relevant_document_ids": [
+        "cap41r-direct-tier-caps",
+        "HKRBC-DISCLOSURE-CAPITAL"
+      ],
+      "required_document_ids": [],
+      "expected_answerable": false,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "historical_original",
+      "relevance_kind": "partial_or_historical_background",
+      "missing_requirements": [
+        "Original Tier 2 instrument qualification criteria."
+      ],
+      "source_locators": [
+        {
+          "document_id": "cap41r-direct-tier-caps",
+          "version": "ln62-2024-direct-v1",
+          "section": "Rule 7(a)-(c); Gazette B651",
+          "url": "https://www.legco.gov.hk/yr2024/english/subleg/negative/2024ln062-e.pdf",
+          "source_page": 23
+        },
+        {
+          "document_id": "HKRBC-DISCLOSURE-CAPITAL",
+          "version": "2025-08-08-baseline",
+          "section": "Section 4, Capital adequacy, paragraphs (a)–(b), printed pages 4–5",
+          "url": "https://www.ia.org.hk/en/legislative_framework/circulars/reg_matters/files/Circular_20250808_Annex_1.pdf",
+          "source_page": null
+        }
+      ],
+      "rationale": "No instrument-eligibility checklist is contained in the relevant cap/template records."
+    },
+    {
+      "case_id": "unsupported-tvog-calibration-en",
+      "query": "For original rule 19 TVOG, how many simulation paths are required, and exactly how should the risk-neutral generator parameters and convergence test be calibrated?",
+      "role": "analyst",
+      "language": "en",
+      "group": "unsupported_specificity",
+      "relevant_document_ids": [
+        "cap41r-direct-tvog-method"
+      ],
+      "required_document_ids": [],
+      "expected_answerable": false,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "historical_original",
+      "relevance_kind": "partial_or_historical_background",
+      "missing_requirements": [
+        "Required path count, generator calibration and convergence specification."
+      ],
+      "source_locators": [
+        {
+          "document_id": "cap41r-direct-tvog-method",
+          "version": "ln62-2024-direct-v1",
+          "section": "Rule 19(2)-(3); Gazette B693",
+          "url": "https://www.legco.gov.hk/yr2024/english/subleg/negative/2024ln062-e.pdf",
+          "source_page": 44
+        }
+      ],
+      "rationale": "The source states method characteristics but expressly omits generator calibration, path count and detailed implementation."
+    },
+    {
+      "case_id": "unsupported-tvog-calibration-zh",
+      "query": "原始19(2)的TVOG模擬最少要跑幾多條情景？請給模型校準參數同誤差收斂標準。",
+      "role": "analyst",
+      "language": "zh",
+      "group": "unsupported_specificity",
+      "relevant_document_ids": [
+        "cap41r-direct-tvog-method"
+      ],
+      "required_document_ids": [],
+      "expected_answerable": false,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "historical_original",
+      "relevance_kind": "partial_or_historical_background",
+      "missing_requirements": [
+        "Simulation count and calibration/convergence requirements."
+      ],
+      "source_locators": [
+        {
+          "document_id": "cap41r-direct-tvog-method",
+          "version": "ln62-2024-direct-v1",
+          "section": "Rule 19(2)-(3); Gazette B693",
+          "url": "https://www.legco.gov.hk/yr2024/english/subleg/negative/2024ln062-e.pdf",
+          "source_page": 44
+        }
+      ],
+      "rationale": "The stored methodology description does not provide these quantitative simulation requirements."
+    },
+    {
+      "case_id": "unsupported-future-cca-numbers-en",
+      "query": "What exact numerical countercyclical cap and floor will the IA Gazette notice apply after the 2026 amendment starts? I need the new numbers.",
+      "role": "analyst",
+      "language": "en",
+      "group": "unsupported_specificity",
+      "relevant_document_ids": [
+        "cap41r-amend-direct-cca-bounds"
+      ],
+      "required_document_ids": [],
+      "expected_answerable": false,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "prospective_missing_notice",
+      "relevance_kind": "partial_or_historical_background",
+      "missing_requirements": [
+        "Verified subsequent Gazette notice with future numeric bounds."
+      ],
+      "source_locators": [
+        {
+          "document_id": "cap41r-amend-direct-cca-bounds",
+          "version": "ln58-2026-direct-v1",
+          "section": "2026 Amendment Rules, rule 22(2), amending rule 49(3); Gazette B767",
+          "url": "https://www.legco.gov.hk/yr2026/english/hc/sub_leg/sc04/papers/2026ln058-e.pdf",
+          "source_page": 46
+        }
+      ],
+      "rationale": "The future record identifies the notice mechanism but no subsequent notice fixing the numbers was verified."
+    },
+    {
+      "case_id": "unsupported-future-cca-numbers-zh",
+      "query": "2026年新規生效後，IA公告最終定幾多逆周期調整上限同下限？我要新數字，唔係公告方式。",
+      "role": "analyst",
+      "language": "zh",
+      "group": "unsupported_specificity",
+      "relevant_document_ids": [
+        "cap41r-amend-direct-cca-bounds"
+      ],
+      "required_document_ids": [],
+      "expected_answerable": false,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "prospective_missing_notice",
+      "relevance_kind": "partial_or_historical_background",
+      "missing_requirements": [
+        "Verified future numeric cap/floor notice."
+      ],
+      "source_locators": [
+        {
+          "document_id": "cap41r-amend-direct-cca-bounds",
+          "version": "ln58-2026-direct-v1",
+          "section": "2026 Amendment Rules, rule 22(2), amending rule 49(3); Gazette B767",
+          "url": "https://www.legco.gov.hk/yr2026/english/hc/sub_leg/sc04/papers/2026ln058-e.pdf",
+          "source_page": 46
+        }
+      ],
+      "rationale": "The historical fixed bounds must not be reused as unverified future Gazette values."
+    },
+    {
+      "case_id": "compound-caps-plus-eligibility-en",
+      "query": "Give the original rule 7 numeric caps and the full Tier 2 instrument-eligibility checklist in one complete answer.",
+      "role": "analyst",
+      "language": "en",
+      "group": "compound_missing",
+      "relevant_document_ids": [
+        "cap41r-direct-tier-caps",
+        "HKRBC-DISCLOSURE-CAPITAL"
+      ],
+      "required_document_ids": [],
+      "expected_answerable": false,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "historical_original",
+      "relevance_kind": "partial_or_historical_background",
+      "missing_requirements": [
+        "Complete Tier 2 instrument eligibility criteria."
+      ],
+      "source_locators": [
+        {
+          "document_id": "cap41r-direct-tier-caps",
+          "version": "ln62-2024-direct-v1",
+          "section": "Rule 7(a)-(c); Gazette B651",
+          "url": "https://www.legco.gov.hk/yr2024/english/subleg/negative/2024ln062-e.pdf",
+          "source_page": 23
+        },
+        {
+          "document_id": "HKRBC-DISCLOSURE-CAPITAL",
+          "version": "2025-08-08-baseline",
+          "section": "Section 4, Capital adequacy, paragraphs (a)–(b), printed pages 4–5",
+          "url": "https://www.ia.org.hk/en/legislative_framework/circulars/reg_matters/files/Circular_20250808_Annex_1.pdf",
+          "source_page": null
+        }
+      ],
+      "rationale": "The cap component is covered but the instrument checklist is absent, so a complete-answer status must abstain."
+    },
+    {
+      "case_id": "compound-caps-plus-eligibility-zh",
+      "query": "原始第7條有限制一級同二級的數字上限，加埋所有合格工具條件，請一次講齊。",
+      "role": "analyst",
+      "language": "zh",
+      "group": "compound_missing",
+      "relevant_document_ids": [
+        "cap41r-direct-tier-caps",
+        "HKRBC-DISCLOSURE-CAPITAL"
+      ],
+      "required_document_ids": [],
+      "expected_answerable": false,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "historical_original",
+      "relevance_kind": "partial_or_historical_background",
+      "missing_requirements": [
+        "Complete qualifying-instrument conditions."
+      ],
+      "source_locators": [
+        {
+          "document_id": "cap41r-direct-tier-caps",
+          "version": "ln62-2024-direct-v1",
+          "section": "Rule 7(a)-(c); Gazette B651",
+          "url": "https://www.legco.gov.hk/yr2024/english/subleg/negative/2024ln062-e.pdf",
+          "source_page": 23
+        },
+        {
+          "document_id": "HKRBC-DISCLOSURE-CAPITAL",
+          "version": "2025-08-08-baseline",
+          "section": "Section 4, Capital adequacy, paragraphs (a)–(b), printed pages 4–5",
+          "url": "https://www.ia.org.hk/en/legislative_framework/circulars/reg_matters/files/Circular_20250808_Annex_1.pdf",
+          "source_page": null
+        }
+      ],
+      "rationale": "A supported numeric-cap component cannot cover the missing qualification component."
+    },
+    {
+      "case_id": "compound-proxy-plus-curve-en",
+      "query": "Explain the original rule 19(4) conditional 20% proxy, then give the complete Smith-Wilson discount-curve equations and UFR calibration it requires.",
+      "role": "analyst",
+      "language": "en",
+      "group": "compound_missing",
+      "relevant_document_ids": [
+        "cap41r-direct-tvog-proxy",
+        "cap41r-direct-tvog-method"
+      ],
+      "required_document_ids": [],
+      "expected_answerable": false,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "historical_original",
+      "relevance_kind": "partial_or_historical_background",
+      "missing_requirements": [
+        "Complete discount-curve construction and UFR calibration."
+      ],
+      "source_locators": [
+        {
+          "document_id": "cap41r-direct-tvog-proxy",
+          "version": "ln62-2024-direct-v1",
+          "section": "Rule 19(4)-(5); Gazette B693",
+          "url": "https://www.legco.gov.hk/yr2024/english/subleg/negative/2024ln062-e.pdf",
+          "source_page": 44
+        },
+        {
+          "document_id": "cap41r-direct-tvog-method",
+          "version": "ln62-2024-direct-v1",
+          "section": "Rule 19(2)-(3); Gazette B693",
+          "url": "https://www.legco.gov.hk/yr2024/english/subleg/negative/2024ln062-e.pdf",
+          "source_page": 44
+        }
+      ],
+      "rationale": "The proxy is covered, but the full curve construction/calibration is outside these section paraphrases."
+    },
+    {
+      "case_id": "compound-proxy-plus-curve-zh",
+      "query": "說明原始19(4)的20%條件，並列出Smith-Wilson折現曲線全部公式與終極遠期利率校準。",
+      "role": "analyst",
+      "language": "zh",
+      "group": "compound_missing",
+      "relevant_document_ids": [
+        "cap41r-direct-tvog-proxy",
+        "cap41r-direct-tvog-method"
+      ],
+      "required_document_ids": [],
+      "expected_answerable": false,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "historical_original",
+      "relevance_kind": "partial_or_historical_background",
+      "missing_requirements": [
+        "Full curve equations and calibration."
+      ],
+      "source_locators": [
+        {
+          "document_id": "cap41r-direct-tvog-proxy",
+          "version": "ln62-2024-direct-v1",
+          "section": "Rule 19(4)-(5); Gazette B693",
+          "url": "https://www.legco.gov.hk/yr2024/english/subleg/negative/2024ln062-e.pdf",
+          "source_page": 44
+        },
+        {
+          "document_id": "cap41r-direct-tvog-method",
+          "version": "ln62-2024-direct-v1",
+          "section": "Rule 19(2)-(3); Gazette B693",
+          "url": "https://www.legco.gov.hk/yr2024/english/subleg/negative/2024ln062-e.pdf",
+          "source_page": 44
+        }
+      ],
+      "rationale": "The first component is supported; the requested curve specification is absent."
+    },
+    {
+      "case_id": "compound-matrix-plus-life-factors-en",
+      "query": "For my 2026 amendment brief, compare the old and future PCA correlation tables and list every prescribed mortality and longevity stress factor.",
+      "role": "analyst",
+      "language": "en",
+      "group": "compound_missing",
+      "relevant_document_ids": [
+        "cap41r-direct-pca-matrix",
+        "cap41r-amend-direct-pca-matrix"
+      ],
+      "required_document_ids": [],
+      "expected_answerable": false,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "original_and_prospective_comparison_with_missing_calibration",
+      "relevance_kind": "partial_or_historical_background",
+      "missing_requirements": [
+        "Prescribed mortality and longevity factors."
+      ],
+      "source_locators": [
+        {
+          "document_id": "cap41r-direct-pca-matrix",
+          "version": "ln62-2024-direct-v1",
+          "section": "Schedule 7, section 2, Table 2; Gazette B1081",
+          "url": "https://www.legco.gov.hk/yr2024/english/subleg/negative/2024ln062-e.pdf",
+          "source_page": 238
+        },
+        {
+          "document_id": "cap41r-amend-direct-pca-matrix",
+          "version": "ln58-2026-direct-v1",
+          "section": "2026 Amendment Rules, rule 14(1), replacement Schedule 7 Table 2; Gazette B743",
+          "url": "https://www.legco.gov.hk/yr2026/english/hc/sub_leg/sc04/papers/2026ln058-e.pdf",
+          "source_page": 34
+        }
+      ],
+      "rationale": "Both intermodule table records are relevant, but neither supplies life-risk stress calibration."
+    },
+    {
+      "case_id": "compound-matrix-plus-life-factors-zh",
+      "query": "幫我做2026修訂簡報：比較前後PCA相關矩陣，再補齊死亡率與長壽壓力因子的全部數值。",
+      "role": "analyst",
+      "language": "zh",
+      "group": "compound_missing",
+      "relevant_document_ids": [
+        "cap41r-direct-pca-matrix",
+        "cap41r-amend-direct-pca-matrix"
+      ],
+      "required_document_ids": [],
+      "expected_answerable": false,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "original_and_prospective_comparison_with_missing_calibration",
+      "relevance_kind": "partial_or_historical_background",
+      "missing_requirements": [
+        "Complete life-risk mortality/longevity calibration."
+      ],
+      "source_locators": [
+        {
+          "document_id": "cap41r-direct-pca-matrix",
+          "version": "ln62-2024-direct-v1",
+          "section": "Schedule 7, section 2, Table 2; Gazette B1081",
+          "url": "https://www.legco.gov.hk/yr2024/english/subleg/negative/2024ln062-e.pdf",
+          "source_page": 238
+        },
+        {
+          "document_id": "cap41r-amend-direct-pca-matrix",
+          "version": "ln58-2026-direct-v1",
+          "section": "2026 Amendment Rules, rule 14(1), replacement Schedule 7 Table 2; Gazette B743",
+          "url": "https://www.legco.gov.hk/yr2026/english/hc/sub_leg/sc04/papers/2026ln058-e.pdf",
+          "source_page": 34
+        }
+      ],
+      "rationale": "A valid matrix comparison is only part of the request; complete life-risk factors are missing."
+    },
+    {
+      "case_id": "compound-branch-plus-fx-en",
+      "query": "Explain the original non-designated foreign-branch scope and HKD denomination, then give the exact prescribed currency-risk stress for each foreign currency.",
+      "role": "analyst",
+      "language": "en",
+      "group": "compound_missing",
+      "relevant_document_ids": [
+        "cap41r-direct-branch-currency"
+      ],
+      "required_document_ids": [],
+      "expected_answerable": false,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "historical_original",
+      "relevance_kind": "partial_or_historical_background",
+      "missing_requirements": [
+        "Prescribed currency-risk stresses by currency."
+      ],
+      "source_locators": [
+        {
+          "document_id": "cap41r-direct-branch-currency",
+          "version": "ln62-2024-direct-v1",
+          "section": "Rule 4(3)-(4); Gazette B645",
+          "url": "https://www.legco.gov.hk/yr2024/english/subleg/negative/2024ln062-e.pdf",
+          "source_page": 20
+        }
+      ],
+      "rationale": "Scope/denomination is covered, but the record explicitly does not establish FX risk factors."
+    },
+    {
+      "case_id": "compound-branch-plus-fx-zh",
+      "query": "先講原始4(3)-(4)條非獲指定分公司的範圍同港元計算基準，再列各外幣法定壓力百分比。",
+      "role": "analyst",
+      "language": "zh",
+      "group": "compound_missing",
+      "relevant_document_ids": [
+        "cap41r-direct-branch-currency"
+      ],
+      "required_document_ids": [],
+      "expected_answerable": false,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "historical_original",
+      "relevance_kind": "partial_or_historical_background",
+      "missing_requirements": [
+        "Currency-specific prescribed stress percentages."
+      ],
+      "source_locators": [
+        {
+          "document_id": "cap41r-direct-branch-currency",
+          "version": "ln62-2024-direct-v1",
+          "section": "Rule 4(3)-(4); Gazette B645",
+          "url": "https://www.legco.gov.hk/yr2024/english/subleg/negative/2024ln062-e.pdf",
+          "source_page": 20
+        }
+      ],
+      "rationale": "The covered branch boundary must not be expanded into missing currency-risk calibration."
+    },
+    {
+      "case_id": "acl-internal-reviewer-expanded-en",
+      "query": "Can I see the internal reviewer methodology note on reviewing large capital movements and illustrative correlations?",
+      "role": "reviewer",
+      "language": "en",
+      "group": "acl",
+      "relevant_document_ids": [
+        "DEMO-INTERNAL"
+      ],
+      "required_document_ids": [
+        "DEMO-INTERNAL"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "synthetic_governance",
+      "relevance_kind": "direct_or_component",
+      "missing_requirements": [],
+      "source_locators": [
+        {
+          "document_id": "DEMO-INTERNAL",
+          "version": "1.0",
+          "section": "Illustrative model assumptions",
+          "url": "https://example.org/synthetic-internal",
+          "source_page": null
+        }
+      ],
+      "rationale": "A reviewer may retrieve this synthetic internal record; it has no regulatory authority."
+    },
+    {
+      "case_id": "acl-restricted-admin-expanded-en",
+      "query": "Show the administrator governance fixture labelled RESTRICTED_DEMO_SENTINEL.",
+      "role": "admin",
+      "language": "en",
+      "group": "acl",
+      "relevant_document_ids": [
+        "DEMO-RESTRICTED"
+      ],
+      "required_document_ids": [
+        "DEMO-RESTRICTED"
+      ],
+      "expected_answerable": true,
+      "forbidden_document_ids": [
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "synthetic_governance",
+      "relevance_kind": "direct_or_component",
+      "missing_requirements": [],
+      "source_locators": [
+        {
+          "document_id": "DEMO-RESTRICTED",
+          "version": "1.0",
+          "section": "Synthetic permission test",
+          "url": "https://example.org/synthetic-restricted",
+          "source_page": null
+        }
+      ],
+      "rationale": "An administrator may inspect the synthetic restricted fixture, not an actual secret."
+    },
+    {
+      "case_id": "acl-internal-analyst-expanded-en",
+      "query": "Can I see the internal reviewer methodology note on reviewing large capital movements and illustrative correlations?",
+      "role": "analyst",
+      "language": "en",
+      "group": "acl",
+      "relevant_document_ids": [],
+      "required_document_ids": [],
+      "expected_answerable": false,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "synthetic_governance",
+      "relevance_kind": "none_authorized",
+      "missing_requirements": [
+        "Authorization to internal-classification evidence."
+      ],
+      "source_locators": [],
+      "rationale": "The same relevant content exists but is not authorized for the analyst, so it is not a relevant authorized label."
+    },
+    {
+      "case_id": "acl-restricted-reviewer-expanded-zh",
+      "query": "請顯示標記RESTRICTED_DEMO_SENTINEL的管理員治理測試內容。",
+      "role": "reviewer",
+      "language": "zh",
+      "group": "acl",
+      "relevant_document_ids": [],
+      "required_document_ids": [],
+      "expected_answerable": false,
+      "forbidden_document_ids": [
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "synthetic_governance",
+      "relevance_kind": "none_authorized",
+      "missing_requirements": [
+        "Authorization to restricted evidence."
+      ],
+      "source_locators": [],
+      "rationale": "The reviewer role cannot retrieve the restricted synthetic fixture."
+    },
+    {
+      "case_id": "acl-restricted-analyst-expanded-zh",
+      "query": "搜尋管理員專用的受限治理測試紀錄（RESTRICTED_DEMO_SENTINEL）。",
+      "role": "analyst",
+      "language": "zh",
+      "group": "acl",
+      "relevant_document_ids": [],
+      "required_document_ids": [],
+      "expected_answerable": false,
+      "forbidden_document_ids": [
+        "DEMO-INTERNAL",
+        "DEMO-RESTRICTED",
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "synthetic_governance",
+      "relevance_kind": "none_authorized",
+      "missing_requirements": [
+        "Authorization to restricted evidence."
+      ],
+      "source_locators": [],
+      "rationale": "An analyst lacks permission for the restricted fixture even when the marker is supplied in the question."
+    },
+    {
+      "case_id": "acl-archived-admin-expanded-zh",
+      "query": "普通搜尋可否返回ARCHIVED_DEMO_SENTINEL嗰份舊示意方法？請引用其內容。",
+      "role": "admin",
+      "language": "zh",
+      "group": "acl",
+      "relevant_document_ids": [],
+      "required_document_ids": [],
+      "expected_answerable": false,
+      "forbidden_document_ids": [
+        "DEMO-ARCHIVED"
+      ],
+      "requested_scope": "synthetic_ordinary_retrieval",
+      "relevance_kind": "none_authorized",
+      "missing_requirements": [
+        "An active eligible source; archived fixture is excluded from ordinary retrieval."
+      ],
+      "source_locators": [],
+      "rationale": "The archive fixture is explicitly superseded and excluded from ordinary retrieval even for administrators. This case does not test a separate history endpoint."
+    }
+  ]
+}

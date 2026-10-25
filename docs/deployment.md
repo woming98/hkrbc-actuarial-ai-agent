@@ -6,6 +6,7 @@ Python 3.11+ is required; implementation was exercised with Python3.13.12. No AP
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install '.[dev]'
+python scripts/preflight.py
 python -m pytest -q
 python scripts/run_demo.py
 python -m streamlit run app.py --server.address 127.0.0.1 --server.port 8501 --browser.gatherUsageStats false
@@ -98,7 +99,7 @@ The second command intentionally fails when the private cache is absent. Exclude
 
 ## Local checks and GitHub Actions
 
-Run the tests, provenance verifier and evaluation commands locally before release. The installed [GitHub Actions workflow](../.github/workflows/verify.yml) performs a clean package install on Ubuntu with Python 3.11 and 3.13, then runs tests, provenance metadata checks, deterministic fixtures, lexical retrieval diagnostics and the synthetic demonstration. It uses BM25 and offline model settings without provisioning encoder weights. Dependency installation still needs package access. Only evaluation JSON files are uploaded as CI artifacts; private source caches, model weights and local audit databases are excluded. See [observed verification results](phase2-verification.md); a workflow's presence alone does not mean it passed or protects a branch.
+Run the tests, provenance verifier and evaluation commands locally before release. The installed [GitHub Actions workflow](../.github/workflows/verify.yml) performs a clean package install on Ubuntu with Python 3.11 and 3.13, then runs read-only preflight, tests, provenance metadata checks, deterministic fixtures, lexical retrieval diagnostics, authored adversarial probes and the synthetic demonstration. It uses BM25 and offline model settings without provisioning encoder weights. Dependency installation still needs package access. Only freshly generated CI evaluation JSON files are uploaded as artifacts; private source caches, model weights, prior local encoder results and local audit databases are excluded. See [current observed verification results](phase3-verification.md); a workflow's presence alone does not mean it passed or protects a branch.
 
 ## Container example
 

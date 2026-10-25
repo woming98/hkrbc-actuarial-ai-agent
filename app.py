@@ -23,6 +23,13 @@ from hkrbc_agent.store import Document
 
 PAGES = ("Regulatory Assistant", "Capital Analysis", "Validation Dashboard", "Governance & Audit")
 RESULT_KEYS = ("analysis_result", "scenario_result", "saved_report", "report_markdown", "input_error")
+QUESTION_EXAMPLES = {
+    "Commencement / 實施日期": "When did the HK RBC regime commence?",
+    "Original tier caps / 原有資本上限": "原有第7條對 Limited Tier 1 與 Tier 2 的上限是甚麼？",
+    "Scheduled amendment / 未來修訂": "What crypto stress is scheduled by the 2026 amendment?",
+    "Current-law evidence gap / 現行法規證據不足": "What is the current prescribed correlation matrix?",
+    "Compound evidence gap / 複合問題證據不足": "Summarize the 2026 announcement and calculate the matching adjustment formula.",
+}
 
 
 @st.cache_resource(show_spinner=False)
@@ -100,11 +107,17 @@ def clear_results() -> None:
         st.session_state.pop(key, None)
 
 
-def load_demo() -> None:
+def load_demo(variant: str = "standard") -> None:
+    files = {
+        "standard": ("opening.csv", "closing.csv", "Bundled synthetic opening.csv and closing.csv"),
+        "coupon_crossing": ("coupon_crossing_opening.csv", "coupon_crossing_closing.csv",
+                            "Bundled synthetic coupon-crossing example; settlement is unobserved and the factor bridge requires review."),
+    }
+    opening, closing, label = files[variant]
     clear_results()
-    st.session_state["opening_bytes"] = (ROOT / "data" / "portfolios" / "opening.csv").read_bytes()
-    st.session_state["closing_bytes"] = (ROOT / "data" / "portfolios" / "closing.csv").read_bytes()
-    st.session_state["input_label"] = "Bundled synthetic opening.csv and closing.csv"
+    st.session_state["opening_bytes"] = (ROOT / "data" / "portfolios" / opening).read_bytes()
+    st.session_state["closing_bytes"] = (ROOT / "data" / "portfolios" / closing).read_bytes()
+    st.session_state["input_label"] = label
     st.session_state["input_source"] = "demo"
     st.session_state["synthetic_confirmed"] = True
     st.session_state["synthetic_declaration"] = True
@@ -200,6 +213,37 @@ def sidebar(service: AgentService):
         return token, principal, page
 
 
+def use_question_example() -> None:
+    st.session_state["regulatory_question"] = QUESTION_EXAMPLES[st.session_state["question_example"]]
+    st.session_state.pop("query_result", None)
+
+
+def show_missing_coverage(scope: dict) -> None:
+    reasons = []
+    if scope.get("current_law_requested") and not scope.get("all_sources_current_verified"):
+        reasons.append("The current consolidated rules have not been verified by these sources.")
+    labels = {
+        "matching_adjustment.formula": "matching-adjustment formula or numerical calculation",
+        "matching_adjustment.eligibility": "matching-adjustment eligibility criteria",
+        "capital.tier_instrument_eligibility": "eligibility of capital instruments",
+        "capital.pca_calculation": "complete prescribed-capital calculation",
+        "liability.tvog_calculation": "numerical TVOG calculation",
+        "liability.tvog_proxy": "conditions for using a TVOG proxy",
+        "capital.crypto_stress": "the requested crypto stress provision",
+        "capital.equity_cca_bounds": "the requested countercyclical adjustment bounds",
+    }
+    for tag in scope.get("missing_claim_tags", []):
+        reasons.append("Missing evidence for " + labels.get(tag, tag.rsplit(".", 1)[-1].replace("_", " ")) + ".")
+    if scope.get("missing_rule_identifiers"):
+        reasons.append("The exact requested provision is missing: " + ", ".join(scope["missing_rule_identifiers"]) + ".")
+    if scope.get("missing_evidence_versions"):
+        reasons.append("This comparison needs relevant evidence from both the historical baseline and the scheduled amendment.")
+    if scope.get("classification_evidence_missing") or scope.get("missing_named_identifiers"):
+        reasons.append("The requested source is not available in the evidence authorized for this account.")
+    for reason in reasons:
+        st.write("• " + reason)
+
+
 def regulatory_page(service: AgentService, token: str, principal) -> None:
     st.header("Regulatory Assistant")
     st.write("Search authorized source paraphrases with section, version and date references.")
@@ -208,6 +252,10 @@ def regulatory_page(service: AgentService, token: str, principal) -> None:
     mode_label = st.radio("Processing mode", options, horizontal=True, key="model_mode")
     external = mode_label == "Approved external commentary"
     st.caption("Local extractive retrieval is the default. A configured loopback model may add commentary; calculations always run in Python.")
+    with st.expander("Example questions / 示範問題"):
+        st.selectbox("Choose an example", list(QUESTION_EXAMPLES), key="question_example")
+        st.button("Use example", on_click=use_question_example)
+        st.caption("This fills the question only. Review it and select Search evidence to run it.")
     with st.form("regulatory_query", clear_on_submit=True):
         question = st.text_area("Regulatory question", placeholder="When did HK RBC commence? What does original rule 5 say?", key="regulatory_question", height=110)
         approved = st.checkbox("I approve sending this request and public evidence to the configured external API; charges may apply.", value=False) if external else False
@@ -224,7 +272,10 @@ def regulatory_page(service: AgentService, token: str, principal) -> None:
         st.info("Try a question about commencement, the three pillars, capital thresholds or 2026 amendments.")
         return
     if result["status"] == "insufficient_evidence":
-        st.warning(result["answer"])
+        st.warning("Evidence is incomplete for this question. The background sources do not establish the full requested conclusion.")
+        show_missing_coverage(result.get("evidence_scope", {}))
+        with st.expander("Retrieved background and limitations"):
+            st.write(result["answer"])
     else:
         st.subheader("Retrieved evidence")
         st.write(result["answer"])
@@ -291,6 +342,9 @@ def capital_page(service: AgentService, token: str) -> None:
     st.header("Capital Analysis")
     st.write("Compare synthetic opening and closing portfolios and reconcile the illustrative capital movement.")
     st.button("Load synthetic demo portfolios", on_click=load_demo)
+    with st.expander("Validation example / 驗證示範"):
+        st.caption("A second synthetic pair crosses a coupon date without a settlement ledger. Module arithmetic can reconcile while the factor bridge remains blocked.")
+        st.button("Load missing-settlement example", on_click=load_demo, args=("coupon_crossing",))
     cols = st.columns(2)
     for col, stage in zip(cols, ("opening", "closing")):
         with col:

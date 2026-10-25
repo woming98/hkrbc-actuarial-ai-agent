@@ -33,6 +33,7 @@ def metrics(rows: list[dict], k: int) -> dict:
     relevant = [row for row in rows if row["relevant_count"]]
     unsupported = [row for row in rows if not row["expected_answerable"]]
     supported = [row for row in rows if row["expected_answerable"]]
+    component_labeled = [row for row in supported if row.get("required_document_ids")]
     unsupported_by_retrieval = [row for row in rows if not (row["expected_answerable"] and row["retrieved_relevant_section"])]
     grounded_answers = sum(row["answerable"] and row["expected_answerable"] and row["retrieved_relevant_section"] for row in rows)
     answered = sum(row["answerable"] for row in rows)
@@ -51,6 +52,9 @@ def metrics(rows: list[dict], k: int) -> dict:
             "relevant_section_answer_precision": grounded_answers / answered if answered else None,
             "relevant_section_answer_rate": grounded_answers / len(supported) if supported else None,
             "answerable_cases": len(supported),
+            "component_labeled_answerable_cases": len(component_labeled),
+            "all_labeled_components_retrieval_rate": statistics.mean(row["all_required_sections_retrieved"] for row in component_labeled) if component_labeled else None,
+            "answered_with_missing_labeled_components": sum(row["answerable"] and not row["all_required_sections_retrieved"] for row in component_labeled),
             "unauthorized_retrievals": sum(len(row["unauthorized_document_ids"]) for row in rows),
             "median_query_ms": statistics.median(row["elapsed_ms"] for row in rows) if rows else None}
 
@@ -75,12 +79,17 @@ def evaluate(*, cases_path: Path, corpus_path: Path, model_path: Path | None = N
     for case in cases:
         if set(case["relevant_document_ids"]) - ids:
             raise ValueError("A relevance label names a missing source section")
+        required_ids = case.get("required_document_ids", [])
+        if (not isinstance(required_ids, list) or any(not isinstance(value, str) for value in required_ids)
+                or len(set(required_ids)) != len(required_ids) or set(required_ids) - set(case["relevant_document_ids"])):
+            raise ValueError("Required source components must be unique labeled relevant sections")
     k = int(manifest.get("k", 3))
     roles = {"analyst": Role.ANALYST, "reviewer": Role.REVIEWER, "admin": Role.ADMIN}
     result = {"schema_version": "1.0", "generated_at": datetime.now(timezone.utc).isoformat(),
         "retrieval_version": RETRIEVAL_VERSION, "case_manifest_sha256": digest(cases_path),
         "retrieval_source_sha256": digest(ROOT / "src/hkrbc_agent/retrieval.py"),
         "encoder_source_sha256": digest(ROOT / "src/hkrbc_agent/embeddings.py"),
+        "evaluator_source_sha256": digest(Path(__file__)),
         "corpus_sha256": corpus_hash, "supplement_sha256": supplement_hash,
         "corpus_section_records": len(records), "cases": len(cases), "k": k,
         "label_status": "matched" if labels_complete else "not_scored_supplement_labels_incomplete",
@@ -90,6 +99,7 @@ def evaluate(*, cases_path: Path, corpus_path: Path, model_path: Path | None = N
             "Recall/MRR are section relevance checks, not answer entailment or current-law validation.",
             "Latency includes request-local document encoding; model load time is separate. No shared vector cache.",
             "Additional sources require relabeling before quality metrics can be interpreted."]}
+    result["limitations"].append("All-labeled-components coverage checks an annotator's source set, not semantic entailment; another citation's dated metadata can overlap a labeled component.")
     encoder = None
     if model_path is not None:
         start = time.perf_counter()
@@ -125,6 +135,7 @@ def evaluate(*, cases_path: Path, corpus_path: Path, model_path: Path | None = N
                     return document_id
                 retrieved = list(dict.fromkeys(source_id(hit.document.document_id) for hit in hits))
                 expected = set(case["relevant_document_ids"])
+                required_sources = set(case.get("required_document_ids", []))
                 first = next((rank for rank, identifier in enumerate(retrieved, 1) if identifier in expected), None)
                 forbidden = set(case.get("forbidden_document_ids", []))
                 unauthorized = {source_id(hit.document.document_id) for hit in hits
@@ -133,6 +144,9 @@ def evaluate(*, cases_path: Path, corpus_path: Path, model_path: Path | None = N
                     "role": case["role"], "retrieved_document_ids": retrieved,
                     "retrieved_references": [hit.document.reference for hit in hits],
                     "relevant_document_ids": sorted(expected), "relevant_count": len(expected),
+                    "required_document_ids": sorted(required_sources),
+                    "all_required_sections_retrieved": required_sources.issubset(retrieved),
+                    "missing_required_document_ids": sorted(required_sources - set(retrieved)),
                     "retrieved_relevant_section": bool(expected & set(retrieved)),
                     "recall": len(expected & set(retrieved)) / len(expected) if expected else None,
                     "reciprocal_rank": 1 / first if first else 0.0,

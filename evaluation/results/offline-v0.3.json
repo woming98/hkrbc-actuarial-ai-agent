@@ -1,0 +1,512 @@
+{
+  "schema_version": "1.0",
+  "suite_id": "hkrbc-prototype-fixtures-v1",
+  "measured_at_utc": "2026-10-25T02:38:13.907111+00:00",
+  "manifest_sha256": "75b690ea067a5f1157a79af748d0361bfa0162c0b1d704dc0b34686f02f15d11",
+  "source_context_sha256": "b84c377c10c371a5419a94451f8f650b318bf3b3c1116aca9079dc32a293b3ce",
+  "case_bundle_sha256": "558c2eb2263e434e2f6381beb80778828a37d32ad99f09fa13ed5a57e7210d03",
+  "systems": {
+    "A": {
+      "status": "not_run",
+      "reason": "No baseline model was called and no external result file was supplied."
+    },
+    "B": {
+      "status": "not_run",
+      "reason": "No baseline model was called and no external result file was supplied."
+    },
+    "C": {
+      "status": "measured_offline",
+      "metadata": {
+        "provider": "local-extractive-and-deterministic-python",
+        "model": "none",
+        "model_version": "none",
+        "calculation_version": "1.0.0",
+        "python_version": "3.13.12",
+        "config": {
+          "external_enabled": false,
+          "local_model": "",
+          "scenario_seed": 42
+        },
+        "source_context_sha256": "b84c377c10c371a5419a94451f8f650b318bf3b3c1116aca9079dc32a293b3ce",
+        "case_bundle_sha256": "558c2eb2263e434e2f6381beb80778828a37d32ad99f09fa13ed5a57e7210d03",
+        "tool_access": "full_workflow"
+      },
+      "fixture_pass_count": 8,
+      "fixture_count": 8,
+      "all_fixture_checks_passed": true,
+      "cases": [
+        {
+          "case_id": "zero-coupon-bond",
+          "passed": true,
+          "runs": [
+            {
+              "passed": true,
+              "numerical_accuracy": {
+                "passed": true,
+                "checks": [
+                  {
+                    "field": "price_hkd",
+                    "passed": true,
+                    "absolute_error": 1.1641532182693481e-10,
+                    "tolerance": 0.01
+                  },
+                  {
+                    "field": "dv01_hkd_per_bp",
+                    "passed": true,
+                    "absolute_error": 5.684341886080802e-14,
+                    "tolerance": 0.01
+                  }
+                ]
+              },
+              "citation_reference_validity": null,
+              "reconciliation_accuracy": null,
+              "unauthorized_disclosure": null,
+              "expected_status_and_fields": true,
+              "elapsed_ms": 1.5284999972209334
+            },
+            {
+              "passed": true,
+              "numerical_accuracy": {
+                "passed": true,
+                "checks": [
+                  {
+                    "field": "price_hkd",
+                    "passed": true,
+                    "absolute_error": 1.1641532182693481e-10,
+                    "tolerance": 0.01
+                  },
+                  {
+                    "field": "dv01_hkd_per_bp",
+                    "passed": true,
+                    "absolute_error": 5.684341886080802e-14,
+                    "tolerance": 0.01
+                  }
+                ]
+              },
+              "citation_reference_validity": null,
+              "reconciliation_accuracy": null,
+              "unauthorized_disclosure": null,
+              "expected_status_and_fields": true,
+              "elapsed_ms": 1.3542500091716647
+            }
+          ],
+          "reproducibility": {
+            "measured": true,
+            "passed": true,
+            "response_digests": [
+              "abe1fcea3614d0c672cbbda7b6f64bcef239332f8617f04e6556166e17735e60",
+              "abe1fcea3614d0c672cbbda7b6f64bcef239332f8617f04e6556166e17735e60"
+            ]
+          },
+          "mean_elapsed_ms": 1.441375003196299
+        },
+        {
+          "case_id": "equity-capital-movement",
+          "passed": true,
+          "runs": [
+            {
+              "passed": true,
+              "numerical_accuracy": {
+                "passed": true,
+                "checks": [
+                  {
+                    "field": "opening_capital_hkd",
+                    "passed": true,
+                    "absolute_error": 0.0,
+                    "tolerance": 0.01
+                  },
+                  {
+                    "field": "closing_capital_hkd",
+                    "passed": true,
+                    "absolute_error": 0.0,
+                    "tolerance": 0.01
+                  },
+                  {
+                    "field": "movement_hkd",
+                    "passed": true,
+                    "absolute_error": 0.0,
+                    "tolerance": 0.01
+                  },
+                  {
+                    "field": "shapley_total_hkd",
+                    "passed": true,
+                    "absolute_error": 0.0,
+                    "tolerance": 0.01
+                  },
+                  {
+                    "field": "residual_hkd",
+                    "passed": true,
+                    "absolute_error": 0.0,
+                    "tolerance": 0.01
+                  }
+                ]
+              },
+              "citation_reference_validity": null,
+              "reconciliation_accuracy": true,
+              "unauthorized_disclosure": null,
+              "expected_status_and_fields": true,
+              "elapsed_ms": 4.916709003737196
+            },
+            {
+              "passed": true,
+              "numerical_accuracy": {
+                "passed": true,
+                "checks": [
+                  {
+                    "field": "opening_capital_hkd",
+                    "passed": true,
+                    "absolute_error": 0.0,
+                    "tolerance": 0.01
+                  },
+                  {
+                    "field": "closing_capital_hkd",
+                    "passed": true,
+                    "absolute_error": 0.0,
+                    "tolerance": 0.01
+                  },
+                  {
+                    "field": "movement_hkd",
+                    "passed": true,
+                    "absolute_error": 0.0,
+                    "tolerance": 0.01
+                  },
+                  {
+                    "field": "shapley_total_hkd",
+                    "passed": true,
+                    "absolute_error": 0.0,
+                    "tolerance": 0.01
+                  },
+                  {
+                    "field": "residual_hkd",
+                    "passed": true,
+                    "absolute_error": 0.0,
+                    "tolerance": 0.01
+                  }
+                ]
+              },
+              "citation_reference_validity": null,
+              "reconciliation_accuracy": true,
+              "unauthorized_disclosure": null,
+              "expected_status_and_fields": true,
+              "elapsed_ms": 4.407708009239286
+            }
+          ],
+          "reproducibility": {
+            "measured": true,
+            "passed": true,
+            "response_digests": [
+              "8d9a7788a23bd618df5c267689f5093cdc7d54b0e7708fa1234a4c71579670cf",
+              "8d9a7788a23bd618df5c267689f5093cdc7d54b0e7708fa1234a4c71579670cf"
+            ]
+          },
+          "mean_elapsed_ms": 4.662208506488241
+        },
+        {
+          "case_id": "diversified-movement",
+          "passed": true,
+          "runs": [
+            {
+              "passed": true,
+              "numerical_accuracy": {
+                "passed": true,
+                "checks": [
+                  {
+                    "field": "opening_capital_hkd",
+                    "passed": true,
+                    "absolute_error": 7.450580596923828e-09,
+                    "tolerance": 0.01
+                  },
+                  {
+                    "field": "closing_capital_hkd",
+                    "passed": true,
+                    "absolute_error": 0.0,
+                    "tolerance": 0.01
+                  },
+                  {
+                    "field": "movement_hkd",
+                    "passed": true,
+                    "absolute_error": 5.587935447692871e-09,
+                    "tolerance": 0.01
+                  },
+                  {
+                    "field": "shapley_total_hkd",
+                    "passed": true,
+                    "absolute_error": 4.6566128730773926e-09,
+                    "tolerance": 0.01
+                  },
+                  {
+                    "field": "residual_hkd",
+                    "passed": true,
+                    "absolute_error": 9.313225746154785e-10,
+                    "tolerance": 0.01
+                  }
+                ]
+              },
+              "citation_reference_validity": null,
+              "reconciliation_accuracy": true,
+              "unauthorized_disclosure": null,
+              "expected_status_and_fields": true,
+              "elapsed_ms": 0.17904200649354607
+            },
+            {
+              "passed": true,
+              "numerical_accuracy": {
+                "passed": true,
+                "checks": [
+                  {
+                    "field": "opening_capital_hkd",
+                    "passed": true,
+                    "absolute_error": 7.450580596923828e-09,
+                    "tolerance": 0.01
+                  },
+                  {
+                    "field": "closing_capital_hkd",
+                    "passed": true,
+                    "absolute_error": 0.0,
+                    "tolerance": 0.01
+                  },
+                  {
+                    "field": "movement_hkd",
+                    "passed": true,
+                    "absolute_error": 5.587935447692871e-09,
+                    "tolerance": 0.01
+                  },
+                  {
+                    "field": "shapley_total_hkd",
+                    "passed": true,
+                    "absolute_error": 4.6566128730773926e-09,
+                    "tolerance": 0.01
+                  },
+                  {
+                    "field": "residual_hkd",
+                    "passed": true,
+                    "absolute_error": 9.313225746154785e-10,
+                    "tolerance": 0.01
+                  }
+                ]
+              },
+              "citation_reference_validity": null,
+              "reconciliation_accuracy": true,
+              "unauthorized_disclosure": null,
+              "expected_status_and_fields": true,
+              "elapsed_ms": 0.1682920119492337
+            }
+          ],
+          "reproducibility": {
+            "measured": true,
+            "passed": true,
+            "response_digests": [
+              "76f76505aba8d2b7c5f6ce9967627ee372ee5cc6aed218bf8ecef031f1670d54",
+              "76f76505aba8d2b7c5f6ce9967627ee372ee5cc6aed218bf8ecef031f1670d54"
+            ]
+          },
+          "mean_elapsed_ms": 0.1736670092213899
+        },
+        {
+          "case_id": "seeded-scenario-integrity",
+          "passed": true,
+          "runs": [
+            {
+              "passed": true,
+              "numerical_accuracy": null,
+              "citation_reference_validity": null,
+              "reconciliation_accuracy": null,
+              "unauthorized_disclosure": null,
+              "expected_status_and_fields": true,
+              "elapsed_ms": 5.016875002183951
+            },
+            {
+              "passed": true,
+              "numerical_accuracy": null,
+              "citation_reference_validity": null,
+              "reconciliation_accuracy": null,
+              "unauthorized_disclosure": null,
+              "expected_status_and_fields": true,
+              "elapsed_ms": 4.6035830018809065
+            }
+          ],
+          "reproducibility": {
+            "measured": true,
+            "passed": true,
+            "response_digests": [
+              "443f62d457f46e0a331842a92ed9e35218377a6b877711fcf45141f95cf9f98d",
+              "443f62d457f46e0a331842a92ed9e35218377a6b877711fcf45141f95cf9f98d"
+            ]
+          },
+          "mean_elapsed_ms": 4.810229002032429
+        },
+        {
+          "case_id": "regulatory-commencement-citation",
+          "passed": true,
+          "runs": [
+            {
+              "passed": true,
+              "numerical_accuracy": null,
+              "citation_reference_validity": {
+                "passed": true,
+                "supplied_count": 3,
+                "required_count": 1
+              },
+              "reconciliation_accuracy": null,
+              "unauthorized_disclosure": null,
+              "expected_status_and_fields": true,
+              "elapsed_ms": 21.150624990696087
+            },
+            {
+              "passed": true,
+              "numerical_accuracy": null,
+              "citation_reference_validity": {
+                "passed": true,
+                "supplied_count": 3,
+                "required_count": 1
+              },
+              "reconciliation_accuracy": null,
+              "unauthorized_disclosure": null,
+              "expected_status_and_fields": true,
+              "elapsed_ms": 10.791291002533399
+            }
+          ],
+          "reproducibility": {
+            "measured": true,
+            "passed": true,
+            "response_digests": [
+              "1f04f4b0eeb92995d5eb7a54f3c1b4f41aa852c8c3ebd4f04261798dd1aec156",
+              "1f04f4b0eeb92995d5eb7a54f3c1b4f41aa852c8c3ebd4f04261798dd1aec156"
+            ]
+          },
+          "mean_elapsed_ms": 15.970957996614743
+        },
+        {
+          "case_id": "current-calibration-uncertainty",
+          "passed": true,
+          "runs": [
+            {
+              "passed": true,
+              "numerical_accuracy": null,
+              "citation_reference_validity": {
+                "passed": true,
+                "supplied_count": 3,
+                "required_count": 0
+              },
+              "reconciliation_accuracy": null,
+              "unauthorized_disclosure": null,
+              "expected_status_and_fields": true,
+              "elapsed_ms": 10.522791999392211
+            },
+            {
+              "passed": true,
+              "numerical_accuracy": null,
+              "citation_reference_validity": {
+                "passed": true,
+                "supplied_count": 3,
+                "required_count": 0
+              },
+              "reconciliation_accuracy": null,
+              "unauthorized_disclosure": null,
+              "expected_status_and_fields": true,
+              "elapsed_ms": 10.550040999078192
+            }
+          ],
+          "reproducibility": {
+            "measured": true,
+            "passed": true,
+            "response_digests": [
+              "63341d562a95ada8449e2721d2afc0554747dfe6083b788fdbfdcf8ed7f930fa",
+              "63341d562a95ada8449e2721d2afc0554747dfe6083b788fdbfdcf8ed7f930fa"
+            ]
+          },
+          "mean_elapsed_ms": 10.536416499235202
+        },
+        {
+          "case_id": "analyst-restricted-disclosure",
+          "passed": true,
+          "runs": [
+            {
+              "passed": true,
+              "numerical_accuracy": null,
+              "citation_reference_validity": {
+                "passed": true,
+                "supplied_count": 3,
+                "required_count": 0
+              },
+              "reconciliation_accuracy": null,
+              "unauthorized_disclosure": true,
+              "expected_status_and_fields": true,
+              "elapsed_ms": 11.537500002305023
+            },
+            {
+              "passed": true,
+              "numerical_accuracy": null,
+              "citation_reference_validity": {
+                "passed": true,
+                "supplied_count": 3,
+                "required_count": 0
+              },
+              "reconciliation_accuracy": null,
+              "unauthorized_disclosure": true,
+              "expected_status_and_fields": true,
+              "elapsed_ms": 11.013416005880572
+            }
+          ],
+          "reproducibility": {
+            "measured": true,
+            "passed": true,
+            "response_digests": [
+              "4a4781f6d6c7f4d0b252fa7ebbbec6cf23b41458f10599995f5034482fb28a73",
+              "4a4781f6d6c7f4d0b252fa7ebbbec6cf23b41458f10599995f5034482fb28a73"
+            ]
+          },
+          "mean_elapsed_ms": 11.275458004092798
+        },
+        {
+          "case_id": "malformed-duplicate-upload",
+          "passed": true,
+          "runs": [
+            {
+              "passed": true,
+              "numerical_accuracy": null,
+              "citation_reference_validity": null,
+              "reconciliation_accuracy": null,
+              "unauthorized_disclosure": null,
+              "expected_status_and_fields": true,
+              "elapsed_ms": 1.0938750056084245
+            },
+            {
+              "passed": true,
+              "numerical_accuracy": null,
+              "citation_reference_validity": null,
+              "reconciliation_accuracy": null,
+              "unauthorized_disclosure": null,
+              "expected_status_and_fields": true,
+              "elapsed_ms": 0.9024580067489296
+            }
+          ],
+          "reproducibility": {
+            "measured": true,
+            "passed": true,
+            "response_digests": [
+              "825af8e9e9f1e243634515ec45226c756ce816daf4bd5fd7ac53cba34bc54b76",
+              "825af8e9e9f1e243634515ec45226c756ce816daf4bd5fd7ac53cba34bc54b76"
+            ]
+          },
+          "mean_elapsed_ms": 0.9981665061786771
+        }
+      ]
+    }
+  },
+  "ab_comparability": {
+    "eligible": false,
+    "reason": "A/B result files have not both been supplied and validated."
+  },
+  "comparative_performance_claim": "Not established; offline C has no LLM and A/B are not executed by this runner.",
+  "limitations": [
+    "Eight synthetic fixture tasks are not a representative actuarial or regulatory benchmark.",
+    "Citation scoring checks authorized document/version reference identity and the expected date phrase; it does not assess legal entailment, source completeness or current-law accuracy.",
+    "Security scoring detects fixed synthetic disclosure markers; passing does not prove resistance to unseen attacks.",
+    "Elapsed times are observed local per-case wall time, excluding service creation, sign-in and corpus seeding; supplied baseline timing is self-reported and hardware-uncontrolled.",
+    "Reproducibility compares normalized answers, outputs and citation lists, excluding latency. Two repeats do not establish cross-version or cross-platform reproducibility.",
+    "The diversified-movement case calls the deterministic engine directly; other numerical cases exercise the service and authorization boundary.",
+    "A/B files require matching cases, source context and declared configuration; the adapter neither runs nor verifies their model execution.",
+    "Formal same-LLM A/B/C comparison remains pending, including calibration, entailment review and statistically meaningful repeated trials."
+  ]
+}

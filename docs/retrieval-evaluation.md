@@ -1,5 +1,7 @@
 # Retrieval methods and measured diagnostic evaluation
 
+This page preserves the **0.2.0 / original 44-case** study. See [0.3.0 verification](phase3-verification.md) for the expanded 64-case corpus, current scope fixes and additional component-coverage metrics. The two case/corpus sets are different experiments.
+
 The default ranker is now bilingual **BM25F with exact rule identifiers and light MMR diversification**. Two actual locally provisioned SentenceTransformers encoders were also loaded and measured. On the small developer-authored set below, the English encoder reduced Chinese retrieval quality; neither dense nor hybrid retrieval replaces BM25 by default.
 
 This is a diagnostic development set, not a blinded or held-out benchmark, a general claim of semantic-search superiority, or an evaluation of legal answer correctness. The set exposed two implementation bugs during development: an overly broad `cap` pattern also matched `capital`, and hyphenated prose did not match its separated words. Both were corrected with general regression tests. Queries and relevance labels were left unchanged.
@@ -103,7 +105,7 @@ The same frozen cases were also run with `sentence-transformers/paraphrase-multi
 
 The multilingual encoder improved Chinese recall over the English encoder on these cases, while remaining below BM25 overall. Dense and hybrid each reported zero unsupported-corpus false positives and zero unauthorized hits. Their joint evidence-supported false positives were **2/20** and **1/19**, respectively: an apparently correct answerability status still sometimes accompanied the wrong labeled section. Their relevant-section answer precision/rate was 0.923/0.923 and 0.962/0.962. BM25 remains the default. These are two encoder comparisons on a small development set, not proof that lexical search is universally better.
 
-Both final artifacts were regenerated after the strict local-loader hardening described below; their encoder/retrieval source hashes match the delivered code. Timing runs overlapped other local verification activity and are not controlled hardware benchmarks. Rankings and quality scores remained unchanged after the loader gates were added.
+Both artifacts were regenerated after the strict local-loader hardening described below; their encoder/retrieval hashes identify the measured **0.2.0 snapshot**. Later retrieval changes do not rewrite these historical results. Timing runs overlapped other local verification activity and are not controlled hardware benchmarks. Rankings and quality scores remained unchanged after the loader gates were added.
 
 ## Claim scope and uncertainty
 

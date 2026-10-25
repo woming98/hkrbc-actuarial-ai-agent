@@ -75,7 +75,7 @@ _PHRASES = {
     "minimum capital amount": "mca", "prescribed capital amount": "pca", "own-assessment": "own assessment", "factor-based": "factor based", "public reporting": "disclosure",
 }
 FIELD_WEIGHTS = {"title": 2.0, "section": 2.8, "text": 1.0}
-RETRIEVAL_VERSION = "bm25f-bilingual-1.0"
+RETRIEVAL_VERSION = "bm25f-bilingual-1.1"
 
 
 def _normal(text: str) -> str:
@@ -83,22 +83,69 @@ def _normal(text: str) -> str:
 
 
 def rule_identifiers(text: str) -> set[str]:
-    """Preserve exact subrules and full-width/Chinese section notation."""
+    """Preserve alphanumeric rules, nested clauses and bounded clause ranges."""
     text = _normal(text)
+    text = re.sub(r"\b(and|or|to|through)(?=\d)", r"\1 ", text)
     result: set[str] = set()
-    pattern = r"(?P<label>rules?|sections?|§)\s*(?P<rule>\d{1,3})\s*(?:\(\s*(?P<sub>\d+[a-z]?)\s*\))?"
+    component = r"[a-z0-9]+"
+    chain = rf"(?:\s*\(\s*{component}\s*\))*"
+
+    def add(kind: str, rule: str, parts: list[str], remainder: str) -> None:
+        prefix = f"{kind}:{rule}"
+        suffix = "".join(f"({part})" for part in parts)
+        result.add(prefix + suffix)
+        if remainder.lstrip().startswith("("):
+            result.add(prefix + suffix + "(?)")
+        while parts:
+            endpoint = re.match(rf"\s*(?P<op>[–—-]|to\b|through\b|and\b|or\b|[至到及和、,&，])\s*(?P<subs>(?:\(\s*{component}\s*\)\s*)+)", remainder)
+            if not endpoint:
+                break
+            following = re.findall(component, endpoint["subs"])
+            first, last = parts[-1], following[0]
+            stem = prefix + "".join(f"({part})" for part in parts[:-1])
+            is_range = endpoint["op"] in {"–", "—", "-", "to", "through", "至", "到"}
+            if not is_range:
+                result.add(stem + "".join(f"({part})" for part in following))
+            elif len(following) == 1 and first.isdigit() and last.isdigit() and 0 <= int(last) - int(first) <= 12:
+                result.update(stem + f"({value})" for value in range(int(first), int(last) + 1))
+            elif len(following) == 1 and len(first) == len(last) == 1 and first.isalpha() and last.isalpha() and 0 <= ord(last) - ord(first) <= 12:
+                result.update(stem + f"({chr(value)})" for value in range(ord(first), ord(last) + 1))
+            else:
+                result.add(stem + f"({first}).." + "".join(f"({part})" for part in following))
+            parts = parts[:-1] + following
+            remainder = remainder[endpoint.end():]
+
+    pattern = rf"(?<![a-z])(?P<label>rules?|sections?|§)\s*(?P<rule>\d+[a-z0-9]*)(?P<subs>{chain})"
+    labeled_spans = []
     for match in re.finditer(pattern, text):
+        labeled_spans.append(match.span())
         kind = "section" if match["label"].startswith("section") else "rule"
-        result.add(f"{kind}:{match['rule']}" + (f"({match['sub']})" if match["sub"] else ""))
-    for match in re.finditer(r"(?<!\d)(\d{1,3})\s*\(\s*(\d+[a-z]?)\s*\)", text):
-        result.add(f"rule:{match[1]}({match[2]})")
-    for match in re.finditer(r"第\s*(\d{1,3})\s*(?:\(\s*(\d+)\s*\))?\s*[條条](?:第?\s*(\d+)\s*[款項项])?", text):
-        sub = match[2] or match[3]
-        result.add(f"rule:{match[1]}" + (f"({sub})" if sub else ""))
-    for match in re.finditer(r"(rules?|sections?)\s*(\d{1,3})\s*[–—-]\s*(\d{1,3})\b", text):
-        kind = "section" if match[1].startswith("section") else "rule"
-        if 0 <= int(match[3]) - int(match[2]) <= 12:
-            result.update(f"{kind}:{number}" for number in range(int(match[2]), int(match[3]) + 1))
+        parts = re.findall(component, match["subs"])
+        add(kind, match["rule"], parts, text[match.end():])
+        if not parts:
+            remainder, first = text[match.end():], match["rule"]
+            while True:
+                endpoint = re.match(rf"\s*(?P<op>[–—-]|to\b|through\b|and\b|or\b|[至到及和、,&，])\s*(?:rules?|sections?)?\s*(?P<rule>\d+[a-z0-9]*)(?P<subs>{chain})", remainder)
+                if not endpoint:
+                    break
+                last = endpoint["rule"]
+                if endpoint["op"] in {"and", "or", "及", "和", "、", ",", "，", "&"}:
+                    add(kind, last, re.findall(component, endpoint["subs"]), remainder[endpoint.end():])
+                elif first.isdigit() and last.isdigit() and 0 <= int(last) - int(first) <= 12 and not endpoint["subs"].strip():
+                    result.update(f"{kind}:{number}" for number in range(int(first), int(last) + 1))
+                else:
+                    result.add(f"{kind}:{first}..{last}")
+                remainder, first = remainder[endpoint.end():], last
+    bare = rf"(?<![a-z0-9])(?P<rule>\d+[a-z0-9]*)(?P<subs>(?:\s*\(\s*{component}\s*\))+)"
+    for match in re.finditer(bare, text):
+        if any(start <= match.start() < end for start, end in labeled_spans):
+            continue
+        add("rule", match["rule"], re.findall(component, match["subs"]), text[match.end():])
+    chinese = rf"第\s*(?P<rule>\d+[a-z0-9]*)(?P<subs>{chain})\s*[條条](?:第?\s*(?P<sub>{component})\s*(?:(?P<op>[至到及和、–—-])\s*(?P<end>{component})\s*)?[款項项])?"
+    for match in re.finditer(chinese, text):
+        parts = re.findall(component, match["subs"]) + ([match["sub"]] if match["sub"] else [])
+        remainder = (match["op"] + "(" + match["end"] + ")" if match["op"] else "") + text[match.end():]
+        add("rule", match["rule"], parts, remainder)
     return result
 
 
@@ -173,7 +220,7 @@ def _primary_rules(document: Document) -> set[str]:
 
 def _rule_match(requested: set[str], document: Document) -> bool:
     primary = _primary_rules(document)
-    return not requested or any(wanted in primary or ("(" not in wanted and any(value.startswith(wanted + "(") for value in primary)) for wanted in requested)
+    return not requested or any(wanted in primary or any(value.startswith(wanted + "(") for value in primary) for wanted in requested)
 
 
 def _bm25_scores(documents: list[Document], query: str) -> list[float]:
@@ -280,19 +327,29 @@ class Retriever:
 
 def requested_claims(query: str) -> set[str]:
     """Conservative request scope; curated tags do not prove semantic entailment."""
-    text = _normal(query)
+    text = re.sub(r"(?<=[a-z])[-‐‑–](?=[a-z])", " ", _normal(query))
     claims: set[str] = set()
-    if re.search(r"correlation|相關矩陣|相关矩阵|相關係數|相关系数", text):
+    illustrative_concept = bool(re.search(r"illustrative|internal|synthetic|內部|内部|示意", text)) and not re.search(r"matrix|coefficient|numbers?|values?|percent|calculat|compute|formula|矩陣|矩阵|係數|系数|數值|数值|數字|数字|百分|計算|计算|公式", text)
+    if re.search(r"correlation|(?:pca|capital).{0,35}matrix|matrix.{0,35}(?:pca|capital)|相關矩陣|相关矩阵|相關係數|相关系数", text) and not illustrative_concept:
         claims.add("capital.market_correlation_direction" if re.search(r"(?:interest|equity|market).{0,40}(?:up|down|direction)|利率|股票|升息|降息", text) else "capital.correlation_matrix")
-    if re.search(r"calibrat|prescribed\s+(?:risk\s+)?factors?|stress\s+(?:factors?|percent|rates?)|mortality|longevity|lapse\s+stress|壓力因子|压力因子|死亡率|長壽|长寿", text):
+    specific_crypto = bool(re.search(r"crypto|加密", text))
+    if (re.search(r"prescribed\s+(?:risk\s+)?factors?|stress\s+(?:factors?|percent|rates?)|壓力因子|压力因子", text) and not specific_crypto) or re.search(r"calibrat|校準|校准|mortality|longevity|lapse\s+stress|死亡率|長壽|长寿", text):
         claims.add("capital.risk_factors")
-    if re.search(r"(?:calculate|compute|formula|how.{0,20}calculat).{0,35}(?:pca|prescribed capital)|(?:計算|计算).{0,12}資本|(?:計算|计算).{0,12}资本", text):
+    if re.search(r"(?:calculate|compute|formula|how.{0,20}calculat).{0,35}(?:pca|prescribed capital)|(?:pca|prescribed capital).{0,35}(?:calculat|formula)|(?:計算|计算).{0,12}[資资]本", text):
         claims.add("capital.pca_calculation")
-    if re.search(r"matching adjustment|匹配調整|匹配调整", text) and not re.search(r"announcement|announce|mention|changes?|2026|公告|修訂|修订|提及", text):
-        claims.add("matching_adjustment.eligibility" if re.search(r"eligib|qualif|資格|资格|適用|适用", text) else "matching_adjustment.formula")
-    if re.search(r"tier.{0,20}\b(?:caps?|limits?)\b|\b(?:caps?|limits?)\b.{0,20}tier|[一二兩两][級级].{0,10}上限", text):
+    if re.search(r"matching adjustment|匹配調整|匹配调整", text):
+        # Mentioning an announcement/year must not erase a second, unsupported
+        # formula or eligibility request in a compound question.
+        formula = bool(re.search(r"formula|calculat|compute|calibrat|numerical|percentage|spread|公式|計算|计算|校準|校准|數值|数值|百分比|息差|利差", text))
+        eligibility = bool(re.search(r"eligib|qualif|資格|资格|適用|适用", text))
+        announcement = bool(re.search(r"announcement|announce|mention|公告|公佈|公布|提及", text))
+        if formula or not (announcement or eligibility):
+            claims.add("matching_adjustment.formula")
+        if eligibility:
+            claims.add("matching_adjustment.eligibility")
+    if re.search(r"tier.{0,20}(?:\b(?:caps?|limits?)\b|上限|限額|限额)|\b(?:caps?|limits?)\b.{0,20}tier|[一二兩两][級级].{0,10}上限", text):
         claims.add("capital.tier_limits")
-    if re.search(r"(?:tier|capital).{0,30}(?:eligib|qualif)|(?:eligib|qualif).{0,30}(?:tier|capital)|[一二兩两][級级].{0,10}(?:資格|资格)", text):
+    if re.search(r"tier|instrument|subordinat|debt|bonds?|[一二兩两][級级]|工具|債券|债券|次順位|次顺位", text) and re.search(r"eligib|qualif|inclusion|合格|資格|资格|可計入|可计入", text):
         claims.add("capital.tier_instrument_eligibility")
     if re.search(r"loss.given.default|default probability|\blgd\b|\bpd\b|違約損失|违约损失", text):
         claims.add("capital.counterparty_default_calibration")
@@ -302,8 +359,20 @@ def requested_claims(query: str) -> set[str]:
         claims.add("discount_curve.calibration")
     if re.search(r"\bifrs\s*17\b|\bcsm\b|\bgmm\b", text):
         claims.add("ifrs17.measurement")
-    if re.search(r"\btvog\b|保證.{0,5}時間價值|保证.{0,5}时间价值", text):
+    if re.search(r"(?<![a-z0-9])tvog(?![a-z0-9])|保證.{0,5}時間價值|保证.{0,5}时间价值", text):
         claims.add("liability.tvog_methodology")
+        if re.search(r"proxy|simplif|代理|簡化|简化", text):
+            claims.add("liability.tvog_proxy")
+        if re.search(r"calculat|compute|formula|numerical|calibrat|scenario count|number of scenarios|公式|計算|计算|數值|数值|校準|校准|幾多條情景|多少條情景|參數|参数|收斂|收敛", text):
+            claims.add("liability.tvog_calculation")
+    if re.search(r"crypto|加密", text):
+        claims.add("capital.crypto_stress")
+    if re.search(r"(?<![a-z0-9])cca(?![a-z0-9])|counter\s*cyclical|逆周期|逆週期", text) and re.search(r"bound|limit|range|cap|floor|上下限|範圍|范围|上限|下限", text):
+        claims.add("capital.equity_cca_bounds")
+        if re.search(r"gazette|notice|憲報|宪报|公告", text) and re.search(r"numerical|numbers?|values?|exact|數字|数字|數值|数值|幾多|多少", text):
+            claims.add("capital.equity_cca_notice_values")
+    if re.search(r"currency risk|foreign currenc|(?<![a-z])fx(?![a-z])|匯率|汇率|外幣|外币", text) and re.search(r"stress|charge|factor|calibrat|prescribed|壓力|压力|法定|校準|校准", text):
+        claims.add("capital.fx_calibration")
     for country in ("macao", "macau", "singapore", "bermuda"):
         if re.search(r"\b" + country + r"\b", text):
             claims.add("jurisdiction." + ("macao" if country == "macau" else country))
@@ -312,13 +381,16 @@ def requested_claims(query: str) -> set[str]:
 
 def evidence_answer(query: str, hits: list[Hit]) -> dict:
     required = requested_claims(query)
-    current_question = bool(re.search(r"\b(current|currently|today|latest|compliant|compliance)\b|現行|當前|当前|最新|合規|合规", query, re.I))
+    # "Current estimate" is a technical valuation term, not a request for today's
+    # consolidated law. Other current-law words in the same query still apply.
+    temporal_query = re.sub(r"\b(?:deterministic\s+)?current\s+estimate\b", "technical estimate", query, flags=re.I)
+    current_question = bool(re.search(r"\b(current|currently|today|latest|compliant|compliance)\b|現行|當前|当前|最新|合規|合规", temporal_query, re.I))
     today = datetime.now(ZoneInfo("Asia/Hong_Kong")).date()
-    query_years = {int(value) for value in re.findall(r"\b20\d{2}\b", _normal(query))}
+    query_years = {int(value) for value in re.findall(r"(?<!\d)20\d{2}(?!\d)", _normal(query))}
     named_amendment = bool(re.search(r"amendment|修訂|修订", query, re.I)) and any(
         hit.document.status == "future" and any(value and value.year in query_years
             for value in (hit.document.effective_from, hit.document.published_at)) for hit in hits)
-    future_requested = (bool(re.search(r"\b(future|scheduled|will)\b|未來|未来|將於|将于", query, re.I)) or named_amendment) and not current_question
+    future_requested = (bool(re.search(r"\b(future|scheduled|will)\b|未來|未来|將.{0,6}生效|将.{0,6}生效|將於|将于|預定|预定", query, re.I)) or named_amendment) and not current_question
     coverage_sources = [hit.document for hit in hits if hit.document.status not in {"superseded"}
         and (future_requested or (hit.document.status != "future" and (hit.document.effective_from is None or hit.document.effective_from <= today)))]
     covered = {tag for document in coverage_sources for tag in getattr(document, "claim_tags", ())}
@@ -334,14 +406,22 @@ def evidence_answer(query: str, hits: list[Hit]) -> dict:
     normalized_query = _normal(query)
     requested_class = "restricted" if re.search(r"\brestricted\b|restricted_demo|受限|機密", normalized_query) else ("internal" if re.search(r"\binternal\b|internal_demo|內部|内部", normalized_query) else None)
     class_missing = requested_class is not None and not any(hit.document.classification == requested_class for hit in hits)
-    identifiers = re.findall(r"\b[a-z][a-z0-9]*(?:_[a-z0-9]+){2,}\b", normalized_query)
+    identifiers = re.findall(r"(?<![a-z0-9_])[a-z][a-z0-9]*(?:_[a-z0-9]+){2,}(?![a-z0-9_])", normalized_query)
     missing_named = [value for value in identifiers if not any(value in _normal(hit.document.text + " " + hit.document.document_id) for hit in hits)]
     missing = required - covered
-    insufficient = not hits or bool(missing or missing_rules or missing_named or class_missing) or (current_question and not temporal_ok)
+    comparison = bool(re.search(r"compar|difference|比較|比较", normalized_query)) and future_requested
+    historical_requested = comparison and bool(re.search(r"original|baseline|historical|2024|原始|原版|原有", normalized_query))
+    def relevant_version(document: Document) -> bool:
+        return not required or bool(required & set(document.claim_tags))
+    missing_versions = ["historical_baseline"] if historical_requested and not any(document.status != "future" and document.kind == "regulatory" and document.published_at and document.published_at.year < max(query_years or {today.year}) and relevant_version(document) for document in coverage_sources) else []
+    if historical_requested and not any(document.status == "future" and relevant_version(document) for document in coverage_sources):
+        missing_versions.append("scheduled_amendment")
+    insufficient = not coverage_sources or bool(missing or missing_rules or missing_named or class_missing or missing_versions) or (current_question and not temporal_ok)
     scope = {"requested_claim_tags": sorted(required), "covered_claim_tags": sorted(covered), "missing_claim_tags": sorted(missing),
              "missing_rule_identifiers": sorted(missing_rules), "current_law_requested": current_question, "all_sources_current_verified": temporal_ok,
              "requested_classification": requested_class, "classification_evidence_missing": class_missing, "missing_named_identifiers": missing_named,
              "future_scope_requested": future_requested,
+             "missing_evidence_versions": missing_versions,
              "assessment": "Curated claim tags and explicit dates/identifiers; not semantic entailment verification."}
     if not hits:
         answer = "Insufficient verified evidence in the authorized local corpus. No regulatory conclusion can be made; consult the current official rules and a qualified reviewer."
